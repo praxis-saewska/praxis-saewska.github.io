@@ -1,0 +1,729 @@
+/* Natural Medical Color Palette */
+:root {
+    --primary-teal: #4A9B8E;
+    --light-blue: #E8F4F8;
+    --warm-white: #FAFAFA;
+    --soft-gray: #6B7280;
+    --dark-gray: #374151;
+    --text-dark: #1F2937;
+    --border-light: #E5E7EB;
+    --accent-green: #10B981;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--warm-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-green);
+}
+
+/* Header and Navigation */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.practice-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-teal);
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary-teal);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-teal);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, white 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    color: var(--primary-teal);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--soft-gray);
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background-color: var(--primary-teal);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--accent-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active,
+.btn:focus {
+    background-color: var(--accent-green);
+    color: white;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline: 2px solid var(--primary-teal);
+    outline-offset: 2px;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-teal);
+    color: white;
+}
+
+.btn-secondary:active,
+.btn-secondary:focus {
+    background-color: var(--primary-teal);
+    color: white;
+    outline: 2px solid var(--primary-teal);
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-teal);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+    color: var(--primary-teal);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--soft-gray);
+    line-height: 1.8;
+}
+
+/* Appointment Booking Section */
+.appointment-section {
+    background-color: var(--light-blue);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.doctolib-placeholder {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctolib-placeholder p {
+    color: var(--soft-gray);
+    margin-bottom: 1rem;
+}
+
+.doctolib-instructions {
+    background-color: var(--light-blue);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+.doctolib-instructions code {
+    background-color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+}
+
+/* Contact Section */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.contact-item h3 {
+    color: var(--primary-teal);
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: var(--soft-gray);
+}
+
+/* Google Maps Container */
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 2rem 0;
+    background-color: var(--border-light);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-consent-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.map-consent-message.hidden {
+    display: none;
+}
+
+/* FAQ Accordion */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--dark-gray);
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--light-blue);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary-teal);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+}
+
+.faq-answer-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--soft-gray);
+    line-height: 1.8;
+}
+
+/* About Page */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-info {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+.doctor-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    background-color: var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--soft-gray);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.qualifications-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.qualifications-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.qualifications-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-teal);
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-gray);
+    color: white;
+    padding: 3rem 2rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-gray);
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    display: none;
+}
+
+.cookie-banner.show {
+    display: block;
+}
+
+.cookie-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cookie-banner-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cookie-banner-text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cookie-banner-text a {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookie-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cookie-btn-accept {
+    background-color: var(--primary-teal);
+    color: white;
+}
+
+.cookie-btn-accept:hover {
+    background-color: var(--accent-green);
+}
+
+.cookie-btn-decline {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-decline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .header-container {
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-info {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .doctor-photo {
+        margin: 0 auto;
+    }
+
+    .cookie-banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-banner-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cookie-btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .practice-name {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header,
+    footer,
+    .cookie-banner,
+    .btn {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
