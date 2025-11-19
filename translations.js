@@ -1231,3 +1231,6 @@ const translations = {
     }
 };
 
+// Make translations available globally
+window.translations = translations;
+

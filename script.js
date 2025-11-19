@@ -42,12 +42,13 @@
 
     // Get translation text
     function getTranslation(key, lang) {
-        if (!translations || !translations[lang]) {
+        if (!window.translations || !window.translations[lang]) {
+            console.warn('Translations not loaded or language not found:', lang, key);
             return key;
         }
 
         const keys = key.split('.');
-        let value = translations[lang];
+        let value = window.translations[lang];
 
         for (let i = 0; i < keys.length; i++) {
             if (value && typeof value === 'object' && keys[i] in value) {
@@ -93,16 +94,15 @@
 
     // Translate entire page
     function translatePage(lang) {
+        if (!window.translations) {
+            console.warn('Translations not loaded, cannot translate page');
+            return;
+        }
+        
         const elements = document.querySelectorAll('[data-translate]');
         elements.forEach(element => {
             translateElement(element, lang);
         });
-
-        // Update language selector
-        const langSelect = document.getElementById('language-select');
-        if (langSelect) {
-            langSelect.value = lang;
-        }
     }
 
     // Update HTML lang attribute and meta tags
@@ -116,23 +116,45 @@
             const translation = getTranslation(key, lang);
             metaDesc.setAttribute('content', translation);
         }
+        
+        // Update language selector value
+        const langSelect = document.getElementById('language-select');
+        if (langSelect) {
+            langSelect.value = lang;
+        }
     }
 
     // Initialize language switcher
+    let langSelectHandler = null;
     function initLanguageSwitcher() {
         const langSelect = document.getElementById('language-select');
         if (langSelect) {
             const currentLang = getCurrentLanguage();
             langSelect.value = currentLang;
 
-            langSelect.addEventListener('change', function() {
-                setLanguage(this.value);
-            });
+            // Remove existing listener if any
+            if (langSelectHandler) {
+                langSelect.removeEventListener('change', langSelectHandler);
+            }
+
+            // Add event listener
+            langSelectHandler = function(e) {
+                const selectedLang = e.target.value;
+                setLanguage(selectedLang);
+            };
+            langSelect.addEventListener('change', langSelectHandler);
         }
     }
 
     // Initialize translation system
     function initTranslation() {
+        // Wait for translations to be loaded
+        if (!window.translations) {
+            // Retry after a short delay if translations not loaded yet
+            setTimeout(initTranslation, 50);
+            return;
+        }
+        
         const currentLang = getCurrentLanguage();
         translatePage(currentLang);
         updateHTMLAttributes(currentLang);
