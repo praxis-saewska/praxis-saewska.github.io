@@ -64,7 +64,7 @@ const translations = {
             moreContactInfo: "Weitere Kontaktinformationen",
             addressPlaceholder: "[Ihre Praxisadresse]<br>[PLZ Ort]",
             phonePlaceholder: "[Ihre Telefonnummer]",
-            emailPlaceholder: "[Ihre E-Mail-Adresse]"
+            emailPlaceholder: "info@praxis-saewska.de"
         },
         
         // About Page
@@ -371,7 +371,7 @@ const translations = {
             moreContactInfo: "More Contact Information",
             addressPlaceholder: "[Your Practice Address]<br>[Postal Code City]",
             phonePlaceholder: "[Your Phone Number]",
-            emailPlaceholder: "[Your Email Address]"
+            emailPlaceholder: "info@praxis-saewska.de"
         },
         
         // About Page
@@ -678,7 +678,7 @@ const translations = {
             moreContactInfo: "Дополнительная контактная информация",
             addressPlaceholder: "[Адрес вашей практики]<br>[Почтовый индекс Город]",
             phonePlaceholder: "[Ваш номер телефона]",
-            emailPlaceholder: "[Ваш адрес электронной почты]"
+            emailPlaceholder: "info@praxis-saewska.de"
         },
         
         // About Page
@@ -985,7 +985,7 @@ const translations = {
             moreContactInfo: "Додаткова контактна інформація",
             addressPlaceholder: "[Адреса вашої практики]<br>[Поштовий індекс Місто]",
             phonePlaceholder: "[Ваш номер телефону]",
-            emailPlaceholder: "[Ваша адреса електронної пошти]"
+            emailPlaceholder: "info@praxis-saewska.de"
         },
         
         // About Page
