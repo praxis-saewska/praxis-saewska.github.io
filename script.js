@@ -5,6 +5,69 @@
     const LANGUAGE_KEY = 'preferredLanguage';
     const DEFAULT_LANGUAGE = 'de';
     const SUPPORTED_LANGUAGES = ['de', 'en', 'uk', 'ru'];
+    const loadedLanguages = new Set(); // Track which languages have been loaded
+
+    // Dynamically load translation file for a specific language
+    function loadTranslation(lang) {
+        return new Promise((resolve, reject) => {
+            // Check if already loaded
+            if (window.translations && window.translations[lang]) {
+                loadedLanguages.add(lang);
+                resolve();
+                return;
+            }
+
+            // Check if script is already being loaded
+            const existingScript = document.querySelector(`script[data-lang="${lang}"]`);
+            if (existingScript) {
+                // Wait for it to load
+                const checkInterval = setInterval(() => {
+                    if (window.translations && window.translations[lang]) {
+                        clearInterval(checkInterval);
+                        loadedLanguages.add(lang);
+                        resolve();
+                    }
+                }, 50);
+                
+                existingScript.addEventListener('error', () => {
+                    clearInterval(checkInterval);
+                    reject();
+                });
+                
+                // Timeout after 5 seconds
+                setTimeout(() => {
+                    clearInterval(checkInterval);
+                    if (!window.translations || !window.translations[lang]) {
+                        reject(new Error(`Timeout loading translations for ${lang}`));
+                    }
+                }, 5000);
+                return;
+            }
+
+            // Create and load script
+            const script = document.createElement('script');
+            script.src = `translations-${lang}.js`;
+            script.async = true;
+            script.setAttribute('data-lang', lang);
+            
+            script.onload = () => {
+                // Verify it's actually loaded
+                if (window.translations && window.translations[lang]) {
+                    loadedLanguages.add(lang);
+                    resolve();
+                } else {
+                    reject(new Error(`Translations for ${lang} not found after script load`));
+                }
+            };
+            
+            script.onerror = () => {
+                console.error(`Failed to load translations for ${lang}`);
+                reject(new Error(`Failed to load translations for ${lang}`));
+            };
+            
+            document.head.appendChild(script);
+        });
+    }
 
     // Get current language from localStorage or browser preference
     function getCurrentLanguage() {
@@ -36,8 +99,20 @@
             lang = DEFAULT_LANGUAGE;
         }
         localStorage.setItem(LANGUAGE_KEY, lang);
-        translatePage(lang);
-        updateHTMLAttributes(lang);
+        
+        // Load translation if not already loaded
+        loadTranslation(lang).then(() => {
+            translatePage(lang);
+            updateHTMLAttributes(lang);
+        }).catch(() => {
+            // Fallback to default language if loading fails
+            if (lang !== DEFAULT_LANGUAGE) {
+                loadTranslation(DEFAULT_LANGUAGE).then(() => {
+                    translatePage(DEFAULT_LANGUAGE);
+                    updateHTMLAttributes(DEFAULT_LANGUAGE);
+                });
+            }
+        });
     }
 
     // Get translation text
@@ -89,6 +164,9 @@
         }
         if (element.tagName === 'TITLE') {
             document.title = translation;
+        }
+        if (element.tagName === 'IMG' && element.hasAttribute('data-translate')) {
+            element.setAttribute('alt', translation);
         }
     }
 
@@ -148,17 +226,26 @@
 
     // Initialize translation system
     function initTranslation() {
-        // Wait for translations to be loaded
-        if (!window.translations) {
-            // Retry after a short delay if translations not loaded yet
-            setTimeout(initTranslation, 50);
-            return;
-        }
-        
         const currentLang = getCurrentLanguage();
-        translatePage(currentLang);
-        updateHTMLAttributes(currentLang);
-        initLanguageSwitcher();
+        
+        // Load the current language translation
+        loadTranslation(currentLang).then(() => {
+            translatePage(currentLang);
+            updateHTMLAttributes(currentLang);
+            initLanguageSwitcher();
+        }).catch(() => {
+            // Fallback to default language if current language fails
+            if (currentLang !== DEFAULT_LANGUAGE) {
+                loadTranslation(DEFAULT_LANGUAGE).then(() => {
+                    translatePage(DEFAULT_LANGUAGE);
+                    updateHTMLAttributes(DEFAULT_LANGUAGE);
+                    initLanguageSwitcher();
+                });
+            } else {
+                console.error('Failed to load default language translations');
+                initLanguageSwitcher();
+            }
+        });
     }
 
     // Make functions available globally

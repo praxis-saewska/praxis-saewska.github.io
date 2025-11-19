@@ -42,11 +42,8 @@
 
                 <div class="about-section">
                     <div class="doctor-info">
-                        <div class="doctor-photo" data-translate="about.photoPlaceholder">
-                            [Photo Placeholder]<br>
-                            Please insert<br>
-                            a professional<br>
-                            photo here
+                        <div class="doctor-photo">
+                            <img src="elena-saewska.jpg" alt="Dr. PhD Elena Saewska" data-translate="about.photoAlt">
                         </div>
                         <div>
                             <h2 data-translate="about.doctorName">Dr. [Name]</h2>
@@ -63,9 +60,7 @@
                         <li data-translate="about.qualification2">[Year] - Doctorate at [University]</li>
                         <li data-translate="about.qualification3">[Year] - Specialist training at [Clinic]</li>
                         <li data-translate="about.qualification4">[Year] - Additional qualification in [Area]</li>
-                        <li data-translate="about.qualification5">[Further Qualifications]</li>
                     </ul>
-                    <p style="margin-top: 1rem; color: var(--soft-gray);"><em data-translate="about.qualificationsNote">Please update this information with your actual qualifications.</em></p>
                 </div>
 
                 <div class="about-section">
@@ -104,12 +99,16 @@
                         <li data-translate="about.membership2">German Society for Gynecology and Obstetrics (DGGG)</li>
                         <li data-translate="about.membership3">[Further Memberships]</li>
                     </ul>
-                    <p style="margin-top: 1rem; color: var(--soft-gray);"><em data-translate="about.membershipsNote">Please update this list with your actual memberships.</em></p>
                 </div>
 
                 <div class="about-section">
                     <h2 data-translate="about.developmentTitle">Training and Development</h2>
                     <p data-translate="about.developmentText">Medicine is a constantly evolving field. Therefore, I place great value on regular training and exchange with colleagues to always offer you the best possible treatment.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2 data-translate="about.languagesTitle">Languages</h2>
+                    <p data-translate="about.languagesText">I speak English fluently, my native languages are Russian and Ukrainian, and I have German at B2 level. This enables me to competently care for patients from various cultural backgrounds.</p>
                 </div>
             </div>
         </div>
@@ -156,7 +155,8 @@
         </div>
     </div>
 
-    <script src="translations.js"></script>
+    <!-- Load default language (German) - other languages will be loaded on demand -->
+    <script src="translations-de.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
