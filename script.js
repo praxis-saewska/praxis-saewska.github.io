@@ -3,8 +3,8 @@
     'use strict';
 
     const LANGUAGE_KEY = 'preferredLanguage';
-    const DEFAULT_LANGUAGE = 'en';
-    const SUPPORTED_LANGUAGES = ['en', 'ru', 'uk'];
+    const DEFAULT_LANGUAGE = 'de';
+    const SUPPORTED_LANGUAGES = ['de', 'en', 'ru', 'uk'];
 
     // Get current language from localStorage or browser preference
     function getCurrentLanguage() {
@@ -20,6 +20,10 @@
             const langCode = browserLang.split('-')[0].toLowerCase();
             if (SUPPORTED_LANGUAGES.includes(langCode)) {
                 return langCode;
+            }
+            // Special handling for German variants (de-AT, de-CH, etc.)
+            if (langCode === 'de' || browserLang.toLowerCase().startsWith('de')) {
+                return 'de';
             }
         }
 
@@ -49,9 +53,13 @@
             if (value && typeof value === 'object' && keys[i] in value) {
                 value = value[keys[i]];
             } else {
-                // Fallback to English if translation not found
+                // Fallback to default language (German) if translation not found
                 if (lang !== DEFAULT_LANGUAGE) {
                     return getTranslation(key, DEFAULT_LANGUAGE);
+                }
+                // If default language also doesn't have it, try English as last resort
+                if (lang !== 'en') {
+                    return getTranslation(key, 'en');
                 }
                 return key;
             }

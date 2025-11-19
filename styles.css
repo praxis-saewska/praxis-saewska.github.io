@@ -1,13 +1,15 @@
-/* Natural Medical Color Palette */
+/* Vibrant Medical Color Palette */
 :root {
-    --primary-teal: #4A9B8E;
-    --light-blue: #E8F4F8;
-    --warm-white: #FAFAFA;
-    --soft-gray: #6B7280;
-    --dark-gray: #374151;
-    --text-dark: #1F2937;
-    --border-light: #E5E7EB;
-    --accent-green: #10B981;
+    --primary-teal: #00C9A7;
+    --light-blue: #E0F7FA;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #06B6D4;
+    --accent-purple: #8B5CF6;
+    --accent-coral: #F87171;
 }
 
 /* Reset and Base Styles */
@@ -65,7 +67,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-green);
+    color: var(--accent-purple);
 }
 
 /* Header and Navigation */
@@ -93,9 +95,16 @@ header {
 }
 
 .logo {
-    height: 70px;
+    height: 90px;
     width: auto;
     color: var(--primary-teal);
+    filter: drop-shadow(0 2px 4px rgba(0, 201, 167, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(0, 201, 167, 0.5));
 }
 
 .practice-name {
@@ -183,7 +192,7 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--light-blue) 0%, white 100%);
+    background: linear-gradient(135deg, var(--light-blue) 0%, #B2EBF2 50%, white 100%);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -220,17 +229,17 @@ nav a:hover::after {
 }
 
 .btn:hover {
-    background-color: var(--accent-green);
+    background-color: var(--accent-purple);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
 }
 
 .btn:active,
 .btn:focus {
-    background-color: var(--accent-green);
+    background-color: var(--accent-purple);
     color: white;
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
     outline: 2px solid var(--primary-teal);
     outline-offset: 2px;
 }
@@ -289,7 +298,8 @@ nav a:hover::after {
 
 .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 201, 167, 0.2);
+    border-top: 3px solid var(--primary-teal);
 }
 
 .service-card h3 {
@@ -304,7 +314,7 @@ nav a:hover::after {
 
 /* Appointment Booking Section */
 .appointment-section {
-    background-color: var(--light-blue);
+    background: linear-gradient(135deg, var(--light-blue) 0%, #B2EBF2 100%);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -427,7 +437,7 @@ nav a:hover::after {
 }
 
 .faq-question:hover {
-    background-color: var(--light-blue);
+    background: linear-gradient(90deg, var(--light-blue) 0%, #B2EBF2 100%);
 }
 
 .faq-question::after {
@@ -621,7 +631,7 @@ footer {
 }
 
 .cookie-btn-accept:hover {
-    background-color: var(--accent-green);
+    background-color: var(--accent-purple);
 }
 
 .cookie-btn-decline {
@@ -751,7 +761,7 @@ footer {
     }
 
     .logo {
-        height: 50px;
+        height: 70px;
     }
 
     .btn {
