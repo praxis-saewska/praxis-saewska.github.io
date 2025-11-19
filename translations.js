@@ -17,7 +17,7 @@ const translations = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Akzeptieren",
             decline: "Ablehnen",
-            menu: "Menü"
+            menu: "☰"
         },
         
         // Index Page
@@ -324,7 +324,7 @@ const translations = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Accept",
             decline: "Decline",
-            menu: "Menu"
+            menu: "☰"
         },
         
         // Index Page
@@ -631,7 +631,7 @@ const translations = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Принять",
             decline: "Отклонить",
-            menu: "Меню"
+            menu: "☰"
         },
         
         // Index Page
@@ -938,7 +938,7 @@ const translations = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Прийняти",
             decline: "Відхилити",
-            menu: "Меню"
+            menu: "☰"
         },
         
         // Index Page
