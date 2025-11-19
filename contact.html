@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontakt - So erreichen Sie unsere Praxis">
-    <title>Kontakt - Praxis Saewska</title>
+    <meta name="description" content="Contact - How to reach our practice" data-translate="contact.metaDescription">
+    <title data-translate="contact.title">Contact - Praxis Saewska</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,16 +12,23 @@
         <div class="header-container">
             <div class="logo-container">
                 <img src="file.svg" alt="Praxis Logo" class="logo">
-                <span class="practice-name">Praxis Saewska</span>
+                <span class="practice-name" data-translate="common.practiceName">Praxis Saewska</span>
             </div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" data-translate="common.menu">☰</button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Startseite</a></li>
-                    <li><a href="index.html#services">Leistungen</a></li>
-                    <li><a href="about.html">Über uns</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="index.html" data-translate="common.home">Home</a></li>
+                    <li><a href="index.html#services" data-translate="common.services">Services</a></li>
+                    <li><a href="about.html" data-translate="common.about">About Us</a></li>
+                    <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
+                    <li><a href="contact.html" data-translate="common.contact">Contact</a></li>
+                    <li class="language-switcher">
+                        <select id="language-select" aria-label="Select language">
+                            <option value="en">English</option>
+                            <option value="ru">Русский</option>
+                            <option value="uk">Українська</option>
+                        </select>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -29,68 +36,68 @@
 
     <section class="section">
         <div class="container">
-            <h1 class="section-title">Kontakt</h1>
+            <h1 class="section-title" data-translate="contact.pageTitle">Contact</h1>
 
             <div class="contact-info" style="margin-bottom: 3rem;">
                 <div class="contact-item">
-                    <h3>Adresse</h3>
-                    <p>Uhlandstr. 87<br>10717 Berlin</p>
+                    <h3 data-translate="contact.address">Address</h3>
+                    <p data-translate="contact.addressValue">Uhlandstr. 87<br>10717 Berlin</p>
                 </div>
                 <div class="contact-item">
-                    <h3>Telefon</h3>
-                    <p><a href="tel:[Telefonnummer]">[Ihre Telefonnummer]</a></p>
+                    <h3 data-translate="contact.phone">Phone</h3>
+                    <p><a href="tel:[Telefonnummer]" data-translate="contact.phoneValue">[Your Phone Number]</a></p>
                 </div>
                 <div class="contact-item">
-                    <h3>E-Mail</h3>
+                    <h3 data-translate="contact.email">Email</h3>
                     <p><a href="mailto:[E-Mail]">info@praxis-saewska.de</a></p>
                 </div>
             </div>
 
             <div class="about-section" style="margin-bottom: 3rem;">
-                <h2>Öffnungszeiten</h2>
+                <h2 data-translate="contact.hoursTitle">Opening Hours</h2>
                 <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
                     <tr style="border-bottom: 1px solid var(--border-light);">
-                        <td style="padding: 0.75rem 0; font-weight: 600;">Montag</td>
-                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">[Zeit] - [Zeit] Uhr</td>
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.monday">Monday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-translate="contact.hoursPlaceholder">[Time] - [Time]</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-light);">
-                        <td style="padding: 0.75rem 0; font-weight: 600;">Dienstag</td>
-                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">[Zeit] - [Zeit] Uhr</td>
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.tuesday">Tuesday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-translate="contact.hoursPlaceholder">[Time] - [Time]</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-light);">
-                        <td style="padding: 0.75rem 0; font-weight: 600;">Mittwoch</td>
-                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">[Zeit] - [Zeit] Uhr</td>
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.wednesday">Wednesday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-translate="contact.hoursPlaceholder">[Time] - [Time]</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-light);">
-                        <td style="padding: 0.75rem 0; font-weight: 600;">Donnerstag</td>
-                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">[Zeit] - [Zeit] Uhr</td>
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.thursday">Thursday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-translate="contact.hoursPlaceholder">[Time] - [Time]</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-light);">
-                        <td style="padding: 0.75rem 0; font-weight: 600;">Freitag</td>
-                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">[Zeit] - [Zeit] Uhr</td>
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.friday">Friday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-translate="contact.hoursPlaceholder">[Time] - [Time]</td>
                     </tr>
                 </table>
-                <p style="margin-top: 1rem; color: var(--soft-gray); font-size: 0.9rem;"><em>Bitte aktualisieren Sie die Öffnungszeiten mit Ihren tatsächlichen Zeiten.</em></p>
+                <p style="margin-top: 1rem; color: var(--soft-gray); font-size: 0.9rem;"><em data-translate="contact.hoursNote">Please update the opening hours with your actual times.</em></p>
             </div>
 
             <div class="about-section" style="margin-bottom: 3rem;">
-                <h2>So finden Sie uns</h2>
-                <p>Unsere Praxis befindet sich in Charlottenburg.</p>
-                <p><strong>Anfahrt mit dem Auto:</strong><br>
-                [Beschreibung der Anfahrt mit dem Auto]</p>
-                <p><strong>Anfahrt mit öffentlichen Verkehrsmitteln:</strong><br>
-                [Beschreibung der Anfahrt mit ÖPNV]</p>
-                <p><strong>Parkmöglichkeiten:</strong><br>
-                [Informationen zu Parkplätzen]</p>
+                <h2 data-translate="contact.directionsTitle">How to Find Us</h2>
+                <p data-translate="contact.directionsText">Our practice is located in Charlottenburg.</p>
+                <p><strong data-translate="contact.directionsCar">By Car:</strong><br>
+                <span data-translate="contact.directionsCarText">[Description of how to get there by car]</span></p>
+                <p><strong data-translate="contact.directionsPublic">By Public Transport:</strong><br>
+                <span data-translate="contact.directionsPublicText">[Description of how to get there by public transport]</span></p>
+                <p><strong data-translate="contact.parking">Parking:</strong><br>
+                <span data-translate="contact.parkingText">[Information about parking]</span></p>
             </div>
 
             <div class="about-section">
-                <h2>Standort</h2>
+                <h2 data-translate="contact.locationTitle">Location</h2>
                 <div class="map-container" id="google-map-container">
                     <div id="map-consent-message" class="map-consent-message">
-                        <p><strong>Karte wird geladen</strong></p>
-                        <p>Um die Karte anzuzeigen, benötigen wir Ihre Einwilligung zur Verwendung von Cookies.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem;">Bitte akzeptieren Sie Cookies in der Cookie-Banner, um die Karte zu sehen.</p>
+                        <p><strong data-translate="contact.mapLoading">Map is loading</strong></p>
+                        <p data-translate="contact.mapConsent">To display the map, we need your consent to use cookies.</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;" data-translate="contact.mapConsentNote">Please accept cookies in the cookie banner to see the map.</p>
                     </div>
                     <!-- PLACEHOLDER: Replace this iframe with your Google Maps embed code -->
                     <!-- To get your embed code:
@@ -111,13 +118,12 @@
                     </iframe>
                 </div>
                 <p style="margin-top: 1rem; color: var(--soft-gray); font-size: 0.9rem;">
-                    <strong>Hinweis:</strong> Bitte ersetzen Sie den obigen Google Maps Embed-Code mit dem Code Ihrer tatsächlichen Praxisadresse. 
-                    Die Karte wird nur nach Zustimmung zu Cookies geladen (DSGVO-konform).
+                    <strong>Note:</strong> <span data-translate="contact.mapNote">Please replace the above Google Maps embed code with the code for your actual practice address. The map will only load after consent to cookies (GDPR compliant).</span>
                 </p>
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="index.html#appointment" class="btn">Termin vereinbaren</a>
+                <a href="index.html#appointment" class="btn" data-translate="contact.bookAppointment">Book Appointment</a>
             </div>
         </div>
     </section>
@@ -125,28 +131,28 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Praxis Saewska</h3>
-                <p>Ihre gynäkologische Praxis für umfassende Betreuung und moderne Medizin.</p>
+                <h3 data-translate="common.practiceName">Praxis Saewska</h3>
+                <p data-translate="footer.description">Your gynecological practice for comprehensive care and modern medicine.</p>
             </div>
             <div class="footer-section">
-                <h3>Navigation</h3>
+                <h3 data-translate="footer.navigation">Navigation</h3>
                 <ul>
-                    <li><a href="index.html">Startseite</a></li>
-                    <li><a href="about.html">Über uns</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="index.html" data-translate="common.home">Home</a></li>
+                    <li><a href="about.html" data-translate="common.about">About Us</a></li>
+                    <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
+                    <li><a href="contact.html" data-translate="common.contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Rechtliches</h3>
+                <h3 data-translate="footer.legal">Legal</h3>
                 <ul>
-                    <li><a href="privacy.html">Datenschutz</a></li>
-                    <li><a href="#" id="cookie-settings">Cookie-Einstellungen</a></li>
+                    <li><a href="privacy.html" data-translate="common.privacy">Privacy Policy</a></li>
+                    <li><a href="#" id="cookie-settings" data-translate="common.cookieSettings">Cookie Settings</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Praxis Saewska. Alle Rechte vorbehalten.</p>
+            <p><span data-translate="common.copyright">© 2024 Praxis Saewska.</span> <span data-translate="common.allRightsReserved">All rights reserved.</span></p>
         </div>
     </footer>
 
@@ -154,15 +160,16 @@
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-banner-content">
             <div class="cookie-banner-text">
-                <p>Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="privacy.html">Datenschutzerklärung</a>.</p>
+                <p><span data-translate="cookie.text">We use cookies to provide you with the best experience on our website. By using our website, you agree to the use of cookies. For more information, please see our</span> <a href="privacy.html" data-translate="cookie.privacyLink">Privacy Policy</a>.</p>
             </div>
             <div class="cookie-banner-actions">
-                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Akzeptieren</button>
-                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Ablehnen</button>
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Accept</button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Decline</button>
             </div>
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
