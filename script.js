@@ -4,7 +4,7 @@
 
     const LANGUAGE_KEY = 'preferredLanguage';
     const DEFAULT_LANGUAGE = 'de';
-    const SUPPORTED_LANGUAGES = ['de', 'en', 'ru', 'uk'];
+    const SUPPORTED_LANGUAGES = ['de', 'en', 'uk', 'ru'];
 
     // Get current language from localStorage or browser preference
     function getCurrentLanguage() {
