@@ -5,7 +5,7 @@ const translations = {
     de: {
         // Common/Navigation
         common: {
-            practiceName: "Gynäkologische Praxis Dr. PhD Elena Saewska",
+            practiceName: "Gynäkologische Praxis<br>Dr. PhD Elena Saewska",
             home: "Startseite",
             services: "Leistungen",
             about: "Über uns",
@@ -312,7 +312,7 @@ const translations = {
     en: {
         // Common/Navigation
         common: {
-            practiceName: "Praxis Saewska",
+            practiceName: "Gynecological Practice<br>Dr. PhD Elena Saewska",
             home: "Home",
             services: "Services",
             about: "About Us",
@@ -619,11 +619,11 @@ const translations = {
     ru: {
         // Common/Navigation
         common: {
-            practiceName: "Praxis Saewska",
+            practiceName: "Гинекологический кабинет<br>Доктор PhD Елена Заевская",
             home: "Главная",
             services: "Услуги",
             about: "О нас",
-            faq: "Часто задаваемые вопросы",
+            faq: "ЧаВо",
             contact: "Контакты",
             privacy: "Политика конфиденциальности",
             cookieSettings: "Настройки cookies",
@@ -926,7 +926,7 @@ const translations = {
     uk: {
         // Common/Navigation
         common: {
-            practiceName: "Praxis Saewska",
+            practiceName: "Гінекологічна практика<br>Доктор PhD Олена Заєвська",
             home: "Головна",
             services: "Послуги",
             about: "Про нас",

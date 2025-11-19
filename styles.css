@@ -108,8 +108,9 @@ header {
 }
 
 .practice-name {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    font-style: italic;
     color: var(--primary-teal);
 }
 
@@ -757,7 +758,7 @@ footer {
 
 @media (max-width: 480px) {
     .practice-name {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 
     .logo {
