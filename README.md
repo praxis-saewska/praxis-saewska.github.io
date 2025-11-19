@@ -143,4 +143,4 @@ For questions or problems:
 
 ## License
 
-© 2024 Praxis Saewska. All rights reserved.
+© 2025 Praxis Saewska. All rights reserved.
