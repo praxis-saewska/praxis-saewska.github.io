@@ -5,7 +5,7 @@ const translations = {
     de: {
         // Common/Navigation
         common: {
-            practiceName: "Praxis Saewska",
+            practiceName: "Gynäkologische Praxis Dr. PhD Elena Saewska",
             home: "Startseite",
             services: "Leistungen",
             about: "Über uns",
