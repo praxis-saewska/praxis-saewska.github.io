@@ -14,7 +14,7 @@ const translations = {
             privacy: "Datenschutz",
             cookieSettings: "Cookie-Einstellungen",
             allRightsReserved: "Alle Rechte vorbehalten.",
-            copyright: "© 2024 Praxis Saewska.",
+            copyright: "© 2025 Praxis Saewska.",
             accept: "Akzeptieren",
             decline: "Ablehnen",
             menu: "Menü"
@@ -321,7 +321,7 @@ const translations = {
             privacy: "Privacy Policy",
             cookieSettings: "Cookie Settings",
             allRightsReserved: "All rights reserved.",
-            copyright: "© 2024 Praxis Saewska.",
+            copyright: "© 2025 Praxis Saewska.",
             accept: "Accept",
             decline: "Decline",
             menu: "Menu"
@@ -628,7 +628,7 @@ const translations = {
             privacy: "Политика конфиденциальности",
             cookieSettings: "Настройки cookies",
             allRightsReserved: "Все права защищены.",
-            copyright: "© 2024 Praxis Saewska.",
+            copyright: "© 2025 Praxis Saewska.",
             accept: "Принять",
             decline: "Отклонить",
             menu: "Меню"
@@ -935,7 +935,7 @@ const translations = {
             privacy: "Політика конфіденційності",
             cookieSettings: "Налаштування cookies",
             allRightsReserved: "Всі права захищені.",
-            copyright: "© 2024 Praxis Saewska.",
+            copyright: "© 2025 Praxis Saewska.",
             accept: "Прийняти",
             decline: "Відхилити",
             menu: "Меню"
