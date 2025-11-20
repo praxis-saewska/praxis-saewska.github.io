@@ -63,8 +63,8 @@
     <title data-translate="index.title">Praxis Saewska - Gynäkologie</title>
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
+    <!-- Structured Data (JSON-LD) - Will be populated dynamically from common-data.js -->
+    <script type="application/ld+json" id="structured-data">
     {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
@@ -72,7 +72,7 @@
       "image": "https://praxis-saewska.de/images/elena-saewska.jpg",
       "@id": "https://praxis-saewska.de",
       "url": "https://praxis-saewska.de",
-      "telephone": "[Ihre Telefonnummer]",
+      "telephone": "",
       "email": "info@praxis-saewska.de",
       "address": {
         "@type": "PostalAddress",
@@ -97,6 +97,7 @@
       ],
       "priceRange": "$$",
       "medicalSpecialty": "Gynecology",
+      "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4858.949177167592!2d13.319794212440835!3d52.48864823843353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a850f4bd3f636b%3A0x74162961ef9f5934!2sUhlandstra%C3%9Fe%2087%2C%2010717%20Berlin!5e0!3m2!1sen!2sde!4v1763564262086!5m2!1sen!2sde",
       "founder": {
         "@type": "Physician",
         "name": "Dr. PhD Elena Saewska",
@@ -104,8 +105,81 @@
       }
     }
     </script>
+    <script>
+    // Update structured data with contact information from common-data.js
+    (function() {
+      function updateStructuredData() {
+        if (!window.commonData) return;
+        
+        const script = document.getElementById('structured-data');
+        if (!script) return;
+        
+        try {
+          const data = JSON.parse(script.textContent);
+          
+          // Update telephone if available and not a placeholder
+          if (window.commonData.contact && window.commonData.contact.phone) {
+            const phone = window.commonData.contact.phone.trim();
+            if (phone && !phone.includes('[') && !phone.includes('Ihre')) {
+              data.telephone = phone;
+            }
+          }
+          
+          // Update opening hours from common-data.js
+          if (window.commonData.openingHours) {
+            const hours = window.commonData.openingHours;
+            const openingHoursSpec = [];
+            
+            const dayMap = {
+              monday: 'Monday',
+              tuesday: 'Tuesday',
+              wednesday: 'Wednesday',
+              thursday: 'Thursday',
+              friday: 'Friday',
+              saturday: 'Saturday',
+              sunday: 'Sunday'
+            };
+            
+            Object.keys(dayMap).forEach(day => {
+              if (hours[day] && !hours[day].toLowerCase().includes('geschlossen') && !hours[day].toLowerCase().includes('closed')) {
+                const timeMatch = hours[day].match(/(\d{2}):(\d{2})\s*-\s*(\d{2}):(\d{2})/);
+                if (timeMatch) {
+                  openingHoursSpec.push({
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": dayMap[day],
+                    "opens": `${timeMatch[1]}:${timeMatch[2]}`,
+                    "closes": `${timeMatch[3]}:${timeMatch[4]}`
+                  });
+                }
+              }
+            });
+            
+            if (openingHoursSpec.length > 0) {
+              data.openingHoursSpecification = openingHoursSpec;
+            }
+          }
+          
+          script.textContent = JSON.stringify(data);
+        } catch (e) {
+          console.error('Error updating structured data:', e);
+        }
+      }
+      
+      // Update when common-data.js loads
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateStructuredData);
+      } else {
+        updateStructuredData();
+      }
+      
+      // Also try after a short delay in case common-data.js loads asynchronously
+      setTimeout(updateStructuredData, 100);
+    })();
+    </script>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-container">
             <div class="logo-container">
@@ -114,8 +188,8 @@
                 </a>
                 <span class="practice-name" data-translate="common.practiceName">Gynäkologische Praxis</span>
             </div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" data-translate="common.menu">☰</button>
-            <nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-navigation" data-translate="common.menu">☰</button>
+            <nav id="main-navigation" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html" data-translate="common.home">Startseite</a></li>
                     <li><a href="index.html#services" data-translate="common.services">Leistungen</a></li>
@@ -123,7 +197,7 @@
                     <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
                     <li><a href="index.html#contact" data-translate="common.contact">Kontakt</a></li>
                     <li class="language-switcher">
-                        <select id="language-select" aria-label="Select language">
+                        <select id="language-select" aria-label="Select language" aria-describedby="language-select-description">
                             <option value="de">Deutsch</option>
                             <option value="en">English</option>
                             <option value="ua">Українська</option>
@@ -135,7 +209,8 @@
         </div>
     </header>
 
-    <section class="hero">
+    <main id="main-content">
+    <section class="hero" aria-label="Hero section">
         <div class="hero-content">
             <h1 data-translate="index.heroTitle">Willkommen in unserer Praxis</h1>
             <p data-translate="index.heroSubtitle">Ihre Gesundheit liegt uns am Herzen. Wir bieten umfassende gynäkologische Betreuung in vertrauensvoller Atmosphäre.</p>
@@ -314,8 +389,9 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-translate="common.practiceName">Praxis Saewska</h3>
@@ -344,14 +420,48 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner-content">
             <div class="cookie-banner-text">
-                <p><span data-translate="cookie.text">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer</span> <a href="privacy.html" data-translate="cookie.privacyLink">Datenschutzerklärung</a>.</p>
+                <p id="cookie-banner-title"><span data-translate="cookie.text">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer</span> <a href="privacy.html" data-translate="cookie.privacyLink">Datenschutzerklärung</a>.</p>
             </div>
             <div class="cookie-banner-actions">
                 <button id="cookie-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Akzeptieren</button>
                 <button id="cookie-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Ablehnen</button>
+                <button id="cookie-settings-btn" class="cookie-btn cookie-btn-settings" data-translate="cookie.settings">Einstellungen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-settings-modal" role="dialog" aria-labelledby="cookie-settings-title" aria-modal="true">
+        <div class="cookie-settings-modal-content">
+            <div class="cookie-settings-modal-header">
+                <h2 id="cookie-settings-title" data-translate="cookie.settingsTitle">Cookie-Einstellungen</h2>
+                <button id="cookie-settings-close" class="cookie-settings-close" aria-label="Close cookie settings">&times;</button>
+            </div>
+            <div class="cookie-settings-modal-body">
+                <p data-translate="cookie.settingsDescription">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Sie können wählen, welche Cookies Sie zulassen möchten.</p>
+                <div class="cookie-settings-options">
+                    <div class="cookie-setting-item">
+                        <label>
+                            <input type="checkbox" id="cookie-necessary" checked disabled>
+                            <span data-translate="cookie.necessary">Notwendige Cookies</span>
+                        </label>
+                        <p class="cookie-setting-description" data-translate="cookie.necessaryDesc">Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.</p>
+                    </div>
+                    <div class="cookie-setting-item">
+                        <label>
+                            <input type="checkbox" id="cookie-analytics">
+                            <span data-translate="cookie.analytics">Analytische Cookies</span>
+                        </label>
+                        <p class="cookie-setting-description" data-translate="cookie.analyticsDesc">Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-settings-modal-footer">
+                <button id="cookie-settings-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Alle akzeptieren</button>
+                <button id="cookie-settings-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Alle ablehnen</button>
             </div>
         </div>
     </div>

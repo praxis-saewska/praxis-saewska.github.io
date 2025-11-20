@@ -10,62 +10,84 @@
     // Dynamically load translation file for a specific language
     function loadTranslation(lang) {
         return new Promise((resolve, reject) => {
-            // Check if already loaded
-            if (window.translations && window.translations[lang]) {
-                loadedLanguages.add(lang);
-                resolve();
-                return;
-            }
-
-            // Check if script is already being loaded
-            const existingScript = document.querySelector(`script[data-lang="${lang}"]`);
-            if (existingScript) {
-                // Wait for it to load
-                const checkInterval = setInterval(() => {
-                    if (window.translations && window.translations[lang]) {
-                        clearInterval(checkInterval);
-                        loadedLanguages.add(lang);
-                        resolve();
-                    }
-                }, 50);
-                
-                existingScript.addEventListener('error', () => {
-                    clearInterval(checkInterval);
-                    reject();
-                });
-                
-                // Timeout after 5 seconds
-                setTimeout(() => {
-                    clearInterval(checkInterval);
-                    if (!window.translations || !window.translations[lang]) {
-                        reject(new Error(`Timeout loading translations for ${lang}`));
-                    }
-                }, 5000);
-                return;
-            }
-
-            // Create and load script
-            const script = document.createElement('script');
-            script.src = `translations-${lang}.js`;
-            script.async = true;
-            script.setAttribute('data-lang', lang);
-            
-            script.onload = () => {
-                // Verify it's actually loaded
+            try {
+                // Check if already loaded
                 if (window.translations && window.translations[lang]) {
                     loadedLanguages.add(lang);
                     resolve();
-                } else {
-                    reject(new Error(`Translations for ${lang} not found after script load`));
+                    return;
                 }
-            };
-            
-            script.onerror = () => {
-                console.error(`Failed to load translations for ${lang}`);
-                reject(new Error(`Failed to load translations for ${lang}`));
-            };
-            
-            document.head.appendChild(script);
+
+                // Check if script is already being loaded
+                const existingScript = document.querySelector(`script[data-lang="${lang}"]`);
+                if (existingScript) {
+                    // Wait for it to load
+                    let timeoutId;
+                    const checkInterval = setInterval(() => {
+                        try {
+                            if (window.translations && window.translations[lang]) {
+                                clearInterval(checkInterval);
+                                if (timeoutId) clearTimeout(timeoutId);
+                                loadedLanguages.add(lang);
+                                resolve();
+                            }
+                        } catch (e) {
+                            clearInterval(checkInterval);
+                            if (timeoutId) clearTimeout(timeoutId);
+                            console.error('Error checking translation load:', e);
+                            reject(e);
+                        }
+                    }, 50);
+                    
+                    const errorHandler = () => {
+                        clearInterval(checkInterval);
+                        if (timeoutId) clearTimeout(timeoutId);
+                        reject(new Error(`Failed to load translations for ${lang}`));
+                    };
+                    
+                    existingScript.addEventListener('error', errorHandler);
+                    
+                    // Timeout after 5 seconds
+                    timeoutId = setTimeout(() => {
+                        clearInterval(checkInterval);
+                        if (!window.translations || !window.translations[lang]) {
+                            reject(new Error(`Timeout loading translations for ${lang}`));
+                        }
+                    }, 5000);
+                    return;
+                }
+
+                // Create and load script
+                const script = document.createElement('script');
+                script.src = `translations-${lang}.js`;
+                script.async = true;
+                script.setAttribute('data-lang', lang);
+                
+                script.onload = () => {
+                    try {
+                        // Verify it's actually loaded
+                        if (window.translations && window.translations[lang]) {
+                            loadedLanguages.add(lang);
+                            resolve();
+                        } else {
+                            reject(new Error(`Translations for ${lang} not found after script load`));
+                        }
+                    } catch (e) {
+                        console.error('Error in translation load handler:', e);
+                        reject(e);
+                    }
+                };
+                
+                script.onerror = () => {
+                    console.error(`Failed to load translations for ${lang}`);
+                    reject(new Error(`Failed to load translations for ${lang}`));
+                };
+                
+                document.head.appendChild(script);
+            } catch (e) {
+                console.error('Error in loadTranslation:', e);
+                reject(e);
+            }
         });
     }
 
@@ -93,6 +115,28 @@
         return DEFAULT_LANGUAGE;
     }
 
+    // Show loading indicator
+    function showLoadingIndicator() {
+        let loader = document.getElementById('language-loading-indicator');
+        if (!loader) {
+            loader = document.createElement('div');
+            loader.id = 'language-loading-indicator';
+            loader.className = 'language-loading-indicator';
+            loader.setAttribute('aria-live', 'polite');
+            loader.setAttribute('aria-label', 'Loading language');
+            document.body.appendChild(loader);
+        }
+        loader.classList.add('show');
+    }
+
+    // Hide loading indicator
+    function hideLoadingIndicator() {
+        const loader = document.getElementById('language-loading-indicator');
+        if (loader) {
+            loader.classList.remove('show');
+        }
+    }
+
     // Set language and save to localStorage
     function setLanguage(lang) {
         if (!SUPPORTED_LANGUAGES.includes(lang)) {
@@ -100,17 +144,26 @@
         }
         localStorage.setItem(LANGUAGE_KEY, lang);
         
+        // Show loading indicator
+        showLoadingIndicator();
+        
         // Load translation if not already loaded
         loadTranslation(lang).then(() => {
             translatePage(lang);
             updateHTMLAttributes(lang);
+            hideLoadingIndicator();
         }).catch(() => {
             // Fallback to default language if loading fails
             if (lang !== DEFAULT_LANGUAGE) {
                 loadTranslation(DEFAULT_LANGUAGE).then(() => {
                     translatePage(DEFAULT_LANGUAGE);
                     updateHTMLAttributes(DEFAULT_LANGUAGE);
+                    hideLoadingIndicator();
+                }).catch(() => {
+                    hideLoadingIndicator();
                 });
+            } else {
+                hideLoadingIndicator();
             }
         });
     }
@@ -157,6 +210,16 @@
         
         if (hasHtmlTags) {
             element.innerHTML = translation;
+            
+            // Add lazy loading to images that are not in hero/above-the-fold
+            const images = element.querySelectorAll('img');
+            images.forEach(img => {
+                // Check if image is in hero section or header
+                const isAboveFold = img.closest('.hero, header, .logo-container');
+                if (!isAboveFold && !img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+            });
         } else {
             element.textContent = translation;
         }
@@ -175,15 +238,23 @@
 
     // Translate entire page
     function translatePage(lang) {
-        if (!window.translations) {
-            console.warn('Translations not loaded, cannot translate page');
-            return;
+        try {
+            if (!window.translations) {
+                console.warn('Translations not loaded, cannot translate page');
+                return;
+            }
+            
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                try {
+                    translateElement(element, lang);
+                } catch (e) {
+                    console.error('Error translating element:', e, element);
+                }
+            });
+        } catch (e) {
+            console.error('Error in translatePage:', e);
         }
-        
-        const elements = document.querySelectorAll('[data-translate]');
-        elements.forEach(element => {
-            translateElement(element, lang);
-        });
     }
 
     // Update HTML lang attribute and meta tags
@@ -286,26 +357,44 @@
 
     // Initialize translation system
     function initTranslation() {
-        const currentLang = getCurrentLanguage();
-        
-        // Load the current language translation
-        loadTranslation(currentLang).then(() => {
-            translatePage(currentLang);
-            updateHTMLAttributes(currentLang);
-            initLanguageSwitcher();
-        }).catch(() => {
-            // Fallback to default language if current language fails
-            if (currentLang !== DEFAULT_LANGUAGE) {
-                loadTranslation(DEFAULT_LANGUAGE).then(() => {
-                    translatePage(DEFAULT_LANGUAGE);
-                    updateHTMLAttributes(DEFAULT_LANGUAGE);
+        try {
+            const currentLang = getCurrentLanguage();
+            
+            // Load the current language translation
+            loadTranslation(currentLang).then(() => {
+                try {
+                    translatePage(currentLang);
+                    updateHTMLAttributes(currentLang);
                     initLanguageSwitcher();
-                });
-            } else {
-                console.error('Failed to load default language translations');
-                initLanguageSwitcher();
-            }
-        });
+                } catch (e) {
+                    console.error('Error initializing translation:', e);
+                    initLanguageSwitcher();
+                }
+            }).catch((error) => {
+                console.error('Failed to load translation for', currentLang, error);
+                // Fallback to default language if current language fails
+                if (currentLang !== DEFAULT_LANGUAGE) {
+                    loadTranslation(DEFAULT_LANGUAGE).then(() => {
+                        try {
+                            translatePage(DEFAULT_LANGUAGE);
+                            updateHTMLAttributes(DEFAULT_LANGUAGE);
+                            initLanguageSwitcher();
+                        } catch (e) {
+                            console.error('Error initializing default translation:', e);
+                            initLanguageSwitcher();
+                        }
+                    }).catch((fallbackError) => {
+                        console.error('Failed to load default language translations:', fallbackError);
+                        initLanguageSwitcher();
+                    });
+                } else {
+                    console.error('Failed to load default language translations');
+                    initLanguageSwitcher();
+                }
+            });
+        } catch (e) {
+            console.error('Error in initTranslation:', e);
+        }
     }
 
     // Make functions available globally
@@ -365,7 +454,10 @@
     function showCookieBanner() {
         const banner = document.getElementById('cookie-banner');
         if (banner) {
-            banner.classList.add('show');
+            // Add animation class
+            setTimeout(() => {
+                banner.classList.add('show');
+            }, 100);
         }
     }
 
@@ -374,6 +466,27 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.classList.remove('show');
+        }
+    }
+
+    // Show cookie settings modal
+    function showCookieSettings() {
+        const modal = document.getElementById('cookie-settings-modal');
+        if (modal) {
+            modal.classList.add('show');
+            // Focus first interactive element
+            const firstButton = modal.querySelector('button');
+            if (firstButton) {
+                setTimeout(() => firstButton.focus(), 100);
+            }
+        }
+    }
+
+    // Hide cookie settings modal
+    function hideCookieSettings() {
+        const modal = document.getElementById('cookie-settings-modal');
+        if (modal) {
+            modal.classList.remove('show');
         }
     }
 
@@ -388,6 +501,12 @@
     function handleDecline() {
         saveConsent(false);
         hideCookieBanner();
+    }
+
+    // Handle settings button
+    function handleSettings() {
+        hideCookieBanner();
+        showCookieSettings();
     }
 
     // Initialize cookie banner
@@ -405,6 +524,8 @@
         // Attach event listeners
         const acceptBtn = document.getElementById('cookie-accept');
         const declineBtn = document.getElementById('cookie-decline');
+        const settingsBtn = document.getElementById('cookie-settings');
+        const settingsModal = document.getElementById('cookie-settings-modal');
         
         if (acceptBtn) {
             acceptBtn.addEventListener('click', handleAccept);
@@ -412,6 +533,52 @@
         
         if (declineBtn) {
             declineBtn.addEventListener('click', handleDecline);
+        }
+        
+        if (settingsBtn) {
+            settingsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleSettings();
+            });
+        }
+
+        // Cookie settings modal handlers
+        if (settingsModal) {
+            const modalAccept = settingsModal.querySelector('#cookie-settings-accept');
+            const modalDecline = settingsModal.querySelector('#cookie-settings-decline');
+            const modalClose = settingsModal.querySelector('#cookie-settings-close');
+            
+            if (modalAccept) {
+                modalAccept.addEventListener('click', () => {
+                    handleAccept();
+                    hideCookieSettings();
+                });
+            }
+            
+            if (modalDecline) {
+                modalDecline.addEventListener('click', () => {
+                    handleDecline();
+                    hideCookieSettings();
+                });
+            }
+            
+            if (modalClose) {
+                modalClose.addEventListener('click', hideCookieSettings);
+            }
+            
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && settingsModal.classList.contains('show')) {
+                    hideCookieSettings();
+                }
+            });
+            
+            // Close on backdrop click
+            settingsModal.addEventListener('click', (e) => {
+                if (e.target === settingsModal) {
+                    hideCookieSettings();
+                }
+            });
         }
     }
 
@@ -448,20 +615,46 @@
         
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
-            if (question) {
-                question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            
+            if (question && answer) {
+                const toggleFAQ = () => {
                     const isActive = item.classList.contains('active');
                     
                     // Close all items
                     faqItems.forEach(faqItem => {
                         faqItem.classList.remove('active');
+                        const q = faqItem.querySelector('.faq-question');
+                        const a = faqItem.querySelector('.faq-answer');
+                        if (q) q.setAttribute('aria-expanded', 'false');
+                        if (a) a.setAttribute('aria-hidden', 'true');
                     });
                     
                     // Open clicked item if it wasn't active
                     if (!isActive) {
                         item.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                        answer.setAttribute('aria-hidden', 'false');
+                    } else {
+                        question.setAttribute('aria-expanded', 'false');
+                        answer.setAttribute('aria-hidden', 'true');
+                    }
+                };
+                
+                // Click handler
+                question.addEventListener('click', toggleFAQ);
+                
+                // Keyboard handler (Enter and Space)
+                question.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFAQ();
                     }
                 });
+                
+                // Initialize aria attributes
+                question.setAttribute('aria-expanded', 'false');
+                answer.setAttribute('aria-hidden', 'true');
             }
         });
     }
@@ -472,16 +665,69 @@
         const nav = document.querySelector('nav');
         
         if (menuToggle && nav) {
+            // Create overlay if it doesn't exist
+            let overlay = document.querySelector('.nav-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'nav-overlay';
+                document.body.appendChild(overlay);
+            }
+            
+            const toggleMenu = (open) => {
+                const isOpen = nav.classList.contains('active');
+                if (open === undefined) {
+                    nav.classList.toggle('active');
+                    overlay.classList.toggle('show');
+                } else if (open) {
+                    nav.classList.add('active');
+                    overlay.classList.add('show');
+                    // Prevent body scroll when menu is open
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    nav.classList.remove('active');
+                    overlay.classList.remove('show');
+                    // Restore body scroll
+                    document.body.style.overflow = '';
+                }
+                
+                const isNowOpen = nav.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isNowOpen.toString());
+                
+                // Focus management
+                if (isNowOpen) {
+                    // Focus first link when opening
+                    const firstLink = nav.querySelector('a');
+                    if (firstLink) {
+                        setTimeout(() => firstLink.focus(), 100);
+                    }
+                } else {
+                    // Return focus to toggle button when closing
+                    menuToggle.focus();
+                }
+            };
+            
             menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('active');
+                toggleMenu();
+            });
+            
+            // Close menu when clicking on overlay
+            overlay.addEventListener('click', () => {
+                toggleMenu(false);
             });
             
             // Close menu when clicking on a link
             const navLinks = nav.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    nav.classList.remove('active');
+                    toggleMenu(false);
                 });
+            });
+            
+            // Close menu on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && nav.classList.contains('active')) {
+                    toggleMenu(false);
+                }
             });
         }
     }
@@ -505,6 +751,18 @@
         });
     }
 
+    // Add lazy loading to images (except hero/above-the-fold)
+    function initLazyLoading() {
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            // Check if image is in hero section or header
+            const isAboveFold = img.closest('.hero, header, .logo-container');
+            if (!isAboveFold) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+    }
+
     // Initialize everything when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
@@ -512,12 +770,14 @@
             initFAQ();
             initMobileMenu();
             initSmoothScroll();
+            initLazyLoading();
         });
     } else {
         initCookieBanner();
         initFAQ();
         initMobileMenu();
         initSmoothScroll();
+        initLazyLoading();
     }
 
     // Export functions for potential external use
@@ -533,44 +793,75 @@
     'use strict';
 
     function applyCommonData() {
-        if (!window.commonData) return;
+        try {
+            if (!window.commonData) {
+                console.warn('commonData not available');
+                return;
+            }
 
-        const { openingHours, contact } = window.commonData;
+            const { openingHours, contact } = window.commonData;
 
-        // Apply opening hours using data-hours-day attribute
-        if (openingHours) {
-            document.querySelectorAll('[data-hours-day]').forEach(el => {
-                const day = el.getAttribute('data-hours-day');
-                if (openingHours[day]) {
-                    el.textContent = openingHours[day];
+            // Apply opening hours using data-hours-day attribute
+            if (openingHours) {
+                document.querySelectorAll('[data-hours-day]').forEach(el => {
+                    try {
+                        const day = el.getAttribute('data-hours-day');
+                        if (openingHours[day]) {
+                            el.textContent = openingHours[day];
+                        }
+                    } catch (e) {
+                        console.error('Error applying opening hours:', e, el);
+                    }
+                });
+            }
+
+            // Apply contact information
+            if (contact) {
+                try {
+                    // Address
+                    document.querySelectorAll('[data-translate="index.addressPlaceholder"], [data-translate="contact.addressValue"]').forEach(el => {
+                        try {
+                            el.innerHTML = contact.address;
+                        } catch (e) {
+                            console.error('Error applying address:', e, el);
+                        }
+                    });
+
+                    // Phone
+                    document.querySelectorAll('[data-translate="index.phonePlaceholder"], [data-translate="contact.phoneValue"]').forEach(el => {
+                        try {
+                            el.textContent = contact.phone;
+                        } catch (e) {
+                            console.error('Error applying phone:', e, el);
+                        }
+                    });
+
+                    // Email
+                    document.querySelectorAll('[data-translate="index.emailPlaceholder"], [data-translate="contact.emailValue"]').forEach(el => {
+                        try {
+                            el.textContent = contact.email;
+                        } catch (e) {
+                            console.error('Error applying email:', e, el);
+                        }
+                    });
+
+                    // Email links
+                    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                        try {
+                            link.href = `mailto:${contact.email}`;
+                            if (!link.querySelector('[data-translate]')) {
+                                link.textContent = contact.email;
+                            }
+                        } catch (e) {
+                            console.error('Error applying email link:', e, link);
+                        }
+                    });
+                } catch (e) {
+                    console.error('Error applying contact information:', e);
                 }
-            });
-        }
-
-        // Apply contact information
-        if (contact) {
-            // Address
-            document.querySelectorAll('[data-translate="index.addressPlaceholder"], [data-translate="contact.addressValue"]').forEach(el => {
-                el.innerHTML = contact.address;
-            });
-
-            // Phone
-            document.querySelectorAll('[data-translate="index.phonePlaceholder"], [data-translate="contact.phoneValue"]').forEach(el => {
-                el.textContent = contact.phone;
-            });
-
-            // Email
-            document.querySelectorAll('[data-translate="index.emailPlaceholder"], [data-translate="contact.emailValue"]').forEach(el => {
-                el.textContent = contact.email;
-            });
-
-            // Email links
-            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                link.href = `mailto:${contact.email}`;
-                if (!link.querySelector('[data-translate]')) {
-                    link.textContent = contact.email;
-                }
-            });
+            }
+        } catch (e) {
+            console.error('Error in applyCommonData:', e);
         }
     }
 

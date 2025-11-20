@@ -1,8 +1,9 @@
 // Service Worker for Praxis Saewska PWA
-// Version 1.0.1 - Updated paths for images folder
+// Version 1.0.2 - Improved caching strategy and error handling
 
-const CACHE_NAME = 'praxis-saewska-v1.0.1';
-const RUNTIME_CACHE = 'praxis-saewska-runtime-v1.0.1';
+const CACHE_NAME = 'praxis-saewska-v1.0.2';
+const RUNTIME_CACHE = 'praxis-saewska-runtime-v1.0.2';
+const OFFLINE_PAGE = '/index.html';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
@@ -30,7 +31,12 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('[Service Worker] Caching static assets');
-        return cache.addAll(STATIC_ASSETS.map(url => new Request(url, { cache: 'reload' })));
+        return cache.addAll(STATIC_ASSETS.map(url => new Request(url, { cache: 'reload' })))
+          .catch((error) => {
+            console.warn('[Service Worker] Some assets failed to cache:', error);
+            // Continue even if some assets fail
+            return Promise.resolve();
+          });
       })
       .then(() => {
         console.log('[Service Worker] Static assets cached');
@@ -38,6 +44,8 @@ self.addEventListener('install', (event) => {
       })
       .catch((error) => {
         console.error('[Service Worker] Error caching static assets:', error);
+        // Still skip waiting to activate the service worker
+        return self.skipWaiting();
       })
   );
 });
@@ -52,7 +60,9 @@ self.addEventListener('activate', (event) => {
           cacheNames.map((cacheName) => {
             if (cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE) {
               console.log('[Service Worker] Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
+              return caches.delete(cacheName).catch((error) => {
+                console.warn('[Service Worker] Error deleting cache:', cacheName, error);
+              });
             }
           })
         );
@@ -60,6 +70,11 @@ self.addEventListener('activate', (event) => {
       .then(() => {
         console.log('[Service Worker] Activated');
         return self.clients.claim(); // Take control of all pages immediately
+      })
+      .catch((error) => {
+        console.error('[Service Worker] Error during activation:', error);
+        // Still try to claim clients
+        return self.clients.claim();
       })
   );
 });
@@ -78,17 +93,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Strategy: Cache First, then Network
+  // Strategy: Stale-While-Revalidate for better performance
   event.respondWith(
     caches.match(request)
       .then((cachedResponse) => {
-        // Return cached version if available
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-
-        // Otherwise, fetch from network
-        return fetch(request)
+        // Start fetching from network in parallel
+        const fetchPromise = fetch(request)
           .then((response) => {
             // Don't cache non-successful responses
             if (!response || response.status !== 200 || response.type !== 'basic') {
@@ -101,34 +111,102 @@ self.addEventListener('fetch', (event) => {
             // Cache the response for future use
             caches.open(RUNTIME_CACHE)
               .then((cache) => {
-                cache.put(request, responseToCache);
+                cache.put(request, responseToCache).catch((error) => {
+                  console.warn('[Service Worker] Error caching response:', error);
+                });
+              })
+              .catch((error) => {
+                console.warn('[Service Worker] Error opening cache:', error);
               });
 
             return response;
           })
-          .catch(() => {
-            // If network fails and it's a navigation request, return offline page
-            if (request.mode === 'navigate') {
-              return caches.match('/index.html');
-            }
+          .catch((error) => {
+            console.warn('[Service Worker] Network fetch failed:', error);
+            // Return null if network fails, we'll use cache
+            return null;
           });
+
+        // Return cached version immediately if available, otherwise wait for network
+        if (cachedResponse) {
+          // Update cache in background (stale-while-revalidate)
+          fetchPromise.catch(() => {
+            // Ignore errors in background update
+          });
+          return cachedResponse;
+        }
+
+        // No cache, wait for network
+        return fetchPromise.then((networkResponse) => {
+          if (networkResponse) {
+            return networkResponse;
+          }
+
+          // Network failed, try to return offline page for navigation requests
+          if (request.mode === 'navigate') {
+            return caches.match(OFFLINE_PAGE).then((offlinePage) => {
+              if (offlinePage) {
+                return offlinePage;
+              }
+              // Last resort: return a basic offline response
+              return new Response('Offline - Please check your internet connection', {
+                status: 503,
+                statusText: 'Service Unavailable',
+                headers: new Headers({
+                  'Content-Type': 'text/plain'
+                })
+              });
+            });
+          }
+
+          // For non-navigation requests, return error
+          return new Response('Network error', {
+            status: 408,
+            statusText: 'Request Timeout'
+          });
+        });
+      })
+      .catch((error) => {
+        console.error('[Service Worker] Fetch handler error:', error);
+        // Last resort fallback
+        if (request.mode === 'navigate') {
+          return caches.match(OFFLINE_PAGE).catch(() => {
+            return new Response('Service unavailable', {
+              status: 503,
+              statusText: 'Service Unavailable'
+            });
+          });
+        }
+        return new Response('Error', {
+          status: 500,
+          statusText: 'Internal Server Error'
+        });
       })
   );
 });
 
 // Handle messages from the page
 self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-  
-  if (event.data && event.data.type === 'CACHE_URLS') {
-    event.waitUntil(
-      caches.open(CACHE_NAME)
-        .then((cache) => {
-          return cache.addAll(event.data.urls);
-        })
-    );
+  try {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+      self.skipWaiting();
+    }
+    
+    if (event.data && event.data.type === 'CACHE_URLS') {
+      event.waitUntil(
+        caches.open(CACHE_NAME)
+          .then((cache) => {
+            return cache.addAll(event.data.urls).catch((error) => {
+              console.warn('[Service Worker] Error caching URLs:', error);
+            });
+          })
+          .catch((error) => {
+            console.error('[Service Worker] Error opening cache for URLs:', error);
+          })
+      );
+    }
+  } catch (error) {
+    console.error('[Service Worker] Error handling message:', error);
   }
 });
 

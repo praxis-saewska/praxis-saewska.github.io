@@ -64,6 +64,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-container">
             <div class="logo-container">
@@ -72,8 +74,8 @@
                 </a>
                 <span class="practice-name" data-translate="common.practiceName">Praxis Saewska</span>
             </div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" data-translate="common.menu">☰</button>
-            <nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-navigation" data-translate="common.menu">☰</button>
+            <nav id="main-navigation" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html" data-translate="common.home">Startseite</a></li>
                     <li><a href="index.html#services" data-translate="common.services">Leistungen</a></li>
@@ -81,7 +83,7 @@
                     <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
                     <li><a href="index.html#contact" data-translate="common.contact">Kontakt</a></li>
                     <li class="language-switcher">
-                        <select id="language-select" aria-label="Select language">
+                        <select id="language-select" aria-label="Select language" aria-describedby="language-select-description">
                             <option value="de">Deutsch</option>
                             <option value="en">English</option>
                             <option value="ua">Українська</option>
@@ -93,8 +95,15 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section class="section">
         <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html" data-translate="common.home">Startseite</a></li>
+                    <li aria-current="page" data-translate="common.privacy">Datenschutz</li>
+                </ol>
+            </nav>
             <div class="about-content">
                 <h1 class="section-title" data-translate="privacy.pageTitle">Datenschutzerklärung</h1>
                 <p style="text-align: center; color: var(--soft-gray); margin-bottom: 3rem;" data-translate="privacy.lastUpdated">Stand: [Datum]</p>
@@ -146,8 +155,9 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-translate="common.practiceName">Praxis Saewska</h3>
@@ -176,14 +186,48 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner-content">
             <div class="cookie-banner-text">
-                <p><span data-translate="cookie.text">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer</span> <a href="privacy.html" data-translate="cookie.privacyLink">Datenschutzerklärung</a>.</p>
+                <p id="cookie-banner-title"><span data-translate="cookie.text">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer</span> <a href="privacy.html" data-translate="cookie.privacyLink">Datenschutzerklärung</a>.</p>
             </div>
             <div class="cookie-banner-actions">
                 <button id="cookie-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Akzeptieren</button>
                 <button id="cookie-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Ablehnen</button>
+                <button id="cookie-settings-btn" class="cookie-btn cookie-btn-settings" data-translate="cookie.settings">Einstellungen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-settings-modal" role="dialog" aria-labelledby="cookie-settings-title" aria-modal="true">
+        <div class="cookie-settings-modal-content">
+            <div class="cookie-settings-modal-header">
+                <h2 id="cookie-settings-title" data-translate="cookie.settingsTitle">Cookie-Einstellungen</h2>
+                <button id="cookie-settings-close" class="cookie-settings-close" aria-label="Close cookie settings">&times;</button>
+            </div>
+            <div class="cookie-settings-modal-body">
+                <p data-translate="cookie.settingsDescription">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Sie können wählen, welche Cookies Sie zulassen möchten.</p>
+                <div class="cookie-settings-options">
+                    <div class="cookie-setting-item">
+                        <label>
+                            <input type="checkbox" id="cookie-necessary" checked disabled>
+                            <span data-translate="cookie.necessary">Notwendige Cookies</span>
+                        </label>
+                        <p class="cookie-setting-description" data-translate="cookie.necessaryDesc">Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.</p>
+                    </div>
+                    <div class="cookie-setting-item">
+                        <label>
+                            <input type="checkbox" id="cookie-analytics">
+                            <span data-translate="cookie.analytics">Analytische Cookies</span>
+                        </label>
+                        <p class="cookie-setting-description" data-translate="cookie.analyticsDesc">Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-settings-modal-footer">
+                <button id="cookie-settings-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Alle akzeptieren</button>
+                <button id="cookie-settings-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Alle ablehnen</button>
             </div>
         </div>
     </div>

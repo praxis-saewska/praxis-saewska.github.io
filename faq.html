@@ -104,6 +104,8 @@
     </script>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-container">
             <div class="logo-container">
@@ -112,8 +114,8 @@
                 </a>
                 <span class="practice-name" data-translate="common.practiceName">Praxis Saewska</span>
             </div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" data-translate="common.menu">☰</button>
-            <nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-navigation" data-translate="common.menu">☰</button>
+            <nav id="main-navigation" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html" data-translate="common.home">Startseite</a></li>
                     <li><a href="index.html#services" data-translate="common.services">Leistungen</a></li>
@@ -121,7 +123,7 @@
                     <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
                     <li><a href="index.html#contact" data-translate="common.contact">Kontakt</a></li>
                     <li class="language-switcher">
-                        <select id="language-select" aria-label="Select language">
+                        <select id="language-select" aria-label="Select language" aria-describedby="language-select-description">
                             <option value="de">Deutsch</option>
                             <option value="en">English</option>
                             <option value="ua">Українська</option>
@@ -133,84 +135,91 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section class="section">
         <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html" data-translate="common.home">Startseite</a></li>
+                    <li aria-current="page" data-translate="common.faq">FAQ</li>
+                </ol>
+            </nav>
             <h1 class="section-title" data-translate="faq.pageTitle">Häufig gestellte Fragen</h1>
 
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q1">Wie vereinbare ich einen Termin?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1" data-translate="faq.q1">Wie vereinbare ich einen Termin?</div>
+                    <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
                         <div class="faq-answer-content" data-translate="faq.a1"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q2">Welche Unterlagen sollte ich zum Termin mitbringen?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2" data-translate="faq.q2">Welche Unterlagen sollte ich zum Termin mitbringen?</div>
+                    <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
                         <div class="faq-answer-content" data-translate="faq.a2"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q3">Welche Zahlungsmethoden werden akzeptiert?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3" data-translate="faq.q3">Welche Zahlungsmethoden werden akzeptiert?</div>
+                    <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
                         <div class="faq-answer-content" data-translate="faq.a3"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q4">Welche Versicherungen werden akzeptiert?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4" data-translate="faq.q4">Welche Versicherungen werden akzeptiert?</div>
+                    <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
                         <div class="faq-answer-content" data-translate="faq.a4"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q5">Was erwartet mich beim ersten Besuch?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5" data-translate="faq.q5">Was erwartet mich beim ersten Besuch?</div>
+                    <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
                         <div class="faq-answer-content" data-translate="faq.a5"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q6">Kann ich auch ohne Termin kommen?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6" data-translate="faq.q6">Kann ich auch ohne Termin kommen?</div>
+                    <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
                         <div class="faq-answer-content" data-translate="faq.a6"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q7">Was kostet eine Behandlung?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-7" id="faq-question-7" data-translate="faq.q7">Was kostet eine Behandlung?</div>
+                    <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7">
                         <div class="faq-answer-content" data-translate="faq.a7"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q8">Wie kann ich Rezepte erneuern lassen?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-8" id="faq-question-8" data-translate="faq.q8">Wie kann ich Rezepte erneuern lassen?</div>
+                    <div class="faq-answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8">
                         <div class="faq-answer-content" data-translate="faq.a8"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q9">Notfallkontakt - Was tun bei Notfällen?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-9" id="faq-question-9" data-translate="faq.q9">Notfallkontakt - Was tun bei Notfällen?</div>
+                    <div class="faq-answer" id="faq-answer-9" role="region" aria-labelledby="faq-question-9">
                         <div class="faq-answer-content" data-translate="faq.a9"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q10">Wie kann ich meine Untersuchungsergebnisse erhalten?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-10" id="faq-question-10" data-translate="faq.q10">Wie kann ich meine Untersuchungsergebnisse erhalten?</div>
+                    <div class="faq-answer" id="faq-answer-10" role="region" aria-labelledby="faq-question-10">
                         <div class="faq-answer-content" data-translate="faq.a10"></div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question" data-translate="faq.q11">Bieten Sie auch Hausbesuche an?</div>
-                    <div class="faq-answer">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-11" id="faq-question-11" data-translate="faq.q11">Bieten Sie auch Hausbesuche an?</div>
+                    <div class="faq-answer" id="faq-answer-11" role="region" aria-labelledby="faq-question-11">
                         <div class="faq-answer-content" data-translate="faq.a11"></div>
                     </div>
                 </div>
@@ -222,8 +231,9 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-translate="common.practiceName">Praxis Saewska</h3>
@@ -252,14 +262,48 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner-content">
             <div class="cookie-banner-text">
-                <p><span data-translate="cookie.text">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer</span> <a href="privacy.html" data-translate="cookie.privacyLink">Datenschutzerklärung</a>.</p>
+                <p id="cookie-banner-title"><span data-translate="cookie.text">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer</span> <a href="privacy.html" data-translate="cookie.privacyLink">Datenschutzerklärung</a>.</p>
             </div>
             <div class="cookie-banner-actions">
                 <button id="cookie-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Akzeptieren</button>
                 <button id="cookie-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Ablehnen</button>
+                <button id="cookie-settings-btn" class="cookie-btn cookie-btn-settings" data-translate="cookie.settings">Einstellungen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-settings-modal" role="dialog" aria-labelledby="cookie-settings-title" aria-modal="true">
+        <div class="cookie-settings-modal-content">
+            <div class="cookie-settings-modal-header">
+                <h2 id="cookie-settings-title" data-translate="cookie.settingsTitle">Cookie-Einstellungen</h2>
+                <button id="cookie-settings-close" class="cookie-settings-close" aria-label="Close cookie settings">&times;</button>
+            </div>
+            <div class="cookie-settings-modal-body">
+                <p data-translate="cookie.settingsDescription">Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Sie können wählen, welche Cookies Sie zulassen möchten.</p>
+                <div class="cookie-settings-options">
+                    <div class="cookie-setting-item">
+                        <label>
+                            <input type="checkbox" id="cookie-necessary" checked disabled>
+                            <span data-translate="cookie.necessary">Notwendige Cookies</span>
+                        </label>
+                        <p class="cookie-setting-description" data-translate="cookie.necessaryDesc">Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.</p>
+                    </div>
+                    <div class="cookie-setting-item">
+                        <label>
+                            <input type="checkbox" id="cookie-analytics">
+                            <span data-translate="cookie.analytics">Analytische Cookies</span>
+                        </label>
+                        <p class="cookie-setting-description" data-translate="cookie.analyticsDesc">Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-settings-modal-footer">
+                <button id="cookie-settings-accept" class="cookie-btn cookie-btn-accept" data-translate="cookie.accept">Alle akzeptieren</button>
+                <button id="cookie-settings-decline" class="cookie-btn cookie-btn-decline" data-translate="cookie.decline">Alle ablehnen</button>
             </div>
         </div>
     </div>
