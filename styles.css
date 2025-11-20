@@ -94,6 +94,11 @@ header {
     gap: 1rem;
 }
 
+.logo-container a {
+    text-decoration: none;
+    display: inline-block;
+}
+
 .logo {
     height: 90px;
     width: auto;
