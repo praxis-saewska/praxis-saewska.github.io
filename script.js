@@ -595,3 +595,54 @@
     init();
 })();
 
+// Service Worker Registration for PWA
+(function() {
+    'use strict';
+
+    // Check if service workers are supported
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+                .then((registration) => {
+                    console.log('[Service Worker] Registration successful:', registration.scope);
+
+                    // Check for updates every hour
+                    setInterval(() => {
+                        registration.update();
+                    }, 3600000); // 1 hour
+
+                    // Handle updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New service worker available, notify user
+                                console.log('[Service Worker] New version available');
+                                // Optionally show a notification to the user
+                                // You can add a UI notification here if needed
+                            }
+                        });
+                    });
+                })
+                .catch((error) => {
+                    console.error('[Service Worker] Registration failed:', error);
+                });
+
+            // Listen for messages from service worker
+            navigator.serviceWorker.addEventListener('message', (event) => {
+                console.log('[Service Worker] Message received:', event.data);
+            });
+        });
+
+        // Handle service worker controller change (page refresh after update)
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                refreshing = true;
+                console.log('[Service Worker] New service worker activated, reloading page...');
+                window.location.reload();
+            }
+        });
+    }
+})();
+

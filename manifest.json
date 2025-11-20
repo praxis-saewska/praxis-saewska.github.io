@@ -1,0 +1,92 @@
+{
+  "name": "Praxis Saewska - Gynäkologische Praxis",
+  "short_name": "Praxis Saewska",
+  "description": "Gynäkologische Praxis in Berlin - Professionelle Betreuung für alle Fragen der Frauengesundheit",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#00C9A7",
+  "orientation": "portrait-primary",
+  "lang": "de",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "health"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Termin vereinbaren",
+      "short_name": "Termin",
+      "description": "Buchen Sie einen Termin online",
+      "url": "/#appointment",
+      "icons": [
+        {
+          "src": "images/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Kontaktinformationen und Anfahrt",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "images/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
+

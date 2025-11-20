@@ -37,7 +37,7 @@ This website is a simple, modern, and GDPR-compliant landing page for a gynecolo
    - `privacy.html`
    - `styles.css`
    - `script.js`
-   - `file.svg`
+   - `images/file.svg`
    - `.nojekyll` (important for GitHub Pages)
 
 2. Commit and push all changes:
@@ -121,7 +121,9 @@ Before going live, you should replace the following placeholders:
 ### Files
 - `styles.css` - All styles for the website
 - `script.js` - JavaScript for cookie consent, FAQ accordion, mobile menu
-- `file.svg` - Practice logo
+- `images/file.svg` - Practice logo
+- `images/elena-saewska.jpg` - Doctor photo
+- `images/icon-*.png` - PWA icons
 
 ## Maintenance
 
