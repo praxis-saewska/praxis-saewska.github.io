@@ -151,8 +151,11 @@
 
         const translation = getTranslation(key, lang);
         
-        // Handle HTML content (for elements with <br> tags, etc.)
-        if (translation.includes('<br>') || translation.includes('<strong>') || translation.includes('<em>')) {
+        // Handle HTML content - check if translation contains any HTML tags
+        // Use regex to detect HTML tags (anything between < and >)
+        const hasHtmlTags = /<[^>]+>/.test(translation);
+        
+        if (hasHtmlTags) {
             element.innerHTML = translation;
         } else {
             element.textContent = translation;
