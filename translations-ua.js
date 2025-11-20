@@ -25,6 +25,10 @@ window.translations.ua = {
         index: {
             metaDescription: "Гінекологічна практика - Професійний догляд за жіночим здоров'ям",
             title: "Praxis Saewska - Гінекологія",
+            ogTitle: "Praxis Saewska - Гінекологія",
+            ogDescription: "Гінекологічна практика - Професійний догляд за жіночим здоров'ям",
+            twitterTitle: "Praxis Saewska - Гінекологія",
+            twitterDescription: "Гінекологічна практика - Професійний догляд",
             heroTitle: "Ласкаво просимо до нашої практики",
             heroSubtitle: "Ваше здоров'я важливе для нас. Ми пропонуємо комплексну гінекологічну допомогу в атмосфері довіри.",
             bookAppointment: "Записатися на прийом",
@@ -80,6 +84,10 @@ window.translations.ua = {
         about: {
             metaDescription: "Про нас - Дізнайтеся про нашу команду практики та нашу філософію",
             title: "Про нас - Praxis Saewska",
+            ogTitle: "Про нас - Praxis Saewska",
+            ogDescription: "Про нас - Дізнайтеся про нашу команду практики та нашу філософію",
+            twitterTitle: "Про нас - Praxis Saewska",
+            twitterDescription: "Про нас - Дізнайтеся про нашу команду",
             pageTitle: "Про нас",
             doctorName: "Д-р PhD Олена Заєвська",
             doctorTitle: "Спеціаліст з гінекології та акушерства",
@@ -163,6 +171,10 @@ window.translations.ua = {
         faq: {
             metaDescription: "Часті запитання - Відповіді на найважливіші питання",
             title: "Часті запитання - Praxis Saewska",
+            ogTitle: "FAQ - Praxis Saewska",
+            ogDescription: "Часті запитання - Відповіді на найважливіші питання",
+            twitterTitle: "FAQ - Praxis Saewska",
+            twitterDescription: "Часті запитання",
             pageTitle: "Часті запитання",
             q1: "Як записатися на прийом?",
             a1p1: "Ви можете записатися на прийом різними способами:",
@@ -228,6 +240,10 @@ window.translations.ua = {
         privacy: {
             metaDescription: "Політика конфіденційності - Інформація про захист даних",
             title: "Політика конфіденційності - Praxis Saewska",
+            ogTitle: "Політика конфіденційності - Praxis Saewska",
+            ogDescription: "Політика конфіденційності - Інформація про захист даних",
+            twitterTitle: "Політика конфіденційності - Praxis Saewska",
+            twitterDescription: "Політика конфіденційності",
             pageTitle: "Політика конфіденційності",
             lastUpdated: "Останнє оновлення: [Дата]",
             section1Title: "1. Захист даних коротко",

@@ -25,6 +25,10 @@ window.translations.en = {
         index: {
             metaDescription: "Gynecological Practice - Professional care for all women's health questions",
             title: "Praxis Saewska - Gynecology",
+            ogTitle: "Praxis Saewska - Gynecology",
+            ogDescription: "Gynecological Practice - Professional care for all women's health questions",
+            twitterTitle: "Praxis Saewska - Gynecology",
+            twitterDescription: "Gynecological Practice - Professional care",
             heroTitle: "Welcome to Our Practice",
             heroSubtitle: "Your health is important to us. We offer comprehensive gynecological care in a trusting atmosphere.",
             bookAppointment: "Book Appointment",
@@ -80,6 +84,10 @@ window.translations.en = {
         about: {
             metaDescription: "About Us - Learn about our practice team and our philosophy",
             title: "About Us - Praxis Saewska",
+            ogTitle: "About Us - Praxis Saewska",
+            ogDescription: "About Us - Learn about our practice team and our philosophy",
+            twitterTitle: "About Us - Praxis Saewska",
+            twitterDescription: "About Us - Learn about our practice team",
             pageTitle: "About Us",
             doctorName: "Dr. PhD Elena Saewska",
             doctorTitle: "Specialist in Gynecology and Obstetrics",
@@ -163,6 +171,10 @@ window.translations.en = {
         faq: {
             metaDescription: "Frequently Asked Questions - Answers to the most important questions",
             title: "FAQ - Praxis Saewska",
+            ogTitle: "FAQ - Praxis Saewska",
+            ogDescription: "Frequently Asked Questions - Answers to the most important questions",
+            twitterTitle: "FAQ - Praxis Saewska",
+            twitterDescription: "Frequently Asked Questions",
             pageTitle: "Frequently Asked Questions",
             q1: "How do I book an appointment?",
             a1p1: "You can book an appointment in various ways:",
@@ -228,6 +240,10 @@ window.translations.en = {
         privacy: {
             metaDescription: "Privacy Policy - Information on data protection",
             title: "Privacy Policy - Praxis Saewska",
+            ogTitle: "Privacy Policy - Praxis Saewska",
+            ogDescription: "Privacy Policy - Information on data protection",
+            twitterTitle: "Privacy Policy - Praxis Saewska",
+            twitterDescription: "Privacy Policy",
             pageTitle: "Privacy Policy",
             lastUpdated: "Last updated: [Date]",
             section1Title: "1. Data Protection at a Glance",

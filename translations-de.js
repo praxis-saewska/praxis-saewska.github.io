@@ -25,6 +25,10 @@ window.translations.de = {
         index: {
             metaDescription: "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit",
             title: "Praxis Saewska - Gynäkologie",
+            ogTitle: "Praxis Saewska - Gynäkologie",
+            ogDescription: "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit",
+            twitterTitle: "Praxis Saewska - Gynäkologie",
+            twitterDescription: "Gynäkologische Praxis - Professionelle Betreuung",
             heroTitle: "Willkommen in unserer Praxis",
             heroSubtitle: "Ihre Gesundheit liegt uns am Herzen. Wir bieten umfassende gynäkologische Betreuung in vertrauensvoller Atmosphäre.",
             bookAppointment: "Termin vereinbaren",
@@ -80,6 +84,10 @@ window.translations.de = {
         about: {
             metaDescription: "Über uns - Lernen Sie unser Praxisteam und unsere Philosophie kennen",
             title: "Über uns - Praxis Saewska",
+            ogTitle: "Über uns - Praxis Saewska",
+            ogDescription: "Über uns - Lernen Sie unser Praxisteam und unsere Philosophie kennen",
+            twitterTitle: "Über uns - Praxis Saewska",
+            twitterDescription: "Über uns - Lernen Sie unser Praxisteam kennen",
             pageTitle: "Über uns",
             doctorName: "Dr. PhD Elena Saewska",
             doctorTitle: "Fachärztin für Gynäkologie und Geburtshilfe",
@@ -163,6 +171,10 @@ window.translations.de = {
         faq: {
             metaDescription: "Häufig gestellte Fragen - Antworten auf die wichtigsten Fragen",
             title: "FAQ - Praxis Saewska",
+            ogTitle: "FAQ - Praxis Saewska",
+            ogDescription: "Häufig gestellte Fragen - Antworten auf die wichtigsten Fragen",
+            twitterTitle: "FAQ - Praxis Saewska",
+            twitterDescription: "Häufig gestellte Fragen",
             pageTitle: "Häufig gestellte Fragen",
             q1: "Wie vereinbare ich einen Termin?",
             a1p1: "Sie können einen Termin auf verschiedene Weise vereinbaren:",
@@ -228,6 +240,10 @@ window.translations.de = {
         privacy: {
             metaDescription: "Datenschutzerklärung - Informationen zum Datenschutz",
             title: "Datenschutz - Praxis Saewska",
+            ogTitle: "Datenschutz - Praxis Saewska",
+            ogDescription: "Datenschutzerklärung - Informationen zum Datenschutz",
+            twitterTitle: "Datenschutz - Praxis Saewska",
+            twitterDescription: "Datenschutzerklärung",
             pageTitle: "Datenschutzerklärung",
             lastUpdated: "Stand: [Datum]",
             section1Title: "1. Datenschutz auf einen Blick",

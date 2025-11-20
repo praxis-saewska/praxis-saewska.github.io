@@ -195,6 +195,63 @@
             metaDesc.setAttribute('content', translation);
         }
         
+        // Update canonical URL
+        const canonicalLink = document.getElementById('canonical-link');
+        if (canonicalLink) {
+            const currentPath = window.location.pathname;
+            const fileName = currentPath.split('/').pop() || 'index.html';
+            const baseDomain = 'https://praxis-saewska.de';
+            canonicalLink.href = baseDomain + '/' + fileName + (lang !== 'de' ? `?lang=${lang}` : '');
+        }
+        
+        // Update OG URL
+        const ogUrl = document.getElementById('og-url');
+        if (ogUrl) {
+            const currentPath = window.location.pathname;
+            const fileName = currentPath.split('/').pop() || 'index.html';
+            const baseDomain = 'https://praxis-saewska.de';
+            ogUrl.content = baseDomain + '/' + fileName + (lang !== 'de' ? `?lang=${lang}` : '');
+        }
+        
+        // Update OG locale
+        const ogLocale = document.getElementById('og-locale');
+        if (ogLocale) {
+            const localeMap = { de: 'de_DE', en: 'en_US', ru: 'ru_RU', ua: 'uk_UA' };
+            ogLocale.content = localeMap[lang] || 'de_DE';
+        }
+        
+        // Update OG title if it has data-translate
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle && ogTitle.hasAttribute('data-translate')) {
+            const key = ogTitle.getAttribute('data-translate');
+            const translation = getTranslation(key, lang);
+            ogTitle.setAttribute('content', translation);
+        }
+        
+        // Update OG description if it has data-translate
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc && ogDesc.hasAttribute('data-translate')) {
+            const key = ogDesc.getAttribute('data-translate');
+            const translation = getTranslation(key, lang);
+            ogDesc.setAttribute('content', translation);
+        }
+        
+        // Update Twitter title if it has data-translate
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle && twitterTitle.hasAttribute('data-translate')) {
+            const key = twitterTitle.getAttribute('data-translate');
+            const translation = getTranslation(key, lang);
+            twitterTitle.setAttribute('content', translation);
+        }
+        
+        // Update Twitter description if it has data-translate
+        const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDesc && twitterDesc.hasAttribute('data-translate')) {
+            const key = twitterDesc.getAttribute('data-translate');
+            const translation = getTranslation(key, lang);
+            twitterDesc.setAttribute('content', translation);
+        }
+        
         // Update language selector value
         const langSelect = document.getElementById('language-select');
         if (langSelect) {

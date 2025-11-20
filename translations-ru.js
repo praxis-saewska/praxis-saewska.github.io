@@ -25,6 +25,10 @@ window.translations.ru = {
         index: {
             metaDescription: "Гинекологическая практика - Профессиональная забота о женском здоровье",
             title: "Praxis Saewska - Гинекология",
+            ogTitle: "Praxis Saewska - Гинекология",
+            ogDescription: "Гинекологическая практика - Профессиональная забота о женском здоровье",
+            twitterTitle: "Praxis Saewska - Гинекология",
+            twitterDescription: "Гинекологическая практика - Профессиональная забота",
             heroTitle: "Добро пожаловать в нашу практику",
             heroSubtitle: "Ваше здоровье важно для нас. Мы предлагаем комплексную гинекологическую помощь в атмосфере доверия.",
             bookAppointment: "Записаться на прием",
@@ -80,6 +84,10 @@ window.translations.ru = {
         about: {
             metaDescription: "О нас - Узнайте о нашей команде практики и нашей философии",
             title: "О нас - Praxis Saewska",
+            ogTitle: "О нас - Praxis Saewska",
+            ogDescription: "О нас - Узнайте о нашей команде практики и нашей философии",
+            twitterTitle: "О нас - Praxis Saewska",
+            twitterDescription: "О нас - Узнайте о нашей команде",
             pageTitle: "О нас",
             doctorName: "Д-р PhD Елена Заевская",
             doctorTitle: "Специалист по гинекологии и акушерству",
@@ -163,6 +171,10 @@ window.translations.ru = {
         faq: {
             metaDescription: "Часто задаваемые вопросы - Ответы на самые важные вопросы",
             title: "Часто задаваемые вопросы - Praxis Saewska",
+            ogTitle: "FAQ - Praxis Saewska",
+            ogDescription: "Часто задаваемые вопросы - Ответы на самые важные вопросы",
+            twitterTitle: "FAQ - Praxis Saewska",
+            twitterDescription: "Часто задаваемые вопросы",
             pageTitle: "Часто задаваемые вопросы",
             q1: "Как записаться на прием?",
             a1p1: "Вы можете записаться на прием различными способами:",
@@ -228,6 +240,10 @@ window.translations.ru = {
         privacy: {
             metaDescription: "Политика конфиденциальности - Информация о защите данных",
             title: "Политика конфиденциальности - Praxis Saewska",
+            ogTitle: "Политика конфиденциальности - Praxis Saewska",
+            ogDescription: "Политика конфиденциальности - Информация о защите данных",
+            twitterTitle: "Политика конфиденциальности - Praxis Saewska",
+            twitterDescription: "Политика конфиденциальности",
             pageTitle: "Политика конфиденциальности",
             lastUpdated: "Последнее обновление: [Дата]",
             section1Title: "1. Защита данных вкратце",
