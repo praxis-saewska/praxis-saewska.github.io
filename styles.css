@@ -231,6 +231,7 @@ nav a:hover::after {
 
 .btn:hover {
     background-color: var(--accent-purple);
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
 }
@@ -546,8 +547,15 @@ footer {
 }
 
 .footer-section h3 {
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .footer-section ul {

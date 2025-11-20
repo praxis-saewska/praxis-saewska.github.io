@@ -67,7 +67,13 @@ window.translations.en = {
             moreContactInfo: "More Contact Information",
             addressPlaceholder: "[Your Practice Address]<br>[Postal Code City]",
             phonePlaceholder: "[Your Phone Number]",
-            emailPlaceholder: "info@praxis-saewska.de"
+            emailPlaceholder: "info@praxis-saewska.de",
+            hoursTitle: "Opening Hours",
+            hoursMonday: "[Time] - [Time]",
+            hoursTuesday: "[Time] - [Time]",
+            hoursWednesday: "[Time] - [Time]",
+            hoursThursday: "[Time] - [Time]",
+            hoursFriday: "[Time] - [Time]"
         },
         
         // About Page

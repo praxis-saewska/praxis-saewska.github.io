@@ -67,7 +67,13 @@ window.translations.uk = {
             moreContactInfo: "Додаткова контактна інформація",
             addressPlaceholder: "[Адреса вашої практики]<br>[Поштовий індекс Місто]",
             phonePlaceholder: "[Ваш номер телефону]",
-            emailPlaceholder: "info@praxis-saewska.de"
+            emailPlaceholder: "info@praxis-saewska.de",
+            hoursTitle: "Години роботи",
+            hoursMonday: "[Час] - [Час]",
+            hoursTuesday: "[Час] - [Час]",
+            hoursWednesday: "[Час] - [Час]",
+            hoursThursday: "[Час] - [Час]",
+            hoursFriday: "[Час] - [Час]"
         },
         
         // About Page

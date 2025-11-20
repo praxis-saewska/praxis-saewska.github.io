@@ -67,7 +67,13 @@ window.translations.ru = {
             moreContactInfo: "Дополнительная контактная информация",
             addressPlaceholder: "[Адрес вашей практики]<br>[Почтовый индекс Город]",
             phonePlaceholder: "[Ваш номер телефона]",
-            emailPlaceholder: "info@praxis-saewska.de"
+            emailPlaceholder: "info@praxis-saewska.de",
+            hoursTitle: "Часы работы",
+            hoursMonday: "[Время] - [Время]",
+            hoursTuesday: "[Время] - [Время]",
+            hoursWednesday: "[Время] - [Время]",
+            hoursThursday: "[Время] - [Время]",
+            hoursFriday: "[Время] - [Время]"
         },
         
         // About Page
