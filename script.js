@@ -5,14 +5,12 @@
     const LANGUAGE_KEY = 'preferredLanguage';
     const DEFAULT_LANGUAGE = 'de';
     const SUPPORTED_LANGUAGES = ['de', 'en', 'ua', 'ru'];
-    const loadedLanguages = new Set(); // Track which languages have been loaded
 
     // Dynamically load translation file for a specific language
     function loadTranslation(lang) {
         return new Promise((resolve, reject) => {
             // Check if already loaded
             if (window.translations && window.translations[lang]) {
-                loadedLanguages.add(lang);
                 resolve();
                 return;
             }
@@ -21,25 +19,25 @@
             const existingScript = document.querySelector(`script[data-lang="${lang}"]`);
             if (existingScript) {
                 // Wait for it to load
-                let attempts = 0;
-                const maxAttempts = 100; // 5 seconds with 50ms intervals
-                
                 const checkInterval = setInterval(() => {
-                    attempts++;
                     if (window.translations && window.translations[lang]) {
                         clearInterval(checkInterval);
-                        loadedLanguages.add(lang);
                         resolve();
-                    } else if (attempts >= maxAttempts) {
-                        clearInterval(checkInterval);
-                        reject(new Error(`Timeout loading translations for ${lang}`));
                     }
                 }, 50);
                 
                 existingScript.addEventListener('error', () => {
                     clearInterval(checkInterval);
                     reject(new Error(`Error loading script for ${lang}`));
-                });
+                }, { once: true });
+                
+                // Timeout after 3 seconds
+                setTimeout(() => {
+                    clearInterval(checkInterval);
+                    if (!window.translations || !window.translations[lang]) {
+                        reject(new Error(`Timeout loading translations for ${lang}`));
+                    }
+                }, 3000);
                 
                 return;
             }
@@ -51,21 +49,14 @@
             script.setAttribute('data-lang', lang);
             
             script.onload = () => {
-                // Verify it's actually loaded with a small delay
-                setTimeout(() => {
-                    if (window.translations && window.translations[lang]) {
-                        loadedLanguages.add(lang);
-                        resolve();
-                    } else {
-                        reject(new Error(`Translations for ${lang} not found after script load`));
-                    }
-                }, 100);
+                if (window.translations && window.translations[lang]) {
+                    resolve();
+                } else {
+                    reject(new Error(`Translations for ${lang} not found after script load`));
+                }
             };
             
-            script.onerror = (error) => {
-                console.error(`Failed to load translations for ${lang}:`, error);
-                reject(new Error(`Failed to load translations for ${lang}`));
-            };
+            script.onerror = () => reject(new Error(`Failed to load translations for ${lang}`));
             
             document.head.appendChild(script);
         });
@@ -105,74 +96,56 @@
     }
 
     // Show/hide loading indicator
-    function showLoading() {
+    function toggleLoading(show) {
         const loadingOverlay = document.getElementById('loading-overlay');
         if (loadingOverlay) {
-            loadingOverlay.classList.add('active');
-        }
-    }
-
-    function hideLoading() {
-        const loadingOverlay = document.getElementById('loading-overlay');
-        if (loadingOverlay) {
-            loadingOverlay.classList.remove('active');
+            loadingOverlay.classList.toggle('active', show);
         }
     }
 
     // Set language and save to localStorage
     function setLanguage(lang) {
-        if (!SUPPORTED_LANGUAGES.includes(lang)) {
-            lang = DEFAULT_LANGUAGE;
-        }
-        localStorage.setItem(LANGUAGE_KEY, lang);
+        if (!SUPPORTED_LANGUAGES.includes(lang)) lang = DEFAULT_LANGUAGE;
         
-        // Show loading indicator
-        showLoading();
+        localStorage.setItem(LANGUAGE_KEY, lang);
+        toggleLoading(true);
         
         // Load translation if not already loaded
-        loadTranslation(lang).then(() => {
-            translatePage(lang);
-            updateHTMLAttributes(lang);
-            hideLoading();
-        }).catch(() => {
-            // Fallback to default language if loading fails
-            if (lang !== DEFAULT_LANGUAGE) {
-                loadTranslation(DEFAULT_LANGUAGE).then(() => {
-                    translatePage(DEFAULT_LANGUAGE);
-                    updateHTMLAttributes(DEFAULT_LANGUAGE);
-                    hideLoading();
-                }).catch(() => {
-                    hideLoading();
-                });
-            } else {
-                hideLoading();
-            }
-        });
+        loadTranslation(lang)
+            .then(() => {
+                translatePage(lang);
+                updateHTMLAttributes(lang);
+                // Dispatch custom event for other modules
+                window.dispatchEvent(new Event('languageChanged'));
+            })
+            .catch(() => {
+                // Fallback to default language if loading fails
+                if (lang !== DEFAULT_LANGUAGE) {
+                    return loadTranslation(DEFAULT_LANGUAGE).then(() => {
+                        translatePage(DEFAULT_LANGUAGE);
+                        updateHTMLAttributes(DEFAULT_LANGUAGE);
+                        window.dispatchEvent(new Event('languageChanged'));
+                    });
+                }
+            })
+            .finally(() => toggleLoading(false));
     }
 
     // Get translation text
     function getTranslation(key, lang) {
         if (!window.translations || !window.translations[lang]) {
-            console.warn('Translations not loaded or language not found:', lang, key);
             return key;
         }
 
         const keys = key.split('.');
         let value = window.translations[lang];
 
-        for (let i = 0; i < keys.length; i++) {
-            if (value && typeof value === 'object' && keys[i] in value) {
-                value = value[keys[i]];
+        for (const k of keys) {
+            if (value && typeof value === 'object' && k in value) {
+                value = value[k];
             } else {
-                // Fallback to default language (German) if translation not found
-                if (lang !== DEFAULT_LANGUAGE) {
-                    return getTranslation(key, DEFAULT_LANGUAGE);
-                }
-                // If default language also doesn't have it, try English as last resort
-                if (lang !== 'en') {
-                    return getTranslation(key, 'en');
-                }
-                return key;
+                // Fallback to default language if translation not found
+                return lang !== DEFAULT_LANGUAGE ? getTranslation(key, DEFAULT_LANGUAGE) : key;
             }
         }
 
@@ -185,71 +158,48 @@
         if (!key) return;
 
         const translation = getTranslation(key, lang);
+        const tagName = element.tagName;
         
-        // Handle HTML content - check if translation contains any HTML tags
-        // Use regex to detect HTML tags (anything between < and >)
-        const hasHtmlTags = /<[^>]+>/.test(translation);
-        
-        if (hasHtmlTags) {
-            element.innerHTML = translation;
-        } else {
-            element.textContent = translation;
-        }
-
-        // Special handling for attributes
-        if (element.tagName === 'META' && element.hasAttribute('name') && element.getAttribute('name') === 'description') {
+        // Special handling for different elements
+        if (tagName === 'META') {
             element.setAttribute('content', translation);
-        }
-        if (element.tagName === 'TITLE') {
+        } else if (tagName === 'TITLE') {
             document.title = translation;
-        }
-        if (element.tagName === 'IMG' && element.hasAttribute('data-translate')) {
+        } else if (tagName === 'IMG') {
             element.setAttribute('alt', translation);
+        } else {
+            // Check if translation contains HTML tags
+            element[/<[^>]+>/.test(translation) ? 'innerHTML' : 'textContent'] = translation;
         }
     }
 
     // Translate entire page
     function translatePage(lang) {
-        if (!window.translations) {
-            console.warn('Translations not loaded, cannot translate page');
-            return;
-        }
+        if (!window.translations) return;
         
-        const elements = document.querySelectorAll('[data-translate]');
-        elements.forEach(element => {
-            translateElement(element, lang);
-        });
+        document.querySelectorAll('[data-translate]').forEach(el => translateElement(el, lang));
     }
 
     // Update HTML lang attribute and meta tags
     function updateHTMLAttributes(lang) {
         document.documentElement.setAttribute('lang', lang);
         
-        // Update meta description if it exists
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc && metaDesc.hasAttribute('data-translate')) {
-            const key = metaDesc.getAttribute('data-translate');
-            const translation = getTranslation(key, lang);
-            metaDesc.setAttribute('content', translation);
-        }
+        // Update meta tags with data-translate attribute
+        document.querySelectorAll('meta[data-translate]').forEach(meta => {
+            const key = meta.getAttribute('data-translate');
+            meta.setAttribute('content', getTranslation(key, lang));
+        });
         
-        // Update canonical URL
+        // Update canonical and OG URLs
+        const fileName = window.location.pathname.split('/').pop() || 'index.html';
+        const baseDomain = 'https://praxis-saewska.de';
+        const fullUrl = `${baseDomain}/${fileName}${lang !== 'de' ? `?lang=${lang}` : ''}`;
+        
         const canonicalLink = document.getElementById('canonical-link');
-        if (canonicalLink) {
-            const currentPath = window.location.pathname;
-            const fileName = currentPath.split('/').pop() || 'index.html';
-            const baseDomain = 'https://praxis-saewska.de';
-            canonicalLink.href = baseDomain + '/' + fileName + (lang !== 'de' ? `?lang=${lang}` : '');
-        }
+        if (canonicalLink) canonicalLink.href = fullUrl;
         
-        // Update OG URL
         const ogUrl = document.getElementById('og-url');
-        if (ogUrl) {
-            const currentPath = window.location.pathname;
-            const fileName = currentPath.split('/').pop() || 'index.html';
-            const baseDomain = 'https://praxis-saewska.de';
-            ogUrl.content = baseDomain + '/' + fileName + (lang !== 'de' ? `?lang=${lang}` : '');
-        }
+        if (ogUrl) ogUrl.content = fullUrl;
         
         // Update OG locale
         const ogLocale = document.getElementById('og-locale');
@@ -258,84 +208,39 @@
             ogLocale.content = localeMap[lang] || 'de_DE';
         }
         
-        // Update OG title if it has data-translate
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle && ogTitle.hasAttribute('data-translate')) {
-            const key = ogTitle.getAttribute('data-translate');
-            const translation = getTranslation(key, lang);
-            ogTitle.setAttribute('content', translation);
-        }
-        
-        // Update OG description if it has data-translate
-        const ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc && ogDesc.hasAttribute('data-translate')) {
-            const key = ogDesc.getAttribute('data-translate');
-            const translation = getTranslation(key, lang);
-            ogDesc.setAttribute('content', translation);
-        }
-        
-        // Update Twitter title if it has data-translate
-        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twitterTitle && twitterTitle.hasAttribute('data-translate')) {
-            const key = twitterTitle.getAttribute('data-translate');
-            const translation = getTranslation(key, lang);
-            twitterTitle.setAttribute('content', translation);
-        }
-        
-        // Update Twitter description if it has data-translate
-        const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-        if (twitterDesc && twitterDesc.hasAttribute('data-translate')) {
-            const key = twitterDesc.getAttribute('data-translate');
-            const translation = getTranslation(key, lang);
-            twitterDesc.setAttribute('content', translation);
-        }
-        
-        // Update structured data (JSON-LD) if it exists
+        // Update structured data and language selector
         updateStructuredData(lang);
         
-        // Update language selector value
         const langSelect = document.getElementById('language-select');
-        if (langSelect) {
-            langSelect.value = lang;
-        }
+        if (langSelect) langSelect.value = lang;
     }
 
-    // Update structured data (JSON-LD) for FAQ and other pages
+    // Update structured data (JSON-LD) for FAQ pages
     function updateStructuredData(lang) {
-        const jsonLdScripts = document.querySelectorAll('script[type="application/ld+json"]');
-        
-        jsonLdScripts.forEach(script => {
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
             try {
                 const data = JSON.parse(script.textContent);
                 
                 // Update FAQ structured data
                 if (data['@type'] === 'FAQPage' && data.mainEntity) {
                     data.mainEntity.forEach((item, index) => {
-                        const qKey = `faq.q${index + 1}`;
-                        const aKey = `faq.a${index + 1}`;
+                        const question = getTranslation(`faq.q${index + 1}`, lang);
+                        const answer = getTranslation(`faq.a${index + 1}`, lang);
                         
-                        const question = getTranslation(qKey, lang);
-                        const answer = getTranslation(aKey, lang);
-                        
-                        if (question && question !== qKey) {
+                        // Update question
+                        if (question && !question.startsWith('faq.')) {
                             item.name = question;
                         }
                         
-                        if (answer && answer !== aKey) {
-                            // Strip HTML tags for structured data
+                        // Update answer (strip HTML tags)
+                        if (answer && !answer.startsWith('faq.')) {
                             const tempDiv = document.createElement('div');
                             tempDiv.innerHTML = answer;
-                            item.acceptedAnswer.text = tempDiv.textContent || tempDiv.innerText || '';
+                            item.acceptedAnswer.text = tempDiv.textContent || '';
                         }
                     });
                     
                     script.textContent = JSON.stringify(data, null, 2);
-                }
-                
-                // Update MedicalBusiness structured data
-                if (data['@type'] === 'MedicalBusiness') {
-                    // Keep structured data in original language for consistency
-                    // As it's mainly for search engines and should be stable
                 }
             } catch (e) {
                 // Skip if JSON parsing fails
@@ -344,24 +249,11 @@
     }
 
     // Initialize language switcher
-    let langSelectHandler = null;
     function initLanguageSwitcher() {
         const langSelect = document.getElementById('language-select');
         if (langSelect) {
-            const currentLang = getCurrentLanguage();
-            langSelect.value = currentLang;
-
-            // Remove existing listener if any
-            if (langSelectHandler) {
-                langSelect.removeEventListener('change', langSelectHandler);
-            }
-
-            // Add event listener
-            langSelectHandler = function(e) {
-                const selectedLang = e.target.value;
-                setLanguage(selectedLang);
-            };
-            langSelect.addEventListener('change', langSelectHandler);
+            langSelect.value = getCurrentLanguage();
+            langSelect.addEventListener('change', (e) => setLanguage(e.target.value));
         }
     }
 
@@ -369,47 +261,30 @@
     function initTranslation() {
         const currentLang = getCurrentLanguage();
         
-        // Load the current language translation
-        loadTranslation(currentLang).then(() => {
-            translatePage(currentLang);
-            updateHTMLAttributes(currentLang);
-            initLanguageSwitcher();
-        }).catch((error) => {
-            console.warn(`Failed to load translations for ${currentLang}:`, error);
-            
-            // Fallback to default language if current language fails
-            if (currentLang !== DEFAULT_LANGUAGE) {
-                console.log(`Falling back to ${DEFAULT_LANGUAGE}`);
-                loadTranslation(DEFAULT_LANGUAGE).then(() => {
-                    translatePage(DEFAULT_LANGUAGE);
-                    updateHTMLAttributes(DEFAULT_LANGUAGE);
-                    initLanguageSwitcher();
-                }).catch((fallbackError) => {
-                    console.error('Failed to load default language translations:', fallbackError);
-                    // Initialize switcher even if translations fail
-                    initLanguageSwitcher();
-                });
-            } else {
-                console.error('Failed to load default language translations');
-                // Initialize switcher even if translations fail
-                initLanguageSwitcher();
-            }
-        });
+        loadTranslation(currentLang)
+            .then(() => {
+                translatePage(currentLang);
+                updateHTMLAttributes(currentLang);
+            })
+            .catch(() => {
+                // Fallback to default language if current language fails
+                if (currentLang !== DEFAULT_LANGUAGE) {
+                    return loadTranslation(DEFAULT_LANGUAGE).then(() => {
+                        translatePage(DEFAULT_LANGUAGE);
+                        updateHTMLAttributes(DEFAULT_LANGUAGE);
+                    });
+                }
+            })
+            .finally(() => initLanguageSwitcher());
     }
 
     // Make functions available globally
-    window.translation = {
-        setLanguage: setLanguage,
-        getCurrentLanguage: getCurrentLanguage,
-        translatePage: translatePage
-    };
+    window.translation = { setLanguage, getCurrentLanguage, translatePage };
 
     // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initTranslation);
-    } else {
-        initTranslation();
-    }
+    document.readyState === 'loading' 
+        ? document.addEventListener('DOMContentLoaded', initTranslation)
+        : initTranslation();
 })();
 
 // Cookie Consent Management
@@ -421,19 +296,15 @@
 
     // Check if user has already given consent
     function hasConsent() {
-        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-        if (!consent) return null;
-        
         try {
+            const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+            if (!consent) return null;
+            
             const consentData = JSON.parse(consent);
-            const expiryDate = new Date(consentData.expiry);
-            if (expiryDate > new Date()) {
-                return consentData.accepted;
-            }
+            return new Date(consentData.expiry) > new Date() ? consentData.accepted : null;
         } catch (e) {
             return null;
         }
-        return null;
     }
 
     // Save consent preference
@@ -441,42 +312,24 @@
         const expiryDate = new Date();
         expiryDate.setDate(expiryDate.getDate() + COOKIE_CONSENT_EXPIRY);
         
-        const consentData = {
-            accepted: accepted,
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify({
+            accepted,
             date: new Date().toISOString(),
             expiry: expiryDate.toISOString()
-        };
-        
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentData));
+        }));
     }
 
-    // Show cookie banner
-    function showCookieBanner() {
+    // Toggle cookie banner
+    function toggleCookieBanner(show) {
         const banner = document.getElementById('cookie-banner');
-        if (banner) {
-            banner.classList.add('show');
-        }
+        if (banner) banner.classList.toggle('show', show);
     }
 
-    // Hide cookie banner
-    function hideCookieBanner() {
-        const banner = document.getElementById('cookie-banner');
-        if (banner) {
-            banner.classList.remove('show');
-        }
-    }
-
-    // Handle accept button
-    function handleAccept() {
-        saveConsent(true);
-        hideCookieBanner();
-        loadGoogleMaps(); // Load maps if on contact page
-    }
-
-    // Handle decline button
-    function handleDecline() {
-        saveConsent(false);
-        hideCookieBanner();
+    // Handle consent decision
+    function handleConsent(accepted) {
+        saveConsent(accepted);
+        toggleCookieBanner(false);
+        if (accepted) loadGoogleMaps();
     }
 
     // Initialize cookie banner
@@ -484,10 +337,8 @@
         const consent = hasConsent();
         
         if (consent === null) {
-            // No consent given yet, show banner
-            showCookieBanner();
+            toggleCookieBanner(true);
         } else if (consent === true) {
-            // Consent given, load maps if on contact page
             loadGoogleMaps();
         }
 
@@ -495,39 +346,27 @@
         const acceptBtn = document.getElementById('cookie-accept');
         const declineBtn = document.getElementById('cookie-decline');
         
-        if (acceptBtn) {
-            acceptBtn.addEventListener('click', handleAccept);
-        }
-        
-        if (declineBtn) {
-            declineBtn.addEventListener('click', handleDecline);
-        }
+        if (acceptBtn) acceptBtn.addEventListener('click', () => handleConsent(true));
+        if (declineBtn) declineBtn.addEventListener('click', () => handleConsent(false));
     }
 
     // Load Google Maps (only after consent)
     function loadGoogleMaps() {
         const mapContainer = document.getElementById('google-map-container');
-        const consentMessage = document.getElementById('map-consent-message');
-        
         if (!mapContainer) return;
         
+        const consentMessage = document.getElementById('map-consent-message');
         const consent = hasConsent();
+        
         if (consent === true) {
-            // User has consented, load the map
             const mapIframe = mapContainer.querySelector('iframe');
-            if (mapIframe && mapIframe.dataset.src) {
+            if (mapIframe?.dataset.src) {
                 mapIframe.src = mapIframe.dataset.src;
                 mapIframe.removeAttribute('data-src');
             }
-            
-            if (consentMessage) {
-                consentMessage.classList.add('hidden');
-            }
+            consentMessage?.classList.add('hidden');
         } else {
-            // Show consent message
-            if (consentMessage) {
-                consentMessage.classList.remove('hidden');
-            }
+            consentMessage?.classList.remove('hidden');
         }
     }
 
@@ -536,22 +375,11 @@
         const faqItems = document.querySelectorAll('.faq-item');
         
         faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            if (question) {
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all items
-                    faqItems.forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                    });
-                    
-                    // Open clicked item if it wasn't active
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            }
+            item.querySelector('.faq-question')?.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
         });
     }
 
@@ -560,38 +388,33 @@
         const menuToggle = document.getElementById('menu-toggle');
         const nav = document.querySelector('nav');
         
-        if (menuToggle && nav) {
-            // Toggle menu
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                nav.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on a link
-            const navLinks = nav.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.classList.remove('active');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (nav.classList.contains('active') && 
-                    !nav.contains(e.target) && 
-                    !menuToggle.contains(e.target)) {
-                    nav.classList.remove('active');
-                }
-            });
-            
-            // Close menu on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    menuToggle.focus();
-                }
-            });
-        }
+        if (!menuToggle || !nav) return;
+        
+        const closeMenu = () => nav.classList.remove('active');
+        
+        // Toggle menu
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') && !nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                closeMenu();
+                menuToggle.focus();
+            }
+        });
     }
 
     // Smooth scrolling for anchor links
@@ -604,10 +427,7 @@
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
@@ -619,46 +439,31 @@
         if (!scrollBtn) return;
         
         // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.pageYOffset > 300);
         });
         
         // Scroll to top when clicked
-        scrollBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
     // Initialize everything when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            initCookieBanner();
-            initFAQ();
-            initMobileMenu();
-            initSmoothScroll();
-            initScrollToTop();
-        });
-    } else {
+    const initAll = () => {
         initCookieBanner();
         initFAQ();
         initMobileMenu();
         initSmoothScroll();
         initScrollToTop();
-    }
+    };
+    
+    document.readyState === 'loading' 
+        ? document.addEventListener('DOMContentLoaded', initAll)
+        : initAll();
 
     // Export functions for potential external use
-    window.cookieConsent = {
-        hasConsent: hasConsent,
-        saveConsent: saveConsent,
-        loadGoogleMaps: loadGoogleMaps
-    };
+    window.cookieConsent = { hasConsent, saveConsent, loadGoogleMaps };
 })();
 
 // Common Data Application
@@ -670,33 +475,27 @@
 
         const { openingHours, contact } = window.commonData;
 
-        // Apply opening hours using data-hours-day attribute
+        // Apply opening hours
         if (openingHours) {
             document.querySelectorAll('[data-hours-day]').forEach(el => {
                 const day = el.getAttribute('data-hours-day');
-                if (openingHours[day]) {
-                    el.textContent = openingHours[day];
-                }
+                if (openingHours[day]) el.textContent = openingHours[day];
             });
         }
 
         // Apply contact information
         if (contact) {
-            // Address
-            document.querySelectorAll('[data-translate="index.addressPlaceholder"], [data-translate="contact.addressValue"]').forEach(el => {
-                el.innerHTML = contact.address;
-            });
-
-            // Phone
-            document.querySelectorAll('[data-translate="index.phonePlaceholder"], [data-translate="contact.phoneValue"]').forEach(el => {
-                el.textContent = contact.phone;
-            });
-
-            // Email
-            document.querySelectorAll('[data-translate="index.emailPlaceholder"], [data-translate="contact.emailValue"]').forEach(el => {
-                el.textContent = contact.email;
-            });
-
+            // Helper function to update elements
+            const updateElements = (selector, content, isHTML = false) => {
+                document.querySelectorAll(selector).forEach(el => {
+                    el[isHTML ? 'innerHTML' : 'textContent'] = content;
+                });
+            };
+            
+            updateElements('[data-translate="index.addressPlaceholder"], [data-translate="contact.addressValue"]', contact.address, true);
+            updateElements('[data-translate="index.phonePlaceholder"], [data-translate="contact.phoneValue"]', contact.phone);
+            updateElements('[data-translate="index.emailPlaceholder"], [data-translate="contact.emailValue"]', contact.email);
+            
             // Email links
             document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
                 link.href = `mailto:${contact.email}`;
@@ -707,24 +506,14 @@
         }
     }
 
-    function init() {
-        const ready = () => setTimeout(applyCommonData, 100);
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', ready);
-        } else {
-            ready();
-        }
-    }
-
-    // Re-apply after language change
-    if (window.translation?.setLanguage) {
-        const original = window.translation.setLanguage;
-        window.translation.setLanguage = function(lang) {
-            original.call(this, lang);
-            setTimeout(applyCommonData, 200);
-        };
-    }
-
-    init();
+    // Custom event for language changes
+    window.addEventListener('languageChanged', applyCommonData);
+    
+    // Initialize
+    const init = () => requestAnimationFrame(applyCommonData);
+    
+    document.readyState === 'loading'
+        ? document.addEventListener('DOMContentLoaded', init)
+        : init();
 })();
 
