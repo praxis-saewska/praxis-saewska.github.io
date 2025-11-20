@@ -23,7 +23,7 @@
                     <li><a href="index.html#services" data-translate="common.services">Leistungen</a></li>
                     <li><a href="about.html" data-translate="common.about">Über uns</a></li>
                     <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
-                    <li><a href="contact.html" data-translate="common.contact">Kontakt</a></li>
+                    <li><a href="index.html#contact" data-translate="common.contact">Kontakt</a></li>
                     <li class="language-switcher">
                         <select id="language-select" aria-label="Select language">
                             <option value="de">Deutsch</option>
@@ -130,50 +130,89 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title" data-translate="index.contactTitle">Kontakt</h2>
-            <div class="contact-info">
+
+            <div class="contact-info" style="margin-bottom: 3rem;">
                 <div class="contact-item">
-                    <h3 data-translate="index.address">Adresse</h3>
-                    <p data-translate="index.addressPlaceholder">[Ihre Praxisadresse]<br>[PLZ Ort]</p>
+                    <h3 data-translate="contact.address">Address</h3>
+                    <p data-translate="contact.addressValue">Uhlandstr. 87<br>10717 Berlin</p>
                 </div>
                 <div class="contact-item">
-                    <h3 data-translate="index.phone">Telefon</h3>
-                    <p data-translate="index.phonePlaceholder">[Ihre Telefonnummer]</p>
+                    <h3 data-translate="contact.phone">Phone</h3>
+                    <p><a href="tel:[Telefonnummer]" data-translate="contact.phoneValue">[Your Phone Number]</a></p>
                 </div>
                 <div class="contact-item">
-                    <h3 data-translate="index.email">E-Mail</h3>
-                    <p data-translate="index.emailPlaceholder">[Ihre E-Mail-Adresse]</p>
-                </div>
-                <div class="contact-item">
-                    <h3 data-translate="index.hoursTitle">Öffnungszeiten</h3>
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.monday">Montag</td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="monday">[Zeit] - [Zeit]</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.tuesday">Dienstag</td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="tuesday">[Zeit] - [Zeit]</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.wednesday">Mittwoch</td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="wednesday">[Zeit] - [Zeit]</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.thursday">Donnerstag</td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="thursday">[Zeit] - [Zeit]</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border-light);">
-                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.friday">Freitag</td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="friday">[Zeit] - [Zeit]</td>
-                        </tr>
-                    </table>
+                    <h3 data-translate="contact.email">Email</h3>
+                    <p><a href="mailto:[E-Mail]">info@praxis-saewska.de</a></p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="contact.html" class="btn btn-secondary" data-translate="index.moreContactInfo">Weitere Kontaktinformationen</a>
+
+            <div class="about-section" style="margin-bottom: 3rem;">
+                <h2 data-translate="contact.hoursTitle">Opening Hours</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.monday">Monday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="monday">[Time] - [Time]</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.tuesday">Tuesday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="tuesday">[Time] - [Time]</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.wednesday">Wednesday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="wednesday">[Time] - [Time]</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.thursday">Thursday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="thursday">[Time] - [Time]</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-light);">
+                        <td style="padding: 0.75rem 0; font-weight: 600;" data-translate="contact.friday">Friday</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="friday">[Time] - [Time]</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 1rem; color: var(--soft-gray); font-size: 0.9rem;"><em data-translate="contact.hoursNote">Please update the opening hours with your actual times.</em></p>
+            </div>
+
+            <div class="about-section" style="margin-bottom: 3rem;">
+                <h2 data-translate="contact.directionsTitle">How to Find Us</h2>
+                <p data-translate="contact.directionsText">Our practice is located in Charlottenburg.</p>
+                <p><strong data-translate="contact.directionsCar">By Car:</strong><br>
+                <span data-translate="contact.directionsCarText">[Description of how to get there by car]</span></p>
+                <p><strong data-translate="contact.directionsPublic">By Public Transport:</strong><br>
+                <span data-translate="contact.directionsPublicText">[Description of how to get there by public transport]</span></p>
+                <p><strong data-translate="contact.parking">Parking:</strong><br>
+                <span data-translate="contact.parkingText">[Information about parking]</span></p>
+            </div>
+
+            <div class="about-section">
+                <h2 data-translate="contact.locationTitle">Location</h2>
+                <div class="map-container" id="google-map-container">
+                    <div id="map-consent-message" class="map-consent-message">
+                        <p><strong data-translate="contact.mapLoading">Map is loading</strong></p>
+                        <p data-translate="contact.mapConsent">To display the map, we need your consent to use cookies.</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;" data-translate="contact.mapConsentNote">Please accept cookies in the cookie banner to see the map.</p>
+                    </div>
+                    <!-- PLACEHOLDER: Replace this iframe with your Google Maps embed code -->
+                    <!-- To get your embed code:
+                         1. Go to Google Maps
+                         2. Search for your practice address
+                         3. Click "Share" → "Embed a map"
+                         4. Copy the iframe code and replace the one below
+                         5. Add data-src attribute instead of src for GDPR compliance -->
+                    <iframe
+                        data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4858.949177167592!2d13.319794212440835!3d52.48864823843353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a850f4bd3f636b%3A0x74162961ef9f5934!2sUhlandstra%C3%9Fe%2087%2C%2010717%20Berlin!5e0!3m2!1sen!2sde!4v1763564262086!5m2!1sen!2sde"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Praxis Standort">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -190,7 +229,7 @@
                     <li><a href="index.html" data-translate="common.home">Startseite</a></li>
                     <li><a href="about.html" data-translate="common.about">Über uns</a></li>
                     <li><a href="faq.html" data-translate="common.faq">FAQ</a></li>
-                    <li><a href="contact.html" data-translate="common.contact">Kontakt</a></li>
+                    <li><a href="index.html#contact" data-translate="common.contact">Kontakt</a></li>
                 </ul>
             </div>
             <div class="footer-section">
