@@ -1,8 +1,8 @@
-// Translations for UK language
+// Translations for UA language
 // Auto-generated from translations.js
 
 window.translations = window.translations || {};
-window.translations.uk = {
+window.translations.ua = {
 
         // Common/Navigation
         common: {
@@ -319,3 +319,4 @@ window.translations.uk = {
             legal: "Правова інформація"
         }
 };
+

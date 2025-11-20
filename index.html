@@ -26,7 +26,7 @@
                         <select id="language-select" aria-label="Select language">
                             <option value="de">Deutsch</option>
                             <option value="en">English</option>
-                            <option value="uk">Українська</option>
+                            <option value="ua">Українська</option>
                             <option value="ru">Русский</option>
                         </select>
                     </li>
@@ -146,13 +146,28 @@
                 </div>
                 <div class="contact-item">
                     <h3 data-translate="index.hoursTitle">Öffnungszeiten</h3>
-                    <div style="font-size: 0.95rem; line-height: 1.8;">
-                        <div><span data-translate="contact.monday">Montag</span>: <span data-translate="index.hoursMonday">[Zeit] - [Zeit] Uhr</span></div>
-                        <div><span data-translate="contact.tuesday">Dienstag</span>: <span data-translate="index.hoursTuesday">[Zeit] - [Zeit] Uhr</span></div>
-                        <div><span data-translate="contact.wednesday">Mittwoch</span>: <span data-translate="index.hoursWednesday">[Zeit] - [Zeit] Uhr</span></div>
-                        <div><span data-translate="contact.thursday">Donnerstag</span>: <span data-translate="index.hoursThursday">[Zeit] - [Zeit] Uhr</span></div>
-                        <div><span data-translate="contact.friday">Freitag</span>: <span data-translate="index.hoursFriday">[Zeit] - [Zeit] Uhr</span></div>
-                    </div>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.monday">Montag</td>
+                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="monday">[Zeit] - [Zeit]</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.tuesday">Dienstag</td>
+                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="tuesday">[Zeit] - [Zeit]</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.wednesday">Mittwoch</td>
+                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="wednesday">[Zeit] - [Zeit]</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.thursday">Donnerstag</td>
+                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="thursday">[Zeit] - [Zeit]</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <td style="padding: 0.5rem 0; font-weight: 600;" data-translate="contact.friday">Freitag</td>
+                            <td style="padding: 0.5rem 0; text-align: right; color: var(--soft-gray);" data-hours-day="friday">[Zeit] - [Zeit]</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">

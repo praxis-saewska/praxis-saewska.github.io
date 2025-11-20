@@ -4,7 +4,7 @@
 
     const LANGUAGE_KEY = 'preferredLanguage';
     const DEFAULT_LANGUAGE = 'de';
-    const SUPPORTED_LANGUAGES = ['de', 'en', 'uk', 'ru'];
+    const SUPPORTED_LANGUAGES = ['de', 'en', 'ua', 'ru'];
     const loadedLanguages = new Set(); // Track which languages have been loaded
 
     // Dynamically load translation file for a specific language
@@ -472,112 +472,66 @@
 (function() {
     'use strict';
 
-    // Apply common data to the page
     function applyCommonData() {
-        if (!window.commonData) {
-            console.warn('Common data not loaded');
-            return;
-        }
+        if (!window.commonData) return;
 
-        const data = window.commonData;
+        const { openingHours, contact } = window.commonData;
 
-        // Apply opening hours
-        if (data.openingHours) {
-            // Map for index page hours
-            const hoursMap = {
-                'index.hoursMonday': data.openingHours.monday,
-                'index.hoursTuesday': data.openingHours.tuesday,
-                'index.hoursWednesday': data.openingHours.wednesday,
-                'index.hoursThursday': data.openingHours.thursday,
-                'index.hoursFriday': data.openingHours.friday
-            };
-
-            // Apply hours to elements with data-translate attributes on index page
-            Object.keys(hoursMap).forEach(key => {
-                const elements = document.querySelectorAll(`[data-translate="${key}"]`);
-                elements.forEach(el => {
-                    el.textContent = hoursMap[key];
-                });
-            });
-
-            // Apply hours to contact page table
-            const contactHoursMap = {
-                'contact.monday': data.openingHours.monday,
-                'contact.tuesday': data.openingHours.tuesday,
-                'contact.wednesday': data.openingHours.wednesday,
-                'contact.thursday': data.openingHours.thursday,
-                'contact.friday': data.openingHours.friday
-            };
-
-            // Find table rows and apply hours
-            const tableRows = document.querySelectorAll('table tr');
-            tableRows.forEach(row => {
-                const dayCell = row.querySelector('td[data-translate^="contact."]');
-                if (dayCell) {
-                    const translateKey = dayCell.getAttribute('data-translate');
-                    const timeCell = row.querySelector('td:last-child');
-                    if (timeCell && contactHoursMap[translateKey]) {
-                        // Apply hours to the time cell (right column)
-                        timeCell.textContent = contactHoursMap[translateKey];
-                    }
+        // Apply opening hours using data-hours-day attribute
+        if (openingHours) {
+            document.querySelectorAll('[data-hours-day]').forEach(el => {
+                const day = el.getAttribute('data-hours-day');
+                if (openingHours[day]) {
+                    el.textContent = openingHours[day];
                 }
             });
         }
 
         // Apply contact information
-        if (data.contact) {
-            // Apply address
-            const addressElements = document.querySelectorAll('[data-translate="index.addressPlaceholder"], [data-translate="contact.addressValue"]');
-            addressElements.forEach(el => {
-                el.innerHTML = data.contact.address;
+        if (contact) {
+            // Address
+            document.querySelectorAll('[data-translate="index.addressPlaceholder"], [data-translate="contact.addressValue"]').forEach(el => {
+                el.innerHTML = contact.address;
             });
 
-            // Apply phone
-            const phoneElements = document.querySelectorAll('[data-translate="index.phonePlaceholder"], [data-translate="contact.phoneValue"]');
-            phoneElements.forEach(el => {
-                el.textContent = data.contact.phone;
+            // Phone
+            document.querySelectorAll('[data-translate="index.phonePlaceholder"], [data-translate="contact.phoneValue"]').forEach(el => {
+                el.textContent = contact.phone;
             });
 
-            // Apply email
-            const emailElements = document.querySelectorAll('[data-translate="index.emailPlaceholder"]');
-            emailElements.forEach(el => {
-                el.textContent = data.contact.email;
+            // Email
+            document.querySelectorAll('[data-translate="index.emailPlaceholder"], [data-translate="contact.emailValue"]').forEach(el => {
+                el.textContent = contact.email;
             });
 
-            // Apply email in contact page (if it's a link or text)
-            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-            emailLinks.forEach(link => {
-                link.href = `mailto:${data.contact.email}`;
-                if (!link.querySelector('span[data-translate]')) {
-                    link.textContent = data.contact.email;
+            // Email links
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.href = `mailto:${contact.email}`;
+                if (!link.querySelector('[data-translate]')) {
+                    link.textContent = contact.email;
                 }
-            });
-
-            // Apply email to contact page email value
-            const contactEmailElements = document.querySelectorAll('[data-translate="contact.emailValue"]');
-            contactEmailElements.forEach(el => {
-                el.textContent = data.contact.email;
             });
         }
     }
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait a bit for translations to load
-            setTimeout(applyCommonData, 100);
-        });
-    } else {
-        setTimeout(applyCommonData, 100);
+    function init() {
+        const ready = () => setTimeout(applyCommonData, 100);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', ready);
+        } else {
+            ready();
+        }
     }
 
     // Re-apply after language change
-    const originalSetLanguage = window.translation && window.translation.setLanguage;
-    if (originalSetLanguage) {
+    if (window.translation?.setLanguage) {
+        const original = window.translation.setLanguage;
         window.translation.setLanguage = function(lang) {
-            originalSetLanguage.call(this, lang);
+            original.call(this, lang);
             setTimeout(applyCommonData, 200);
         };
     }
+
+    init();
 })();
 
