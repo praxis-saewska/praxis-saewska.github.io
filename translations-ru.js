@@ -18,7 +18,18 @@ window.translations.ru = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Принять",
             decline: "Отклонить",
-            menu: "☰"
+            menu: "☰",
+            skipToMain: "Перейти к основному содержанию"
+        },
+        
+        // 404 Error Page
+        error404: {
+            metaDescription: "Страница не найдена - Ошибка 404",
+            title: "404 - Страница не найдена",
+            heading: "Страница не найдена",
+            message: "Страница, которую вы ищете, не найдена. Возможно, она была перемещена или удалена.",
+            backHome: "Вернуться на главную",
+            contact: "Контакты"
         },
         
         // Index Page

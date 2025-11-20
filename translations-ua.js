@@ -18,7 +18,18 @@ window.translations.ua = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Прийняти",
             decline: "Відхилити",
-            menu: "☰"
+            menu: "☰",
+            skipToMain: "Перейти до основного вмісту"
+        },
+        
+        // 404 Error Page
+        error404: {
+            metaDescription: "Сторінка не знайдена - Помилка 404",
+            title: "404 - Сторінка не знайдена",
+            heading: "Сторінка не знайдена",
+            message: "Сторінку, яку ви шукаєте, не знайдено. Можливо, її було переміщено або видалено.",
+            backHome: "Повернутися на головну",
+            contact: "Контакти"
         },
         
         // Index Page

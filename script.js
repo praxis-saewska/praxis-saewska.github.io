@@ -21,26 +21,26 @@
             const existingScript = document.querySelector(`script[data-lang="${lang}"]`);
             if (existingScript) {
                 // Wait for it to load
+                let attempts = 0;
+                const maxAttempts = 100; // 5 seconds with 50ms intervals
+                
                 const checkInterval = setInterval(() => {
+                    attempts++;
                     if (window.translations && window.translations[lang]) {
                         clearInterval(checkInterval);
                         loadedLanguages.add(lang);
                         resolve();
+                    } else if (attempts >= maxAttempts) {
+                        clearInterval(checkInterval);
+                        reject(new Error(`Timeout loading translations for ${lang}`));
                     }
                 }, 50);
                 
                 existingScript.addEventListener('error', () => {
                     clearInterval(checkInterval);
-                    reject();
+                    reject(new Error(`Error loading script for ${lang}`));
                 });
                 
-                // Timeout after 5 seconds
-                setTimeout(() => {
-                    clearInterval(checkInterval);
-                    if (!window.translations || !window.translations[lang]) {
-                        reject(new Error(`Timeout loading translations for ${lang}`));
-                    }
-                }, 5000);
                 return;
             }
 
@@ -51,17 +51,19 @@
             script.setAttribute('data-lang', lang);
             
             script.onload = () => {
-                // Verify it's actually loaded
-                if (window.translations && window.translations[lang]) {
-                    loadedLanguages.add(lang);
-                    resolve();
-                } else {
-                    reject(new Error(`Translations for ${lang} not found after script load`));
-                }
+                // Verify it's actually loaded with a small delay
+                setTimeout(() => {
+                    if (window.translations && window.translations[lang]) {
+                        loadedLanguages.add(lang);
+                        resolve();
+                    } else {
+                        reject(new Error(`Translations for ${lang} not found after script load`));
+                    }
+                }, 100);
             };
             
-            script.onerror = () => {
-                console.error(`Failed to load translations for ${lang}`);
+            script.onerror = (error) => {
+                console.error(`Failed to load translations for ${lang}:`, error);
                 reject(new Error(`Failed to load translations for ${lang}`));
             };
             
@@ -71,7 +73,16 @@
 
     // Get current language from localStorage or browser preference
     function getCurrentLanguage() {
-        // Check localStorage first
+        // Check URL parameter first (?lang=en, ?lang=ru, etc.)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang)) {
+            // Save to localStorage for future visits
+            localStorage.setItem(LANGUAGE_KEY, urlLang);
+            return urlLang;
+        }
+
+        // Check localStorage second
         const saved = localStorage.getItem(LANGUAGE_KEY);
         if (saved && SUPPORTED_LANGUAGES.includes(saved)) {
             return saved;
@@ -93,6 +104,21 @@
         return DEFAULT_LANGUAGE;
     }
 
+    // Show/hide loading indicator
+    function showLoading() {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('active');
+        }
+    }
+
+    function hideLoading() {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.remove('active');
+        }
+    }
+
     // Set language and save to localStorage
     function setLanguage(lang) {
         if (!SUPPORTED_LANGUAGES.includes(lang)) {
@@ -100,17 +126,26 @@
         }
         localStorage.setItem(LANGUAGE_KEY, lang);
         
+        // Show loading indicator
+        showLoading();
+        
         // Load translation if not already loaded
         loadTranslation(lang).then(() => {
             translatePage(lang);
             updateHTMLAttributes(lang);
+            hideLoading();
         }).catch(() => {
             // Fallback to default language if loading fails
             if (lang !== DEFAULT_LANGUAGE) {
                 loadTranslation(DEFAULT_LANGUAGE).then(() => {
                     translatePage(DEFAULT_LANGUAGE);
                     updateHTMLAttributes(DEFAULT_LANGUAGE);
+                    hideLoading();
+                }).catch(() => {
+                    hideLoading();
                 });
+            } else {
+                hideLoading();
             }
         });
     }
@@ -255,11 +290,57 @@
             twitterDesc.setAttribute('content', translation);
         }
         
+        // Update structured data (JSON-LD) if it exists
+        updateStructuredData(lang);
+        
         // Update language selector value
         const langSelect = document.getElementById('language-select');
         if (langSelect) {
             langSelect.value = lang;
         }
+    }
+
+    // Update structured data (JSON-LD) for FAQ and other pages
+    function updateStructuredData(lang) {
+        const jsonLdScripts = document.querySelectorAll('script[type="application/ld+json"]');
+        
+        jsonLdScripts.forEach(script => {
+            try {
+                const data = JSON.parse(script.textContent);
+                
+                // Update FAQ structured data
+                if (data['@type'] === 'FAQPage' && data.mainEntity) {
+                    data.mainEntity.forEach((item, index) => {
+                        const qKey = `faq.q${index + 1}`;
+                        const aKey = `faq.a${index + 1}`;
+                        
+                        const question = getTranslation(qKey, lang);
+                        const answer = getTranslation(aKey, lang);
+                        
+                        if (question && question !== qKey) {
+                            item.name = question;
+                        }
+                        
+                        if (answer && answer !== aKey) {
+                            // Strip HTML tags for structured data
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = answer;
+                            item.acceptedAnswer.text = tempDiv.textContent || tempDiv.innerText || '';
+                        }
+                    });
+                    
+                    script.textContent = JSON.stringify(data, null, 2);
+                }
+                
+                // Update MedicalBusiness structured data
+                if (data['@type'] === 'MedicalBusiness') {
+                    // Keep structured data in original language for consistency
+                    // As it's mainly for search engines and should be stable
+                }
+            } catch (e) {
+                // Skip if JSON parsing fails
+            }
+        });
     }
 
     // Initialize language switcher
@@ -293,16 +374,24 @@
             translatePage(currentLang);
             updateHTMLAttributes(currentLang);
             initLanguageSwitcher();
-        }).catch(() => {
+        }).catch((error) => {
+            console.warn(`Failed to load translations for ${currentLang}:`, error);
+            
             // Fallback to default language if current language fails
             if (currentLang !== DEFAULT_LANGUAGE) {
+                console.log(`Falling back to ${DEFAULT_LANGUAGE}`);
                 loadTranslation(DEFAULT_LANGUAGE).then(() => {
                     translatePage(DEFAULT_LANGUAGE);
                     updateHTMLAttributes(DEFAULT_LANGUAGE);
                     initLanguageSwitcher();
+                }).catch((fallbackError) => {
+                    console.error('Failed to load default language translations:', fallbackError);
+                    // Initialize switcher even if translations fail
+                    initLanguageSwitcher();
                 });
             } else {
                 console.error('Failed to load default language translations');
+                // Initialize switcher even if translations fail
                 initLanguageSwitcher();
             }
         });
@@ -472,7 +561,9 @@
         const nav = document.querySelector('nav');
         
         if (menuToggle && nav) {
-            menuToggle.addEventListener('click', () => {
+            // Toggle menu
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
                 nav.classList.toggle('active');
             });
             
@@ -482,6 +573,23 @@
                 link.addEventListener('click', () => {
                     nav.classList.remove('active');
                 });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') && 
+                    !nav.contains(e.target) && 
+                    !menuToggle.contains(e.target)) {
+                    nav.classList.remove('active');
+                }
+            });
+            
+            // Close menu on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    menuToggle.focus();
+                }
             });
         }
     }
@@ -505,6 +613,29 @@
         });
     }
 
+    // Scroll to Top Button
+    function initScrollToTop() {
+        const scrollBtn = document.getElementById('scroll-to-top');
+        if (!scrollBtn) return;
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when clicked
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     // Initialize everything when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
@@ -512,12 +643,14 @@
             initFAQ();
             initMobileMenu();
             initSmoothScroll();
+            initScrollToTop();
         });
     } else {
         initCookieBanner();
         initFAQ();
         initMobileMenu();
         initSmoothScroll();
+        initScrollToTop();
     }
 
     // Export functions for potential external use

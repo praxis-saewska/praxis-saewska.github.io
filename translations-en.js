@@ -18,7 +18,18 @@ window.translations.en = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Accept",
             decline: "Decline",
-            menu: "☰"
+            menu: "☰",
+            skipToMain: "Skip to main content"
+        },
+        
+        // 404 Error Page
+        error404: {
+            metaDescription: "Page not found - 404 Error",
+            title: "404 - Page Not Found",
+            heading: "Page Not Found",
+            message: "The page you are looking for could not be found. It may have been moved or deleted.",
+            backHome: "Back to Home",
+            contact: "Contact"
         },
         
         // Index Page

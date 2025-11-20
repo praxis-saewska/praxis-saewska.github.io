@@ -23,6 +23,7 @@
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="ru_RU">
     <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:locale:alternate" content="uk">
     <meta property="og:site_name" content="Praxis Saewska">
     
     <!-- Twitter Card -->
@@ -46,9 +47,20 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="file.svg">
-    <link rel="apple-touch-icon" href="file.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="file.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="file.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="file.svg">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#00C9A7">
     
     <title data-translate="faq.title">FAQ - Praxis Saewska</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="common-data.js" as="script">
+    <link rel="preload" href="translations-de.js" as="script">
+    <link rel="preload" href="script.js" as="script">
+    
     <link rel="stylesheet" href="styles.css">
     
     <!-- Structured Data (JSON-LD) для FAQ -->
@@ -92,11 +104,19 @@
     </script>
 </head>
 <body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" data-translate="common.skipToMain">Skip to main content</a>
+    
     <header>
         <div class="header-container">
             <div class="logo-container">
                 <a href="index.html">
-                    <img src="file.svg" alt="Praxis Logo" class="logo">
+                    <img src="file.svg" alt="Praxis Logo" class="logo" fetchpriority="high">
                 </a>
                 <span class="practice-name" data-translate="common.practiceName">Praxis Saewska</span>
             </div>
@@ -121,6 +141,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section class="section">
         <div class="container">
             <h1 class="section-title" data-translate="faq.pageTitle">Häufig gestellte Fragen</h1>
@@ -210,6 +231,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -238,6 +260,11 @@
             <p><span data-translate="common.copyright">© 2024 Praxis Saewska.</span> <span data-translate="common.allRightsReserved">Alle Rechte vorbehalten.</span></p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+        ↑
+    </button>
 
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="cookie-banner">

@@ -18,7 +18,18 @@ window.translations.de = {
             copyright: "© 2025 Praxis Saewska.",
             accept: "Akzeptieren",
             decline: "Ablehnen",
-            menu: "☰"
+            menu: "☰",
+            skipToMain: "Zum Hauptinhalt springen"
+        },
+        
+        // 404 Error Page
+        error404: {
+            metaDescription: "Seite nicht gefunden - 404 Fehler",
+            title: "404 - Seite nicht gefunden",
+            heading: "Seite nicht gefunden",
+            message: "Die Seite, die Sie suchen, konnte nicht gefunden werden. Sie wurde möglicherweise verschoben oder gelöscht.",
+            backHome: "Zurück zur Startseite",
+            contact: "Kontakt"
         },
         
         // Index Page

@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://praxis-saewska.de/index.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/index.html"/>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://praxis-saewska.de/about.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/about.html"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://praxis-saewska.de/faq.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/faq.html"/>
@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://praxis-saewska.de/privacy.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/privacy.html"/>
