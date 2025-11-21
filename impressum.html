@@ -5,8 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Seite nicht gefunden - 404 Fehler" data-translate="error404.metaDescription">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Impressum - Angaben gemäß § 5 TMG" data-translate="impressum.metaDescription">
+    <meta name="keywords" content="Impressum, Angaben, TMG, Praxis Saewska, Rechtliches">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Praxis Saewska">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://praxis-saewska.de/impressum.html" id="canonical-link">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://praxis-saewska.de/impressum.html" id="og-url">
+    <meta property="og:title" content="Impressum - Praxis Saewska" data-translate="impressum.ogTitle">
+    <meta property="og:description" content="Impressum - Angaben gemäß § 5 TMG" data-translate="impressum.ogDescription">
+    <meta property="og:image" content="https://praxis-saewska.de/elena-saewska.jpg">
+    <meta property="og:locale" content="de_DE" id="og-locale">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:locale:alternate" content="uk">
+    <meta property="og:site_name" content="Praxis Saewska">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://praxis-saewska.de/impressum.html">
+    <meta name="twitter:title" content="Impressum - Praxis Saewska" data-translate="impressum.twitterTitle">
+    <meta name="twitter:description" content="Impressum - Angaben gemäß § 5 TMG" data-translate="impressum.twitterDescription">
+    <meta name="twitter:image" content="https://praxis-saewska.de/elena-saewska.jpg">
+    
+    <!-- Hreflang для многоязычности -->
+    <link rel="alternate" hreflang="de" href="https://praxis-saewska.de/impressum.html">
+    <link rel="alternate" hreflang="en" href="https://praxis-saewska.de/impressum.html?lang=en">
+    <link rel="alternate" hreflang="ru" href="https://praxis-saewska.de/impressum.html?lang=ru">
+    <link rel="alternate" hreflang="uk" href="https://praxis-saewska.de/impressum.html?lang=ua">
+    <link rel="alternate" hreflang="x-default" href="https://praxis-saewska.de/impressum.html">
+    
+    <!-- Preconnect для внешних ресурсов -->
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.doctolib.de">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="file.svg">
@@ -16,7 +53,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#00C9A7">
     
-    <title data-translate="error404.title">404 - Seite nicht gefunden</title>
+    <title data-translate="impressum.title">Impressum - Praxis Saewska</title>
     
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
@@ -25,42 +62,6 @@
     <link rel="preload" href="script.js" as="script">
     
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        .error-404 {
-            text-align: center;
-            padding: 4rem 2rem;
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .error-404 h1 {
-            font-size: 6rem;
-            color: var(--primary-teal);
-            margin-bottom: 1rem;
-        }
-        
-        .error-404 h2 {
-            color: var(--dark-gray);
-            margin-bottom: 1.5rem;
-        }
-        
-        .error-404 p {
-            color: var(--soft-gray);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .error-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    </style>
 </head>
 <body>
     <!-- Loading Overlay -->
@@ -74,7 +75,7 @@
                 <a href="index.html">
                     <img src="file.svg" alt="Praxis Logo" class="logo" fetchpriority="high">
                 </a>
-                <span class="practice-name" data-translate="common.practiceName">Gynäkologische Praxis</span>
+                <span class="practice-name" data-translate="common.practiceName">Praxis Saewska</span>
             </div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Menu" data-translate="common.menu">☰</button>
             <nav>
@@ -98,16 +99,17 @@
     </header>
 
     <main id="main-content">
-        <section class="error-404">
-            <h1>404</h1>
-            <h2 data-translate="error404.heading">Seite nicht gefunden</h2>
-            <p data-translate="error404.message">Die Seite, die Sie suchen, konnte nicht gefunden werden. Sie wurde möglicherweise verschoben oder gelöscht.</p>
-            
-            <div class="error-links">
-                <a href="index.html" class="btn" data-translate="error404.backHome">Zurück zur Startseite</a>
-                <a href="index.html#contact" class="btn btn-secondary" data-translate="error404.contact">Kontakt</a>
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h1 class="section-title" data-translate="impressum.pageTitle">Impressum</h1>
+                <p style="text-align: center; color: var(--soft-gray); margin-bottom: 3rem;" data-translate="impressum.lastUpdated">Stand: [Datum]</p>
+                <div class="about-section">
+                    <div data-translate="impressum.content"></div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <footer>
@@ -135,7 +137,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p><span data-translate="common.copyright">© 2025 Praxis Saewska.</span> <span data-translate="common.allRightsReserved">Alle Rechte vorbehalten.</span></p>
+            <p><span data-translate="common.copyright">© 2024 Praxis Saewska.</span> <span data-translate="common.allRightsReserved">Alle Rechte vorbehalten.</span></p>
         </div>
     </footer>
 

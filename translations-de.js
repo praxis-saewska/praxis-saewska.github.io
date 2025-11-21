@@ -13,6 +13,7 @@ window.translations.de = {
             faq: "FAQ",
             contact: "Kontakt",
             privacy: "Datenschutz",
+            impressum: "Impressum",
             cookieSettings: "Cookie-Einstellungen",
             allRightsReserved: "Alle Rechte vorbehalten.",
             copyright: "© 2025 Praxis Saewska.",
@@ -114,7 +115,9 @@ window.translations.de = {
             developmentTitle: "Fortbildung und Weiterentwicklung",
             development: "<p>Medizin ist ein sich ständig weiterentwickelndes Feld. Daher lege ich großen Wert auf regelmäßige Fortbildungen und den Austausch mit Kolleginnen und Kollegen, um Ihnen stets die bestmögliche Behandlung anbieten zu können. Ich habe meine Qualifikationen regelmäßig durch Weiterbildungen aufgefrischt. Seit meinem PhD in Chirurgie habe ich mehr als 20 wissenschaftliche Publikationen verfasst und verfüge über umfangreiche Erfahrung in der Zusammenarbeit mit internationalen Teams in multidisziplinären Kliniken. Während meiner Zeit als Leiterin der Abteilung für operative Gynäkologie mit minimalinvasiven Operationen habe ich monatlich etwa 50 größere und bis zu 30 kleinere Eingriffe durchgeführt, wobei 85% der Operationen laparoskopisch und hysteroskopisch erfolgten.</p>",
             languagesTitle: "Sprachen",
-            languages: "<p>Ich spreche fließend Deutsch und Englisch, meine Muttersprachen sind Ukrainisch und Russisch.</p>"
+            languages: "<p>Ich spreche fließend Deutsch und Englisch, meine Muttersprachen sind Ukrainisch und Russisch.</p>",
+            impressumTitle: "Impressum",
+            impressum: "<p><strong>Angaben gemäß § 5 TMG:</strong></p><p><strong>Dr. PhD Elena Saewska</strong><br>Fachärztin für Gynäkologie und Geburtshilfe<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Kontakt:</strong><br>Telefon: [Ihre Telefonnummer]<br>E-Mail: info@praxis-saewska.de</p><p><strong>Approbation:</strong><br>Approbationsnummer: [Nummer]<br>Erteilt durch: Landesamt für Gesundheit und Soziales, Berlin<br>Credential ID: 2022-2194-BER</p><p><strong>Berufshaftpflichtversicherung:</strong><br>[Versicherungsgesellschaft]<br>[Adresse der Versicherung]</p><p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>Dr. PhD Elena Saewska<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Haftungsausschluss:</strong></p><p><strong>Haftung für Inhalte</strong><br>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p><p><strong>Haftung für Links</strong><br>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>"
         },
         
         // Contact Page
@@ -230,5 +233,18 @@ window.translations.de = {
             description: "Ihre gynäkologische Praxis für umfassende Betreuung und moderne Medizin.",
             navigation: "Navigation",
             legal: "Rechtliches"
+        },
+        
+        // Impressum Page
+        impressum: {
+            metaDescription: "Impressum - Angaben gemäß § 5 TMG",
+            title: "Impressum - Praxis Saewska",
+            ogTitle: "Impressum - Praxis Saewska",
+            ogDescription: "Impressum - Angaben gemäß § 5 TMG",
+            twitterTitle: "Impressum - Praxis Saewska",
+            twitterDescription: "Impressum - Angaben gemäß § 5 TMG",
+            pageTitle: "Impressum",
+            lastUpdated: "Stand: [Datum]",
+            content: "<p><strong>Angaben gemäß § 5 TMG:</strong></p><p><strong>Dr. PhD Elena Saewska</strong><br>Fachärztin für Gynäkologie und Geburtshilfe<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Kontakt:</strong><br>Telefon: [Ihre Telefonnummer]<br>E-Mail: info@praxis-saewska.de</p><p><strong>Approbation:</strong><br>Approbationsnummer: [Nummer]<br>Erteilt durch: Landesamt für Gesundheit und Soziales, Berlin<br>Credential ID: 2022-2194-BER</p><p><strong>Berufshaftpflichtversicherung:</strong><br>[Versicherungsgesellschaft]<br>[Adresse der Versicherung]</p><p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>Dr. PhD Elena Saewska<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Haftungsausschluss:</strong></p><p><strong>Haftung für Inhalte</strong><br>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p><p><strong>Haftung für Links</strong><br>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>"
         }
 };

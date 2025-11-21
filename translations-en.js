@@ -13,6 +13,7 @@ window.translations.en = {
             faq: "FAQ",
             contact: "Contact",
             privacy: "Privacy Policy",
+            impressum: "Legal Notice",
             cookieSettings: "Cookie Settings",
             allRightsReserved: "All rights reserved.",
             copyright: "© 2025 Praxis Saewska.",
@@ -114,7 +115,9 @@ window.translations.en = {
             developmentTitle: "Training and Development",
             development: "<p>Medicine is a constantly evolving field. Therefore, I place great value on regular training and exchange with colleagues to always offer you the best possible treatment. I have regularly updated my qualifications through continuing education. Since my PhD in Surgery, I have authored more than 20 scientific publications and have extensive experience working with international teams in multidisciplinary clinics. During my time as Head of the Department of Operative Gynecology with Minimally Invasive Operations, I performed approximately 50 major and up to 30 minor procedures monthly, with 85% of operations being performed laparoscopically and hysteroscopically.</p>",
             languagesTitle: "Languages",
-            languages: "<p>I speak fluently German and English, my native languages are Ukrainian and Russian.</p>"
+            languages: "<p>I speak fluently German and English, my native languages are Ukrainian and Russian.</p>",
+            impressumTitle: "Legal Notice (Impressum)",
+            impressum: "<p><strong>Information according to § 5 TMG:</strong></p><p><strong>Dr. PhD Elena Saewska</strong><br>Specialist in Gynecology and Obstetrics<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Contact:</strong><br>Phone: [Your Phone Number]<br>Email: info@praxis-saewska.de</p><p><strong>Medical License:</strong><br>License Number: [Number]<br>Issued by: Landesamt für Gesundheit und Soziales, Berlin<br>Credential ID: 2022-2194-BER</p><p><strong>Professional Liability Insurance:</strong><br>[Insurance Company]<br>[Insurance Address]</p><p><strong>Responsible for content according to § 55 Abs. 2 RStV:</strong><br>Dr. PhD Elena Saewska<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Disclaimer:</strong></p><p><strong>Liability for Content</strong><br>As a service provider, we are responsible for our own content on these pages in accordance with general law pursuant to § 7 para. 1 TMG. However, according to §§ 8 to 10 TMG, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p><p><strong>Liability for Links</strong><br>Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the contents of the linked pages.</p>"
         },
         
         // Contact Page
@@ -230,5 +233,18 @@ window.translations.en = {
             description: "Your gynecological practice for comprehensive care and modern medicine.",
             navigation: "Navigation",
             legal: "Legal"
+        },
+        
+        // Impressum Page
+        impressum: {
+            metaDescription: "Legal Notice - Information according to § 5 TMG",
+            title: "Legal Notice - Praxis Saewska",
+            ogTitle: "Legal Notice - Praxis Saewska",
+            ogDescription: "Legal Notice - Information according to § 5 TMG",
+            twitterTitle: "Legal Notice - Praxis Saewska",
+            twitterDescription: "Legal Notice - Information according to § 5 TMG",
+            pageTitle: "Legal Notice (Impressum)",
+            lastUpdated: "Last updated: [Date]",
+            content: "<p><strong>Information according to § 5 TMG:</strong></p><p><strong>Dr. PhD Elena Saewska</strong><br>Specialist in Gynecology and Obstetrics<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Contact:</strong><br>Phone: [Your Phone Number]<br>Email: info@praxis-saewska.de</p><p><strong>Medical License:</strong><br>License Number: [Number]<br>Issued by: Landesamt für Gesundheit und Soziales, Berlin<br>Credential ID: 2022-2194-BER</p><p><strong>Professional Liability Insurance:</strong><br>[Insurance Company]<br>[Insurance Address]</p><p><strong>Responsible for content according to § 55 Abs. 2 RStV:</strong><br>Dr. PhD Elena Saewska<br>Uhlandstr. 87<br>10717 Berlin</p><p><strong>Disclaimer:</strong></p><p><strong>Liability for Content</strong><br>As a service provider, we are responsible for our own content on these pages in accordance with general law pursuant to § 7 para. 1 TMG. However, according to §§ 8 to 10 TMG, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p><p><strong>Liability for Links</strong><br>Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the contents of the linked pages.</p>"
         }
 };
