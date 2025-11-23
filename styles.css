@@ -223,7 +223,10 @@ header {
 
 .logo-container a {
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0;
 }
 
 .logo {
