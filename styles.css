@@ -1,4 +1,13 @@
-/* Vibrant Medical Color Palette */
+/* ============================================
+   ЦВЕТОВЫЕ СХЕМЫ ДЛЯ МЕДИЦИНСКОЙ ПРАКТИКИ
+   ============================================
+   
+   Раскомментируйте нужную схему и закомментируйте остальные.
+   Для переключения схемы измените класс на <html> или <body>.
+   
+   ============================================ */
+
+/* СХЕМА 1: БИРЮЗОВАЯ (ТЕКУЩАЯ) - Свежесть, чистота, современность */
 :root {
     --primary-teal: #00C9A7;
     --light-blue: #E0F7FA;
@@ -11,6 +20,118 @@
     --accent-purple: #8B5CF6;
     --accent-coral: #F87171;
 }
+
+/* СХЕМА 2: КЛАССИЧЕСКАЯ СИНЯЯ - Доверие, профессионализм, надежность */
+/*
+:root {
+    --primary-teal: #2563EB;
+    --light-blue: #EFF6FF;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #3B82F6;
+    --accent-purple: #6366F1;
+    --accent-coral: #EF4444;
+}
+*/
+
+/* СХЕМА 3: МЯГКАЯ ЗЕЛЕНАЯ - Здоровье, гармония, природа */
+/*
+:root {
+    --primary-teal: #10B981;
+    --light-blue: #ECFDF5;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #059669;
+    --accent-purple: #8B5CF6;
+    --accent-coral: #F87171;
+}
+*/
+
+/* СХЕМА 4: ЛАВАНДОВАЯ - Забота, умиротворение, нежность */
+/*
+:root {
+    --primary-teal: #8B5CF6;
+    --light-blue: #F5F3FF;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #A78BFA;
+    --accent-purple: #7C3AED;
+    --accent-coral: #F87171;
+}
+*/
+
+/* СХЕМА 5: МЯГКАЯ РОЗОВАЯ - Нежность, забота, женственность (идеально для гинекологии) */
+/*
+:root {
+    --primary-teal: #EC4899;
+    --light-blue: #FDF2F8;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #F472B6;
+    --accent-purple: #DB2777;
+    --accent-coral: #F87171;
+}
+*/
+
+/* СХЕМА 6: МЯГКИЙ ГОЛУБОЙ - Спокойствие, чистота, доверие */
+/*
+:root {
+    --primary-teal: #0EA5E9;
+    --light-blue: #F0F9FF;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #38BDF8;
+    --accent-purple: #0284C7;
+    --accent-coral: #F87171;
+}
+*/
+
+/* СХЕМА 7: ТЕПЛАЯ ЗЕЛЕНАЯ - Баланс, стабильность, естественность */
+/*
+:root {
+    --primary-teal: #059669;
+    --light-blue: #F0FDF4;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #34D399;
+    --accent-purple: #8B5CF6;
+    --accent-coral: #F87171;
+}
+*/
+
+/* СХЕМА 8: ПРОФЕССИОНАЛЬНАЯ СИНЯЯ - Серьезность, надежность, медицина */
+/*
+:root {
+    --primary-teal: #1E40AF;
+    --light-blue: #EFF6FF;
+    --warm-white: #FFFFFF;
+    --soft-gray: #64748B;
+    --dark-gray: #1E293B;
+    --text-dark: #0F172A;
+    --border-light: #E2E8F0;
+    --accent-green: #3B82F6;
+    --accent-purple: #6366F1;
+    --accent-coral: #EF4444;
+}
+*/
 
 /* Reset and Base Styles */
 * {
@@ -106,11 +227,13 @@ header {
 }
 
 .logo {
-    height: 90px;
+    height: 80px;
     width: auto;
+    max-width: 120px;
     color: var(--primary-teal);
     filter: drop-shadow(0 2px 4px rgba(0, 201, 167, 0.3));
     transition: transform 0.3s ease, filter 0.3s ease;
+    object-fit: contain;
 }
 
 .logo:hover {
@@ -878,6 +1001,7 @@ footer {
 
     .logo {
         height: 70px;
+        max-width: 90px;
     }
 
     .btn {

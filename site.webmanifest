@@ -4,7 +4,7 @@
     "description": "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit",
     "icons": [
         {
-            "src": "/file.svg",
+            "src": "/images/logo.svg",
             "sizes": "any",
             "type": "image/svg+xml",
             "purpose": "any maskable"
