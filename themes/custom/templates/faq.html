@@ -42,7 +42,7 @@
                                         <div class="faq-question">{{ question_text }}</div>
                                         <div class="faq-answer">
                                             <div class="faq-answer-content">
-                                                {{ answer_cleaned }}
+                                                {{ answer_cleaned|safe }}
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                         <div class="faq-question">Content</div>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                {{ content }}
+                                {{ content|safe }}
                             </div>
                         </div>
                     </div>
