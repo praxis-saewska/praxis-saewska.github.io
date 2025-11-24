@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}{{ SITE_KEYWORDS }}{% endblock %}">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="{{ AUTHOR }}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}" id="canonical-link">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block og_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}" id="og-url">
+    <meta property="og:title" content="{% block og_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
+    <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/elena-saewska.jpg">
+    <meta property="og:locale" content="{% if DEFAULT_LANG == 'de' %}de_DE{% elif DEFAULT_LANG == 'en' %}en_US{% elif DEFAULT_LANG == 'ru' %}ru_RU{% elif DEFAULT_LANG == 'uk' %}uk_UA{% endif %}" id="og-locale">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:locale:alternate" content="uk">
+    <meta property="og:site_name" content="{{ SITENAME }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{% block twitter_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
+    <meta name="twitter:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/elena-saewska.jpg">
+    
+    <!-- Hreflang для многоязычности -->
+    {% if lang_siteurls is defined %}
+        {% if page and page.slug %}
+            {% for lang, url in lang_siteurls.items() %}
+            <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}/{{ page.slug }}/">
+            {% endfor %}
+            <link rel="alternate" hreflang="x-default" href="{{ main_siteurl }}/{{ page.slug }}/">
+        {% else %}
+            {% for lang, url in lang_siteurls.items() %}
+            <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}/">
+            {% endfor %}
+            <link rel="alternate" hreflang="x-default" href="{{ main_siteurl }}/">
+        {% endif %}
+    {% else %}
+        {# Fallback if lang_siteurls is not available #}
+        {% if page and page.slug %}
+        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/{{ page.slug }}/">
+        <link rel="alternate" hreflang="en" href="{{ SITEURL }}/en/{{ page.slug }}/">
+        <link rel="alternate" hreflang="ru" href="{{ SITEURL }}/ru/{{ page.slug }}/">
+        <link rel="alternate" hreflang="uk" href="{{ SITEURL }}/uk/{{ page.slug }}/">
+        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/{{ page.slug }}/">
+        {% else %}
+        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/">
+        <link rel="alternate" hreflang="en" href="{{ SITEURL }}/en/">
+        <link rel="alternate" hreflang="ru" href="{{ SITEURL }}/ru/">
+        <link rel="alternate" hreflang="uk" href="{{ SITEURL }}/uk/">
+        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/">
+        {% endif %}
+    {% endif %}
+    
+    <!-- Preconnect для внешних ресурсов -->
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.doctolib.de">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg">
+    <link rel="manifest" href="{{ SITEURL }}/site.webmanifest">
+    <meta name="theme-color" content="#00C9A7">
+    
+    <title>{% block title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css" as="style">
+    <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js" as="script">
+    
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="{{ SITEURL }}/">
+                    <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg" alt="Praxis Logo" class="logo" fetchpriority="high">
+                </a>
+                <span class="practice-name">{% block practice_name %}{{ _('Gynäkologische Praxis') }}<br>{{ _('Dr. PhD Elena Saewska') }}{% endblock %}</span>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="{{ _('Menu') }}">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="{{ SITEURL }}/">{% block nav_home %}{{ _('Startseite') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/#services">{% block nav_services %}{{ _('Leistungen') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/about/">{% block nav_about %}{{ _('Über uns') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/faq/">{% block nav_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/#contact">{% block nav_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
+                    <li class="language-switcher">
+                        <select id="language-select" aria-label="{{ _('Select language') }}">
+                            <option value="de" {% if DEFAULT_LANG == 'de' %}selected{% endif %}>Deutsch</option>
+                            <option value="en" {% if DEFAULT_LANG == 'en' %}selected{% endif %}>English</option>
+                            <option value="uk" {% if DEFAULT_LANG == 'uk' %}selected{% endif %}>Українська</option>
+                            <option value="ru" {% if DEFAULT_LANG == 'ru' %}selected{% endif %}>Русский</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{% block footer_practice_name %}{{ SITENAME }}{% endblock %}</h3>
+                <p>{% block footer_description %}{{ _('Ihre gynäkologische Praxis für umfassende Betreuung und moderne Medizin.') }}{% endblock %}</p>
+            </div>
+            <div class="footer-section">
+                <h3>{% block footer_navigation %}{{ _('Navigation') }}{% endblock %}</h3>
+                <ul>
+                    <li><a href="{{ SITEURL }}/">{% block footer_home %}{{ _('Startseite') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/about/">{% block footer_about %}{{ _('Über uns') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/faq/">{% block footer_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/#contact">{% block footer_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>{% block footer_legal %}{{ _('Rechtliches') }}{% endblock %}</h3>
+                <ul>
+                    <li><a href="{{ SITEURL }}/privacy/">{% block footer_privacy %}{{ _('Datenschutz') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/impressum/">{% block footer_impressum %}{{ _('Impressum') }}{% endblock %}</a></li>
+                    <li><a href="#" id="cookie-settings">{% block footer_cookie_settings %}{{ _('Cookie-Einstellungen') }}{% endblock %}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span>{% block footer_copyright %}{{ _('© 2025 ') }}{{ SITENAME }}.{% endblock %}</span> <span>{% block footer_rights %}{{ _('Alle Rechte vorbehalten.') }}{% endblock %}</span></p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="{{ _('Scroll to top') }}" title="{{ _('Scroll to top') }}">
+        ↑
+    </button>
+
+    <!-- Load vanilla-cookieconsent library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@2.9.1/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@2.9.1/dist/cookieconsent.min.js" defer></script>
+    
+    <!-- Load scripts -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js" defer></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
+

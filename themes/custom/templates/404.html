@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="error-404">
+    <h1>404</h1>
+    <h2>{% block error_heading %}Seite nicht gefunden{% endblock %}</h2>
+    <p>{% block error_message %}Die Seite, die Sie suchen, konnte nicht gefunden werden. Sie wurde möglicherweise verschoben oder gelöscht.{% endblock %}</p>
+    
+    <div class="error-links">
+        <a href="{{ SITEURL }}/" class="btn">{% block error_back_home %}Zurück zur Startseite{% endblock %}</a>
+        <a href="{{ SITEURL }}/#contact" class="btn btn-secondary">{% block error_contact %}Kontakt{% endblock %}</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+    .error-404 {
+        text-align: center;
+        padding: 4rem 2rem;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .error-404 h1 {
+        font-size: 6rem;
+        color: var(--primary-teal);
+        margin-bottom: 1rem;
+    }
+    
+    .error-404 h2 {
+        color: var(--dark-gray);
+        margin-bottom: 1.5rem;
+    }
+    
+    .error-404 p {
+        color: var(--soft-gray);
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+    
+    .error-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+</style>
+{% endblock %}
+

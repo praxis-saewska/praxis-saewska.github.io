@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://praxis-saewska.de/index.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://praxis-saewska.de/index.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://praxis-saewska.de/index.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://praxis-saewska.de/index.html?lang=ua"/>
+  </url>
+  <url>
+    <loc>https://praxis-saewska.de/about.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://praxis-saewska.de/about.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://praxis-saewska.de/about.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://praxis-saewska.de/about.html?lang=ua"/>
+  </url>
+  <url>
+    <loc>https://praxis-saewska.de/faq.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://praxis-saewska.de/faq.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://praxis-saewska.de/faq.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://praxis-saewska.de/faq.html?lang=ua"/>
+  </url>
+  <url>
+    <loc>https://praxis-saewska.de/privacy.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://praxis-saewska.de/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://praxis-saewska.de/privacy.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://praxis-saewska.de/privacy.html?lang=ua"/>
+  </url>
+  <url>
+    <loc>https://praxis-saewska.de/impressum.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://praxis-saewska.de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://praxis-saewska.de/impressum.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://praxis-saewska.de/impressum.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://praxis-saewska.de/impressum.html?lang=ua"/>
+  </url>
+</urlset>
+
