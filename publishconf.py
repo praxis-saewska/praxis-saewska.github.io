@@ -20,7 +20,7 @@ RELATIVE_URLS = False
 # Update i18n_subsites with production URLs
 # Используем данные из site_data (уже импортированы через pelicanconf)
 # Функция get_opening_hours_for_lang уже доступна из pelicanconf
-from site_data import CONTACT_INFO, PRACTICE_INFO
+from site_data import CONTACT_INFO, PRACTICE_INFO, CLOSED_TEXT
 
 I18N_SUBSITES = {
     'en': {
@@ -30,6 +30,7 @@ I18N_SUBSITES = {
         'OPENING_HOURS': get_opening_hours_for_lang('en'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
     },
     'ru': {
         'SITENAME': 'Praxis Saewska',
@@ -38,6 +39,7 @@ I18N_SUBSITES = {
         'OPENING_HOURS': get_opening_hours_for_lang('ru'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
     },
     'uk': {
         'SITENAME': 'Praxis Saewska',
@@ -46,6 +48,7 @@ I18N_SUBSITES = {
         'OPENING_HOURS': get_opening_hours_for_lang('uk'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
     },
 }
 

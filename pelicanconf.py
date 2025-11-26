@@ -3,6 +3,14 @@
 Pelican configuration for Praxis Saewska website
 """
 
+import sys
+from pathlib import Path
+
+# Add current directory to Python path to ensure site_data can be imported
+current_dir = Path(__file__).parent.absolute()
+if str(current_dir) not in sys.path:
+    sys.path.insert(0, str(current_dir))
+
 AUTHOR = 'Praxis Saewska'
 SITENAME = 'Praxis Saewska'
 SITEURL = ''
@@ -87,6 +95,8 @@ def get_opening_hours_for_lang(lang='de'):
 OPENING_HOURS = get_opening_hours_for_lang('de')
 CONTACT_INFO = CONTACT_INFO
 PRACTICE_INFO = PRACTICE_INFO
+# CLOSED_TEXT доступен в шаблонах для перевода "Geschlossen"
+CLOSED_TEXT = CLOSED_TEXT
 
 # Для i18n_subsites - использовать данные из site_data с переводами
 I18N_SUBSITES = {
@@ -97,6 +107,7 @@ I18N_SUBSITES = {
         'OPENING_HOURS': get_opening_hours_for_lang('en'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
     },
     'ru': {
         'SITENAME': 'Praxis Saewska',
@@ -105,6 +116,7 @@ I18N_SUBSITES = {
         'OPENING_HOURS': get_opening_hours_for_lang('ru'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
     },
     'uk': {
         'SITENAME': 'Praxis Saewska',
@@ -113,6 +125,7 @@ I18N_SUBSITES = {
         'OPENING_HOURS': get_opening_hours_for_lang('uk'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
     },
 }
 
