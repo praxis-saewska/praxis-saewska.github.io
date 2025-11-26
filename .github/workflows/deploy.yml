@@ -3,9 +3,15 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - stat_gen
+      - main
 
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy from'
+        required: false
+        default: 'main'
+        type: string
 
 permissions:
   contents: read
@@ -22,6 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
