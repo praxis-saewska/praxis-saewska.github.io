@@ -1,6 +1,7 @@
 Title: Praxis Saewska - Gynäkologie
 Lang: de
 Slug: index
+Template: index
 Hero_Subtitle: Ihre Gesundheit liegt uns am Herzen. Wir bieten umfassende gynäkologische Betreuung in vertrauensvoller Atmosphäre.
 
 ## Kindergynäkologie und Jugendgynäkologie

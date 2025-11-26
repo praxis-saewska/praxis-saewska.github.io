@@ -3,7 +3,7 @@
 {% block content %}
 <section class="section">
     <div class="container">
-        <div class="page-content">
+        <div class="about-content">
             {% if page %}
             <h1 class="section-title">{{ page.title }}</h1>
             {% if page.metadata and page.metadata.get('Last_Updated') %}
@@ -11,8 +11,25 @@
             {% endif %}
             {% endif %}
             
-            {% if page %}
-            {{ page.content }}
+            {% if page and page.content %}
+            {% set sections = page.content.split('<h2') %}
+            {% for section in sections %}
+                {% if section.strip() and '>' in section and '</h2>' in section %}
+                    {% set parts = section.split('>', 1)[1].split('</h2>', 1) %}
+                    {% set title = parts[0]|trim %}
+                    {% set content = parts[1]|trim if parts|length > 1 else '' %}
+                    {% if '<h2' in content %}
+                        {% set content = content.split('<h2', 1)[0]|trim %}
+                    {% endif %}
+                    
+                    {% if title %}
+                    <div class="about-section">
+                        <h2>{{ title }}</h2>
+                        {{ content|safe }}
+                    </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
             {% endif %}
         </div>
     </div>

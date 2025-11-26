@@ -92,31 +92,7 @@ PRACTICE_INFO = {
 }
 
 I18N_SUBSITES = {
-    'de': {
-        'SITENAME': 'Praxis Saewska',
-        'SITEURL': '',
-        'LOCALE': 'de_DE.UTF-8',
-        'CONTACT_INFO': {
-            'address_street': 'Uhlandstr. 87',
-            'address_city': '10717 Berlin',
-            'phone': '[Ihre Telefonnummer]',
-            'email': 'info@praxis-saewska.de',
-        },
-        'OPENING_HOURS': {
-            'monday': '09:00 - 17:00',
-            'tuesday': '09:00 - 17:00',
-            'wednesday': '09:00 - 17:00',
-            'thursday': '09:00 - 17:00',
-            'friday': '09:00 - 17:00',
-            'saturday': 'Geschlossen',
-            'sunday': 'Geschlossen',
-        },
-        'PRACTICE_INFO': {
-            'name': 'Praxis Saewska',
-            'doctor_name': 'Dr. PhD Elena Saewska',
-            'specialty': 'Gynäkologie und Geburtshilfe',
-        },
-    },
+    # 'de' removed - default language will be generated in root directory
     'en': {
         'SITENAME': 'Praxis Saewska',
         'SITEURL': '/en',

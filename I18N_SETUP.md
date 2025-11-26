@@ -84,7 +84,9 @@ uv run pelican content -s pelicanconf.py
 uv run pelican content -s publishconf.py
 ```
 
-Плагин `i18n_subsites` автоматически создаст отдельные подсайты для каждого языка в `output/`, `output/en/`, `output/ru/`, `output/uk/`.
+Плагин `i18n_subsites` автоматически создаст отдельные подсайты для каждого языка:
+- Основной язык (de) генерируется в корне `output/`
+- Дополнительные языки генерируются в подпапках: `output/en/`, `output/ru/`, `output/uk/`
 
 ## Важные замечания
 

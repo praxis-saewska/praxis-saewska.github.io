@@ -1,6 +1,7 @@
 Title: Praxis Saewska - Gynecology 123
 Lang: en
 Slug: index
+Template: index
 Hero_Subtitle: Your health is important to us. We offer comprehensive gynecological care in a trusting atmosphere.
 
 ## Pediatric and Adolescent Gynecology

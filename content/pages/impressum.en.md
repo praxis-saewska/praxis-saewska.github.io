@@ -1,9 +1,9 @@
 Title: Legal Notice - Praxis Saewska
 Lang: en
 Slug: impressum
+Template: impressum
 Last_Updated: Last updated: [Date]
 
-<div data-translate="impressum.content">
 **Information according to § 5 TMG:**
 
 **Dr. PhD Elena Saewska**  
@@ -36,4 +36,3 @@ As a service provider, we are responsible for our own content on these pages in 
 
 **Liability for Links**  
 Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the contents of the linked pages.
-</div>

@@ -1,9 +1,9 @@
 Title: Impressum - Praxis Saewska
 Lang: de
 Slug: impressum
+Template: impressum
 Last_Updated: Stand: [Datum]
 
-<div data-translate="impressum.content">
 **Angaben gemäß § 5 TMG:**
 
 **Dr. PhD Elena Saewska**  
@@ -36,5 +36,3 @@ Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf dies
 
 **Haftung für Links**  
 Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-</div>
-
