@@ -68,49 +68,26 @@ I18N_UNTRANSLATED_PAGES = 'keep'  # 'hide' (hidden), 'remove', or 'keep'
 SITE_DESCRIPTION = 'Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit'
 SITE_KEYWORDS = 'Gynäkologe Berlin, Frauenarzt Berlin, Gynäkologie Charlottenburg, Schwangerschaftsbetreuung, Urogynäkologie'
 
-# Site data for default language (de)
-# These variables are available in templates for the default language
-CONTACT_INFO = {
-    'address_street': 'Uhlandstr. 87',
-    'address_city': '10717 Berlin',
-    'phone': '[Ihre Telefonnummer]',
-    'email': 'info@praxis-saewska.de',
-}
-OPENING_HOURS = {
-    'monday': '09:00 - 17:00',
-    'tuesday': '09:00 - 17:00',
-    'wednesday': '09:00 - 17:00',
-    'thursday': '09:00 - 17:00',
-    'friday': '09:00 - 17:00',
-    'saturday': 'Geschlossen',
-    'sunday': 'Geschlossen',
-}
-PRACTICE_INFO = {
-    'name': 'Praxis Saewska',
-    'doctor_name': 'Dr. PhD Elena Saewska',
-    'specialty': 'Gynäkologie und Geburtshilfe',
-}
+# В начале файла
+from site_data import OPENING_HOURS, CONTACT_INFO, PRACTICE_INFO
 
+# Использовать напрямую
+OPENING_HOURS = OPENING_HOURS
+CONTACT_INFO = CONTACT_INFO
+PRACTICE_INFO = PRACTICE_INFO
+
+# Для i18n_subsites - использовать те же данные
 I18N_SUBSITES = {
-    # 'de' removed - default language will be generated in root directory
     'en': {
         'SITENAME': 'Praxis Saewska',
         'SITEURL': '/en',
         'LOCALE': 'en_US.UTF-8',
+        'OPENING_HOURS': OPENING_HOURS,  # Используем из site_data
         'CONTACT_INFO': {
             'address_street': 'Uhlandstr. 87',
             'address_city': '10717 Berlin',
             'phone': '[Ihre Telefonnummer]',
             'email': 'info@praxis-saewska.de',
-        },
-        'OPENING_HOURS': {
-            'monday': '09:00 - 17:00',
-            'tuesday': '09:00 - 17:00',
-            'wednesday': '09:00 - 17:00',
-            'thursday': '09:00 - 17:00',
-            'friday': '09:00 - 17:00',
-            'saturday': 'Geschlossen',
-            'sunday': 'Geschlossen',
         },
         'PRACTICE_INFO': {
             'name': 'Praxis Saewska',
@@ -122,12 +99,6 @@ I18N_SUBSITES = {
         'SITENAME': 'Praxis Saewska',
         'SITEURL': '/ru',
         'LOCALE': 'ru_RU.UTF-8',
-        'CONTACT_INFO': {
-            'address_street': 'Uhlandstr. 87',
-            'address_city': '10717 Berlin',
-            'phone': '[Ihre Telefonnummer]',
-            'email': 'info@praxis-saewska.de',
-        },
         'OPENING_HOURS': {
             'monday': '09:00 - 17:00',
             'tuesday': '09:00 - 17:00',
@@ -136,6 +107,12 @@ I18N_SUBSITES = {
             'friday': '09:00 - 17:00',
             'saturday': 'Geschlossen',
             'sunday': 'Geschlossen',
+        },
+        'CONTACT_INFO': {
+            'address_street': 'Uhlandstr. 87',
+            'address_city': '10717 Berlin',
+            'phone': '[Ihre Telefonnummer]',
+            'email': 'info@praxis-saewska.de',
         },
         'PRACTICE_INFO': {
             'name': 'Praxis Saewska',
@@ -147,12 +124,6 @@ I18N_SUBSITES = {
         'SITENAME': 'Praxis Saewska',
         'SITEURL': '/uk',
         'LOCALE': 'uk_UA.UTF-8',
-        'CONTACT_INFO': {
-            'address_street': 'Uhlandstr. 87',
-            'address_city': '10717 Berlin',
-            'phone': '[Ihre Telefonnummer]',
-            'email': 'info@praxis-saewska.de',
-        },
         'OPENING_HOURS': {
             'monday': '09:00 - 17:00',
             'tuesday': '09:00 - 17:00',
@@ -161,6 +132,12 @@ I18N_SUBSITES = {
             'friday': '09:00 - 17:00',
             'saturday': 'Geschlossen',
             'sunday': 'Geschlossen',
+        },
+        'CONTACT_INFO': {
+            'address_street': 'Uhlandstr. 87',
+            'address_city': '10717 Berlin',
+            'phone': '[Ihre Telefonnummer]',
+            'email': 'info@praxis-saewska.de',
         },
         'PRACTICE_INFO': {
             'name': 'Praxis Saewska',

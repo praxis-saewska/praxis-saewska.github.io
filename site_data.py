@@ -1,18 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Site data configuration for Praxis Saewska website
-This file contains global variables used across all language versions
+Site data configuration - ЕДИНСТВЕННЫЙ файл для редактирования рабочих часов
 """
 
-# Contact Information
-CONTACT_INFO = {
-    'address_street': 'Uhlandstr. 87',
-    'address_city': '10717 Berlin',
-    'phone': '[Ihre Telefonnummer]',
-    'email': 'info@praxis-saewska.de',
-}
-
-# Opening Hours
+# Рабочие часы - редактируйте здесь для всех языков
 OPENING_HOURS = {
     'monday': '09:00 - 17:00',
     'tuesday': '09:00 - 17:00',
@@ -23,7 +14,23 @@ OPENING_HOURS = {
     'sunday': 'Geschlossen',
 }
 
-# Practice Information
+# Переводы для "закрыто"
+CLOSED_TEXT = {
+    'de': 'Geschlossen',
+    'en': 'Closed',
+    'ru': 'Закрыто',
+    'uk': 'Закрито',
+}
+
+# Контактная информация
+CONTACT_INFO = {
+    'address_street': 'Uhlandstr. 87',
+    'address_city': '10717 Berlin',
+    'phone': '[Ihre Telefonnummer]',
+    'email': 'info@praxis-saewska.de',
+}
+
+# Информация о практике
 PRACTICE_INFO = {
     'name': 'Praxis Saewska',
     'doctor_name': 'Dr. PhD Elena Saewska',
