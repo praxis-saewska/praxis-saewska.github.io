@@ -1,51 +1,66 @@
 {# Macros for common data display #}
 
 {% macro contact_info() %}
+{% set contact = CONTACT_INFO | default({
+    'address_street': 'Uhlandstr. 87',
+    'address_city': '10717 Berlin',
+    'phone': '[Ihre Telefonnummer]',
+    'email': 'info@praxis-saewska.de'
+}) %}
 <div class="contact-info">
     <div class="contact-item">
         <h3>{% block contact_address_label %}Adresse{% endblock %}</h3>
-        <p>Uhlandstr. 87<br>10717 Berlin</p>
+        <p>{{ contact.address_street }}<br>{{ contact.address_city }}</p>
     </div>
     <div class="contact-item">
         <h3>{% block contact_phone_label %}Telefon{% endblock %}</h3>
-        <p><a href="tel:[Ihre Telefonnummer]">[Ihre Telefonnummer]</a></p>
+        <p><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></p>
     </div>
     <div class="contact-item">
         <h3>{% block contact_email_label %}E-Mail{% endblock %}</h3>
-        <p><a href="mailto:info@praxis-saewska.de">info@praxis-saewska.de</a></p>
+        <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
     </div>
 </div>
 {% endmacro %}
 
 {% macro opening_hours() %}
+{% set hours = OPENING_HOURS | default({
+    'monday': '09:00 - 17:00',
+    'tuesday': '09:00 - 17:00',
+    'wednesday': '09:00 - 17:00',
+    'thursday': '09:00 - 17:00',
+    'friday': '09:00 - 17:00',
+    'saturday': 'Geschlossen',
+    'sunday': 'Geschlossen'
+}) %}
 <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_monday %}Montag{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.monday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_tuesday %}Dienstag{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.tuesday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_wednesday %}Mittwoch{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.wednesday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_thursday %}Donnerstag{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.thursday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_friday %}Freitag{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.friday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_saturday %}Samstag{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">Geschlossen</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.saturday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_sunday %}Sonntag{% endblock %}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">Geschlossen</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.sunday }}</td>
     </tr>
 </table>
 {% endmacro %}

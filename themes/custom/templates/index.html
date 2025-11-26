@@ -108,12 +108,12 @@
       "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/elena-saewska.jpg",
       "@id": "{{ SITEURL }}",
       "url": "{{ SITEURL }}",
-      "telephone": "[Ihre Telefonnummer]",
-      "email": "info@praxis-saewska.de",
+      "telephone": "{{ CONTACT_INFO.phone if CONTACT_INFO else '[Ihre Telefonnummer]' }}",
+      "email": "{{ CONTACT_INFO.email if CONTACT_INFO else 'info@praxis-saewska.de' }}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Uhlandstr. 87",
-        "addressLocality": "10717 Berlin",
+        "streetAddress": "{{ CONTACT_INFO.address_street if CONTACT_INFO else 'Uhlandstr. 87' }}",
+        "addressLocality": "{{ CONTACT_INFO.address_city if CONTACT_INFO else '10717 Berlin' }}",
         "addressRegion": "Berlin",
         "addressCountry": "DE"
       },
