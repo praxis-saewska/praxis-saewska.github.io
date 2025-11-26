@@ -1,0 +1,72 @@
+# German translations for Praxis Saewska theme
+# Copyright (C) 2025 Praxis Saewska
+msgid ""
+msgstr ""
+"Project-Id-Version: Praxis Saewska 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-27 12:00+0000\n"
+"PO-Revision-Date: 2025-01-27 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Gynäkologische Praxis"
+msgstr "Gynäkologische Praxis"
+
+msgid "Dr. PhD Elena Saewska"
+msgstr "Dr. PhD Elena Saewska"
+
+msgid "Startseite"
+msgstr "Startseite"
+
+msgid "Leistungen"
+msgstr "Leistungen"
+
+msgid "Über uns"
+msgstr "Über uns"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Kontakt"
+msgstr "Kontakt"
+
+msgid "Navigation"
+msgstr "Navigation"
+
+msgid "Rechtliches"
+msgstr "Rechtliches"
+
+msgid "Datenschutz"
+msgstr "Datenschutz"
+
+msgid "Impressum"
+msgstr "Impressum"
+
+msgid "Cookie-Einstellungen"
+msgstr "Cookie-Einstellungen"
+
+msgid "© 2025"
+msgstr "© 2025"
+
+msgid "© 2025 "
+msgstr "© 2025 "
+
+msgid "Alle Rechte vorbehalten."
+msgstr "Alle Rechte vorbehalten."
+
+msgid "Ihre gynäkologische Praxis für umfassende Betreuung und moderne Medizin."
+msgstr "Ihre gynäkologische Praxis für umfassende Betreuung und moderne Medizin."
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Select language"
+msgstr "Sprache auswählen"
+
+msgid "Scroll to top"
+msgstr "Nach oben scrollen"
+

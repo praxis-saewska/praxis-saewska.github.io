@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% from "macros.html" import contact_info, opening_hours, map_container %}
+
+{% block content %}
+{% for p in pages %}
+{% if p.lang == DEFAULT_LANG %}
+    {% if not p.slug or p.slug == "" or p.slug == "index" or "gynakologie" in p.slug or "gynecology" in p.slug or "ginekologiia" in p.slug %}
+        {% set page = p %}
+    {# Home page content #}
+    <section class="hero">
+        <div class="hero-content">
+            <h1>{{ page.title if page else SITENAME }}</h1>
+            {% if page %}
+                {# Pelican converts metadata: Hero_Subtitle becomes hero_subtitle attribute #}
+                {% set hero_subtitle = page.hero_subtitle | default('', true) %}
+                {% if hero_subtitle %}
+                <p>{{ hero_subtitle }}</p>
+                {% endif %}
+            {% endif %}
+            <a href="#appointment" class="btn">{{ _('Book Appointment') }}</a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">{{ _('Our Services') }}</h2>
+            <div class="services-grid">
+                {% if page and page.content %}
+                {{ page.content }}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="appointment-section">
+        <div class="container">
+            <h2 class="section-title">{{ _('Book Appointment') }}</h2>
+            <div class="doctolib-placeholder">
+                <h3>{{ _('Online Appointment Booking') }}</h3>
+                <p>{{ _('Book your appointment conveniently online via Doctolib.') }}</p>
+                
+                <!-- PLACEHOLDER: Replace this div with your Doctolib widget code -->
+                <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 4px; margin: 1rem 0; text-align: center; color: #666;">
+                    <p><strong>{{ _('Doctolib Widget will be inserted here') }}</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">{{ _('Please insert your Doctolib widget code here') }}</p>
+                </div>
+                
+                <div class="doctolib-instructions">
+                    <p><strong>{{ _('Instructions for Doctolib Integration:') }}</strong></p>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>{{ _('Log in to your Doctolib account') }}</li>
+                        <li>{{ _('Go to "Settings" → "Widget"') }}</li>
+                        <li>{{ _('Copy the provided widget code') }}</li>
+                        <li>{{ _('Replace the placeholder area above with the Doctolib code') }}</li>
+                    </ol>
+                    <p style="margin-top: 1rem;"><strong>{{ _('Alternatively: Add a link to your Doctolib booking page:') }}</strong></p>
+                    <code>https://www.doctolib.de/...</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">{{ _('Contact') }}</h2>
+
+            {{ contact_info() }}
+
+            <div class="about-section" style="margin-bottom: 3rem;">
+                <h2>{{ _('Opening Hours') }}</h2>
+                {{ opening_hours() }}
+                <p style="margin-top: 1rem; color: var(--soft-gray); font-size: 0.9rem;"><em>{{ _('Please update the opening hours with your actual times.') }}</em></p>
+            </div>
+
+            <div class="about-section" style="margin-bottom: 3rem;">
+                <h2>{{ _('How to Find Us') }}</h2>
+                {% if page and page.metadata and page.metadata.get('directions') %}
+                {{ page.metadata.get('directions') | safe }}
+                {% else %}
+                <p>{{ _('Our practice is located in Charlottenburg.') }}</p>
+                <p><strong>{{ _('By Car:') }}</strong><br>
+                <span>{{ _('[Description of how to get there by car]') }}</span></p>
+                <p><strong>{{ _('By Public Transport:') }}</strong><br>
+                <span>{{ _('[Description of how to get there by public transport]') }}</span></p>
+                <p><strong>{{ _('Parking:') }}</strong><br>
+                <span>{{ _('[Information about parking]') }}</span></p>
+                {% endif %}
+            </div>
+
+            <div class="about-section">
+                <h2>{{ _('Location') }}</h2>
+                {{ map_container() }}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block extra_head %}
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "{{ SITENAME }}",
+      "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/elena-saewska.jpg",
+      "@id": "{{ SITEURL }}",
+      "url": "{{ SITEURL }}",
+      "telephone": "[Ihre Telefonnummer]",
+      "email": "info@praxis-saewska.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Uhlandstr. 87",
+        "addressLocality": "10717 Berlin",
+        "addressRegion": "Berlin",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.488648,
+        "longitude": 13.319794
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "priceRange": "$$",
+      "medicalSpecialty": "Gynecology",
+      "founder": {
+        "@type": "Physician",
+        "name": "{{ PRACTICE_INFO.doctor_name }}",
+        "medicalSpecialty": "{{ PRACTICE_INFO.specialty }}"
+      }
+    }
+    </script>
+{% endblock %}

@@ -1,0 +1,72 @@
+{# Macros for common data display #}
+
+{% macro contact_info() %}
+<div class="contact-info">
+    <div class="contact-item">
+        <h3>{% block contact_address_label %}Adresse{% endblock %}</h3>
+        <p>Uhlandstr. 87<br>10717 Berlin</p>
+    </div>
+    <div class="contact-item">
+        <h3>{% block contact_phone_label %}Telefon{% endblock %}</h3>
+        <p><a href="tel:[Ihre Telefonnummer]">[Ihre Telefonnummer]</a></p>
+    </div>
+    <div class="contact-item">
+        <h3>{% block contact_email_label %}E-Mail{% endblock %}</h3>
+        <p><a href="mailto:info@praxis-saewska.de">info@praxis-saewska.de</a></p>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro opening_hours() %}
+<table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_monday %}Montag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_tuesday %}Dienstag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_wednesday %}Mittwoch{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_thursday %}Donnerstag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_friday %}Freitag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">09:00 - 17:00</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_saturday %}Samstag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">Geschlossen</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border-light);">
+        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_sunday %}Sonntag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">Geschlossen</td>
+    </tr>
+</table>
+{% endmacro %}
+
+{% macro map_container() %}
+<div class="map-container" id="google-map-container">
+    <div id="map-consent-message" class="map-consent-message">
+        <p><strong>{{ _('Map is loading') }}</strong></p>
+        <p>{{ _('To display the map, we need your consent to use cookies.') }}</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">{{ _('Please accept cookies in the cookie banner to see the map.') }}</p>
+    </div>
+    <iframe
+        data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4858.949177167592!2d13.319794212440835!3d52.48864823843353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a850f4bd3f636b%3A0x74162961ef9f5934!2sUhlandstra%C3%9Fe%2087%2C%2010717%20Berlin!5e0!3m2!1sen!2sde!4v1763564262086!5m2!1sen!2sde"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="{{ _('Praxis Location') }}">
+    </iframe>
+</div>
+{% endmacro %}
+

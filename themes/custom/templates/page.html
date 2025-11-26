@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if page %}
+    <section class="section">
+        <div class="container">
+            <div class="page-content">
+                <h1 class="section-title">{{ page.title }}</h1>
+                {% if page.metadata and page.metadata.get('Last_Updated') %}
+                <p style="text-align: center; color: var(--soft-gray); margin-bottom: 3rem;">{{ page.metadata.get('Last_Updated') }}</p>
+                {% endif %}
+                {{ page.content }}
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% endblock %}
+
+
