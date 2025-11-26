@@ -3,6 +3,14 @@
 Production configuration for Praxis Saewska website
 """
 
+import sys
+from pathlib import Path
+
+# Add current directory to Python path to ensure pelicanconf can be imported
+current_dir = Path(__file__).parent.absolute()
+if str(current_dir) not in sys.path:
+    sys.path.insert(0, str(current_dir))
+
 from pelicanconf import *
 
 # Production URL
