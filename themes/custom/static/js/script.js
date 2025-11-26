@@ -81,22 +81,28 @@
     const siteUrl = getSiteUrl();
 
     // Translations for cookie consent
+    // Note: vanilla-cookieconsent v2.9.1 expects snake_case keys
     const translations = {
         de: {
-            consentModal: {
+            consent_modal: {
                 title: 'Wir verwenden Cookies',
                 description: `Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="${siteUrl}/privacy/">Datenschutzerklärung</a>.`,
-                acceptAllBtn: 'Alle akzeptieren',
-                acceptNecessaryBtn: 'Nur notwendige',
-                showPreferencesBtn: 'Einstellungen verwalten'
+                primary_btn: {
+                    text: 'Alle akzeptieren',
+                    role: 'accept_all'
+                },
+                secondary_btn: {
+                    text: 'Einstellungen verwalten',
+                    role: 'settings'
+                }
             },
-            preferencesModal: {
+            settings_modal: {
                 title: 'Cookie-Einstellungen',
-                acceptAllBtn: 'Alle akzeptieren',
-                acceptNecessaryBtn: 'Nur notwendige',
-                savePreferencesBtn: 'Einstellungen speichern',
-                closeIconLabel: 'Schließen',
-                sections: [
+                accept_all_btn: 'Alle akzeptieren',
+                accept_necessary_btn: 'Nur notwendige',
+                save_settings_btn: 'Einstellungen speichern',
+                close_btn_label: 'Schließen',
+                blocks: [
                     {
                         title: 'Cookie-Verwendung',
                         description: 'Wir verwenden Cookies, um sicherzustellen, dass die Website ordnungsgemäß funktioniert.'
@@ -104,31 +110,44 @@
                     {
                         title: 'Notwendige Cookies',
                         description: 'Diese Cookies sind für das ordnungsgemäße Funktionieren der Website erforderlich.',
-                        linkedCategory: 'necessary'
+                        toggle: {
+                            value: 'necessary',
+                            enabled: true,
+                            readonly: true
+                        }
                     },
                     {
                         title: 'Funktionale Cookies',
                         description: 'Diese Cookies ermöglichen es der Website, erweiterte Funktionalität und Personalisierung bereitzustellen.',
-                        linkedCategory: 'functional'
+                        toggle: {
+                            value: 'functional',
+                            enabled: false,
+                            readonly: false
+                        }
                     }
                 ]
             }
         },
         en: {
-            consentModal: {
+            consent_modal: {
                 title: 'We use cookies',
                 description: `We use cookies to provide you with the best experience on our website. By using our website, you agree to the use of cookies. For more information, please see our <a href="${siteUrl}/privacy/">Privacy Policy</a>.`,
-                acceptAllBtn: 'Accept all',
-                acceptNecessaryBtn: 'Necessary only',
-                showPreferencesBtn: 'Manage preferences'
+                primary_btn: {
+                    text: 'Accept all',
+                    role: 'accept_all'
+                },
+                secondary_btn: {
+                    text: 'Manage preferences',
+                    role: 'settings'
+                }
             },
-            preferencesModal: {
+            settings_modal: {
                 title: 'Cookie preferences',
-                acceptAllBtn: 'Accept all',
-                acceptNecessaryBtn: 'Necessary only',
-                savePreferencesBtn: 'Save preferences',
-                closeIconLabel: 'Close',
-                sections: [
+                accept_all_btn: 'Accept all',
+                accept_necessary_btn: 'Necessary only',
+                save_settings_btn: 'Save preferences',
+                close_btn_label: 'Close',
+                blocks: [
                     {
                         title: 'Cookie usage',
                         description: 'We use cookies to ensure the website functions properly.'
@@ -136,31 +155,44 @@
                     {
                         title: 'Necessary cookies',
                         description: 'These cookies are essential for the proper functioning of the website.',
-                        linkedCategory: 'necessary'
+                        toggle: {
+                            value: 'necessary',
+                            enabled: true,
+                            readonly: true
+                        }
                     },
                     {
                         title: 'Functional cookies',
                         description: 'These cookies enable the website to provide enhanced functionality and personalization.',
-                        linkedCategory: 'functional'
+                        toggle: {
+                            value: 'functional',
+                            enabled: false,
+                            readonly: false
+                        }
                     }
                 ]
             }
         },
         ru: {
-            consentModal: {
+            consent_modal: {
                 title: 'Мы используем cookies',
                 description: `Мы используем cookies, чтобы предоставить вам лучший опыт на нашем сайте. Используя наш сайт, вы соглашаетесь на использование cookies. Для получения дополнительной информации см. нашу <a href="${siteUrl}/privacy/">Политику конфиденциальности</a>.`,
-                acceptAllBtn: 'Принять все',
-                acceptNecessaryBtn: 'Только необходимые',
-                showPreferencesBtn: 'Управление настройками'
+                primary_btn: {
+                    text: 'Принять все',
+                    role: 'accept_all'
+                },
+                secondary_btn: {
+                    text: 'Управление настройками',
+                    role: 'settings'
+                }
             },
-            preferencesModal: {
+            settings_modal: {
                 title: 'Настройки cookies',
-                acceptAllBtn: 'Принять все',
-                acceptNecessaryBtn: 'Только необходимые',
-                savePreferencesBtn: 'Сохранить настройки',
-                closeIconLabel: 'Закрыть',
-                sections: [
+                accept_all_btn: 'Принять все',
+                accept_necessary_btn: 'Только необходимые',
+                save_settings_btn: 'Сохранить настройки',
+                close_btn_label: 'Закрыть',
+                blocks: [
                     {
                         title: 'Использование cookies',
                         description: 'Мы используем cookies для обеспечения правильной работы сайта.'
@@ -168,31 +200,44 @@
                     {
                         title: 'Необходимые cookies',
                         description: 'Эти cookies необходимы для правильной работы сайта.',
-                        linkedCategory: 'necessary'
+                        toggle: {
+                            value: 'necessary',
+                            enabled: true,
+                            readonly: true
+                        }
                     },
                     {
                         title: 'Функциональные cookies',
                         description: 'Эти cookies позволяют сайту предоставлять расширенную функциональность и персонализацию.',
-                        linkedCategory: 'functional'
+                        toggle: {
+                            value: 'functional',
+                            enabled: false,
+                            readonly: false
+                        }
                     }
                 ]
             }
         },
         uk: {
-            consentModal: {
+            consent_modal: {
                 title: 'Ми використовуємо cookies',
                 description: `Ми використовуємо cookies, щоб забезпечити вам найкращий досвід на нашому веб-сайті. Використовуючи наш веб-сайт, ви погоджуєтеся на використання cookies. Для отримання додаткової інформації див. нашу <a href="${siteUrl}/privacy/">Політику конфіденційності</a>.`,
-                acceptAllBtn: 'Прийняти все',
-                acceptNecessaryBtn: 'Тільки необхідні',
-                showPreferencesBtn: 'Керування налаштуваннями'
+                primary_btn: {
+                    text: 'Прийняти все',
+                    role: 'accept_all'
+                },
+                secondary_btn: {
+                    text: 'Керування налаштуваннями',
+                    role: 'settings'
+                }
             },
-            preferencesModal: {
+            settings_modal: {
                 title: 'Налаштування cookies',
-                acceptAllBtn: 'Прийняти все',
-                acceptNecessaryBtn: 'Тільки необхідні',
-                savePreferencesBtn: 'Зберегти налаштування',
-                closeIconLabel: 'Закрити',
-                sections: [
+                accept_all_btn: 'Прийняти все',
+                accept_necessary_btn: 'Тільки необхідні',
+                save_settings_btn: 'Зберегти налаштування',
+                close_btn_label: 'Закрити',
+                blocks: [
                     {
                         title: 'Використання cookies',
                         description: 'Ми використовуємо cookies для забезпечення правильної роботи веб-сайту.'
@@ -200,12 +245,20 @@
                     {
                         title: 'Необхідні cookies',
                         description: 'Ці cookies необхідні для правильної роботи веб-сайту.',
-                        linkedCategory: 'necessary'
+                        toggle: {
+                            value: 'necessary',
+                            enabled: true,
+                            readonly: true
+                        }
                     },
                     {
                         title: 'Функціональні cookies',
                         description: 'Ці cookies дозволяють веб-сайту надавати розширену функціональність та персоналізацію.',
-                        linkedCategory: 'functional'
+                        toggle: {
+                            value: 'functional',
+                            enabled: false,
+                            readonly: false
+                        }
                     }
                 ]
             }
@@ -219,7 +272,11 @@
     function initCookieConsent() {
         // Check if initCookieConsent function is available (v2.9.1 API)
         if (typeof window.initCookieConsent === 'function') {
-            const langTranslations = translations[currentLang];
+            // Ensure we have translations for the current language
+            if (!translations[currentLang]) {
+                console.warn(`Translations not found for language: ${currentLang}, falling back to 'de'`);
+                currentLang = 'de';
+            }
 
             try {
                 // Initialize and get the instance, then call run()
@@ -235,12 +292,8 @@
                                 enabled: false
                             }
                         },
-                        language: {
-                            default: currentLang,
-                            translations: {
-                                [currentLang]: langTranslations
-                            }
-                        },
+                        languages: translations,
+                        current_lang: currentLang,
                         guiOptions: {
                             consentModal: {
                                 layout: 'box inline',
@@ -276,7 +329,11 @@
         } 
         // Fallback for v3.x API (CookieConsent.run)
         else if (window.CookieConsent && typeof window.CookieConsent.run === 'function') {
-            const langTranslations = translations[currentLang];
+            // Ensure we have translations for the current language
+            if (!translations[currentLang]) {
+                console.warn(`Translations not found for language: ${currentLang}, falling back to 'de'`);
+                currentLang = 'de';
+            }
 
             try {
                 window.CookieConsent.run({
@@ -289,12 +346,8 @@
                             enabled: false
                         }
                     },
-                    language: {
-                        default: currentLang,
-                        translations: {
-                            [currentLang]: langTranslations
-                        }
-                    },
+                    languages: translations,
+                    current_lang: currentLang,
                     guiOptions: {
                         consentModal: {
                             layout: 'box inline',
