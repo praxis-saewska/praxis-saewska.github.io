@@ -5,6 +5,8 @@ Template: about
 
 ## Dr. PhD Elena Saewska
 
+<img src="/images/elena-saewska.jpg" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
+
 **Specialist in Gynecology and Obstetrics**
 
 Welcome to our practice! I look forward to getting to know you and accompanying you on your journey. With over 14 years of experience as a specialist, including 10 years in a leadership position, I bring comprehensive expertise in minimally invasive gynecology. I am very communicative and always ready to learn new things to provide you with the best possible treatment.
