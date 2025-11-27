@@ -9,7 +9,7 @@ import sys
 def compile_translations():
     """Compile all .po files to .mo files"""
     base_dir = os.path.dirname(__file__)
-    translations_dir = os.path.join(base_dir, 'themes', 'custom', 'translations')
+    translations_dir = os.path.join(base_dir, 'themes', 'med_praxis', 'translations')
     
     languages = ['de', 'en', 'ru', 'uk']
     compiled = 0

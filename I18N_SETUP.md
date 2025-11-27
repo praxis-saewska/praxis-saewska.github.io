@@ -6,7 +6,7 @@
 
 Переводы шаблонов хранятся в формате gettext:
 ```
-themes/custom/translations/
+themes/med_praxis/translations/
 ├── de/LC_MESSAGES/messages.po  # Немецкий (основной язык)
 ├── en/LC_MESSAGES/messages.po  # Английский
 ├── ru/LC_MESSAGES/messages.po  # Русский
@@ -23,10 +23,10 @@ python compile_translations.py
 
 Или вручную для каждого языка:
 ```bash
-msgfmt -o themes/custom/translations/de/LC_MESSAGES/messages.mo themes/custom/translations/de/LC_MESSAGES/messages.po
-msgfmt -o themes/custom/translations/en/LC_MESSAGES/messages.mo themes/custom/translations/en/LC_MESSAGES/messages.po
-msgfmt -o themes/custom/translations/ru/LC_MESSAGES/messages.mo themes/custom/translations/ru/LC_MESSAGES/messages.po
-msgfmt -o themes/custom/translations/uk/LC_MESSAGES/messages.mo themes/custom/translations/uk/LC_MESSAGES/messages.po
+msgfmt -o themes/med_praxis/translations/de/LC_MESSAGES/messages.mo themes/med_praxis/translations/de/LC_MESSAGES/messages.po
+msgfmt -o themes/med_praxis/translations/en/LC_MESSAGES/messages.mo themes/med_praxis/translations/en/LC_MESSAGES/messages.po
+msgfmt -o themes/med_praxis/translations/ru/LC_MESSAGES/messages.mo themes/med_praxis/translations/ru/LC_MESSAGES/messages.po
+msgfmt -o themes/med_praxis/translations/uk/LC_MESSAGES/messages.mo themes/med_praxis/translations/uk/LC_MESSAGES/messages.po
 ```
 
 ### Установка gettext

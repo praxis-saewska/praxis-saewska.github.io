@@ -58,7 +58,7 @@ The site will be available at `http://localhost:8000`
 
 Pelican will output warnings and errors during generation. Common issues:
 
-- **Missing files**: Check that all static files are in `themes/custom/static/`
+- **Missing files**: Check that all static files are in `themes/med_praxis/static/`
 - **Template errors**: Check Jinja2 syntax in templates
 - **Markdown errors**: Check metadata format in `.md` files
 - **Missing translations**: Ensure all language versions exist
@@ -119,7 +119,7 @@ Open browser developer tools (F12) and check:
 
 ### Missing static files
 
-- Ensure files are in `themes/custom/static/`
+- Ensure files are in `themes/med_praxis/static/`
 - Check `STATIC_PATHS` in `pelicanconf.py`
 - Verify `THEME_STATIC_DIR = 'theme'` is set
 

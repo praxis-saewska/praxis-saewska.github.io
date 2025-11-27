@@ -12,7 +12,7 @@ praxis-saewska/
 │       ├── privacy.de.md
 │       └── impressum.de.md
 ├── themes/
-│   └── custom/
+│   └── med_praxis/
 │       ├── templates/
 │       │   ├── base.html
 │       │   ├── index.html

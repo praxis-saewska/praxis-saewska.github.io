@@ -39,7 +39,7 @@ INDEX_SAVE_AS = 'index.html'
 DEFAULT_PAGINATION = False
 
 # Theme
-THEME = 'themes/custom'
+THEME = 'themes/med_praxis'
 
 # Plugins
 PLUGIN_PATHS = []

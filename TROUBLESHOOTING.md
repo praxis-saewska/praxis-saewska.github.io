@@ -7,7 +7,7 @@
 **Solution:** Ensure the `content/images/` directory exists and contains image files:
 ```bash
 mkdir -p content/images
-cp -r themes/custom/static/images/* content/images/
+cp -r themes/med_praxis/static/images/* content/images/
 ```
 
 ### 2. "Unable to find `/site.webmanifest` or variations"
