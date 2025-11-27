@@ -24,46 +24,75 @@
 {% endmacro %}
 
 {% macro opening_hours() %}
-{% set hours = OPENING_HOURS | default({
-    'monday': '09:00 - 17:00',
-    'tuesday': '09:00 - 17:00',
-    'wednesday': '09:00 - 17:00',
-    'thursday': '09:00 - 17:00',
-    'friday': '09:00 - 17:00',
-    'saturday': 'Geschlossen',
-    'sunday': 'Geschlossen'
-}) %}
-{% set closed_text_map = CLOSED_TEXT | default({'de': 'Geschlossen', 'en': 'Closed', 'ru': 'Закрыто', 'uk': 'Закрито'}) %}
-{% set current_lang = DEFAULT_LANG | default('de') %}
-{% set closed_text = closed_text_map.get(current_lang, closed_text_map.get('de', 'Geschlossen')) %}
+{# Debug: Check if OPENING_HOURS is available #}
+{% set hours = {} %}
+{% if OPENING_HOURS is defined and OPENING_HOURS %}
+    {% set hours = OPENING_HOURS %}
+{% else %}
+    {# Fallback to site_data values directly #}
+    {% set hours = {
+        'monday': '09:00 - 10:00',
+        'tuesday': '09:00 - 14:00',
+        'wednesday': '09:00 - 14:00 15:00 - 17:00',
+        'thursday': '09:00 - 17:00',
+        'friday': '09:00 - 17:00',
+        'saturday': 'Geschlossen',
+        'sunday': 'Geschlossen'
+    } %}
+{% endif %}
+
+{# Localize "closed" label based on current site URL (language subsite) #}
+{% set siteurl = SITEURL | default('') %}
+{% if siteurl.endswith('/en') or siteurl == '/en' %}
+    {% set closed_text = 'Closed' %}
+{% elif siteurl.endswith('/ru') or siteurl == '/ru' %}
+    {% set closed_text = 'Закрыто' %}
+{% elif siteurl.endswith('/uk') or siteurl == '/uk' %}
+    {% set closed_text = 'Закрито' %}
+{% else %}
+    {% set closed_text = 'Geschlossen' %}
+{% endif %}
+
 <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Montag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.monday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.monday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.monday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Dienstag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.tuesday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.tuesday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.tuesday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Mittwoch') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.wednesday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.wednesday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.wednesday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Donnerstag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.thursday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.thursday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.thursday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Freitag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.friday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.friday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.friday }}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Samstag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.saturday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.saturday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">
+            {% if ' - ' in hours.saturday %}
+                {{ hours.saturday }}
+            {% else %}
+                {{ closed_text }}
+            {% endif %}
+        </td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Sonntag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.sunday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.sunday }}{% endif %}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">
+            {% if ' - ' in hours.sunday %}
+                {{ hours.sunday }}
+            {% else %}
+                {{ closed_text }}
+            {% endif %}
+        </td>
     </tr>
 </table>
 {% endmacro %}

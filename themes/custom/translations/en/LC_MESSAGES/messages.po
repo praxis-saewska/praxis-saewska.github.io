@@ -103,3 +103,29 @@ msgstr "E-Mail"
 msgid "Opening Hours"
 msgstr "Opening Hours"
 
+
+# "How to Find Us" section
+msgid "How to Find Us"
+msgstr "How to Find Us"
+
+msgid "Our practice is located in Charlottenburg."
+msgstr "Our practice is located in Charlottenburg."
+
+msgid "By Car:"
+msgstr "By Car:"
+
+msgid "[Description of how to get there by car]"
+msgstr "[Description of how to get there by car]"
+
+msgid "By Public Transport:"
+msgstr "By Public Transport:"
+
+msgid "[Description of how to get there by public transport]"
+msgstr "[Description of how to get there by public transport]"
+
+msgid "Parking:"
+msgstr "Parking:"
+
+msgid "[Information about parking]"
+msgstr "[Information about parking]"
+

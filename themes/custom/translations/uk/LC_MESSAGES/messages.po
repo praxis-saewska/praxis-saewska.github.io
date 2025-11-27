@@ -103,3 +103,29 @@ msgstr "Електронна пошта"
 msgid "Opening Hours"
 msgstr "Години роботи"
 
+
+# "How to Find Us" section
+msgid "How to Find Us"
+msgstr "Як нас знайти"
+
+msgid "Our practice is located in Charlottenburg."
+msgstr "Наша практика знаходиться в Шарлоттенбурзі."
+
+msgid "By Car:"
+msgstr "Автомобілем:"
+
+msgid "[Description of how to get there by car]"
+msgstr "[Опис маршруту автомобілем]"
+
+msgid "By Public Transport:"
+msgstr "Громадським транспортом:"
+
+msgid "[Description of how to get there by public transport]"
+msgstr "[Опис маршруту громадським транспортом]"
+
+msgid "Parking:"
+msgstr "Паркування:"
+
+msgid "[Information about parking]"
+msgstr "[Інформація про паркування]"
+
