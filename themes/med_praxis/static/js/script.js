@@ -602,39 +602,61 @@
         : initScrollToTop();
 })();
 
-// Wrap service h2 and p elements in a common container to make them appear as one card
+// Initialize services section: wrap cards and set title from markdown
 (function() {
     'use strict';
 
-    function wrapServiceCards() {
-        const servicesGrid = document.querySelector('.services-grid');
-        if (!servicesGrid) return;
+    function initServicesSection() {
+        const servicesSection = document.querySelector('#services');
+        if (!servicesSection) return;
 
-        // Find all h2 elements that are direct children of services-grid
-        const h2Elements = Array.from(servicesGrid.querySelectorAll(':scope > h2'));
+        const sectionTitle = servicesSection.querySelector('h2.section-title');
+        const servicesGrid = servicesSection.querySelector('.services-grid');
+        if (!sectionTitle || !servicesGrid) return;
+
+        // Find the first heading inside services-grid (this corresponds to first "##" in markdown)
+        const firstHeading = servicesGrid.querySelector('h1, h2, h3, h4, h5, h6');
+        if (!firstHeading) return;
+
+        // Set section title text from markdown heading
+        sectionTitle.textContent = firstHeading.textContent.trim();
+
+        // FIRST: Wrap all service cards (h2/h3 + p pairs)
+        // Find all heading elements (h2/h3) that are direct children of services-grid
+        const headingElements = Array.from(
+            servicesGrid.querySelectorAll(':scope > h2, :scope > h3')
+        );
         
-        h2Elements.forEach(h2 => {
-            // Check if this h2 is already wrapped
-            if (h2.parentElement !== servicesGrid) return;
+        headingElements.forEach(heading => {
+            // Skip the first heading (section title) - we'll remove it later
+            if (heading === firstHeading) return;
+            
+            // Check if this heading is already wrapped
+            if (heading.parentElement !== servicesGrid) return;
             
             // Find the next sibling p element
-            const nextP = h2.nextElementSibling;
+            const nextP = heading.nextElementSibling;
             if (nextP && nextP.tagName === 'P' && nextP.parentElement === servicesGrid) {
                 // Create a wrapper div
                 const wrapper = document.createElement('div');
                 wrapper.className = 'service-card-wrapper';
                 
-                // Insert wrapper before h2
-                servicesGrid.insertBefore(wrapper, h2);
+                // Insert wrapper before heading
+                servicesGrid.insertBefore(wrapper, heading);
                 
-                // Move h2 and p into wrapper
-                wrapper.appendChild(h2);
+                // Move heading and p into wrapper
+                wrapper.appendChild(heading);
                 wrapper.appendChild(nextP);
             }
         });
+
+        // THEN: Remove the first heading from the grid to avoid duplicated titles
+        if (firstHeading.parentElement === servicesGrid) {
+            servicesGrid.removeChild(firstHeading);
+        }
     }
 
-    document.readyState === 'loading' 
-        ? document.addEventListener('DOMContentLoaded', wrapServiceCards)
-        : wrapServiceCards();
+    document.readyState === 'loading'
+        ? document.addEventListener('DOMContentLoaded', initServicesSection)
+        : initServicesSection();
 })();

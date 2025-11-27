@@ -465,8 +465,8 @@ nav a:hover::after {
     margin-bottom: 1rem;
 }
 
-/* Style markdown h2 and p as service cards - combined into one card */
-/* JavaScript wraps h2+p in .service-card-wrapper, so we style that */
+/* Style markdown headings (h2/h3) and p as service cards - combined into one card */
+/* JavaScript wraps heading+p in .service-card-wrapper, so we style that */
 .service-card-wrapper {
     background: white;
     border-radius: 8px;
@@ -481,7 +481,8 @@ nav a:hover::after {
     border-top: 3px solid var(--primary-teal);
 }
 
-.service-card-wrapper > h2 {
+.service-card-wrapper > h2,
+.service-card-wrapper > h3 {
     background: white;
     padding: 2rem 2rem 1rem 2rem;
     border-radius: 0;
@@ -494,7 +495,8 @@ nav a:hover::after {
     transition: border-color 0.3s ease;
 }
 
-.service-card-wrapper:hover > h2 {
+.service-card-wrapper:hover > h2,
+.service-card-wrapper:hover > h3 {
     border-top: 3px solid var(--primary-teal);
 }
 
@@ -508,8 +510,9 @@ nav a:hover::after {
     line-height: 1.8;
 }
 
-/* Fallback styles for h2 and p that are direct children (before JS runs) */
-.services-grid > h2 {
+/* Fallback styles for headings and p that are direct children (before JS runs) */
+.services-grid > h2,
+.services-grid > h3 {
     background: white;
     padding: 2rem 2rem 1rem 2rem;
     border-radius: 8px 8px 0 0;
@@ -523,7 +526,8 @@ nav a:hover::after {
     position: relative;
 }
 
-.services-grid > h2 + p {
+.services-grid > h2 + p,
+.services-grid > h3 + p {
     background: white;
     padding: 0 2rem 2rem 2rem;
     margin: 0 0 2rem 0;
