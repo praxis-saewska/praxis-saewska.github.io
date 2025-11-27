@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{# SEO/meta overrides for article pages #}
+{% block title %}
+    {% if article and article.title %}
+        {{ article.title }} - {{ SITENAME }}
+    {% else %}
+        {{ SITENAME }}
+    {% endif %}
+{% endblock %}
+
+{% block canonical_url %}
+    {% if article %}
+        {{ SITEURL }}/{{ article.url }}
+    {% else %}
+        {{ SITEURL }}/
+    {% endif %}
+{% endblock %}
+
+{% block og_url %}
+    {% if article %}
+        {{ SITEURL }}/{{ article.url }}
+    {% else %}
+        {{ SITEURL }}/
+    {% endif %}
+{% endblock %}
+
+{% block og_title %}
+    {% if article and article.title %}
+        {{ article.title }}
+    {% else %}
+        {{ SITENAME }}
+    {% endif %}
+{% endblock %}
+
+{% block og_description %}
+    {% if article and article.summary %}
+        {{ article.summary | striptags }}
+    {% else %}
+        {{ SITE_DESCRIPTION }}
+    {% endif %}
+{% endblock %}
+
+{% block twitter_url %}
+    {% if article %}
+        {{ SITEURL }}/{{ article.url }}
+    {% else %}
+        {{ SITEURL }}/
+    {% endif %}
+{% endblock %}
+
+{% block twitter_title %}
+    {% if article and article.title %}
+        {{ article.title }}
+    {% else %}
+        {{ SITENAME }}
+    {% endif %}
+{% endblock %}
+
+{% block twitter_description %}
+    {% if article and article.summary %}
+        {{ article.summary | striptags }}
+    {% else %}
+        {{ SITE_DESCRIPTION }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% if article %}
+<section class="section">
+    <div class="container">
+        <article class="page-content article-detail">
+            <header class="article-header">
+                {% block article_badge %}{% endblock %}
+                <h1 class="section-title">{{ article.title }}</h1>
+
+                <div class="article-meta">
+                    {% if article.date %}
+                        <span class="article-meta-item">
+                            {{ article.date.strftime(DEFAULT_DATE_FORMAT) }}
+                        </span>
+                    {% endif %}
+                    {% if article.category %}
+                        <span class="article-meta-item">
+                            {{ _('Category') }}: {{ article.category.name }}
+                        </span>
+                    {% endif %}
+                    {% if article.tags %}
+                        <span class="article-meta-item">
+                            {{ _('Tags') }}:
+                            {% for tag in article.tags %}
+                                <a href="{{ SITEURL }}/{{ tag.url }}" class="article-tag">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+                </div>
+            </header>
+
+            <div class="article-body">
+                {{ article.content }}
+            </div>
+        </article>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+
+

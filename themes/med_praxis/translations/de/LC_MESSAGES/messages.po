@@ -67,6 +67,9 @@ msgstr "Sprache auswählen"
 msgid "Scroll to top"
 msgstr "Nach oben scrollen"
 
+msgid "Artikel"
+msgstr "Artikel"
+
 msgid "Montag"
 msgstr "Montag"
 
@@ -99,6 +102,15 @@ msgstr "E-Mail"
 
 msgid "Opening Hours"
 msgstr "Öffnungszeiten"
+
+msgid "News"
+msgstr "News"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Tags"
+msgstr "Tags"
 
 
 # "How to Find Us" section

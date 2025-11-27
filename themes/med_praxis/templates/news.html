@@ -1,0 +1,19 @@
+{% extends "article.html" %}
+
+{# Specialised template for news items.
+   Use in article metadata:
+
+   Title: Some News
+   Lang: de
+   Slug: some-news
+   Category: News
+   Template: news
+ #}
+
+{% block article_badge %}
+<div class="article-badge article-badge-news">
+    {{ _('News') }}
+</div>
+{% endblock %}
+
+

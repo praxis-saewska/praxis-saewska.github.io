@@ -67,6 +67,9 @@ msgstr "Вибрати мову"
 msgid "Scroll to top"
 msgstr "Вгору"
 
+msgid "Artikel"
+msgstr "Статті"
+
 msgid "Montag"
 msgstr "Понеділок"
 
@@ -99,6 +102,15 @@ msgstr "Електронна пошта"
 
 msgid "Opening Hours"
 msgstr "Години роботи"
+
+msgid "News"
+msgstr "Новини"
+
+msgid "Category"
+msgstr "Категорія"
+
+msgid "Tags"
+msgstr "Теги"
 
 
 # "How to Find Us" section
