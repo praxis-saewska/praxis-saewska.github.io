@@ -2,6 +2,8 @@
 
 > Gynäkologische Praxis in Berlin-Charlottenburg unter der Leitung von Dr. PhD Elena Saewska. Wir bieten umfassende gynäkologische Betreuung, Schwangerschaftsbetreuung, Urogynäkologie, Kindergynäkologie und moderne minimalinvasive Behandlungen. Die Praxis ist mehrsprachig (Deutsch, Englisch, Russisch, Ukrainisch) und legt Wert auf individuelle Betreuung in vertrauensvoller Atmosphäre.
 
+Die Praxis befindet sich in der Uhlandstr. 87, 10717 Berlin. Alle Seiten sind in vier Sprachen verfügbar (Deutsch, Englisch, Russisch, Ukrainisch). Die Website verwendet relative URLs für die Hauptsprache und Sprachpräfixe (/en/, /ru/, /uk/) für andere Sprachen.
+
 ## Hauptseiten
 
 - [Startseite](https://praxis-saewska.de/) - Übersicht über alle Leistungen der Praxis: Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen und mehr
@@ -21,27 +23,7 @@
 
 ## Optional
 
-### Mehrsprachigkeit
-
-Die Website ist in vier Sprachen verfügbar:
-- [Deutsch](https://praxis-saewska.de/) - Hauptsprache
-- [English](https://praxis-saewska.de/en/) - English version
-- [Русский](https://praxis-saewska.de/ru/) - Русская версия
-- [Українська](https://praxis-saewska.de/uk/) - Українська версія
-
-### Spezialisierungen
-
-- Minimalinvasive Gynäkologie (Laparoskopie und Hysteroskopie)
-- Urogynäkologie und Beckenbodentherapie
-- Operative Gynäkologie
-- Schwangerschaftsbetreuung und Geburtshilfe
-- Kindergynäkologie und Jugendgynäkologie
-- Endometriose-Behandlung
-
-### Technische Details
-
-- Website-Generator: Pelican (Python-basiertes Static Site Generator)
-- Mehrsprachigkeit: i18n_subsites Plugin
-- Deployment: GitHub Pages via GitHub Actions
-- Theme: Custom theme "med_praxis"
+- [English Version](https://praxis-saewska.de/en/) - English version of the website
+- [Русская версия](https://praxis-saewska.de/ru/) - Russian version of the website
+- [Українська версія](https://praxis-saewska.de/uk/) - Ukrainian version of the website
 
