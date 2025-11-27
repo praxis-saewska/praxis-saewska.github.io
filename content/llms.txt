@@ -1,0 +1,47 @@
+# Praxis Saewska
+
+> Gynäkologische Praxis in Berlin-Charlottenburg unter der Leitung von Dr. PhD Elena Saewska. Wir bieten umfassende gynäkologische Betreuung, Schwangerschaftsbetreuung, Urogynäkologie, Kindergynäkologie und moderne minimalinvasive Behandlungen. Die Praxis ist mehrsprachig (Deutsch, Englisch, Russisch, Ukrainisch) und legt Wert auf individuelle Betreuung in vertrauensvoller Atmosphäre.
+
+## Hauptseiten
+
+- [Startseite](/) - Übersicht über alle Leistungen der Praxis: Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen und mehr
+- [Über uns](/about/) - Informationen über Dr. PhD Elena Saewska, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
+- [FAQ](/faq/) - Häufig gestellte Fragen zu Terminvereinbarung, Unterlagen, Zahlungsmethoden, Versicherungen und Behandlungen
+
+## Wichtige Informationen
+
+- [Kontakt](/about/#contact) - Adresse: Uhlandstr. 87, 10717 Berlin, Telefon und E-Mail für Terminvereinbarungen
+- [Öffnungszeiten](/about/#contact) - Sprechzeiten: Montag-Freitag 10:00-14:00 und 15:00-17:00 (Mittwoch ab 09:00), Samstag und Sonntag geschlossen
+- [Leistungen](/#services) - Detaillierte Beschreibung aller angebotenen gynäkologischen Leistungen und Behandlungen
+
+## Rechtliches
+
+- [Datenschutz](/privacy/) - Datenschutzerklärung der Praxis
+- [Impressum](/impressum/) - Rechtliche Angaben und Kontaktdaten
+
+## Optional
+
+### Mehrsprachigkeit
+
+Die Website ist in vier Sprachen verfügbar:
+- [Deutsch](/) - Hauptsprache
+- [English](/en/) - English version
+- [Русский](/ru/) - Русская версия
+- [Українська](/uk/) - Українська версія
+
+### Spezialisierungen
+
+- Minimalinvasive Gynäkologie (Laparoskopie und Hysteroskopie)
+- Urogynäkologie und Beckenbodentherapie
+- Operative Gynäkologie
+- Schwangerschaftsbetreuung und Geburtshilfe
+- Kindergynäkologie und Jugendgynäkologie
+- Endometriose-Behandlung
+
+### Technische Details
+
+- Website-Generator: Pelican (Python-basiertes Static Site Generator)
+- Mehrsprachigkeit: i18n_subsites Plugin
+- Deployment: GitHub Pages via GitHub Actions
+- Theme: Custom theme "med_praxis"
+

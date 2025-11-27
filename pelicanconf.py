@@ -13,12 +13,12 @@ if str(current_dir) not in sys.path:
 
 AUTHOR = 'Praxis Saewska'
 SITENAME = 'Praxis Saewska'
-SITEURL = ''
+SITEURL = 'https://praxis-saewska.de/'
 
 # Path settings
 PATH = 'content'
 OUTPUT_PATH = 'output'
-STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAME']
+STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAME', 'llms.txt']
 
 # Theme static directory
 THEME_STATIC_DIR = 'theme'
@@ -139,6 +139,3 @@ LANGUAGES = {
 
 # Delete output directory before generating
 DELETE_OUTPUT_DIRECTORY = True
-
-# Copy static files - handled by STATIC_PATHS
-
