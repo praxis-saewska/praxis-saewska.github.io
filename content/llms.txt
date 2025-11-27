@@ -4,30 +4,30 @@
 
 ## Hauptseiten
 
-- [Startseite](/) - Übersicht über alle Leistungen der Praxis: Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen und mehr
-- [Über uns](/about/) - Informationen über Dr. PhD Elena Saewska, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
-- [FAQ](/faq/) - Häufig gestellte Fragen zu Terminvereinbarung, Unterlagen, Zahlungsmethoden, Versicherungen und Behandlungen
+- [Startseite](https://praxis-saewska.de/) - Übersicht über alle Leistungen der Praxis: Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen und mehr
+- [Über uns](https://praxis-saewska.de/about/) - Informationen über Dr. PhD Elena Saewska, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
+- [FAQ](https://praxis-saewska.de/faq/) - Häufig gestellte Fragen zu Terminvereinbarung, Unterlagen, Zahlungsmethoden, Versicherungen und Behandlungen
 
 ## Wichtige Informationen
 
-- [Kontakt](/about/#contact) - Adresse: Uhlandstr. 87, 10717 Berlin, Telefon und E-Mail für Terminvereinbarungen
-- [Öffnungszeiten](/about/#contact) - Sprechzeiten: Montag-Freitag 10:00-14:00 und 15:00-17:00 (Mittwoch ab 09:00), Samstag und Sonntag geschlossen
-- [Leistungen](/#services) - Detaillierte Beschreibung aller angebotenen gynäkologischen Leistungen und Behandlungen
+- [Kontakt](https://praxis-saewska.de/about/#contact) - Adresse: Uhlandstr. 87, 10717 Berlin, Telefon und E-Mail für Terminvereinbarungen
+- [Öffnungszeiten](https://praxis-saewska.de/about/#contact) - Sprechzeiten: Montag-Freitag 10:00-14:00 und 15:00-17:00 (Mittwoch ab 09:00), Samstag und Sonntag geschlossen
+- [Leistungen](https://praxis-saewska.de/#services) - Detaillierte Beschreibung aller angebotenen gynäkologischen Leistungen und Behandlungen
 
 ## Rechtliches
 
-- [Datenschutz](/privacy/) - Datenschutzerklärung der Praxis
-- [Impressum](/impressum/) - Rechtliche Angaben und Kontaktdaten
+- [Datenschutz](https://praxis-saewska.de/privacy/) - Datenschutzerklärung der Praxis
+- [Impressum](https://praxis-saewska.de/impressum/) - Rechtliche Angaben und Kontaktdaten
 
 ## Optional
 
 ### Mehrsprachigkeit
 
 Die Website ist in vier Sprachen verfügbar:
-- [Deutsch](/) - Hauptsprache
-- [English](/en/) - English version
-- [Русский](/ru/) - Русская версия
-- [Українська](/uk/) - Українська версія
+- [Deutsch](https://praxis-saewska.de/) - Hauptsprache
+- [English](https://praxis-saewska.de/en/) - English version
+- [Русский](https://praxis-saewska.de/ru/) - Русская версия
+- [Українська](https://praxis-saewska.de/uk/) - Українська версія
 
 ### Spezialisierungen
 
