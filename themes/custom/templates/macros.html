@@ -97,6 +97,38 @@
 </table>
 {% endmacro %}
 
+{% macro directions_section(page=None) %}
+<div class="about-section" style="margin-bottom: 3rem;">
+    {% if page and page.metadata and page.metadata.get('directions') %}
+    {{ page.metadata.get('directions') | safe }}
+    {% else %}
+    {% set siteurl = SITEURL | default('') %}
+    {% set is_main_site = (not siteurl or siteurl == '' or siteurl == '/') %}
+    {% if is_main_site %}
+    {# Немецкий текст для основного сайта (/) #}
+    <h2>Anfahrt</h2>
+    <p>Unsere Praxis befindet sich in der Uhlandstraße 87, 10717 Berlin (Charlottenburg).</p>
+    <p><strong>Mit dem Auto:</strong><br>
+    <span>Mit dem Auto erreichen Sie uns über die Stadtautobahn A100 (Ausfahrt Hohenzollerndamm). Von dort fahren Sie in Richtung Stadtzentrum und biegen in die Uhlandstraße ein. Öffentliche Parkplätze finden Sie in der Umgebung.</span></p>
+    <p><strong>Mit öffentlichen Verkehrsmitteln:</strong><br>
+    <span>Mit der U-Bahn-Linie U7 (Haltestelle "Blissestraße") sind es nur wenige Gehminuten zu unserer Praxis. Alternativ können Sie die U-Bahn-Linie U9 (Haltestelle "Güntzelstraße") nutzen.</span></p>
+    <p><strong>Parken:</strong><br>
+    <span>In der Uhlandstraße und den Nebenstraßen gibt es öffentliche Parkplätze. Bitte beachten Sie die Beschilderung und Parkscheinautomaten.</span></p>
+    {% else %}
+    {# Локализуемый текст для языковых подсайтов (/en, /ru, /uk) #}
+    <h2>{{ _('How to Find Us') }}</h2>
+    <p>{{ _('Our practice is located at Uhlandstraße 87, 10717 Berlin (Charlottenburg).') }}</p>
+    <p><strong>{{ _('By Car:') }}</strong><br>
+    <span>{{ _('By car, you can reach us via the A100 city motorway (Hohenzollerndamm exit). From there, drive towards the city center and turn into Uhlandstraße. Public parking spaces are available in the surrounding area.') }}</span></p>
+    <p><strong>{{ _('By Public Transport:') }}</strong><br>
+    <span>{{ _('By public transport, the U7 subway line (Blissestraße stop) is just a few minutes walk from our practice. Alternatively, you can use the U9 subway line (Güntzelstraße stop).') }}</span></p>
+    <p><strong>{{ _('Parking:') }}</strong><br>
+    <span>{{ _('There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters.') }}</span></p>
+    {% endif %}
+    {% endif %}
+</div>
+{% endmacro %}
+
 {% macro map_container() %}
 <div class="map-container" id="google-map-container">
     <div id="map-consent-message" class="map-consent-message">

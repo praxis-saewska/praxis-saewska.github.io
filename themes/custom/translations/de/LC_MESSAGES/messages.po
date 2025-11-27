@@ -108,24 +108,24 @@ msgstr "Öffnungszeiten"
 msgid "How to Find Us"
 msgstr "Anfahrt"
 
-msgid "Our practice is located in Charlottenburg."
-msgstr "Unsere Praxis befindet sich in Charlottenburg."
+msgid "Our practice is located at Uhlandstraße 87, 10717 Berlin (Charlottenburg)."
+msgstr "Unsere Praxis befindet sich in der Uhlandstraße 87, 10717 Berlin (Charlottenburg)."
 
 msgid "By Car:"
 msgstr "Mit dem Auto:"
 
-msgid "[Description of how to get there by car]"
-msgstr "[Beschreibung der Anfahrt mit dem Auto]"
+msgid "By car, you can reach us via the A100 city motorway (Hohenzollerndamm exit). From there, drive towards the city center and turn into Uhlandstraße. Public parking spaces are available in the surrounding area."
+msgstr "Mit dem Auto erreichen Sie uns über die Stadtautobahn A100 (Ausfahrt Hohenzollerndamm). Von dort fahren Sie in Richtung Stadtzentrum und biegen in die Uhlandstraße ein. Öffentliche Parkplätze finden Sie in der Umgebung."
 
 msgid "By Public Transport:"
 msgstr "Mit öffentlichen Verkehrsmitteln:"
 
-msgid "[Description of how to get there by public transport]"
-msgstr "[Beschreibung der Anfahrt mit öffentlichen Verkehrsmitteln]"
+msgid "By public transport, the U7 subway line (Blissestraße stop) is just a few minutes walk from our practice. Alternatively, you can use the U9 subway line (Güntzelstraße stop)."
+msgstr "Mit der U-Bahn-Linie U7 (Haltestelle \"Blissestraße\") sind es nur wenige Gehminuten zu unserer Praxis. Alternativ können Sie die U-Bahn-Linie U9 (Haltestelle \"Güntzelstraße\") nutzen."
 
 msgid "Parking:"
 msgstr "Parken:"
 
-msgid "[Information about parking]"
-msgstr "[Informationen zum Parken]"
+msgid "There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters."
+msgstr "In der Uhlandstraße und den Nebenstraßen gibt es öffentliche Parkplätze. Bitte beachten Sie die Beschilderung und Parkscheinautomaten."
 

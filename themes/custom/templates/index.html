@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import contact_info, opening_hours, map_container with context %}
+{% from "macros.html" import contact_info, opening_hours, map_container, directions_section with context %}
 
 {% block content %}
 {% for p in pages %}
@@ -72,20 +72,7 @@
                 <p style="margin-top: 1rem; color: var(--soft-gray); font-size: 0.9rem;"><em>{{ _('Please update the opening hours with your actual times.') }}</em></p>
             </div>
 
-            <div class="about-section" style="margin-bottom: 3rem;">
-                <h2>{{ _('How to Find Us') }}</h2>
-                {% if page and page.metadata and page.metadata.get('directions') %}
-                {{ page.metadata.get('directions') | safe }}
-                {% else %}
-                <p>{{ _('Our practice is located in Charlottenburg.') }}</p>
-                <p><strong>{{ _('By Car:') }}</strong><br>
-                <span>{{ _('[Description of how to get there by car]') }}</span></p>
-                <p><strong>{{ _('By Public Transport:') }}</strong><br>
-                <span>{{ _('[Description of how to get there by public transport]') }}</span></p>
-                <p><strong>{{ _('Parking:') }}</strong><br>
-                <span>{{ _('[Information about parking]') }}</span></p>
-                {% endif %}
-            </div>
+            {{ directions_section(page) }}
 
             <div class="about-section">
                 <h2>{{ _('Location') }}</h2>

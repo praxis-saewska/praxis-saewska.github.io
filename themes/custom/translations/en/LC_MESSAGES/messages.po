@@ -108,24 +108,24 @@ msgstr "Opening Hours"
 msgid "How to Find Us"
 msgstr "How to Find Us"
 
-msgid "Our practice is located in Charlottenburg."
-msgstr "Our practice is located in Charlottenburg."
+msgid "Our practice is located at Uhlandstraße 87, 10717 Berlin (Charlottenburg)."
+msgstr "Our practice is located at Uhlandstraße 87, 10717 Berlin (Charlottenburg)."
 
 msgid "By Car:"
 msgstr "By Car:"
 
-msgid "[Description of how to get there by car]"
-msgstr "[Description of how to get there by car]"
+msgid "By car, you can reach us via the A100 city motorway (Hohenzollerndamm exit). From there, drive towards the city center and turn into Uhlandstraße. Public parking spaces are available in the surrounding area."
+msgstr "By car, you can reach us via the A100 city motorway (Hohenzollerndamm exit). From there, drive towards the city center and turn into Uhlandstraße. Public parking spaces are available in the surrounding area."
 
 msgid "By Public Transport:"
 msgstr "By Public Transport:"
 
-msgid "[Description of how to get there by public transport]"
-msgstr "[Description of how to get there by public transport]"
+msgid "By public transport, the U7 subway line (Blissestraße stop) is just a few minutes walk from our practice. Alternatively, you can use the U9 subway line (Güntzelstraße stop)."
+msgstr "By public transport, the U7 subway line (Blissestraße stop) is just a few minutes walk from our practice. Alternatively, you can use the U9 subway line (Güntzelstraße stop)."
 
 msgid "Parking:"
 msgstr "Parking:"
 
-msgid "[Information about parking]"
-msgstr "[Information about parking]"
+msgid "There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters."
+msgstr "There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters."
 
