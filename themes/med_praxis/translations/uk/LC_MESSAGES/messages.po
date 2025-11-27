@@ -50,9 +50,6 @@ msgid "Cookie-Einstellungen"
 msgstr "Налаштування cookies"
 
 msgid "© 2025"
-msgstr "© 2025"
-
-msgid "© 2025 "
 msgstr "© 2025 "
 
 msgid "Alle Rechte vorbehalten."
