@@ -70,3 +70,36 @@ msgstr "Вибрати мову"
 msgid "Scroll to top"
 msgstr "Вгору"
 
+msgid "Montag"
+msgstr "Понеділок"
+
+msgid "Dienstag"
+msgstr "Вівторок"
+
+msgid "Mittwoch"
+msgstr "Середа"
+
+msgid "Donnerstag"
+msgstr "Четвер"
+
+msgid "Freitag"
+msgstr "П'ятниця"
+
+msgid "Samstag"
+msgstr "Субота"
+
+msgid "Sonntag"
+msgstr "Неділя"
+
+msgid "Adresse"
+msgstr "Адреса"
+
+msgid "Telefon"
+msgstr "Телефон"
+
+msgid "E-Mail"
+msgstr "Електронна пошта"
+
+msgid "Opening Hours"
+msgstr "Години роботи"
+

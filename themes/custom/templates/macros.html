@@ -9,15 +9,15 @@
 }) %}
 <div class="contact-info">
     <div class="contact-item">
-        <h3>{% block contact_address_label %}Adresse{% endblock %}</h3>
+        <h3>{{ _('Adresse') }}</h3>
         <p>{{ contact.address_street }}<br>{{ contact.address_city }}</p>
     </div>
     <div class="contact-item">
-        <h3>{% block contact_phone_label %}Telefon{% endblock %}</h3>
+        <h3>{{ _('Telefon') }}</h3>
         <p><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></p>
     </div>
     <div class="contact-item">
-        <h3>{% block contact_email_label %}E-Mail{% endblock %}</h3>
+        <h3>{{ _('E-Mail') }}</h3>
         <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
     </div>
 </div>
@@ -38,31 +38,31 @@
 {% set closed_text = closed_text_map.get(current_lang, closed_text_map.get('de', 'Geschlossen')) %}
 <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_monday %}Montag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Montag') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.monday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.monday }}{% endif %}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_tuesday %}Dienstag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Dienstag') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.tuesday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.tuesday }}{% endif %}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_wednesday %}Mittwoch{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Mittwoch') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.wednesday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.wednesday }}{% endif %}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_thursday %}Donnerstag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Donnerstag') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.thursday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.thursday }}{% endif %}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_friday %}Freitag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Freitag') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.friday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.friday }}{% endif %}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_saturday %}Samstag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Samstag') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.saturday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.saturday }}{% endif %}</td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
-        <td style="padding: 0.75rem 0; font-weight: 600;">{% block hours_sunday %}Sonntag{% endblock %}</td>
+        <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Sonntag') }}</td>
         <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{% if hours.sunday == 'Geschlossen' %}{{ closed_text }}{% else %}{{ hours.sunday }}{% endif %}</td>
     </tr>
 </table>

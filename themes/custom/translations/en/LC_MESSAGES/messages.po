@@ -70,3 +70,36 @@ msgstr "Select language"
 msgid "Scroll to top"
 msgstr "Scroll to top"
 
+msgid "Montag"
+msgstr "Monday"
+
+msgid "Dienstag"
+msgstr "Tuesday"
+
+msgid "Mittwoch"
+msgstr "Wednesday"
+
+msgid "Donnerstag"
+msgstr "Thursday"
+
+msgid "Freitag"
+msgstr "Friday"
+
+msgid "Samstag"
+msgstr "Saturday"
+
+msgid "Sonntag"
+msgstr "Sunday"
+
+msgid "Adresse"
+msgstr "Address"
+
+msgid "Telefon"
+msgstr "Phone"
+
+msgid "E-Mail"
+msgstr "E-Mail"
+
+msgid "Opening Hours"
+msgstr "Opening Hours"
+

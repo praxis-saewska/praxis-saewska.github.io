@@ -70,3 +70,36 @@ msgstr "Выбрать язык"
 msgid "Scroll to top"
 msgstr "Наверх"
 
+msgid "Montag"
+msgstr "Понедельник"
+
+msgid "Dienstag"
+msgstr "Вторник"
+
+msgid "Mittwoch"
+msgstr "Среда"
+
+msgid "Donnerstag"
+msgstr "Четверг"
+
+msgid "Freitag"
+msgstr "Пятница"
+
+msgid "Samstag"
+msgstr "Суббота"
+
+msgid "Sonntag"
+msgstr "Воскресенье"
+
+msgid "Adresse"
+msgstr "Адрес"
+
+msgid "Telefon"
+msgstr "Телефон"
+
+msgid "E-Mail"
+msgstr "Электронная почта"
+
+msgid "Opening Hours"
+msgstr "Часы работы"
+
