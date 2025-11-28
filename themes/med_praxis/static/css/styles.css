@@ -1153,6 +1153,144 @@ footer {
     }
 }
 
+/* Contact Form Styles */
+.contact-form-wrapper {
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.contact-form {
+    background: var(--warm-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+    box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.required {
+    color: var(--accent-coral);
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.form-note {
+    margin-top: 1rem;
+    color: var(--soft-gray);
+}
+
+.form-status {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.form-status.success {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #10B981;
+}
+
+.form-status.error {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #EF4444;
+}
+
+.contact-form-info {
+    background: var(--light-blue);
+    padding: 2rem;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.contact-form-info h3 {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.contact-form-info ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.contact-form-info li {
+    margin-bottom: 0.5rem;
+    color: var(--soft-gray);
+}
+
+.contact-form-info p {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.hero-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.hero-subtitle p {
+    margin: 0.5rem 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {

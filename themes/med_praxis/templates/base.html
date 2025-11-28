@@ -107,7 +107,7 @@
                     <li><a href="{{ SITEURL }}/#services">{% block nav_services %}{{ _('Leistungen') }}{% endblock %}</a></li>
                     <li><a href="{{ SITEURL }}/about/">{% block nav_about %}{{ _('Über uns') }}{% endblock %}</a></li>
                     <li><a href="{{ SITEURL }}/faq/">{% block nav_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/#contact">{% block nav_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/contact/">{% block nav_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
                     <li class="language-switcher">
                         <select id="language-select" aria-label="{{ _('Select language') }}">
                             <option value="de" {% if DEFAULT_LANG == 'de' %}selected{% endif %}>Deutsch</option>
@@ -137,7 +137,7 @@
                     <li><a href="{{ SITEURL }}/">{% block footer_home %}{{ _('Startseite') }}{% endblock %}</a></li>
                     <li><a href="{{ SITEURL }}/about/">{% block footer_about %}{{ _('Über uns') }}{% endblock %}</a></li>
                     <li><a href="{{ SITEURL }}/faq/">{% block footer_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/#contact">{% block footer_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
+                    <li><a href="{{ SITEURL }}/contact/">{% block footer_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
                 </ul>
             </div>
             <div class="footer-section">

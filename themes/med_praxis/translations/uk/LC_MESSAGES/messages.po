@@ -126,3 +126,182 @@ msgstr "Паркування:"
 msgid "There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters."
 msgstr "В Уландштрассе та прилеглих вулицях є громадські паркувальні місця. Будь ласка, зверніть увагу на дорожні знаки та паркомати."
 
+# Contact page translations
+msgid "Kontaktinformationen"
+msgstr "Контактна інформація"
+
+msgid "Nachricht senden"
+msgstr "Надіслати повідомлення"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Ihr Name"
+msgstr "Ваше ім'я"
+
+msgid "ihre.email@example.com"
+msgstr "ваша.пошта@example.com"
+
+msgid "Ihre Telefonnummer (optional)"
+msgstr "Ваш номер телефону (необов'язково)"
+
+msgid "Betreff"
+msgstr "Тема"
+
+msgid "Betreff Ihrer Nachricht"
+msgstr "Тема вашого повідомлення"
+
+msgid "Nachricht"
+msgstr "Повідомлення"
+
+msgid "Ihre Nachricht an uns..."
+msgstr "Ваше повідомлення нам..."
+
+msgid "Ich habe die"
+msgstr "Я прочитав(ла)"
+
+msgid "Datenschutzerklärung"
+msgstr "Політику конфіденційності"
+
+msgid "gelesen und akzeptiert."
+msgstr "і приймаю її."
+
+msgid "Zurücksetzen"
+msgstr "Скинути"
+
+msgid "Hinweis:"
+msgstr "Примітка:"
+
+msgid "Felder mit * sind Pflichtfelder."
+msgstr "Поля, позначені *, є обов'язковими для заповнення."
+
+msgid "Wir antworten in der Regel innerhalb von 24 Stunden während der Geschäftszeiten."
+msgstr "Ми зазвичай відповідаємо протягом 24 годин в робочий час."
+
+msgid "Location"
+msgstr "Місцезнаходження"
+
+msgid "Kontaktformular"
+msgstr "Контактна форма"
+
+msgid "Book Appointment"
+msgstr "Записатися на прийом"
+
+msgid "Contact"
+msgstr "Контакти"
+
+msgid "Online Appointment Booking"
+msgstr "Онлайн-запис на прийом"
+
+msgid "Book your appointment conveniently online via Doctolib."
+msgstr "Запишіться на прийом зручно онлайн через Doctolib."
+
+msgid "Doctolib Widget will be inserted here"
+msgstr "Віджет Doctolib буде вставлено тут"
+
+msgid "Please insert your Doctolib widget code here"
+msgstr "Будь ласка, вставте тут код віджета Doctolib"
+
+msgid "Instructions for Doctolib Integration:"
+msgstr "Інструкції з інтеграції Doctolib:"
+
+msgid "Log in to your Doctolib account"
+msgstr "Увійдіть у свій обліковий запис Doctolib"
+
+msgid "Go to \"Settings\" → \"Widget\""
+msgstr "Перейдіть в \"Налаштування\" → \"Віджет\""
+
+msgid "Copy the provided widget code"
+msgstr "Скопіюйте наданий код віджета"
+
+msgid "Replace the placeholder area above with the Doctolib code"
+msgstr "Замініть область-заповнювач вище кодом Doctolib"
+
+msgid "Alternatively: Add a link to your Doctolib booking page:"
+msgstr "Альтернативно: Додайте посилання на вашу сторінку бронювання Doctolib:"
+
+msgid "Map is loading"
+msgstr "Карта завантажується"
+
+msgid "To display the map, we need your consent to use cookies."
+msgstr "Для відображення карти нам потрібна ваша згода на використання cookies."
+
+msgid "Please accept cookies in the cookie banner to see the map."
+msgstr "Будь ласка, прийміть cookies в банері cookies, щоб побачити карту."
+
+msgid "Praxis Location"
+msgstr "Розташування практики"
+
+msgid "Bitte akzeptieren Sie die Datenschutzerklärung."
+msgstr "Будь ласка, прийміть політику конфіденційності."
+
+msgid "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+msgstr "Дякуємо за ваше повідомлення! Ми скоро зв'яжемося з вами."
+
+# Contact form translations
+msgid "Send us a message"
+msgstr "Надішліть нам повідомлення"
+
+msgid "Your Name"
+msgstr "Ваше ім'я"
+
+msgid "Enter your name"
+msgstr "Введіть ваше ім'я"
+
+msgid "Your Email"
+msgstr "Ваш e-mail"
+
+msgid "Enter your email"
+msgstr "Введіть ваш e-mail"
+
+msgid "Preferred Contact Method"
+msgstr "Бажаний спосіб зв'язку"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Your Message"
+msgstr "Ваше повідомлення"
+
+msgid "Enter your message"
+msgstr "Введіть ваше повідомлення"
+
+msgid "Send Message"
+msgstr "Надіслати повідомлення"
+
+msgid "Fields marked with * are required"
+msgstr "Поля, позначені * обов'язкові для заповнення"
+
+msgid "Why contact us?"
+msgstr "Навіщо зв'язуватися з нами?"
+
+msgid "General questions about our services"
+msgstr "Загальні питання про наші послуги"
+
+msgid "Information requests"
+msgstr "Запити інформації"
+
+msgid "Feedback and suggestions"
+msgstr "Відгуки та пропозиції"
+
+msgid "For appointments:"
+msgstr "Для запису на прийом:"
+
+msgid "Please use our online booking system."
+msgstr "Будь ласка, використовуйте нашу систему онлайн-бронювання."
+
+msgid "New contact form submission"
+msgstr "Нове повідомлення з контактної форми"
+
+msgid "Sending..."
+msgstr "Відправка..."
+
+msgid "Thank you! Your message has been sent successfully."
+msgstr "Дякуємо! Ваше повідомлення успішно надіслано."
+
+msgid "Something went wrong. Please try again."
+msgstr "Щось пішло не так. Будь ласка, спробуйте ще раз."
+
+msgid "Contact Information"
+msgstr "Контактна інформація"
+
