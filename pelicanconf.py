@@ -19,22 +19,35 @@ SITEURL = ''
 # Path settings
 PATH = 'content'
 OUTPUT_PATH = 'output'
-STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAME', 'llms.txt']
+STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAME', 'llms.txt', '.htaccess']
+
 
 # Theme static directory
 THEME_STATIC_DIR = 'theme'
 
-# Time and locale
+# Time and locale  
+# Используем английский как DEFAULT_LANG (технический язык для Pelican)
+# Все реальные языки (включая немецкий) генерируются как подсайты с переводами
+# .htaccess редиректит корень на соответствующий язык на основе Accept-Language
 TIMEZONE = 'Europe/Berlin'
-DEFAULT_LANG = 'de'
+DEFAULT_LANG = 'en'  # Технический язык - английский (msgid = перевод)
+LOCALE = 'en_US.UTF-8'
 DEFAULT_DATE_FORMAT = '%d.%m.%Y'
 
 # URL settings - clean URLs without extensions
+# Для подсайтов эти настройки переопределяются в I18N_SUBSITES
 ARTICLE_URL = '{slug}/'
-ARTICLE_SAVE_AS = '{slug}/index.html'
 PAGE_URL = '{slug}/'
-PAGE_SAVE_AS = '{slug}/index.html'
-INDEX_SAVE_AS = 'index.html'
+
+# Полностью отключаем генерацию основного сайта (DEFAULT_LANG) в корне
+# Генерируем ТОЛЬКО подсайты в /de/, /en/, /ru/, /uk/
+INDEX_SAVE_AS = ''      # Нет главной страницы в корне
+PAGE_SAVE_AS = ''       # Нет контент-страниц в корне
+ARTICLE_SAVE_AS = ''    # Нет статей в корне
+AUTHORS_SAVE_AS = ''    # Нет страницы авторов
+CATEGORIES_SAVE_AS = '' # Нет страницы категорий
+TAGS_SAVE_AS = ''       # Нет страницы тегов
+ARCHIVES_SAVE_AS = ''   # Нет страницы архивов
 
 # Pagination
 DEFAULT_PAGINATION = False
@@ -43,7 +56,7 @@ DEFAULT_PAGINATION = False
 THEME = 'themes/med_praxis'
 
 # Plugins
-PLUGIN_PATHS = []
+PLUGIN_PATHS = ['.']
 PLUGINS = ['i18n_subsites']
 
 # Feed settings (disabled)
@@ -63,6 +76,10 @@ MARKDOWN = {
     },
     'output_format': 'html5',
 }
+
+# I18N plugin settings  
+I18N_GETTEXT_LOCALEDIR = 'themes/med_praxis/translations/'
+I18N_GETTEXT_DOMAIN = 'messages'
 
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
@@ -91,20 +108,40 @@ def get_opening_hours_for_lang(lang='de'):
             hours[day] = closed_text
     return hours
 
-# Site data for default language (de)
-# These variables are available in templates for the default language
-OPENING_HOURS = get_opening_hours_for_lang('de')
+# Site data for default language (en - технический)
+# Основной сайт не используется (отключен через INDEX_SAVE_AS = '')
+# Все языки генерируются как подсайты
+OPENING_HOURS = get_opening_hours_for_lang('en')
 CONTACT_INFO = CONTACT_INFO
 PRACTICE_INFO = PRACTICE_INFO
-# CLOSED_TEXT доступен в шаблонах для перевода "Geschlossen"
 CLOSED_TEXT = CLOSED_TEXT
 
 # Для i18n_subsites - использовать данные из site_data с переводами
+# Все языки как подсайты, немецкий тоже получает свою папку /de
 I18N_SUBSITES = {
+    'de': {
+        'SITENAME': 'Praxis Saewska',
+        'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
+        'LOCALE': 'de_DE.UTF-8',
+        'LANG_PREFIX': '/de',  # Префикс для навигационных ссылок
+        # Включаем генерацию страниц для подсайта
+        'INDEX_SAVE_AS': 'index.html',
+        'PAGE_SAVE_AS': '{slug}/index.html',
+        'ARTICLE_SAVE_AS': '{slug}/index.html',
+        'OPENING_HOURS': get_opening_hours_for_lang('de'),
+        'CONTACT_INFO': CONTACT_INFO,
+        'PRACTICE_INFO': PRACTICE_INFO,
+        'CLOSED_TEXT': CLOSED_TEXT,
+    },
     'en': {
         'SITENAME': 'Praxis Saewska',
-        'SITEURL': '/en',
+        'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
         'LOCALE': 'en_US.UTF-8',
+        'LANG_PREFIX': '/en',  # Префикс для навигационных ссылок
+        # Включаем генерацию страниц для подсайта
+        'INDEX_SAVE_AS': 'index.html',
+        'PAGE_SAVE_AS': '{slug}/index.html',
+        'ARTICLE_SAVE_AS': '{slug}/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('en'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
@@ -112,8 +149,13 @@ I18N_SUBSITES = {
     },
     'ru': {
         'SITENAME': 'Praxis Saewska',
-        'SITEURL': '/ru',
+        'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
         'LOCALE': 'ru_RU.UTF-8',
+        'LANG_PREFIX': '/ru',  # Префикс для навигационных ссылок
+        # Включаем генерацию страниц для подсайта
+        'INDEX_SAVE_AS': 'index.html',
+        'PAGE_SAVE_AS': '{slug}/index.html',
+        'ARTICLE_SAVE_AS': '{slug}/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('ru'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
@@ -121,8 +163,13 @@ I18N_SUBSITES = {
     },
     'uk': {
         'SITENAME': 'Praxis Saewska',
-        'SITEURL': '/uk',
+        'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
         'LOCALE': 'uk_UA.UTF-8',
+        'LANG_PREFIX': '/uk',  # Префикс для навигационных ссылок
+        # Включаем генерацию страниц для подсайта
+        'INDEX_SAVE_AS': 'index.html',
+        'PAGE_SAVE_AS': '{slug}/index.html',
+        'ARTICLE_SAVE_AS': '{slug}/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('uk'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,

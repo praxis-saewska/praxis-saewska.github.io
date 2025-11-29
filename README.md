@@ -11,17 +11,39 @@ Static website for Praxis Saewska built with Pelican. Multilingual support (Germ
 uv sync
 ```
 
-2. Build the site:
+2. **Build the multilingual site** (recommended):
 ```bash
+./build.sh
+```
+This automatically compiles translations and generates all 4 language versions.
+
+3. **Manual build** (if needed):
+```bash
+# Compile translations first
+python3 compile_translations.py
+
+# Then generate the site
 uv run pelican content -s pelicanconf.py
 ```
 
-3. Preview locally:
+4. Preview locally:
 ```bash
-cd output && python -m http.server 8000
+python -m http.server 8000 -d output
 ```
 
-Visit `http://localhost:8000` to view the site.
+Visit the site in your browser:
+- 🇩🇪 **German (main):** http://localhost:8000/de/
+- 🇬🇧 **English:** http://localhost:8000/en/
+- 🇷🇺 **Russian:** http://localhost:8000/ru/
+- 🇺🇦 **Ukrainian:** http://localhost:8000/uk/
+
+### 🌐 Multilingual Support
+
+The site has **full translation support** for all 4 languages. See [MULTILINGUAL_SETUP.md](MULTILINGUAL_SETUP.md) for:
+- How the translation system works
+- Adding/editing translations
+- Language auto-detection (browser language)
+- Troubleshooting translation issues
 
 ## Editing Content
 
