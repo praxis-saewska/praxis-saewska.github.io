@@ -19,7 +19,7 @@ SITEURL = ''
 # Path settings
 PATH = 'content'
 OUTPUT_PATH = 'output'
-STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAME', 'llms.txt', '.htaccess']
+STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAME', 'llms.txt', '_redirects']
 
 
 # Theme static directory

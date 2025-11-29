@@ -14,6 +14,9 @@ if str(current_dir) not in sys.path:
 from pelicanconf import *
 
 # Production URL
+# Update this to match your Cloudflare Pages custom domain or *.pages.dev domain
+# For custom domain: 'https://praxis-saewska.de'
+# For Cloudflare Pages default: 'https://praxis-saewska.pages.dev'
 SITEURL = 'https://praxis-saewska.de'
 RELATIVE_URLS = False
 
