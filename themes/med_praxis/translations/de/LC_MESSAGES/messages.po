@@ -305,3 +305,52 @@ msgstr "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
 msgid "Contact Information"
 msgstr "Kontaktinformationen"
 
+# Blog and Articles translations
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Latest news and articles from"
+msgstr "Neueste Nachrichten und Artikel von"
+
+msgid "Latest news and articles from our practice"
+msgstr "Neueste Nachrichten und Artikel aus unserer Praxis"
+
+msgid "Articles in category"
+msgstr "Artikel in der Kategorie"
+
+msgid "Articles in this category"
+msgstr "Artikel in dieser Kategorie"
+
+msgid "Filter by category"
+msgstr "Nach Kategorie filtern"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Published"
+msgstr "Veröffentlicht"
+
+msgid "Updated"
+msgstr "Aktualisiert"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Available in"
+msgstr "Verfügbar in"
+
+msgid "Tags"
+msgstr "Schlagwörter"
+
+msgid "Read more"
+msgstr "Weiterlesen"
+
+msgid "Back to Blog"
+msgstr "Zurück zum Blog"
+
+msgid "No articles available yet."
+msgstr "Noch keine Artikel verfügbar."
+
+msgid "No articles in this category yet."
+msgstr "Noch keine Artikel in dieser Kategorie."
+

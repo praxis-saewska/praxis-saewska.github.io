@@ -36,21 +36,29 @@ DEFAULT_DATE_FORMAT = '%d.%m.%Y'
 
 # URL settings - clean URLs without extensions
 # Для подсайтов эти настройки переопределяются в I18N_SUBSITES
-ARTICLE_URL = '{slug}/'
+ARTICLE_URL = 'blog/{slug}/'
+ARTICLE_SAVE_AS = 'blog/{slug}/index.html'
 PAGE_URL = '{slug}/'
+CATEGORY_URL = 'blog/category/{slug}/'
+CATEGORY_SAVE_AS = 'blog/category/{slug}/index.html'
 
 # Полностью отключаем генерацию основного сайта (DEFAULT_LANG) в корне
 # Генерируем ТОЛЬКО подсайты в /de/, /en/, /ru/, /uk/
 INDEX_SAVE_AS = ''      # Нет главной страницы в корне
 PAGE_SAVE_AS = ''       # Нет контент-страниц в корне
-ARTICLE_SAVE_AS = ''    # Нет статей в корне
+ARTICLE_SAVE_AS = ''    # Нет статей в корне (будет включено в подсайтах)
 AUTHORS_SAVE_AS = ''    # Нет страницы авторов
-CATEGORIES_SAVE_AS = '' # Нет страницы категорий
+CATEGORIES_SAVE_AS = '' # Нет страницы категорий (будет включено в подсайтах)
 TAGS_SAVE_AS = ''       # Нет страницы тегов
-ARCHIVES_SAVE_AS = ''   # Нет страницы архивов
+ARCHIVES_SAVE_AS = ''   # Нет страницы архивов (будет включено в подсайтах)
+
+# Article settings
+DEFAULT_CATEGORY = 'Articles'
+ARTICLE_ORDER_BY = 'reversed-date'
+USE_FOLDER_AS_CATEGORY = False
 
 # Pagination
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 10
 
 # Theme
 THEME = 'themes/med_praxis'
@@ -127,7 +135,13 @@ I18N_SUBSITES = {
         # Включаем генерацию страниц для подсайта
         'INDEX_SAVE_AS': 'index.html',
         'PAGE_SAVE_AS': '{slug}/index.html',
-        'ARTICLE_SAVE_AS': '{slug}/index.html',
+        # Articles и blog
+        'ARTICLE_URL': 'blog/{slug}/',
+        'ARTICLE_SAVE_AS': 'blog/{slug}/index.html',
+        'ARCHIVES_SAVE_AS': 'blog/index.html',
+        'CATEGORY_URL': 'blog/category/{slug}/',
+        'CATEGORY_SAVE_AS': 'blog/category/{slug}/index.html',
+        'CATEGORIES_SAVE_AS': 'blog/categories/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('de'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
@@ -141,7 +155,13 @@ I18N_SUBSITES = {
         # Включаем генерацию страниц для подсайта
         'INDEX_SAVE_AS': 'index.html',
         'PAGE_SAVE_AS': '{slug}/index.html',
-        'ARTICLE_SAVE_AS': '{slug}/index.html',
+        # Articles и blog
+        'ARTICLE_URL': 'blog/{slug}/',
+        'ARTICLE_SAVE_AS': 'blog/{slug}/index.html',
+        'ARCHIVES_SAVE_AS': 'blog/index.html',
+        'CATEGORY_URL': 'blog/category/{slug}/',
+        'CATEGORY_SAVE_AS': 'blog/category/{slug}/index.html',
+        'CATEGORIES_SAVE_AS': 'blog/categories/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('en'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
@@ -155,7 +175,13 @@ I18N_SUBSITES = {
         # Включаем генерацию страниц для подсайта
         'INDEX_SAVE_AS': 'index.html',
         'PAGE_SAVE_AS': '{slug}/index.html',
-        'ARTICLE_SAVE_AS': '{slug}/index.html',
+        # Articles и blog
+        'ARTICLE_URL': 'blog/{slug}/',
+        'ARTICLE_SAVE_AS': 'blog/{slug}/index.html',
+        'ARCHIVES_SAVE_AS': 'blog/index.html',
+        'CATEGORY_URL': 'blog/category/{slug}/',
+        'CATEGORY_SAVE_AS': 'blog/category/{slug}/index.html',
+        'CATEGORIES_SAVE_AS': 'blog/categories/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('ru'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,
@@ -169,7 +195,13 @@ I18N_SUBSITES = {
         # Включаем генерацию страниц для подсайта
         'INDEX_SAVE_AS': 'index.html',
         'PAGE_SAVE_AS': '{slug}/index.html',
-        'ARTICLE_SAVE_AS': '{slug}/index.html',
+        # Articles и blog
+        'ARTICLE_URL': 'blog/{slug}/',
+        'ARTICLE_SAVE_AS': 'blog/{slug}/index.html',
+        'ARCHIVES_SAVE_AS': 'blog/index.html',
+        'CATEGORY_URL': 'blog/category/{slug}/',
+        'CATEGORY_SAVE_AS': 'blog/category/{slug}/index.html',
+        'CATEGORIES_SAVE_AS': 'blog/categories/index.html',
         'OPENING_HOURS': get_opening_hours_for_lang('uk'),
         'CONTACT_INFO': CONTACT_INFO,
         'PRACTICE_INFO': PRACTICE_INFO,

@@ -305,3 +305,52 @@ msgstr "Щось пішло не так. Будь ласка, спробуйте
 msgid "Contact Information"
 msgstr "Контактна інформація"
 
+# Blog and Articles translations
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Latest news and articles from"
+msgstr "Останні новини та статті від"
+
+msgid "Latest news and articles from our practice"
+msgstr "Останні новини та статті нашої практики"
+
+msgid "Articles in category"
+msgstr "Статті в категорії"
+
+msgid "Articles in this category"
+msgstr "Статті в цій категорії"
+
+msgid "Filter by category"
+msgstr "Фільтр за категорією"
+
+msgid "All"
+msgstr "Всі"
+
+msgid "Published"
+msgstr "Опубліковано"
+
+msgid "Updated"
+msgstr "Оновлено"
+
+msgid "Category"
+msgstr "Категорія"
+
+msgid "Available in"
+msgstr "Доступно мовами"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Read more"
+msgstr "Читати далі"
+
+msgid "Back to Blog"
+msgstr "Повернутися до блогу"
+
+msgid "No articles available yet."
+msgstr "Статей поки немає."
+
+msgid "No articles in this category yet."
+msgstr "У цій категорії поки немає статей."
+

@@ -305,3 +305,52 @@ msgstr "Something went wrong. Please try again."
 msgid "Contact Information"
 msgstr "Contact Information"
 
+# Blog and Articles translations
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Latest news and articles from"
+msgstr "Latest news and articles from"
+
+msgid "Latest news and articles from our practice"
+msgstr "Latest news and articles from our practice"
+
+msgid "Articles in category"
+msgstr "Articles in category"
+
+msgid "Articles in this category"
+msgstr "Articles in this category"
+
+msgid "Filter by category"
+msgstr "Filter by category"
+
+msgid "All"
+msgstr "All"
+
+msgid "Published"
+msgstr "Published"
+
+msgid "Updated"
+msgstr "Updated"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Available in"
+msgstr "Available in"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Read more"
+msgstr "Read more"
+
+msgid "Back to Blog"
+msgstr "Back to Blog"
+
+msgid "No articles available yet."
+msgstr "No articles available yet."
+
+msgid "No articles in this category yet."
+msgstr "No articles in this category yet."
+

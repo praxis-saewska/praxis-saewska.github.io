@@ -305,3 +305,52 @@ msgstr "Что-то пошло не так. Пожалуйста, попробу
 msgid "Contact Information"
 msgstr "Контактная информация"
 
+# Blog and Articles translations
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Latest news and articles from"
+msgstr "Последние новости и статьи от"
+
+msgid "Latest news and articles from our practice"
+msgstr "Последние новости и статьи нашей практики"
+
+msgid "Articles in category"
+msgstr "Статьи в категории"
+
+msgid "Articles in this category"
+msgstr "Статьи в этой категории"
+
+msgid "Filter by category"
+msgstr "Фильтр по категории"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Updated"
+msgstr "Обновлено"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Available in"
+msgstr "Доступно на"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Read more"
+msgstr "Читать далее"
+
+msgid "Back to Blog"
+msgstr "Вернуться к блогу"
+
+msgid "No articles available yet."
+msgstr "Статей пока нет."
+
+msgid "No articles in this category yet."
+msgstr "В этой категории пока нет статей."
+
