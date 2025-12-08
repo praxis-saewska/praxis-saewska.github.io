@@ -1,6 +1,8 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
+- for site generatios `pelican` framework is using: documentation: https://docs.getpelican.com/en/latest/ git: https://github.com/getpelican/pelican
+- site themes (created using [Jinja2](https://palletsprojects.com/p/jinja/) templates)
 - `content/pages/{slug}.{lang}.md` holds page content; keep slugs aligned across languages (de/en/ru/uk) and include `Title`, `Lang`, `Slug`, `Template` metadata.
 - `content/images/` for assets; `output/` is generated and should not be committed.
 - `themes/med_praxis/templates/` contains Jinja2 templates; shared styles/scripts live in `themes/med_praxis/static/`, translations in `themes/med_praxis/translations/{lang}/`.
@@ -16,6 +18,7 @@
 - `python -m http.server 8000 -d output` previews the generated site locally.
 
 ## Coding Style & Naming Conventions
+- sire is deploying to [cloudflare pages](https://pages.cloudflare.com/)
 - Python: 4-space indentation, prefer small pure helpers; keep data in `site_data.py` and avoid hardcoding hours/contact info elsewhere.
 - Templates: use `_('text')` for strings needing translation; keep shared pieces in `macros.html`; avoid inline styles.
 - Content: name files `about.de.md`, `faq.en.md`, etc.; keep slugs consistent across languages; use Markdown headings rather than HTML unless necessary.
