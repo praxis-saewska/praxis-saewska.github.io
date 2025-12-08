@@ -11,3 +11,6 @@
 #
 # This file can be used for other simple redirects if needed in the future.
 
+# Simple redirect to default language (German)
+# / /de/ 302
+# /index.html /de/ 302
