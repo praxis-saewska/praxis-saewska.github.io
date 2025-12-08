@@ -26,12 +26,12 @@ STATIC_PATHS = ['images', 'site.webmanifest', 'robots.txt', 'sitemap.xml', 'CNAM
 THEME_STATIC_DIR = 'theme'
 
 # Time and locale  
-# Используем английский как DEFAULT_LANG (технический язык для Pelican)
-# Все реальные языки (включая немецкий) генерируются как подсайты с переводами
+# Используем 'C' как DEFAULT_LANG (технический язык для Pelican, не в I18N_SUBSITES)
+# Все реальные языки (включая английский и немецкий) генерируются как подсайты с переводами
 # .htaccess редиректит корень на соответствующий язык на основе Accept-Language
 TIMEZONE = 'Europe/Berlin'
-DEFAULT_LANG = 'en'  # Технический язык - английский (msgid = перевод)
-LOCALE = 'en_US.UTF-8'
+DEFAULT_LANG = 'C'  # Технический язык - 'C' (не в I18N_SUBSITES, чтобы плагин загружал переводы для всех языков)
+LOCALE = 'C'
 DEFAULT_DATE_FORMAT = '%d.%m.%Y'
 
 # URL settings - clean URLs without extensions
@@ -155,6 +155,9 @@ I18N_SUBSITES = {
         'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
         'LOCALE': 'en_US.UTF-8',
         'LANG_PREFIX': '/en',  # Префикс для навигационных ссылок
+        # Явно указываем настройки gettext для загрузки переводов
+        'I18N_GETTEXT_LOCALEDIR': I18N_GETTEXT_LOCALEDIR,
+        'I18N_GETTEXT_DOMAIN': I18N_GETTEXT_DOMAIN,
         # Включаем генерацию страниц для подсайта
         'INDEX_SAVE_AS': 'index.html',
         'PAGE_SAVE_AS': '{slug}/index.html',
