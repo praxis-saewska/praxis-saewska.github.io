@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "macros.html" import contact_info, opening_hours, map_container, directions_section with context %}
+{% from "macros.html" import contact_info, opening_hours with context %}
 
 {% block content %}
 {% for p in pages %}
@@ -70,13 +70,6 @@
             <div class="about-section" style="margin-bottom: 3rem;">
                 <h2>{{ _('Opening Hours') }}</h2>
                 {{ opening_hours() }}
-            </div>
-
-            {{ directions_section(page) }}
-
-            <div class="about-section">
-                <h2>{{ _('Location') }}</h2>
-                {{ map_container() }}
             </div>
         </div>
     </section>

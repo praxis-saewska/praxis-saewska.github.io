@@ -126,3 +126,231 @@ msgstr "Parken:"
 msgid "There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters."
 msgstr "In der Uhlandstraße und den Nebenstraßen gibt es öffentliche Parkplätze. Bitte beachten Sie die Beschilderung und Parkscheinautomaten."
 
+# Contact page translations
+msgid "Kontaktinformationen"
+msgstr "Kontaktinformationen"
+
+msgid "Nachricht senden"
+msgstr "Nachricht senden"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Ihr Name"
+msgstr "Ihr Name"
+
+msgid "ihre.email@example.com"
+msgstr "ihre.email@example.com"
+
+msgid "Ihre Telefonnummer (optional)"
+msgstr "Ihre Telefonnummer (optional)"
+
+msgid "Betreff"
+msgstr "Betreff"
+
+msgid "Betreff Ihrer Nachricht"
+msgstr "Betreff Ihrer Nachricht"
+
+msgid "Nachricht"
+msgstr "Nachricht"
+
+msgid "Ihre Nachricht an uns..."
+msgstr "Ihre Nachricht an uns..."
+
+msgid "Ich habe die"
+msgstr "Ich habe die"
+
+msgid "Datenschutzerklärung"
+msgstr "Datenschutzerklärung"
+
+msgid "gelesen und akzeptiert."
+msgstr "gelesen und akzeptiert."
+
+msgid "Zurücksetzen"
+msgstr "Zurücksetzen"
+
+msgid "Hinweis:"
+msgstr "Hinweis:"
+
+msgid "Felder mit * sind Pflichtfelder."
+msgstr "Felder mit * sind Pflichtfelder."
+
+msgid "Wir antworten in der Regel innerhalb von 24 Stunden während der Geschäftszeiten."
+msgstr "Wir antworten in der Regel innerhalb von 24 Stunden während der Geschäftszeiten."
+
+msgid "Location"
+msgstr "Standort"
+
+msgid "Kontaktformular"
+msgstr "Kontaktformular"
+
+msgid "Book Appointment"
+msgstr "Termin buchen"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Online Appointment Booking"
+msgstr "Online-Terminbuchung"
+
+msgid "Book your appointment conveniently online via Doctolib."
+msgstr "Buchen Sie Ihren Termin bequem online über Doctolib."
+
+msgid "Doctolib Widget will be inserted here"
+msgstr "Doctolib-Widget wird hier eingefügt"
+
+msgid "Please insert your Doctolib widget code here"
+msgstr "Bitte fügen Sie hier Ihren Doctolib-Widget-Code ein"
+
+msgid "Instructions for Doctolib Integration:"
+msgstr "Anleitung zur Doctolib-Integration:"
+
+msgid "Log in to your Doctolib account"
+msgstr "Melden Sie sich in Ihrem Doctolib-Konto an"
+
+msgid "Go to \"Settings\" → \"Widget\""
+msgstr "Gehen Sie zu \"Einstellungen\" → \"Widget\""
+
+msgid "Copy the provided widget code"
+msgstr "Kopieren Sie den bereitgestellten Widget-Code"
+
+msgid "Replace the placeholder area above with the Doctolib code"
+msgstr "Ersetzen Sie den Platzhalterbereich oben durch den Doctolib-Code"
+
+msgid "Alternatively: Add a link to your Doctolib booking page:"
+msgstr "Alternativ: Fügen Sie einen Link zu Ihrer Doctolib-Buchungsseite hinzu:"
+
+msgid "Map is loading"
+msgstr "Karte wird geladen"
+
+msgid "To display the map, we need your consent to use cookies."
+msgstr "Um die Karte anzuzeigen, benötigen wir Ihre Zustimmung zur Verwendung von Cookies."
+
+msgid "Please accept cookies in the cookie banner to see the map."
+msgstr "Bitte akzeptieren Sie Cookies im Cookie-Banner, um die Karte zu sehen."
+
+msgid "Praxis Location"
+msgstr "Praxis-Standort"
+
+msgid "Bitte akzeptieren Sie die Datenschutzerklärung."
+msgstr "Bitte akzeptieren Sie die Datenschutzerklärung."
+
+msgid "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+msgstr "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+
+# Contact form translations
+msgid "Send us a message"
+msgstr "Senden Sie uns eine Nachricht"
+
+msgid "Your Name"
+msgstr "Ihr Name"
+
+msgid "Enter your name"
+msgstr "Geben Sie Ihren Namen ein"
+
+msgid "Your Email"
+msgstr "Ihre E-Mail"
+
+msgid "Enter your email"
+msgstr "Geben Sie Ihre E-Mail ein"
+
+msgid "Preferred Contact Method"
+msgstr "Bevorzugte Kontaktmethode"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Your Message"
+msgstr "Ihre Nachricht"
+
+msgid "Enter your message"
+msgstr "Geben Sie Ihre Nachricht ein"
+
+msgid "Send Message"
+msgstr "Nachricht senden"
+
+msgid "Fields marked with * are required"
+msgstr "Mit * gekennzeichnete Felder sind Pflichtfelder"
+
+msgid "Why contact us?"
+msgstr "Warum uns kontaktieren?"
+
+msgid "General questions about our services"
+msgstr "Allgemeine Fragen zu unseren Leistungen"
+
+msgid "Information requests"
+msgstr "Informationsanfragen"
+
+msgid "Feedback and suggestions"
+msgstr "Feedback und Vorschläge"
+
+msgid "For appointments:"
+msgstr "Für Terminvereinbarungen:"
+
+msgid "Please use our online booking system."
+msgstr "Bitte nutzen Sie unser Online-Buchungssystem."
+
+msgid "New contact form submission"
+msgstr "Neue Kontaktformular-Nachricht"
+
+msgid "Sending..."
+msgstr "Wird gesendet..."
+
+msgid "Thank you! Your message has been sent successfully."
+msgstr "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet."
+
+msgid "Something went wrong. Please try again."
+msgstr "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+
+msgid "Contact Information"
+msgstr "Kontaktinformationen"
+
+# Blog and Articles translations
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Latest news and articles from"
+msgstr "Neueste Nachrichten und Artikel von"
+
+msgid "Latest news and articles from our practice"
+msgstr "Neueste Nachrichten und Artikel aus unserer Praxis"
+
+msgid "Articles in category"
+msgstr "Artikel in der Kategorie"
+
+msgid "Articles in this category"
+msgstr "Artikel in dieser Kategorie"
+
+msgid "Filter by category"
+msgstr "Nach Kategorie filtern"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Published"
+msgstr "Veröffentlicht"
+
+msgid "Updated"
+msgstr "Aktualisiert"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Available in"
+msgstr "Verfügbar in"
+
+msgid "Tags"
+msgstr "Schlagwörter"
+
+msgid "Read more"
+msgstr "Weiterlesen"
+
+msgid "Back to Blog"
+msgstr "Zurück zum Blog"
+
+msgid "No articles available yet."
+msgstr "Noch keine Artikel verfügbar."
+
+msgid "No articles in this category yet."
+msgstr "Noch keine Artikel in dieser Kategorie."
+

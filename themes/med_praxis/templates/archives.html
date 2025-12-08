@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Blog') }} - {{ SITENAME }}{% endblock %}
+
+{% block meta_description %}{{ _('Latest news and articles from') }} {{ SITENAME }}{% endblock %}
+
+{% block og_title %}{{ _('Blog') }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="blog-page">
+    <div class="page-header">
+        <nav class="breadcrumb">
+            <a href="/{{ DEFAULT_LANG }}/">{{ _('Startseite') }}</a> &raquo;
+            <span>{{ _('Blog') }}</span>
+        </nav>
+        
+        <h1>{{ _('Blog') }}</h1>
+        <p class="page-description">{{ _('Latest news and articles from our practice') }}</p>
+    </div>
+    
+    {% if categories %}
+    <div class="category-filter">
+        <strong>{{ _('Filter by category') }}:</strong>
+        <a href="/{{ DEFAULT_LANG }}/blog/" class="category-badge active">{{ _('All') }}</a>
+        {% for category, articles in categories %}
+            <a href="/{{ DEFAULT_LANG }}/{{ category.url }}" class="category-badge">{{ category }} ({{ articles|count }})</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% if dates %}
+    <div class="articles-list">
+        {% for article in dates %}
+        <article class="article-card">
+            <div class="article-card-header">
+                {% if article.category %}
+                <span class="article-card-category {{ article.category.slug }}">{{ article.category }}</span>
+                {% endif %}
+                <time datetime="{{ article.date.isoformat() }}" class="article-card-date">
+                    {{ article.locale_date }}
+                </time>
+            </div>
+            
+            <h2 class="article-card-title">
+                <a href="/{{ DEFAULT_LANG }}/{{ article.url }}">{{ article.title }}</a>
+            </h2>
+            
+            {% if article.summary %}
+            <div class="article-card-summary">
+                {{ article.summary }}
+            </div>
+            {% endif %}
+            
+            <div class="article-card-footer">
+                <a href="/{{ DEFAULT_LANG }}/{{ article.url }}" class="read-more">
+                    {{ _('Read more') }}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                
+                {% if article.tags %}
+                <div class="article-card-tags">
+                    {% for tag in article.tags[:3] %}
+                        <span class="tag-mini">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-articles">
+        <p>{{ _('No articles available yet.') }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+

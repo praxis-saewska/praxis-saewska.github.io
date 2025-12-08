@@ -95,7 +95,7 @@
     <header>
         <div class="header-container">
             <div class="logo-container">
-                <a href="{{ SITEURL }}/">
+                <a href="/{{ DEFAULT_LANG }}/">
                     <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg" alt="Praxis Logo" class="logo" fetchpriority="high">
                 </a>
                 <span class="practice-name">{% block practice_name %}{{ _('Gynäkologische Praxis') }}<br>{{ _('Dr. PhD Elena Saewska') }}{% endblock %}</span>
@@ -103,11 +103,12 @@
             <button class="menu-toggle" id="menu-toggle" aria-label="{{ _('Menu') }}">☰</button>
             <nav>
                 <ul>
-                    <li><a href="{{ SITEURL }}/">{% block nav_home %}{{ _('Startseite') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/#services">{% block nav_services %}{{ _('Leistungen') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/about/">{% block nav_about %}{{ _('Über uns') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/faq/">{% block nav_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/#contact">{% block nav_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/">{% block nav_home %}{{ _('Startseite') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/#services">{% block nav_services %}{{ _('Leistungen') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/about/">{% block nav_about %}{{ _('Über uns') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/faq/">{% block nav_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/blog/">{% block nav_blog %}{{ _('Blog') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/contact/">{% block nav_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
                     <li class="language-switcher">
                         <select id="language-select" aria-label="{{ _('Select language') }}">
                             <option value="de" {% if DEFAULT_LANG == 'de' %}selected{% endif %}>Deutsch</option>
@@ -134,17 +135,18 @@
             <div class="footer-section">
                 <h3>{% block footer_navigation %}{{ _('Navigation') }}{% endblock %}</h3>
                 <ul>
-                    <li><a href="{{ SITEURL }}/">{% block footer_home %}{{ _('Startseite') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/about/">{% block footer_about %}{{ _('Über uns') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/faq/">{% block footer_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/#contact">{% block footer_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/">{% block footer_home %}{{ _('Startseite') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/about/">{% block footer_about %}{{ _('Über uns') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/faq/">{% block footer_faq %}{{ _('FAQ') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/blog/">{% block footer_blog %}{{ _('Blog') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/contact/">{% block footer_contact %}{{ _('Kontakt') }}{% endblock %}</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>{% block footer_legal %}{{ _('Rechtliches') }}{% endblock %}</h3>
                 <ul>
-                    <li><a href="{{ SITEURL }}/privacy/">{% block footer_privacy %}{{ _('Datenschutz') }}{% endblock %}</a></li>
-                    <li><a href="{{ SITEURL }}/impressum/">{% block footer_impressum %}{{ _('Impressum') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/privacy/">{% block footer_privacy %}{{ _('Datenschutz') }}{% endblock %}</a></li>
+                    <li><a href="/{{ DEFAULT_LANG }}/impressum/">{% block footer_impressum %}{{ _('Impressum') }}{% endblock %}</a></li>
                     <li><a href="#" id="cookie-settings">{% block footer_cookie_settings %}{{ _('Cookie-Einstellungen') }}{% endblock %}</a></li>
                 </ul>
             </div>

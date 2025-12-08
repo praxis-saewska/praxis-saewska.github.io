@@ -126,3 +126,231 @@ msgstr "Парковка:"
 msgid "There are public parking spaces in Uhlandstraße and the side streets. Please pay attention to the signage and parking meters."
 msgstr "В Уландштрассе и прилегающих улицах есть общественные парковочные места. Пожалуйста, обратите внимание на дорожные знаки и паркоматы."
 
+# Contact page translations
+msgid "Kontaktinformationen"
+msgstr "Контактная информация"
+
+msgid "Nachricht senden"
+msgstr "Отправить сообщение"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Ihr Name"
+msgstr "Ваше имя"
+
+msgid "ihre.email@example.com"
+msgstr "ваша.почта@example.com"
+
+msgid "Ihre Telefonnummer (optional)"
+msgstr "Ваш номер телефона (необязательно)"
+
+msgid "Betreff"
+msgstr "Тема"
+
+msgid "Betreff Ihrer Nachricht"
+msgstr "Тема вашего сообщения"
+
+msgid "Nachricht"
+msgstr "Сообщение"
+
+msgid "Ihre Nachricht an uns..."
+msgstr "Ваше сообщение нам..."
+
+msgid "Ich habe die"
+msgstr "Я прочитал(а)"
+
+msgid "Datenschutzerklärung"
+msgstr "Политику конфиденциальности"
+
+msgid "gelesen und akzeptiert."
+msgstr "и принимаю её."
+
+msgid "Zurücksetzen"
+msgstr "Сбросить"
+
+msgid "Hinweis:"
+msgstr "Примечание:"
+
+msgid "Felder mit * sind Pflichtfelder."
+msgstr "Поля, отмеченные *, обязательны для заполнения."
+
+msgid "Wir antworten in der Regel innerhalb von 24 Stunden während der Geschäftszeiten."
+msgstr "Мы обычно отвечаем в течение 24 часов в рабочее время."
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Kontaktformular"
+msgstr "Контактная форма"
+
+msgid "Book Appointment"
+msgstr "Записаться на прием"
+
+msgid "Contact"
+msgstr "Контакты"
+
+msgid "Online Appointment Booking"
+msgstr "Онлайн-запись на прием"
+
+msgid "Book your appointment conveniently online via Doctolib."
+msgstr "Запишитесь на прием удобно онлайн через Doctolib."
+
+msgid "Doctolib Widget will be inserted here"
+msgstr "Виджет Doctolib будет вставлен здесь"
+
+msgid "Please insert your Doctolib widget code here"
+msgstr "Пожалуйста, вставьте здесь код виджета Doctolib"
+
+msgid "Instructions for Doctolib Integration:"
+msgstr "Инструкции по интеграции Doctolib:"
+
+msgid "Log in to your Doctolib account"
+msgstr "Войдите в свою учетную запись Doctolib"
+
+msgid "Go to \"Settings\" → \"Widget\""
+msgstr "Перейдите в \"Настройки\" → \"Виджет\""
+
+msgid "Copy the provided widget code"
+msgstr "Скопируйте предоставленный код виджета"
+
+msgid "Replace the placeholder area above with the Doctolib code"
+msgstr "Замените область-заполнитель выше кодом Doctolib"
+
+msgid "Alternatively: Add a link to your Doctolib booking page:"
+msgstr "Альтернативно: Добавьте ссылку на вашу страницу бронирования Doctolib:"
+
+msgid "Map is loading"
+msgstr "Карта загружается"
+
+msgid "To display the map, we need your consent to use cookies."
+msgstr "Для отображения карты нам нужно ваше согласие на использование cookies."
+
+msgid "Please accept cookies in the cookie banner to see the map."
+msgstr "Пожалуйста, примите cookies в баннере cookies, чтобы увидеть карту."
+
+msgid "Praxis Location"
+msgstr "Расположение практики"
+
+msgid "Bitte akzeptieren Sie die Datenschutzerklärung."
+msgstr "Пожалуйста, примите политику конфиденциальности."
+
+msgid "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+msgstr "Спасибо за ваше сообщение! Мы скоро свяжемся с вами."
+
+# Contact form translations
+msgid "Send us a message"
+msgstr "Отправьте нам сообщение"
+
+msgid "Your Name"
+msgstr "Ваше имя"
+
+msgid "Enter your name"
+msgstr "Введите ваше имя"
+
+msgid "Your Email"
+msgstr "Ваш e-mail"
+
+msgid "Enter your email"
+msgstr "Введите ваш e-mail"
+
+msgid "Preferred Contact Method"
+msgstr "Предпочтительный способ связи"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Your Message"
+msgstr "Ваше сообщение"
+
+msgid "Enter your message"
+msgstr "Введите ваше сообщение"
+
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+msgid "Fields marked with * are required"
+msgstr "Поля, отмеченные * обязательны для заполнения"
+
+msgid "Why contact us?"
+msgstr "Зачем связываться с нами?"
+
+msgid "General questions about our services"
+msgstr "Общие вопросы о наших услугах"
+
+msgid "Information requests"
+msgstr "Запросы информации"
+
+msgid "Feedback and suggestions"
+msgstr "Отзывы и предложения"
+
+msgid "For appointments:"
+msgstr "Для записи на прием:"
+
+msgid "Please use our online booking system."
+msgstr "Пожалуйста, используйте нашу систему онлайн-бронирования."
+
+msgid "New contact form submission"
+msgstr "Новое сообщение из контактной формы"
+
+msgid "Sending..."
+msgstr "Отправка..."
+
+msgid "Thank you! Your message has been sent successfully."
+msgstr "Спасибо! Ваше сообщение успешно отправлено."
+
+msgid "Something went wrong. Please try again."
+msgstr "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
+
+msgid "Contact Information"
+msgstr "Контактная информация"
+
+# Blog and Articles translations
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Latest news and articles from"
+msgstr "Последние новости и статьи от"
+
+msgid "Latest news and articles from our practice"
+msgstr "Последние новости и статьи нашей практики"
+
+msgid "Articles in category"
+msgstr "Статьи в категории"
+
+msgid "Articles in this category"
+msgstr "Статьи в этой категории"
+
+msgid "Filter by category"
+msgstr "Фильтр по категории"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Updated"
+msgstr "Обновлено"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Available in"
+msgstr "Доступно на"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Read more"
+msgstr "Читать далее"
+
+msgid "Back to Blog"
+msgstr "Вернуться к блогу"
+
+msgid "No articles available yet."
+msgstr "Статей пока нет."
+
+msgid "No articles in this category yet."
+msgstr "В этой категории пока нет статей."
+

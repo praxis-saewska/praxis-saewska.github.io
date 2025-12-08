@@ -3,7 +3,7 @@ Lang: ru
 Slug: about
 Template: about
 
-## Д-р PhD Елена Заевская
+## К.мед.н. Елена Заевская
 
 <img src="/images/elena-saewska.jpg" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
 

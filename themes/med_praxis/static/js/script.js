@@ -10,12 +10,17 @@
         // Detect current language from URL
         const currentPath = window.location.pathname;
         let currentLang = 'de';
-        if (currentPath.startsWith('/en/') || currentPath === '/en') {
+        if (currentPath.startsWith('/de/') || currentPath === '/de') {
+            currentLang = 'de';
+        } else if (currentPath.startsWith('/en/') || currentPath === '/en') {
             currentLang = 'en';
         } else if (currentPath.startsWith('/ru/') || currentPath === '/ru') {
             currentLang = 'ru';
         } else if (currentPath.startsWith('/uk/') || currentPath === '/uk') {
             currentLang = 'uk';
+        } else if (currentPath === '/' || currentPath === '/index.html') {
+            // На корневой странице показываем немецкий как выбранный
+            currentLang = 'de';
         }
         
         langSelect.value = currentLang;
@@ -34,14 +39,9 @@
                 pagePath = '';
             }
             
-            // Build new URL
+            // Build new URL - все языки теперь имеют префиксы
             const baseUrl = window.location.origin;
-            let newUrl;
-            if (newLang === 'de') {
-                newUrl = baseUrl + pagePath;
-            } else {
-                newUrl = baseUrl + '/' + newLang + pagePath;
-            }
+            const newUrl = baseUrl + '/' + newLang + pagePath;
             
             window.location.href = newUrl;
         });
@@ -60,12 +60,17 @@
     // Detect current language from URL
     const currentPath = window.location.pathname;
     let currentLang = 'de';
-    if (currentPath.startsWith('/en/') || currentPath === '/en') {
+    if (currentPath.startsWith('/de/') || currentPath === '/de') {
+        currentLang = 'de';
+    } else if (currentPath.startsWith('/en/') || currentPath === '/en') {
         currentLang = 'en';
     } else if (currentPath.startsWith('/ru/') || currentPath === '/ru') {
         currentLang = 'ru';
     } else if (currentPath.startsWith('/uk/') || currentPath === '/uk') {
         currentLang = 'uk';
+    } else if (currentPath === '/' || currentPath === '/index.html') {
+        // На корневой странице используем немецкий
+        currentLang = 'de';
     }
 
     // Get SITEURL from the page (from canonical link or base tag)
