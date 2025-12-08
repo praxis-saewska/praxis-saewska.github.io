@@ -2,28 +2,42 @@
 
 > Gynäkologische Praxis in Berlin-Charlottenburg unter der Leitung von Dr. PhD Elena Saewska. Wir bieten umfassende gynäkologische Betreuung, Schwangerschaftsbetreuung, Urogynäkologie, Kindergynäkologie und moderne minimalinvasive Behandlungen. Die Praxis ist mehrsprachig (Deutsch, Englisch, Russisch, Ukrainisch) und legt Wert auf individuelle Betreuung in vertrauensvoller Atmosphäre.
 
-Die Praxis befindet sich in der Uhlandstr. 87, 10717 Berlin. Alle Seiten sind in vier Sprachen verfügbar (Deutsch, Englisch, Russisch, Ukrainisch). Die Website verwendet relative URLs für die Hauptsprache und Sprachpräfixe (/en/, /ru/, /uk/) für andere Sprachen.
+Die Praxis befindet sich in der Uhlandstr. 87, 10717 Berlin. Alle Seiten sind in vier Sprachen verfügbar (Deutsch, Englisch, Russisch, Ukrainisch). Die Website verwendet Sprachpräfixe für alle Sprachen: /de/ (Deutsch), /en/ (Englisch), /ru/ (Russisch), /uk/ (Ukrainisch).
 
 ## Hauptseiten
 
-- [Startseite](https://praxis-saewska.de/) - Übersicht über alle Leistungen der Praxis: Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen und mehr
-- [Über uns](https://praxis-saewska.de/about/) - Informationen über Dr. PhD Elena Saewska, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
-- [FAQ](https://praxis-saewska.de/faq/) - Häufig gestellte Fragen zu Terminvereinbarung, Unterlagen, Zahlungsmethoden, Versicherungen und Behandlungen
+- [Startseite (Deutsch)](https://praxis-saewska.de/de/) - Übersicht über alle Leistungen der Praxis: Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen und mehr
+- [Startseite (English)](https://praxis-saewska.de/en/) - Overview of all practice services
+- [Startseite (Русский)](https://praxis-saewska.de/ru/) - Обзор всех услуг практики
+- [Startseite (Українська)](https://praxis-saewska.de/uk/) - Огляд всіх послуг практики
+
+- [Über uns](https://praxis-saewska.de/de/about/) - Informationen über Dr. PhD Elena Saewska, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
+- [FAQ](https://praxis-saewska.de/de/faq/) - Häufig gestellte Fragen zu Terminvereinbarung, Unterlagen, Zahlungsmethoden, Versicherungen und Behandlungen
+- [Kontakt](https://praxis-saewska.de/de/contact/) - Kontaktformular und Informationen zur Terminvereinbarung
 
 ## Wichtige Informationen
 
-- [Kontakt](https://praxis-saewska.de/about/#contact) - Adresse: Uhlandstr. 87, 10717 Berlin, Telefon und E-Mail für Terminvereinbarungen
-- [Öffnungszeiten](https://praxis-saewska.de/about/#contact) - Sprechzeiten: Montag-Freitag 10:00-14:00 und 15:00-17:00 (Mittwoch ab 09:00), Samstag und Sonntag geschlossen
-- [Leistungen](https://praxis-saewska.de/#services) - Detaillierte Beschreibung aller angebotenen gynäkologischen Leistungen und Behandlungen
+- **Adresse:** Uhlandstr. 87, 10717 Berlin
+- **Öffnungszeiten:** Montag-Freitag 10:00-14:00 und 15:00-17:00 (Mittwoch ab 09:00), Samstag und Sonntag geschlossen
+- **E-Mail:** info@praxis-saewska.de
+- **Leistungen:** Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen, minimalinvasive Behandlungen
+
+## Blog
+
+- [Blog (Deutsch)](https://praxis-saewska.de/de/blog/) - Aktuelle Nachrichten und Ankündigungen der Praxis
+- [Blog (English)](https://praxis-saewska.de/en/blog/) - Latest news and announcements
+- [Blog (Русский)](https://praxis-saewska.de/ru/blog/) - Последние новости и объявления
+- [Blog (Українська)](https://praxis-saewska.de/uk/blog/) - Останні новини та оголошення
 
 ## Rechtliches
 
-- [Datenschutz](https://praxis-saewska.de/privacy/) - Datenschutzerklärung der Praxis
-- [Impressum](https://praxis-saewska.de/impressum/) - Rechtliche Angaben und Kontaktdaten
+- [Datenschutz](https://praxis-saewska.de/de/privacy/) - Datenschutzerklärung der Praxis
+- [Impressum](https://praxis-saewska.de/de/impressum/) - Rechtliche Angaben und Kontaktdaten
 
-## Optional
+## Sprachversionen
 
-- [English Version](https://praxis-saewska.de/en/) - English version of the website
-- [Русская версия](https://praxis-saewska.de/ru/) - Russian version of the website
-- [Українська версія](https://praxis-saewska.de/uk/) - Ukrainian version of the website
+- [Deutsch](https://praxis-saewska.de/de/) - Hauptsprache der Website
+- [English](https://praxis-saewska.de/en/) - English version of the website
+- [Русский](https://praxis-saewska.de/ru/) - Русская версия сайта
+- [Українська](https://praxis-saewska.de/uk/) - Українська версія сайта
 

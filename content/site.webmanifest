@@ -1,7 +1,7 @@
 {
     "name": "Praxis Saewska - Gynäkologie",
     "short_name": "Praxis Saewska",
-    "description": "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit",
+    "description": "Gynäkologische Praxis in Berlin-Charlottenburg - Professionelle Betreuung für alle Fragen der Frauengesundheit",
     "icons": [
         {
             "src": "/images/logo.svg",
@@ -13,7 +13,7 @@
     "theme_color": "#00C9A7",
     "background_color": "#FFFFFF",
     "display": "standalone",
-    "start_url": "/",
+    "start_url": "/de/",
     "scope": "/"
 }
 

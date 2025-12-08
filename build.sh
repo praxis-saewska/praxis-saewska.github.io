@@ -6,17 +6,93 @@ set -e  # Exit on error
 echo "🏗️  Building Praxis Saewska multilingual website..."
 echo ""
 
-# Activate virtual environment
-source .venv/bin/activate
+# Check for msgfmt and install if needed
+check_msgfmt() {
+    if ! command -v msgfmt &> /dev/null; then
+        echo "⚠️  msgfmt not found. Attempting to install gettext..."
+        
+        # Detect OS and install accordingly
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+            # macOS
+            if command -v brew &> /dev/null; then
+                echo "📦 Installing gettext via Homebrew..."
+                brew install gettext
+                # Add gettext to PATH if needed
+                if [ -d "/opt/homebrew/opt/gettext/bin" ]; then
+                    export PATH="/opt/homebrew/opt/gettext/bin:$PATH"
+                elif [ -d "/usr/local/opt/gettext/bin" ]; then
+                    export PATH="/usr/local/opt/gettext/bin:$PATH"
+                fi
+            else
+                echo "❌ Homebrew not found. Please install gettext manually:"
+                echo "   brew install gettext"
+                exit 1
+            fi
+        elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+            # Linux
+            if command -v apt-get &> /dev/null; then
+                echo "📦 Installing gettext via apt-get..."
+                sudo apt-get update && sudo apt-get install -y gettext
+            elif command -v yum &> /dev/null; then
+                echo "📦 Installing gettext via yum..."
+                sudo yum install -y gettext
+            elif command -v dnf &> /dev/null; then
+                echo "📦 Installing gettext via dnf..."
+                sudo dnf install -y gettext
+            else
+                echo "❌ Package manager not found. Please install gettext manually:"
+                echo "   sudo apt-get install gettext  # Debian/Ubuntu"
+                echo "   sudo yum install gettext      # RHEL/CentOS"
+                exit 1
+            fi
+        else
+            echo "❌ Unsupported OS. Please install gettext manually:"
+            echo "   macOS: brew install gettext"
+            echo "   Linux: sudo apt-get install gettext"
+            exit 1
+        fi
+        
+        # Verify installation
+        if ! command -v msgfmt &> /dev/null; then
+            echo "❌ msgfmt still not found after installation attempt."
+            echo "   Please install gettext manually and try again."
+            exit 1
+        fi
+        
+        echo "✅ msgfmt installed successfully!"
+        echo ""
+    else
+        echo "✅ msgfmt found"
+    fi
+}
+
+# Check and install msgfmt if needed
+check_msgfmt
+echo ""
+
+# Activate virtual environment and set up Python commands
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+    PYTHON_CMD="python3"
+    PELICAN_CMD="pelican"
+elif command -v uv &> /dev/null; then
+    echo "📦 Using uv for Python environment..."
+    PYTHON_CMD="uv run python"
+    PELICAN_CMD="uv run pelican"
+else
+    echo "⚠️  Warning: No virtual environment found. Using system Python."
+    PYTHON_CMD="python3"
+    PELICAN_CMD="pelican"
+fi
 
 # Compile translations
 echo "📚 Compiling translations..."
-python3 compile_translations.py
+$PYTHON_CMD compile_translations.py
 echo ""
 
 # Generate site
 echo "⚙️  Generating site..."
-pelican content -s pelicanconf.py
+$PELICAN_CMD content -s pelicanconf.py
 echo ""
 
 echo "✅ Build complete! Site generated in output/"

@@ -4,6 +4,12 @@ Allow: /
 # Sitemap
 Sitemap: https://praxis-saewska.de/sitemap.xml
 
+# Allow all language versions
+Allow: /de/
+Allow: /en/
+Allow: /ru/
+Allow: /uk/
+
 # Disallow admin or private areas if any
 # Disallow: /admin/
 
