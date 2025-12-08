@@ -95,6 +95,24 @@ echo "⚙️  Generating site..."
 $PELICAN_CMD content -s pelicanconf.py
 echo ""
 
+# Clean up DEFAULT_LANG files (they shouldn't be generated, but i18n_subsites creates them anyway)
+echo "🧹 Cleaning up DEFAULT_LANG files..."
+DEFAULT_LANG="C"
+# Remove page files for DEFAULT_LANG
+if [ -d "output/pages" ]; then
+    find output/pages -name "*-${DEFAULT_LANG}.html" -delete 2>/dev/null || true
+    # Remove pages directory if empty
+    rmdir output/pages 2>/dev/null || true
+fi
+# Remove article files for DEFAULT_LANG from root
+find output -maxdepth 1 -name "*-${DEFAULT_LANG}.html" -delete 2>/dev/null || true
+# Also remove any language-specific files that shouldn't be in root (they should only be in subdirectories)
+for lang in de en ru uk; do
+    find output -maxdepth 1 -name "*-${lang}.html" -delete 2>/dev/null || true
+done
+echo "✅ Cleanup complete"
+echo ""
+
 echo "✅ Build complete! Site generated in output/"
 echo ""
 echo "📁 Structure:"
