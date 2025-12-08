@@ -102,10 +102,8 @@
     {% if page and page.metadata and page.metadata.get('directions') %}
     {{ page.metadata.get('directions') | safe }}
     {% else %}
-    {% set siteurl = SITEURL | default('') %}
-    {% set is_main_site = (not siteurl or siteurl == '' or siteurl == '/') %}
-    {% if is_main_site %}
-    {# Немецкий текст для основного сайта (/) #}
+    {% if DEFAULT_LANG == 'de' %}
+    {# Немецкий текст для немецкой версии #}
     <h2>Anfahrt</h2>
     <p>Unsere Praxis befindet sich in der Uhlandstraße 87, 10717 Berlin (Charlottenburg).</p>
     <p><strong>Mit dem Auto:</strong><br>
