@@ -1,25 +1,13 @@
-# Cloudflare Pages Language-based Redirects
-# Automatically redirects visitors to appropriate language version based on Accept-Language header
-# Format: source destination status-code [conditions]
-
-# Language-based redirects for root path
-# Russian speakers -> /ru/
-/ /ru/ 302 Language=ru
-/index.html /ru/ 302 Language=ru
-
-# Ukrainian speakers -> /uk/
-/ /uk/ 302 Language=uk
-/index.html /uk/ 302 Language=uk
-
-# English speakers -> /en/
-/ /en/ 302 Language=en
-/index.html /en/ 302 Language=en
-
-# German speakers -> /de/
-/ /de/ 302 Language=de
-/index.html /de/ 302 Language=de
-
-# Default fallback to German (main language) for all other languages
-/ /de/ 302
-/index.html /de/ 302
+# Cloudflare Pages Redirects
+# 
+# NOTE: Language-based redirects are handled by _worker.js
+# Cloudflare Pages does not support Accept-Language conditions in _redirects file.
+# 
+# The Worker intercepts root path requests and redirects based on browser language:
+# - Ukrainian (uk) -> /uk/
+# - Russian (ru) -> /ru/
+# - English (en) -> /en/
+# - German (de) or default -> /de/
+#
+# This file can be used for other simple redirects if needed in the future.
 
