@@ -5,7 +5,7 @@ Template: about
 
 ## Д-р PhD Олена Заєвська
 
-<img src="/images/elena-saewska.jpg" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
+<img src="/images/elena-saewska.png" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
 
 **Спеціаліст з гінекології та акушерства**
 
