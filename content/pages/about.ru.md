@@ -5,7 +5,7 @@ Template: about
 
 ## К.мед.н. Елена Заевская
 
-<img src="/images/elena-saewska.jpg" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
+<img src="/images/elena-saewska.png" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
 
 **Специалист по гинекологии и акушерству**
 
