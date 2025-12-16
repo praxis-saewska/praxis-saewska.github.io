@@ -5,7 +5,7 @@ Template: about
 
 ## Dr. PhD Elena Saewska
 
-<img src="/images/elena-saewska.jpg" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
+<img src="/images/elena-saewska.png" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
 
 **Fachärztin für Gynäkologie und Geburtshilfe**
 
