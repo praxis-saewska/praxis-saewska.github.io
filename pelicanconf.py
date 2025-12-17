@@ -13,8 +13,7 @@ if str(current_dir) not in sys.path:
 
 AUTHOR = 'Praxis Saewska'
 SITENAME = 'Praxis Saewska'
-SITEURL = ''
-# SITEURL = 'https://praxis-saewska.de/'
+SITEURL = 'https://praxis-saewska.de/'
 
 # Path settings
 PATH = 'content'
