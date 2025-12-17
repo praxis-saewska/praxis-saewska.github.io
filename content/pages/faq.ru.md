@@ -2,6 +2,7 @@ Title: FAQ - Praxis Saewska
 Lang: ru
 Slug: faq
 Template: faq
+translation: true
 
 ## Как записаться на прием?
 

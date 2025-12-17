@@ -2,6 +2,7 @@ Title: FAQ - Praxis Saewska
 Lang: uk
 Slug: faq
 Template: faq
+translation: true
 
 ## Як записатися на прийом?
 

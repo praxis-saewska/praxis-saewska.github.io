@@ -2,6 +2,7 @@ Title: FAQ - Praxis Saewska
 Lang: en
 Slug: faq
 Template: faq
+translation: true
 
 ## How do I book an appointment?
 

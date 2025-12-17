@@ -2,6 +2,7 @@ Title: FAQ - Praxis Saewska
 Lang: de
 Slug: faq
 Template: faq
+translation: true
 
 ## Wie vereinbare ich einen Termin?
 
