@@ -5,11 +5,15 @@ Template: about
 
 ## Dr. PhD Elena Saewska
 
-<img src="/images/elena-saewska.png" alt="Elena Photo" style="float: left; margin-right: 1.5em; max-width: 200px;" />
-
-**Fachärztin für Gynäkologie und Geburtshilfe**
-
-Herzlich willkommen in unserer Praxis! Ich freue mich, Sie kennenzulernen und Sie auf Ihrem Weg zu begleiten. Mit über 14 Jahren Erfahrung als Fachärztin, davon 10 Jahre in leitender Position, bringe ich umfassende Expertise in der minimalinvasiven Gynäkologie mit. Ich bin sehr kommunikativ und stets bereit, Neues zu lernen, um Ihnen die bestmögliche Behandlung zu bieten.
+<div class="doctor-info">
+  <div class="doctor-photo">
+    <img src="/images/elena-saewska.png" alt="Elena Photo" />
+  </div>
+  <div class="doctor-details">
+    <p><strong>Fachärztin für Gynäkologie und Geburtshilfe</strong></p>
+    <p>Herzlich willkommen in unserer Praxis! Ich freue mich, Sie kennenzulernen und Sie auf Ihrem Weg zu begleiten. Mit über 14 Jahren Erfahrung als Fachärztin, davon 10 Jahre in leitender Position, bringe ich umfassende Expertise in der minimalinvasiven Gynäkologie mit. Ich bin sehr kommunikativ und stets bereit, Neues zu lernen, um Ihnen die bestmögliche Behandlung zu bieten.</p>
+  </div>
+</div>
 
 ## Qualifikationen und Ausbildung
 
