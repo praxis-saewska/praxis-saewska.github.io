@@ -1,6 +1,7 @@
 Title: Розширені години консультацій з лютого 2025 року
 Date: 2025-01-20 14:30
 Category: News
+Status: draft
 Tags: оголошення, години консультацій, запис
 Slug: extended-consultation-hours
 Lang: uk

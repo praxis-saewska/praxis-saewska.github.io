@@ -1,6 +1,7 @@
 Title: Расширенные часы консультаций с февраля 2025 года
 Date: 2025-01-20 14:30
 Category: News
+Status: draft
 Tags: объявление, часы консультаций, запись
 Slug: extended-consultation-hours
 Lang: ru

@@ -11,10 +11,9 @@ current_dir = Path(__file__).parent.absolute()
 if str(current_dir) not in sys.path:
     sys.path.insert(0, str(current_dir))
 
-AUTHOR = 'Praxis Saewska'
+AUTHOR = 'Praxis Dr. PhD Elena Saewska'
 SITENAME = 'Praxis Saewska'
-SITEURL = ''
-# SITEURL = 'https://praxis-saewska.de/'
+SITEURL = 'https://praxis-saewska.de/'
 
 # Path settings
 PATH = 'content'
@@ -131,7 +130,7 @@ CLOSED_TEXT = CLOSED_TEXT
 # Все языки как подсайты, немецкий тоже получает свою папку /de
 I18N_SUBSITES = {
     'de': {
-        'SITENAME': 'Praxis Saewska',
+        'SITENAME': 'Praxis Dr. PhD Elena Saewska',
         'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
         'LOCALE': 'de_DE.UTF-8',
         'LANG_PREFIX': '/de',  # Префикс для навигационных ссылок
@@ -151,7 +150,7 @@ I18N_SUBSITES = {
         'CLOSED_TEXT': CLOSED_TEXT,
     },
     'en': {
-        'SITENAME': 'Praxis Saewska',
+        'SITENAME': 'Praxis Dr. PhD Elena Saewska',
         'SITEURL': '',  # Пустой SITEURL для правильных путей к статическим файлам
         'LOCALE': 'en_US.UTF-8',
         'LANG_PREFIX': '/en',  # Префикс для навигационных ссылок
