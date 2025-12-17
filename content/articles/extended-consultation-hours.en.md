@@ -1,6 +1,7 @@
 Title: Extended Consultation Hours from February 2025
 Date: 2025-01-20 14:30
 Category: News
+Status: draft
 Tags: announcement, consultation hours, appointments
 Slug: extended-consultation-hours
 Lang: en

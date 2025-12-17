@@ -2,6 +2,7 @@ Title: Добро пожаловать в наш блог
 Date: 2025-01-15 10:00
 Modified: 2025-01-15 10:00
 Category: Articles
+Status: draft
 Tags: практика, новости, информация
 Slug: welcome-to-our-blog
 Lang: ru

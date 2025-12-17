@@ -1,6 +1,7 @@
 Title: Erweiterte Sprechzeiten ab Februar 2025
 Date: 2025-01-20 14:30
 Category: News
+Status: draft
 Tags: ankündigung, sprechzeiten, termine
 Slug: extended-consultation-hours
 Lang: de
