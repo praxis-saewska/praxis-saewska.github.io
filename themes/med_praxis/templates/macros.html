@@ -72,7 +72,13 @@
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Freitag') }}</td>
-        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">{{ hours.friday }}</td>
+        <td style="padding: 0.75rem 0; text-align: right; color: var(--soft-gray);">
+            {% if ' - ' in hours.friday %} 
+                {{ hours.friday }}
+            {% else %}
+                {{ closed_text }}
+            {% endif %}
+        </td>
     </tr>
     <tr style="border-bottom: 1px solid var(--border-light);">
         <td style="padding: 0.75rem 0; font-weight: 600;">{{ _('Samstag') }}</td>
