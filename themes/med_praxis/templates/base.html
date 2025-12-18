@@ -18,7 +18,7 @@
     <meta property="og:url" content="{% block og_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}" id="og-url">
     <meta property="og:title" content="{% block og_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
-    <meta property="og:image" content="https://praxis-saewska.de/theme/images/elena-saewska.png">
+    <meta property="og:image" content="/theme/images/logo.svg">
     <meta property="og:locale" content="{% if DEFAULT_LANG == 'de' %}de_DE{% elif DEFAULT_LANG == 'en' %}en_US{% elif DEFAULT_LANG == 'ru' %}ru_RU{% elif DEFAULT_LANG == 'uk' %}uk_UA{% endif %}" id="og-locale">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="ru_RU">
@@ -31,7 +31,7 @@
     <meta name="twitter:url" content="{% block twitter_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}">
     <meta name="twitter:title" content="{% block twitter_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
-    <meta name="twitter:image" content="https://praxis-saewska.de/theme/images/elena-saewska.png">
+    <meta name="twitter:image" content="/theme/images/logo.svg">
     
     <!-- Hreflang для многоязычности -->
     {% if lang_siteurls is defined %}
