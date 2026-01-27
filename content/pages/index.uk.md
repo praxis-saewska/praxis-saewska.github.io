@@ -1,4 +1,4 @@
-Title: Praxis Saewska - Гінекологія
+Title: Praxis Saewska - Гінекологічний кабінет
 Lang: uk
 Slug: index
 Template: index

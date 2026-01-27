@@ -1,4 +1,4 @@
-Title: Praxis Saewska - Gynecology 123
+Title: Praxis Saewska - Gynecology Clinic
 Lang: en
 Slug: index
 Template: index

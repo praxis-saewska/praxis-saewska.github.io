@@ -1,4 +1,4 @@
-Title: Praxis Saewska - Gynäkologie
+Title: Praxis Saewska - Gynäkologische Praxis
 Lang: de
 Slug: index
 Template: index
