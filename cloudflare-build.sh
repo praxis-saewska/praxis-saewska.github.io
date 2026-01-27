@@ -5,6 +5,7 @@
 set -e  # Exit on error
 
 echo "🏗️  Building Praxis Saewska for Cloudflare Pages..."
+echo python:  (python3 --version)
 echo ""
 
 # Install Python dependencies using pip
@@ -19,7 +20,7 @@ echo ""
 
 # Generate site with production config
 echo "⚙️  Generating site..."
-pelican content -s publishconf.py
+pelican content -s pelicanconf.py
 echo ""
 
 # Clean up files that shouldn't be in root
