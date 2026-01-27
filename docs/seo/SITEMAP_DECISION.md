@@ -2,7 +2,7 @@
 
 ## Decision: Custom Script ✅
 
-After testing both approaches, we're using a **custom sitemap generator** (`generate_sitemap.py`) instead of the pelican-sitemap plugin.
+After testing both approaches, we're using a **custom sitemap generator** (`scripts/generate_sitemap.py`) instead of the pelican-sitemap plugin.
 
 ## Why Not pelican-sitemap Plugin?
 
@@ -100,7 +100,7 @@ grep -c "\./" output/sitemap.xml
 
 ## Implementation Details
 
-### File: `generate_sitemap.py`
+### File: `scripts/generate_sitemap.py`
 
 **Features:**
 - Walks output directory recursively
@@ -114,7 +114,7 @@ grep -c "\./" output/sitemap.xml
 **Usage:**
 ```bash
 # Run manually
-uv run python generate_sitemap.py output
+uv run python scripts/generate_sitemap.py output
 
 # Runs automatically via
 ./build.sh
@@ -126,7 +126,7 @@ Added step after Pelican build:
 ```bash
 # Generate sitemap
 echo "🗺️  Generating sitemap..."
-$PYTHON_CMD generate_sitemap.py output
+$PYTHON_CMD scripts/generate_sitemap.py output
 ```
 
 ## Performance Comparison
@@ -166,4 +166,4 @@ The pelican-sitemap plugin is not suitable for complex multilingual sites with i
 **Test Date:** 2026-01-27
 **Pelican Version:** 4.11.0
 **pelican-sitemap Version:** 1.2.2
-**Decision:** Use custom `generate_sitemap.py` script
+**Decision:** Use custom `scripts/generate_sitemap.py` script

@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Manual build process (if needed):
 # 1. Compile .po translation files to .mo binary files
-python3 compile_translations.py
+python3 scripts/compile_translations.py
 
 # 2. Generate site (development)
 uv run pelican content -s pelicanconf.py
@@ -65,7 +65,7 @@ The site uses a sophisticated multilingual architecture:
 
 1. **Template UI strings**: Jinja2 templates use `{{ _('string') }}` syntax
    - Translations in `themes/med_praxis/translations/{lang}/LC_MESSAGES/messages.po`
-   - Compiled to `.mo` binary files by `compile_translations.py`
+   - Compiled to `.mo` binary files by `scripts/compile_translations.py`
    - Loaded by Pelican i18n extension at build time
 
 2. **Site data (hours, contact)**: Python dictionaries in `site_data.py`
@@ -166,7 +166,7 @@ After editing, rebuild: `./build.sh`
    msgid "About"
    msgstr "Über uns"
    ```
-3. Compile translations: `python3 compile_translations.py`
+3. Compile translations: `python3 scripts/compile_translations.py`
 4. Rebuild: `./build.sh`
 
 ### Add New Page
@@ -209,7 +209,7 @@ Templates use `{{ _('string') }}` for translatable UI strings and access site da
 3. Uploads `output/` directory to GitHub Pages
 4. Site live at https://praxis-saewska.de
 
-Note: The workflow uses `publishconf.py` (not `build.sh`), so it only compiles the site without running `compile_translations.py`. Ensure translations are compiled and `.mo` files are committed before pushing.
+Note: The workflow uses `publishconf.py` (not `build.sh`), so it only compiles the site without running `scripts/compile_translations.py`. Ensure translations are compiled and `.mo` files are committed before pushing.
 
 ## Critical Implementation Patterns
 
@@ -218,7 +218,7 @@ Note: The workflow uses `publishconf.py` (not `build.sh`), so it only compiles t
 - **Always create content for all 4 languages** with matching `Slug:` metadata
 - Edit `site_data.py` for data that should be consistent across languages
 - Edit `.po` files for UI strings that need translation
-- Run `compile_translations.py` after editing `.po` files
+- Run `scripts/compile_translations.py` after editing `.po` files
 
 ### Modifying Configuration
 

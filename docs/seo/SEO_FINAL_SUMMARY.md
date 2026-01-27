@@ -11,13 +11,13 @@ Complete SEO and AI crawler optimization for Praxis Saewska medical practice web
 ### 1. Sitemap Generation
 **Status:** ✅ Production Ready
 
-- **Solution:** Custom `generate_sitemap.py` script
+- **Solution:** Custom `scripts/generate_sitemap.py` script
 - **Why Custom:** pelican-sitemap plugin incompatible with i18n_subsites (generates broken `/.` URLs)
 - **Result:** 48 perfect URLs across 4 languages
 - **Integration:** Auto-generates via `build.sh`
 
 **Files:**
-- ✅ `generate_sitemap.py` (new)
+- ✅ `scripts/generate_sitemap.py` (new)
 - ✅ `build.sh` (modified - added sitemap step)
 - ✅ `pelicanconf.py` (documented why custom script used)
 
@@ -161,7 +161,7 @@ Complete SEO and AI crawler optimization for Praxis Saewska medical practice web
 ## 📁 Files Created/Modified
 
 ### Created (New Files)
-1. `generate_sitemap.py` - Custom sitemap generator
+1. `scripts/generate_sitemap.py` - Custom sitemap generator
 2. `SEO_OPTIMIZATION_SUMMARY.md` - Technical documentation
 3. `SEO_QUICK_REFERENCE.md` - Quick troubleshooting guide
 4. `SEO_IMPLEMENTATION_VERIFIED.md` - Build verification report
@@ -236,9 +236,9 @@ python -m http.server 8000 -d output
 ```yaml
 - name: Build site
   run: |
-    uv run python compile_translations.py
+    uv run python scripts/compile_translations.py
     uv run pelican content -s publishconf.py
-    uv run python generate_sitemap.py output
+    uv run python scripts/generate_sitemap.py output
 ```
 
 ### 3. Deploy

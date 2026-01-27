@@ -42,7 +42,7 @@ Done: Processed 4 articles, 8 drafts, 0 hidden articles, 24 pages, 0 hidden page
 
 ### 1. Sitemap Generation
 
-**Implementation:** Custom Python script (`generate_sitemap.py`)
+**Implementation:** Custom Python script (`scripts/generate_sitemap.py`)
 
 **Status:** ✅ WORKING
 - Sitemap generated at `output/sitemap.xml`
@@ -354,9 +354,9 @@ git push origin main
 ```yaml
 - name: Build site
   run: |
-    uv run python compile_translations.py
+    uv run python scripts/compile_translations.py
     uv run pelican content -s publishconf.py
-    uv run python generate_sitemap.py output
+    uv run python scripts/generate_sitemap.py output
 ```
 
 **Or better:** Use the build script:

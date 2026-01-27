@@ -84,9 +84,9 @@ Find this section:
 - name: Build site
   run: |
     chmod +x build.sh
-    uv run python compile_translations.py
+    uv run python scripts/compile_translations.py
     uv run pelican content -s publishconf.py
-    uv run python generate_sitemap.py output
+    uv run python scripts/generate_sitemap.py output
 ```
 
 **Why:** GitHub Actions workflow must generate sitemap just like local build.
@@ -197,11 +197,11 @@ curl -I https://praxis-saewska.de/
 ### Sitemap Not Generated
 
 ```bash
-# Check if generate_sitemap.py exists
-ls -la generate_sitemap.py
+# Check if scripts/generate_sitemap.py exists
+ls -la scripts/generate_sitemap.py
 
 # Test manually
-uv run python generate_sitemap.py output
+uv run python scripts/generate_sitemap.py output
 
 # Check build.sh includes sitemap step
 grep "generate_sitemap" build.sh
@@ -236,7 +236,7 @@ ls -la output/robots.txt
 ### GitHub Actions Failing
 
 1. Check workflow file updated correctly
-2. Verify all Python files committed (generate_sitemap.py)
+2. Verify all Python files committed (scripts/generate_sitemap.py)
 3. Check build logs in Actions tab
 4. Ensure build.sh has execute permissions
 

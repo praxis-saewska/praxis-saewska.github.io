@@ -20,7 +20,7 @@ This automatically compiles translations and generates all 4 language versions.
 3. **Manual build** (if needed):
 ```bash
 # Compile translations first
-python3 compile_translations.py
+python3 scripts/compile_translations.py
 
 # Then generate the site
 uv run pelican content -s pelicanconf.py
@@ -154,11 +154,23 @@ The website is **automatically deployed** using GitHub Actions.
 ```
 .
 ├── content/              # Content files
-│   └── pages/           # Page markdown files
+│   ├── pages/           # Page markdown files
+│   ├── articles/        # Blog articles
+│   ├── images/          # Images and media
+│   ├── robots.txt       # Crawler directives
+│   ├── llms.txt         # AI crawler guidelines
+│   └── _worker.js       # Cloudflare Worker (language detection)
 ├── themes/              # Theme templates
+│   └── med_praxis/      # Custom medical practice theme
+├── scripts/             # Build utility scripts
+│   ├── compile_translations.py   # Compile .po to .mo files
+│   └── generate_sitemap.py       # Generate sitemap.xml
+├── docs/                # Documentation
+│   └── seo/             # SEO implementation documentation
 ├── site_data.py         # Site-wide data (hours, contacts)
 ├── pelicanconf.py       # Development configuration
 ├── publishconf.py       # Production configuration
+├── build.sh             # Build script (translations + site + sitemap)
 └── output/              # Generated site (git-ignored)
 ```
 

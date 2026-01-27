@@ -14,7 +14,7 @@ This document summarizes all SEO and AI crawler optimizations implemented for th
 **Problem:** Sitemap files were deleted, no automatic generation configured.
 
 **Solution:**
-- Created custom `generate_sitemap.py` script (Pelican-compatible, no external plugins needed)
+- Created custom `scripts/generate_sitemap.py` script (Pelican-compatible, no external plugins needed)
 - Integrated into `build.sh` to auto-generate after Pelican build
 - Configured priorities and changefreqs:
   - Homepage: priority 1.0, weekly updates
@@ -27,7 +27,7 @@ This document summarizes all SEO and AI crawler optimizations implemented for th
 - Valid XML format, tested with xmllint
 
 **Files Created:**
-- `generate_sitemap.py` (new custom sitemap generator)
+- `scripts/generate_sitemap.py` (new custom sitemap generator)
 
 **Files Modified:**
 - `build.sh` (added sitemap generation step)
@@ -355,7 +355,7 @@ To apply these changes:
 
 ```bash
 # 1. Compile translations (if any translation strings were modified)
-python3 compile_translations.py
+python3 scripts/compile_translations.py
 
 # 2. Build site
 ./build.sh

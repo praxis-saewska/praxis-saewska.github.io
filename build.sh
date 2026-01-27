@@ -87,7 +87,7 @@ fi
 
 # Compile translations
 echo "📚 Compiling translations..."
-$PYTHON_CMD compile_translations.py
+$PYTHON_CMD scripts/compile_translations.py
 echo ""
 
 # Generate site
@@ -115,7 +115,7 @@ echo ""
 
 # Generate sitemap
 echo "🗺️  Generating sitemap..."
-$PYTHON_CMD generate_sitemap.py output
+$PYTHON_CMD scripts/generate_sitemap.py output
 echo ""
 
 echo "✅ Build complete! Site generated in output/"
