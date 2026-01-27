@@ -2,6 +2,8 @@
 #    uv export --no-hashes --format requirements-txt -o requirements.txt
 anyio==4.11.0
     # via watchfiles
+polib==1.2.0
+    # via praxis-saewska
 blinker==1.9.0
     # via pelican
 docutils==0.22.3
