@@ -1,5 +1,6 @@
 Title: About Us - Praxis Saewska
 Lang: en
+Translation: true
 Slug: about
 Template: about
 

@@ -1,5 +1,6 @@
 Title: Praxis Saewska - Гінекологічний кабінет
 Lang: uk
+Translation: true
 Slug: index
 Template: index
 Hero_Subtitle: Ваше здоров'я важливе для нас. Ми пропонуємо комплексну гінекологічну допомогу в атмосфері довіри.

@@ -1,5 +1,6 @@
 Title: Praxis Saewska - Gynaecological practice
 Lang: en
+Translation: true
 Slug: index
 Template: index
 Hero_Subtitle: Your health is important to us. We offer comprehensive gynecological care in a trusting atmosphere.

@@ -1,5 +1,6 @@
 Title: Контакт
 Lang: uk
+Translation: true
 Slug: contact
 Template: contact
 

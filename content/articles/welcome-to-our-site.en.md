@@ -6,6 +6,7 @@ Status: published
 Tags: practice, news, information
 Slug: welcome-to-our-site
 Lang: en
+Translation: true
 Summary: Praxis Saewska is planned to open on 01.05.2026. On this website you will find an overview of our services, information about Dr. PhD Elena Saewska, and a way to contact us via the feedback form. The site is under development and will be expanded.
 
 Dear Patients,

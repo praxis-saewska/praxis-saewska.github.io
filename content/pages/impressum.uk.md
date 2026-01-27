@@ -1,5 +1,6 @@
 Title: Вихідні дані - Praxis Saewska
 Lang: uk
+Translation: true
 Slug: impressum
 Template: impressum
 Last_Updated: Останнє оновлення: [Дата]

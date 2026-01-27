@@ -1,5 +1,6 @@
 Title: Contact
 Lang: en
+Translation: true
 Slug: contact
 Template: contact
 

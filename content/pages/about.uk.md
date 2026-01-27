@@ -1,5 +1,6 @@
 Title: Про нас - Praxis Saewska
 Lang: uk
+Translation: true
 Slug: about
 Template: about
 

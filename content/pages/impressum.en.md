@@ -1,5 +1,6 @@
 Title: Legal Notice - Praxis Saewska
 Lang: en
+Translation: true
 Slug: impressum
 Template: impressum
 Last_Updated: Last updated: [Date]

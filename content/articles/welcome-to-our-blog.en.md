@@ -6,6 +6,7 @@ Status: draft
 Tags: practice, news, information
 Slug: welcome-to-our-blog
 Lang: en
+Translation: true
 Summary: We are pleased to open our new blog, where we will regularly inform you about news from our practice, important health topics, and current developments in gynecology.
 
 Dear Patients,

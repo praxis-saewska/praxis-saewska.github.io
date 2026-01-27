@@ -1,5 +1,6 @@
 Title: Політика конфіденційності - Praxis Saewska
 Lang: uk
+Translation: true
 Slug: privacy
 Template: privacy
 Last_Updated: Останнє оновлення: [Дата]

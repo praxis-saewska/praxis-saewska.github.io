@@ -1,5 +1,6 @@
 Title: FAQ - Praxis Saewska
 Lang: en
+Translation: true
 Slug: faq
 Template: faq
 translation: true

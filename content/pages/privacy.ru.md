@@ -1,5 +1,6 @@
 Title: Политика конфиденциальности - Praxis Saewska
 Lang: ru
+Translation: true
 Slug: privacy
 Template: privacy
 Last_Updated: Последнее обновление: [Дата]

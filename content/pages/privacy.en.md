@@ -1,5 +1,6 @@
 Title: Privacy Policy - Praxis Saewska
 Lang: en
+Translation: true
 Slug: privacy
 Template: privacy
 Last_Updated: Last updated: [Date]

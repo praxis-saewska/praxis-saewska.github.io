@@ -5,6 +5,7 @@ Status: draft
 Tags: announcement, consultation hours, appointments
 Slug: extended-consultation-hours
 Lang: en
+Translation: true
 Summary: Starting February 2025, we are extending our consultation hours to offer you even more flexibility when scheduling appointments.
 
 ## Important Announcement: New Consultation Hours

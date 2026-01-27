@@ -1,5 +1,6 @@
 Title: Выходные данные - Praxis Saewska
 Lang: ru
+Translation: true
 Slug: impressum
 Template: impressum
 Last_Updated: Последнее обновление: [Дата]
