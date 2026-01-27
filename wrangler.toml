@@ -1,4 +1,6 @@
 name = "praxis-saewska"
-compatibility_date = "2024-01-27"
+compatibility_date = "2025-01-27"
 pages_build_output_dir = "./output"
-build = './cloudflare-build.sh'
+
+[build]
+command = "./cloudflare-build.sh"
