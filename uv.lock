@@ -217,7 +217,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "markdown", specifier = ">=3.5.0" },
-    { name = "pelican", specifier = ">=4.9.0" },
+    { name = "pelican", specifier = ">=4.11.0" },
     { name = "pelican-i18n-subsites", specifier = ">=1.0.0" },
     { name = "typogrify", specifier = ">=2.0.7" },
 ]

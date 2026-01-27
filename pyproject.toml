@@ -4,9 +4,8 @@ version = "2.0.0"
 description = "Praxis Saewska website generated with Pelican"
 requires-python = ">=3.12"
 dependencies = [
-    "pelican>=4.9.0",
+    "pelican>=4.11.0",
     "markdown>=3.5.0",
     "typogrify>=2.0.7",
     "pelican-i18n-subsites>=1.0.0",
 ]
-
