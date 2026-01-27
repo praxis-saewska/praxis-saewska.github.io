@@ -9,22 +9,22 @@ echo ""
 
 # Install system dependencies (gettext for msgfmt)
 echo "📦 Installing gettext..."
-apt-get update && apt-get install -y gettext
+apt-get update && apt-get install -y gettext python3-pip
 echo ""
 
-# Install Python dependencies using uv
+# Install Python dependencies using pip
 echo "📦 Installing Python dependencies..."
-uv sync
+pip install -r requirements.txt
 echo ""
 
 # Compile translations
 echo "📚 Compiling translations..."
-uv run python scripts/compile_translations.py
+python3 scripts/compile_translations.py
 echo ""
 
 # Generate site with production config
 echo "⚙️  Generating site..."
-uv run pelican content -s publishconf.py
+pelican content -s publishconf.py
 echo ""
 
 # Clean up files that shouldn't be in root
@@ -50,7 +50,7 @@ echo ""
 
 # Generate sitemap
 echo "🗺️  Generating sitemap..."
-uv run python scripts/generate_sitemap.py output
+python3 scripts/generate_sitemap.py output
 echo ""
 
 echo "✅ Build complete! Site generated in output/"
