@@ -1,4 +1,4 @@
-Title: Praxis Saewska - Gynecology Clinic
+Title: Praxis Saewska - Gynaecological practice
 Lang: en
 Slug: index
 Template: index

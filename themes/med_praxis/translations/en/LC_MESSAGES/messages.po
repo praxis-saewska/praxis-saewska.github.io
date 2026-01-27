@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Gynäkologische Praxis"
-msgstr "Gynecological Practice"
+msgstr "Gynaecological Practice"
 
 msgid "Dr. PhD Elena Saewska"
 msgstr "Dr. PhD Elena Saewska"
@@ -353,4 +353,3 @@ msgstr "No articles available yet."
 
 msgid "No articles in this category yet."
 msgstr "No articles in this category yet."
-

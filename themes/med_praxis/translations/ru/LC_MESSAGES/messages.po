@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Gynäkologische Praxis"
-msgstr "Гинекологическая практика"
+msgstr "Гинекологический кабинет"
 
 msgid "Dr. PhD Elena Saewska"
 msgstr "Доктор PhD Елена Заевская"
