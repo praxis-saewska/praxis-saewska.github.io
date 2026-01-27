@@ -5,7 +5,7 @@
 set -e  # Exit on error
 
 echo "🏗️  Building Praxis Saewska for Cloudflare Pages..."
-# echo "python: $(python3 --version)"
+echo "python: $(python3 --version)"
 echo ""
 
 # Install Python dependencies using pip

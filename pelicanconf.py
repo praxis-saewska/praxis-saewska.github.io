@@ -11,7 +11,7 @@ current_dir = Path(__file__).parent.absolute()
 if str(current_dir) not in sys.path:
     sys.path.insert(0, str(current_dir))
 
-AUTHOR = "Praxis Dr. PhD Elena Saewska"
+AUTHOR = "Praxis Dr. Elena Saewska, PhD"
 SITENAME = "Praxis Saewska"
 SITEURL = "https://praxis-saewska.de/"
 
