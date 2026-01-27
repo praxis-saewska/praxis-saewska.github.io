@@ -87,7 +87,7 @@ fi
 
 # Compile translations
 echo "📚 Compiling translations..."
-$PYTHON_CMD compile_translations.py
+$PYTHON_CMD scripts/compile_translations.py
 echo ""
 
 # Generate site
@@ -111,6 +111,11 @@ for lang in de en ru uk; do
     find output -maxdepth 1 -name "*-${lang}.html" -delete 2>/dev/null || true
 done
 echo "✅ Cleanup complete"
+echo ""
+
+# Generate sitemap
+echo "🗺️  Generating sitemap..."
+$PYTHON_CMD scripts/generate_sitemap.py output
 echo ""
 
 echo "✅ Build complete! Site generated in output/"

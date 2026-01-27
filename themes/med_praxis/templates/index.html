@@ -119,4 +119,77 @@
       }
     }
     </script>
+    
+    <!-- Detailed Physician Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "{{ PRACTICE_INFO.doctor_name if PRACTICE_INFO else 'Dr. PhD Elena Saewska' }}",
+      "honorificPrefix": "Dr. PhD",
+      "givenName": "Elena",
+      "familyName": "Saewska",
+      "jobTitle": "{{ _('Gynecologist and Obstetrician') }}",
+      "worksFor": {
+        "@type": "MedicalBusiness",
+        "name": "{{ SITENAME }}",
+        "url": "{{ SITEURL }}"
+      },
+      "medicalSpecialty": [
+        {
+          "@type": "MedicalSpecialty",
+          "name": "Gynecology"
+        },
+        {
+          "@type": "MedicalSpecialty",
+          "name": "Obstetrics"
+        }
+      ],
+      "knowsAbout": [
+        "Gynecology",
+        "Obstetrics",
+        "Preventive Care",
+        "Women's Health",
+        "Pregnancy Care",
+        "Urogynecology"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ CONTACT_INFO.address_street if CONTACT_INFO else 'Uhlandstr. 87' }}",
+        "addressLocality": "Berlin",
+        "postalCode": "10717",
+        "addressCountry": "DE"
+      },
+      "telephone": "{{ CONTACT_INFO.phone if CONTACT_INFO else '[Ihre Telefonnummer]' }}",
+      "email": "{{ CONTACT_INFO.email if CONTACT_INFO else 'info@praxis-saewska.de' }}",
+      "url": "{{ SITEURL }}",
+      "image": "{{ SITEURL }}/theme/images/elena-saewska.png",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Medical University"
+      },
+      "availableLanguage": [
+        {
+          "@type": "Language",
+          "name": "German",
+          "alternateName": "de"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Russian",
+          "alternateName": "ru"
+        },
+        {
+          "@type": "Language",
+          "name": "Ukrainian",
+          "alternateName": "uk"
+        }
+      ]
+    }
+    </script>
 {% endblock %}

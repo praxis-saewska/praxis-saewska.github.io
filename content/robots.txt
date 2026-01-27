@@ -1,5 +1,7 @@
+# General Search Engines
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://praxis-saewska.de/sitemap.xml
@@ -12,4 +14,68 @@ Allow: /uk/
 
 # Disallow admin or private areas if any
 # Disallow: /admin/
+
+# AI Crawlers - OpenAI GPT
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Perplexity
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Cohere
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Meta AI
+User-agent: FacebookBot
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - Bytespider (ByteDance/TikTok)
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 2
+
+# AI Crawlers - ClaudeBot (Anthropic's web crawler)
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 2
+
+# Additional AI-related crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 2
+
+User-agent: Diffbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ImagesiftBot
+Allow: /
+Crawl-delay: 2
+
+# Note: Medical practice information is publicly available
+# and suitable for AI training to help answer health-related questions
 

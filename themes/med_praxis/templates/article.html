@@ -35,6 +35,77 @@
         {% endfor %}
         <link rel="alternate" hreflang="{{ article.lang }}" href="{{ SITEURL }}/{{ DEFAULT_LANG }}/{{ article.url }}">
     {% endif %}
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "{{ _('Home') }}",
+          "item": "{{ SITEURL }}/{{ article.lang }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ _('Blog') }}",
+          "item": "{{ SITEURL }}/{{ article.lang }}/blog/"
+        }{% if article.category %},
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ article.category }}",
+          "item": "{{ SITEURL }}/{{ article.lang }}/{{ article.category.url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "{{ article.title|striptags }}",
+          "item": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"
+        }{% else %},
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ article.title|striptags }}",
+          "item": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"
+        }{% endif %}
+      ]
+    }
+    </script>
+    
+    <!-- BlogPosting Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ article.title|striptags|tojson }},
+      "datePublished": "{{ article.date.isoformat() }}",
+      {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
+      "author": {
+        "@type": "Person",
+        "name": "{{ article.author if article.author else AUTHOR }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ SITENAME }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ SITEURL }}/theme/images/logo.svg"
+        }
+      },
+      {% if article.summary %}"description": {{ article.summary|striptags|tojson }},{% endif %}
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"
+      },
+      {% if article.category %}"articleSection": "{{ article.category }}",{% endif %}
+      {% if article.tags %}"keywords": "{% for tag in article.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}",{% endif %}
+      "inLanguage": "{{ article.lang }}"
+    }
+    </script>
 {% endblock %}
 
 {% block content %}

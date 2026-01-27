@@ -1,5 +1,56 @@
 {% extends "base.html" %}
 
+{% block extra_head %}
+<!-- FAQPage Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% set content = page.content if page and page.content else '' %}
+    {% set sections = content.split('<h2') %}
+    {% set faq_items = [] %}
+    
+    {% for section in sections %}
+        {% if section.strip() and not loop.first %}
+            {% if '>' in section and '</h2>' in section %}
+                {% set after_attrs = section.split('>', 1) %}
+                {% if after_attrs|length > 1 %}
+                    {% set header_content = after_attrs[1] %}
+                    {% set parts = header_content.split('</h2>', 1) %}
+                    {% set question = parts[0]|trim|striptags %}
+                    {% set answer = parts[1]|trim|striptags if parts|length > 1 else '' %}
+                    
+                    {% if '<h2' in answer %}
+                        {% set next_sections = answer.split('<h2', 1) %}
+                        {% if next_sections|length > 1 %}
+                            {% set answer = next_sections[0]|trim|striptags %}
+                        {% endif %}
+                    {% endif %}
+                    
+                    {% if question and answer %}
+                        {% set _ = faq_items.append({'question': question, 'answer': answer}) %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    
+    {% for item in faq_items %}
+    {
+      "@type": "Question",
+      "name": {{ item.question|tojson }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.answer|tojson }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <section class="section">
     <div class="container">

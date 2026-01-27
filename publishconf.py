@@ -17,7 +17,7 @@ from pelicanconf import *
 # Update this to match your Cloudflare Pages custom domain or *.pages.dev domain
 # For custom domain: 'https://praxis-saewska.de'
 # For Cloudflare Pages default: 'https://praxis-saewska.pages.dev'
-SITEURL = 'https://praxis-saewska.de'
+SITEURL = "https://praxis-saewska.de"
 RELATIVE_URLS = False
 
 # Update i18n_subsites with production URLs

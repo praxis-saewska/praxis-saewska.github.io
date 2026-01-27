@@ -17,7 +17,7 @@ msgid "Gynäkologische Praxis"
 msgstr "Gynäkologische Praxis"
 
 msgid "Dr. PhD Elena Saewska"
-msgstr "Dr. PhD Elena Saewska"
+msgstr "Dr.  Elena Saewska, PhD"
 
 msgid "Startseite"
 msgstr "Startseite"
@@ -353,4 +353,3 @@ msgstr "Noch keine Artikel verfügbar."
 
 msgid "No articles in this category yet."
 msgstr "Noch keine Artikel in dieser Kategorie."
-
