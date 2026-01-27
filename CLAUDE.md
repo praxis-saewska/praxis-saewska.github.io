@@ -202,14 +202,55 @@ Templates use `{{ _('string') }}` for translatable UI strings and access site da
 
 ## Deployment
 
-**Automatic deployment via GitHub Actions** (`.github/workflows/deploy.yml`):
+**Automatic deployment via GitHub Actions to Cloudflare Pages** (`.github/workflows/deploy-cloudflare.yml`):
 
-1. Push to `main` branch (or trigger workflow manually)
-2. Workflow runs `uv run pelican content -s publishconf.py`
-3. Uploads `output/` directory to GitHub Pages
-4. Site live at https://praxis-saewska.de
+The site uses a CI/CD pipeline that automatically builds and deploys to Cloudflare Pages on every push to `main`.
 
-Note: The workflow uses `publishconf.py` (not `build.sh`), so it only compiles the site without running `scripts/compile_translations.py`. Ensure translations are compiled and `.mo` files are committed before pushing.
+### Deployment Process
+
+1. **Trigger**: Push to `main` branch or manually trigger workflow
+2. **Build steps**:
+   - Compile translations (`.po` → `.mo` files)
+   - Generate Pelican site with `publishconf.py` (production config)
+   - Clean up root directory (remove language-specific files that should only be in subdirectories)
+   - Generate `sitemap.xml`
+3. **Deploy**: Upload `output/` directory to Cloudflare Pages via API
+4. **Live**: Site automatically deployed to https://praxis-saewska.de
+
+### Build Script
+
+The complete build process is encapsulated in `scripts/build_for_deployment.py`, which includes all steps from `build.sh`:
+- Translation compilation
+- Site generation
+- Root cleanup
+- Sitemap generation
+
+This ensures the CI/CD build matches local development builds exactly.
+
+### Required GitHub Secrets
+
+Configure these in your GitHub repository settings (Settings → Secrets and variables → Actions):
+
+- `CLOUDFLARE_API_TOKEN`: API token with Cloudflare Pages:Edit permissions
+  - Create at: https://dash.cloudflare.com/profile/api-tokens
+  - Template: "Edit Cloudflare Workers"
+  
+- `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+  - Find at: https://dash.cloudflare.com/ (right sidebar)
+
+### Cloudflare Pages Project Setup
+
+1. Create Cloudflare Pages project named `praxis-saewska` (or update `projectName` in workflow)
+2. Connect to GitHub repository (for preview deployments on PRs)
+3. Production deployments handled by GitHub Actions workflow
+
+### Language Detection
+
+Cloudflare Worker (`content/_worker.js`) automatically redirects root path (`/`) to appropriate language based on visitor's `Accept-Language` header:
+- Ukrainian (`uk`) speakers → `/uk/`
+- Russian (`ru`) speakers → `/ru/`
+- English (`en`) speakers → `/en/`
+- Default/German → `/de/`
 
 ## Critical Implementation Patterns
 
