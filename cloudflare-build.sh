@@ -7,11 +7,6 @@ set -e  # Exit on error
 echo "🏗️  Building Praxis Saewska for Cloudflare Pages..."
 echo ""
 
-# Install system dependencies (gettext for msgfmt)
-echo "📦 Installing gettext..."
-apt-get update && apt-get install -y gettext python3-pip
-echo ""
-
 # Install Python dependencies using pip
 echo "📦 Installing Python dependencies..."
 pip install -r requirements.txt
