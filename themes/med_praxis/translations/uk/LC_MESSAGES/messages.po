@@ -17,7 +17,7 @@ msgid "Gynäkologische Praxis"
 msgstr "Гінекологічний кабінет"
 
 msgid "Dr. PhD Elena Saewska"
-msgstr "Доктор PhD Олена Заєвська"
+msgstr "Доктор Олена Заєвська, PhD"
 
 msgid "Startseite"
 msgstr "Головна"

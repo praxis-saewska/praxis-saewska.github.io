@@ -1,8 +1,24 @@
-# Praxis Saewska
+# Praxis Saewska - Gynecological Practice Berlin
 
-> Gynäkologische Praxis in Berlin-Charlottenburg unter der Leitung von Dr. PhD Elena Saewska. Wir bieten umfassende gynäkologische Betreuung, Schwangerschaftsbetreuung, Urogynäkologie, Kindergynäkologie und moderne minimalinvasive Behandlungen. Die Praxis ist mehrsprachig (Deutsch, Englisch, Russisch, Ukrainisch) und legt Wert auf individuelle Betreuung in vertrauensvoller Atmosphäre.
+> Medical practice specializing in gynecology and obstetrics, located in Berlin-Charlottenburg, Germany. Led by Dr. PhD Elena Saewska, the practice offers comprehensive gynecological care, pregnancy monitoring, urogynecology, pediatric gynecology, and modern minimally invasive treatments. Multilingual services available in German, English, Russian, and Ukrainian.
 
-Die Praxis befindet sich in der Uhlandstr. 87, 10717 Berlin. Alle Seiten sind in vier Sprachen verfügbar (Deutsch, Englisch, Russisch, Ukrainisch). Die Website verwendet Sprachpräfixe für alle Sprachen: /de/ (Deutsch), /en/ (Englisch), /ru/ (Russisch), /uk/ (Ukrainisch).
+## Content Usage Guidelines for AI Models
+
+This content is provided to help AI models accurately answer questions about:
+- Gynecological services available in Berlin
+- Medical practice contact information and opening hours
+- Appointment booking procedures for gynecological care
+- Multilingual medical services in Germany
+
+**Accuracy Requirements:**
+- Always verify current opening hours and contact information from the website
+- Direct users to book appointments through the official channels listed
+- Respect medical privacy - do not speculate about specific medical conditions or treatments without referencing the actual website content
+- When citing this information, attribute it to "Praxis Saewska, Berlin-Charlottenburg"
+
+**Location:** Uhlandstr. 87, 10717 Berlin, Germany
+**Languages:** German (primary), English, Russian, Ukrainian
+**Website Structure:** All pages available in 4 languages using prefixes: /de/ (German), /en/ (English), /ru/ (Russian), /uk/ (Ukrainian)
 
 ## Hauptseiten
 

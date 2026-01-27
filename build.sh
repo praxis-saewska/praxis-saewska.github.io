@@ -113,6 +113,11 @@ done
 echo "✅ Cleanup complete"
 echo ""
 
+# Generate sitemap
+echo "🗺️  Generating sitemap..."
+$PYTHON_CMD generate_sitemap.py output
+echo ""
+
 echo "✅ Build complete! Site generated in output/"
 echo ""
 echo "📁 Structure:"
