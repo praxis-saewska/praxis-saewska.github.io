@@ -14,8 +14,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Build entire multilingual site (recommended - compiles translations + generates all languages)
 ./build.sh
 
+# For deployment (includes all build.sh steps + production config)
+python scripts/build_for_deployment.py
+
 # Manual build process (if needed):
-# 1. Compile .po translation files to .mo binary files
+# 1. Compile .po translation files to .mo binary files (uses polib - no system gettext needed)
 python3 scripts/compile_translations.py
 
 # 2. Generate site (development)
@@ -24,6 +27,8 @@ uv run pelican content -s pelicanconf.py
 # 3. Generate site (production)
 uv run pelican content -s publishconf.py
 ```
+
+**Note**: Translation compilation now uses `polib` (pure Python) instead of system `msgfmt`, eliminating the need for gettext system package.
 
 ### Local Development
 

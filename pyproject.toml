@@ -8,5 +8,6 @@ dependencies = [
     "markdown>=3.5.0",
     "typogrify>=2.0.7",
     "pelican-i18n-subsites>=1.0.0",
+    "polib>=1.2.0",
 ]
 
