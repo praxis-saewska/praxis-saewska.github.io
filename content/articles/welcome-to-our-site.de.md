@@ -27,4 +27,4 @@ Für alle aktuellen Fragen können Sie Dr. Saewska über das Kontaktformular auf
 **Hinweis**: Diese Website befindet sich im Aufbau und wird schrittweise mit neuen Inhalten ergänzt.
 
 Mit freundlichen Grüßen  
-Dr. med. Elena Saewska
+Dr.  Elena Saewska, PhD
