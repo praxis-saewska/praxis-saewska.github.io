@@ -190,36 +190,6 @@ msgstr "Termin buchen"
 msgid "Contact"
 msgstr "Kontakt"
 
-msgid "Online Appointment Booking"
-msgstr "Online-Terminbuchung"
-
-msgid "Book your appointment conveniently online via Doctolib."
-msgstr "Buchen Sie Ihren Termin bequem online über Doctolib."
-
-msgid "Doctolib Widget will be inserted here"
-msgstr "Doctolib-Widget wird hier eingefügt"
-
-msgid "Please insert your Doctolib widget code here"
-msgstr "Bitte fügen Sie hier Ihren Doctolib-Widget-Code ein"
-
-msgid "Instructions for Doctolib Integration:"
-msgstr "Anleitung zur Doctolib-Integration:"
-
-msgid "Log in to your Doctolib account"
-msgstr "Melden Sie sich in Ihrem Doctolib-Konto an"
-
-msgid "Go to \"Settings\" → \"Widget\""
-msgstr "Gehen Sie zu \"Einstellungen\" → \"Widget\""
-
-msgid "Copy the provided widget code"
-msgstr "Kopieren Sie den bereitgestellten Widget-Code"
-
-msgid "Replace the placeholder area above with the Doctolib code"
-msgstr "Ersetzen Sie den Platzhalterbereich oben durch den Doctolib-Code"
-
-msgid "Alternatively: Add a link to your Doctolib booking page:"
-msgstr "Alternativ: Fügen Sie einen Link zu Ihrer Doctolib-Buchungsseite hinzu:"
-
 msgid "Map is loading"
 msgstr "Karte wird geladen"
 
