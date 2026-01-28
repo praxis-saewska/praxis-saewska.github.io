@@ -26,10 +26,6 @@ A new phase of life with new possibilities: We support you during menopause with
 
 We offer modern diagnostics and therapy for fibroids, endometriosis, ovarian cysts, and inflammatory diseases of the female reproductive organs. Our goal is gentle, individually adapted treatment – for your long-term health.
 
-### Medical Abortion
-
-In a protected and respectful setting, we offer counseling and performance of medical abortion according to legal requirements – with personal support and medical safety.
-
 ### Preventive Examinations
 
 Regular preventive examinations are the best protection for your health. We perform comprehensive early detection examinations, smears, ultrasound, and individual health counseling.

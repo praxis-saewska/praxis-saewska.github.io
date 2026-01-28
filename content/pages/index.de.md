@@ -26,10 +26,6 @@ Ein neuer Lebensabschnitt mit neuen Möglichkeiten: Wir unterstützen Sie in den
 
 Wir bieten moderne Diagnostik und Therapie bei Myomen, Endometriose, Ovarialzysten und entzündlichen Erkrankungen der weiblichen Geschlechtsorgane. Unser Ziel ist eine schonende, individuell angepasste Behandlung – für Ihre langfristige Gesundheit.
 
-### Medikamentöser Schwangerschaftsabbruch
-
-In einem geschützten und respektvollen Rahmen bieten wir Beratung und Durchführung des medikamentösen Schwangerschaftsabbruchs nach gesetzlichen Vorgaben – mit persönlicher Begleitung und medizinischer Sicherheit.
-
 ### Vorsorgeuntersuchungen
 
 Regelmäßige Vorsorgeuntersuchungen sind der beste Schutz für Ihre Gesundheit. Wir führen umfassende Früherkennungsuntersuchungen, Abstriche, Ultraschall und individuelle Gesundheitsberatung durch.

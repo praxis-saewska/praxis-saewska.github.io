@@ -190,36 +190,6 @@ msgstr "Записаться на прием"
 msgid "Contact"
 msgstr "Контакты"
 
-msgid "Online Appointment Booking"
-msgstr "Онлайн-запись на прием"
-
-msgid "Book your appointment conveniently online via Doctolib."
-msgstr "Запишитесь на прием удобно онлайн через Doctolib."
-
-msgid "Doctolib Widget will be inserted here"
-msgstr "Виджет Doctolib будет вставлен здесь"
-
-msgid "Please insert your Doctolib widget code here"
-msgstr "Пожалуйста, вставьте здесь код виджета Doctolib"
-
-msgid "Instructions for Doctolib Integration:"
-msgstr "Инструкции по интеграции Doctolib:"
-
-msgid "Log in to your Doctolib account"
-msgstr "Войдите в свою учетную запись Doctolib"
-
-msgid "Go to \"Settings\" → \"Widget\""
-msgstr "Перейдите в \"Настройки\" → \"Виджет\""
-
-msgid "Copy the provided widget code"
-msgstr "Скопируйте предоставленный код виджета"
-
-msgid "Replace the placeholder area above with the Doctolib code"
-msgstr "Замените область-заполнитель выше кодом Doctolib"
-
-msgid "Alternatively: Add a link to your Doctolib booking page:"
-msgstr "Альтернативно: Добавьте ссылку на вашу страницу бронирования Doctolib:"
-
 msgid "Map is loading"
 msgstr "Карта загружается"
 
