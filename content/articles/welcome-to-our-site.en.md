@@ -10,7 +10,7 @@ Summary: Praxis Saewska is planned to open on 01.05.2026. On this website you wi
 
 Dear Patients,
 
-We are happy to share that Dr. PhD Elena Saewska’s private gynecology practice is planned to open on **01.05.2026**.
+We are happy to share that Dr. PhD Elena Saewska’s private gynecology practice is planned to open on **01.04.2026**.
 
 Dr. Elena Saewska is a specialist in gynecology and obstetrics with more than 15 years of experience, including 10 years in a leadership role. Her focus is modern and gentle care, including minimally invasive gynecology. Over the years she has published more than 20 scientific papers. Learn more on the [About us](/en/about/) page.
 
@@ -26,5 +26,3 @@ For any current questions, you will be able to contact Dr. Saewska via the feedb
 
 Kind regards,
 Dr. Elena Saewska
-
-

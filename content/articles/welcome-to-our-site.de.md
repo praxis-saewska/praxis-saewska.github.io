@@ -10,7 +10,7 @@ Summary: Die Praxis Saewska soll am 01.05.2026 eröffnen. Auf der Website finden
 
 Liebe Patientinnen,
 
-mit großer Freude teilen wir Ihnen mit, dass die private gynäkologische Praxis von Dr. PhD Elena Saewska ab dem **01.05.2026** ihre Arbeit aufnehmen wird.
+mit großer Freude teilen wir Ihnen mit, dass die private gynäkologische Praxis von Dr. PhD Elena Saewska ab dem **01.04.2026** ihre Arbeit aufnehmen wird.
 
 Dr. Elena Saewska ist Fachärztin für Gynäkologie und Geburtshilfe mit mehr als 15 Jahren Erfahrung, darunter 10 Jahre in leitender Position. Im Fokus steht eine moderne und zugleich besonders behutsame Betreuung – unter anderem im Bereich der minimalinvasiven Gynäkologie. Im Laufe ihrer Tätigkeit hat sie mehr als 20 wissenschaftliche Arbeiten veröffentlicht. Mehr dazu finden Sie auf der Seite [Über uns](/de/about/).
 
@@ -26,5 +26,3 @@ Für alle aktuellen Fragen können Sie Dr. Saewska über das Kontaktformular auf
 
 Mit freundlichen Grüßen
 Dr. Elena Saewska
-
-
