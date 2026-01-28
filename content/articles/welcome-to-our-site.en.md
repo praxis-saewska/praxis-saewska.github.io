@@ -10,7 +10,7 @@ Summary: Praxis Saewska will open on 14.04.2026. On this website you will find a
 
 Dear Patients,
 
-We are pleased to inform you that as of **14.04.2026** the private gynecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska, PhD, and will continue its work in a renewed format as Praxis Saewska.
+We are pleased to inform you that as of **14.04.2026** the private gynecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska PhD, and will continue its work in a renewed format as Praxis Saewska.
 
 Dr. Elena Saewska is a specialist in gynecology and obstetrics with more than 15 years of experience, including 10 years in a leadership position. Her focus is on modern, gentle care, including minimally invasive gynecology. Over the course of her career, she has published more than 20 scientific papers. You can find more details on the [About Us](/en/about/) page.
 
@@ -27,4 +27,4 @@ For all current questions, you will be able to contact Dr. Saewska via the conta
 **Please note**: this website is in development and will gradually be expanded with new content.
 
 Kind regards,  
-Dr. Elena Saewska
+Dr. Elena Saewska, PhD
