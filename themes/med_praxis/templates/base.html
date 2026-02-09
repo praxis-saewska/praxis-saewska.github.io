@@ -49,17 +49,17 @@
     {% else %}
         {# Fallback if lang_siteurls is not available #}
         {% if page and page.slug %}
-        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/{{ page.slug }}/">
+        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/de/{{ page.slug }}/">
         <link rel="alternate" hreflang="en" href="{{ SITEURL }}/en/{{ page.slug }}/">
         <link rel="alternate" hreflang="ru" href="{{ SITEURL }}/ru/{{ page.slug }}/">
         <link rel="alternate" hreflang="uk" href="{{ SITEURL }}/uk/{{ page.slug }}/">
-        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/{{ page.slug }}/">
+        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/de/{{ page.slug }}/">
         {% else %}
-        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/">
+        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/de/">
         <link rel="alternate" hreflang="en" href="{{ SITEURL }}/en/">
         <link rel="alternate" hreflang="ru" href="{{ SITEURL }}/ru/">
         <link rel="alternate" hreflang="uk" href="{{ SITEURL }}/uk/">
-        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/">
+        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/de/">
         {% endif %}
     {% endif %}
     
