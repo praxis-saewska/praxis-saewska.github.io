@@ -81,7 +81,7 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": {{ article.title|striptags|tojson }},
+      "headline": {{ article.title|striptags|tojson(ensure_ascii=False) }},
       "datePublished": "{{ article.date.isoformat() }}",
       {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
       "author": {
@@ -96,7 +96,7 @@
           "url": "{{ SITEURL }}/theme/images/logo.svg"
         }
       },
-      {% if article.summary %}"description": {{ article.summary|striptags|tojson }},{% endif %}
+      {% if article.summary %}"description": {{ article.summary|striptags|tojson(ensure_ascii=False) }},{% endif %}
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"

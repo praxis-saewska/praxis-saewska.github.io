@@ -39,10 +39,10 @@
     {% for item in faq_items %}
     {
       "@type": "Question",
-      "name": {{ item.question|tojson }},
+      "name": {{ item.question|tojson(ensure_ascii=False) }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ item.answer|tojson }}
+        "text": {{ item.answer|tojson(ensure_ascii=False) }}
       }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
