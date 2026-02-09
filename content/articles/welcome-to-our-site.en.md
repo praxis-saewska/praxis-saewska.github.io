@@ -6,25 +6,25 @@ Status: published
 Tags: practice, news, information
 Slug: welcome-to-our-site
 Lang: en
-Summary: Praxis Saewska is planned to open on 01.05.2026. On this website you will find an overview of our services, information about Dr. PhD Elena Saewska, and a way to contact us via the feedback form. The site is under development and will be expanded.
+Summary: Praxis Saewska will open on 14.04.2026. On this website you will find an overview of our services, information about Dr. Elena Saewska, and a way to contact us via the contact form. The site is under development and will be expanded.
 
 Dear Patients,
 
-We are happy to share that Dr. PhD Elena Saewska’s private gynecology practice is planned to open on **01.05.2026**.
+We are pleased to inform you that as of **14.04.2026** the private gynecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska PhD, and will continue its work in a renewed format as Praxis Saewska.
 
-Dr. Elena Saewska is a specialist in gynecology and obstetrics with more than 15 years of experience, including 10 years in a leadership role. Her focus is modern and gentle care, including minimally invasive gynecology. Over the years she has published more than 20 scientific papers. Learn more on the [About us](/en/about/) page.
+Dr. Elena Saewska is a specialist in gynecology and obstetrics with more than 15 years of experience, including 10 years in a leadership position. Her focus is on modern, gentle care, including minimally invasive gynecology. Over the course of her career, she has published more than 20 scientific papers. You can find more details on the [About Us](/en/about/) page.
 
-At our practice, you can expect modern, attentive, and individually tailored medical care in gynecology and women’s health. Our goal is a calm, trusting atmosphere in which every patient feels supported and confident in the quality of care.
+Dr. Saewska has deep respect and gratitude for the many years of work and dedication of Dr. Josepha Rodriguez in developing the practice and caring for her patients. In continuing this work, Dr. Saewska will strive to meet the expectations and the familiar level of attention and care that Dr. Rodriguez’s patients are used to, while preserving continuity of approach and an atmosphere of trust.
 
-Appointment booking and additional information will be available on the website soon.
+In our practice, you will receive modern, attentive, and individually tailored medical care in the field of gynecology and women’s health. Our goal is a calm, trusting atmosphere in which every patient feels supported and confident in the quality of treatment.
 
-An overview of our services is available on the homepage in the [Our Services](/en/#services) section.
+Appointment booking and additional information will be available on the website in the near future.
 
-For any current questions, you will be able to contact Dr. Saewska via the feedback form on the website: [Contact form](/en/contact/).
+An overview of the services we offer can be found on the homepage in the [Our Services](/en/#services) section.
 
-**Please note**: this website is under development and will be gradually expanded with new content.
+For all current questions, you will be able to contact Dr. Saewska via the contact form on the website: [Contact Form](/en/contact/).
 
-Kind regards,
-Dr. Elena Saewska
+**Please note**: this website is in development and will gradually be expanded with new content.
 
-
+Kind regards,  
+Dr. Elena Saewska, PhD

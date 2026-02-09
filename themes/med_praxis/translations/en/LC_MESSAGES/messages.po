@@ -17,7 +17,7 @@ msgid "Gynäkologische Praxis"
 msgstr "Gynaecological Practice"
 
 msgid "Dr. PhD Elena Saewska"
-msgstr "Dr. Elena Saewska? PhD"
+msgstr "Dr. Elena Saewska, PhD"
 
 msgid "Startseite"
 msgstr "Home"
@@ -189,36 +189,6 @@ msgstr "Book Appointment"
 
 msgid "Contact"
 msgstr "Contact"
-
-msgid "Online Appointment Booking"
-msgstr "Online Appointment Booking"
-
-msgid "Book your appointment conveniently online via Doctolib."
-msgstr "Book your appointment conveniently online via Doctolib."
-
-msgid "Doctolib Widget will be inserted here"
-msgstr "Doctolib Widget will be inserted here"
-
-msgid "Please insert your Doctolib widget code here"
-msgstr "Please insert your Doctolib widget code here"
-
-msgid "Instructions for Doctolib Integration:"
-msgstr "Instructions for Doctolib Integration:"
-
-msgid "Log in to your Doctolib account"
-msgstr "Log in to your Doctolib account"
-
-msgid "Go to \"Settings\" → \"Widget\""
-msgstr "Go to \"Settings\" → \"Widget\""
-
-msgid "Copy the provided widget code"
-msgstr "Copy the provided widget code"
-
-msgid "Replace the placeholder area above with the Doctolib code"
-msgstr "Replace the placeholder area above with the Doctolib code"
-
-msgid "Alternatively: Add a link to your Doctolib booking page:"
-msgstr "Alternatively: Add a link to your Doctolib booking page:"
 
 msgid "Map is loading"
 msgstr "Map is loading"

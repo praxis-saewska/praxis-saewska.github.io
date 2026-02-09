@@ -3,6 +3,7 @@
 Pelican configuration for Praxis Saewska website
 """
 
+import json
 import sys
 from pathlib import Path
 
@@ -11,7 +12,7 @@ current_dir = Path(__file__).parent.absolute()
 if str(current_dir) not in sys.path:
     sys.path.insert(0, str(current_dir))
 
-AUTHOR = "Praxis Dr. PhD Elena Saewska"
+AUTHOR = "Praxis Dr. Elena Saewska, PhD"
 SITENAME = "Praxis Saewska"
 SITEURL = "https://praxis-saewska.de/"
 
@@ -104,8 +105,19 @@ MARKDOWN = {
 I18N_GETTEXT_LOCALEDIR = "themes/med_praxis/translations/"
 I18N_GETTEXT_DOMAIN = "messages"
 
+
+# Custom Jinja2 filter to preserve Unicode characters in JSON output
+def tojson_unicode(value):
+    """Convert value to JSON string without escaping non-ASCII characters."""
+    return json.dumps(value, ensure_ascii=False)
+
+
 JINJA_ENVIRONMENT = {
     "extensions": ["jinja2.ext.i18n"],
+}
+
+JINJA_FILTERS = {
+    "tojson_unicode": tojson_unicode,
 }
 
 # i18n_subsites configuration
@@ -114,8 +126,8 @@ I18N_UNTRANSLATED_ARTICLES = "keep"  # 'hide' (draft), 'remove', or 'keep'
 I18N_UNTRANSLATED_PAGES = "keep"  # 'hide' (hidden), 'remove', or 'keep'
 
 # Custom settings
-SITE_DESCRIPTION = "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit"
-SITE_KEYWORDS = "Gynäkologe Berlin, Frauenarzt Berlin, Gynäkologie Charlottenburg, Schwangerschaftsbetreuung, Urogynäkologie"
+# SITE_DESCRIPTION = "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit"
+# SITE_KEYWORDS = "Gynäkologe Berlin, Frauenarzt Berlin, Gynäkologie Charlottenburg, Schwangerschaftsbetreuung, Urogynäkologie"
 
 # Import site data - ЕДИНСТВЕННЫЙ файл для редактирования данных
 from site_data import CLOSED_TEXT, CONTACT_INFO, OPENING_HOURS, PRACTICE_INFO
@@ -145,7 +157,7 @@ CLOSED_TEXT = CLOSED_TEXT
 # Все языки как подсайты, немецкий тоже получает свою папку /de
 I18N_SUBSITES = {
     "de": {
-        "SITENAME": "Praxis Dr. PhD Elena Saewska",
+        "SITENAME": "Praxis Dr. Elena Saewska, PhD",
         "SITEURL": "",  # Пустой SITEURL для правильных путей к статическим файлам
         "LOCALE": "de_DE.UTF-8",
         "LANG_PREFIX": "/de",  # Префикс для навигационных ссылок
@@ -163,9 +175,11 @@ I18N_SUBSITES = {
         "CONTACT_INFO": CONTACT_INFO,
         "PRACTICE_INFO": PRACTICE_INFO,
         "CLOSED_TEXT": CLOSED_TEXT,
+        "SITE_DESCRIPTION": "Gynäkologische Praxis - Professionelle Betreuung für alle Fragen der Frauengesundheit",
+        "SITE_KEYWORDS": "Gynäkologe Berlin, Frauenarzt Berlin, Gynäkologie Charlottenburg, Schwangerschaftsbetreuung, Urogynäkologie",
     },
     "en": {
-        "SITENAME": "Praxis Dr. PhD Elena Saewska",
+        "SITENAME": "Praxis Dr. Elena Saewska, PhD",
         "SITEURL": "",  # Пустой SITEURL для правильных путей к статическим файлам
         "LOCALE": "en_US.UTF-8",
         "LANG_PREFIX": "/en",  # Префикс для навигационных ссылок
@@ -186,9 +200,11 @@ I18N_SUBSITES = {
         "CONTACT_INFO": CONTACT_INFO,
         "PRACTICE_INFO": PRACTICE_INFO,
         "CLOSED_TEXT": CLOSED_TEXT,
+        "SITE_DESCRIPTION": "Gynecological Practice - Professional care for all women's health matters",
+        "SITE_KEYWORDS": "Gynecologist Berlin, Women's doctor Berlin, Gynecology Charlottenburg, Pregnancy care, Urogynecology",
     },
     "ru": {
-        "SITENAME": "Praxis Saewska",
+        "SITENAME": "Praxis Dr. Elena Saewska, PhD",
         "SITEURL": "",  # Пустой SITEURL для правильных путей к статическим файлам
         "LOCALE": "ru_RU.UTF-8",
         "LANG_PREFIX": "/ru",  # Префикс для навигационных ссылок
@@ -206,9 +222,11 @@ I18N_SUBSITES = {
         "CONTACT_INFO": CONTACT_INFO,
         "PRACTICE_INFO": PRACTICE_INFO,
         "CLOSED_TEXT": CLOSED_TEXT,
+        "SITE_DESCRIPTION": "Гинекологическая практика - Профессиональная помощь по всем вопросам женского здоровья",
+        "SITE_KEYWORDS": "Гинеколог Берлин, Женский врач Берлин, Гинекология Шарлоттенбург, Ведение беременности, Урогинекология",
     },
     "uk": {
-        "SITENAME": "Praxis Saewska",
+        "SITENAME": "Praxis Dr. Elena Saewska, PhD",
         "SITEURL": "",  # Пустой SITEURL для правильных путей к статическим файлам
         "LOCALE": "uk_UA.UTF-8",
         "LANG_PREFIX": "/uk",  # Префикс для навигационных ссылок
@@ -226,6 +244,8 @@ I18N_SUBSITES = {
         "CONTACT_INFO": CONTACT_INFO,
         "PRACTICE_INFO": PRACTICE_INFO,
         "CLOSED_TEXT": CLOSED_TEXT,
+        "SITE_DESCRIPTION": "Гінекологічна практика - Професійна допомога з усіх питань жіночого здоров'я",
+        "SITE_KEYWORDS": "Гінеколог Берлін, Жіночий лікар Берлін, Гінекологія Шарлоттенбург, Ведення вагітності, Урогінекологія",
     },
 }
 

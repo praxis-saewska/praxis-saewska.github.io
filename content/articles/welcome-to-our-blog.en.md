@@ -2,7 +2,7 @@ Title: Welcome to Our Blog
 Date: 2025-01-15 10:00
 Modified: 2025-01-15 10:00
 Category: Articles
-Status: draft
+Status: published
 Tags: practice, news, information
 Slug: welcome-to-our-blog
 Lang: en
@@ -28,4 +28,3 @@ We invite you to check back regularly and stay informed about current topics. Al
 If you have any questions or suggestions, please feel free to contact us at any time. We look forward to connecting with you!
 
 Your Praxis Saewska Team
-

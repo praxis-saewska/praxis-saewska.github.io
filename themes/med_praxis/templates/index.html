@@ -37,24 +37,24 @@
         <div class="container">
             <h2 class="section-title">{{ _('Book Appointment') }}</h2>
             <div class="doctolib-placeholder">
-                <h3>{{ _('Online Appointment Booking') }}</h3>
-                <p>{{ _('Book your appointment conveniently online via Doctolib.') }}</p>
-                
+                <h3>Online Appointment Booking</h3>
+                <p>Book your appointment conveniently online via Doctolib.</p>
+
                 <!-- PLACEHOLDER: Replace this div with your Doctolib widget code -->
                 <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 4px; margin: 1rem 0; text-align: center; color: #666;">
-                    <p><strong>{{ _('Doctolib Widget will be inserted here') }}</strong></p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">{{ _('Please insert your Doctolib widget code here') }}</p>
+                    <p><strong>Doctolib Widget will be inserted here</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Please insert your Doctolib widget code here</p>
                 </div>
-                
+
                 <div class="doctolib-instructions">
-                    <p><strong>{{ _('Instructions for Doctolib Integration:') }}</strong></p>
+                    <p><strong>Instructions for Doctolib Integration:</strong></p>
                     <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li>{{ _('Log in to your Doctolib account') }}</li>
-                        <li>{{ _('Go to "Settings" → "Widget"') }}</li>
-                        <li>{{ _('Copy the provided widget code') }}</li>
-                        <li>{{ _('Replace the placeholder area above with the Doctolib code') }}</li>
+                        <li>Log in to your Doctolib account</li>
+                        <li>Go to "Settings" → "Widget"</li>
+                        <li>Copy the provided widget code</li>
+                        <li>Replace the placeholder area above with the Doctolib code</li>
                     </ol>
-                    <p style="margin-top: 1rem;"><strong>{{ _('Alternatively: Add a link to your Doctolib booking page:') }}</strong></p>
+                    <p style="margin-top: 1rem;"><strong>Alternatively: Add a link to your Doctolib booking page:</strong></p>
                     <code>https://www.doctolib.de/...</code>
                 </div>
             </div>
@@ -119,13 +119,13 @@
       }
     }
     </script>
-    
+
     <!-- Detailed Physician Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Physician",
-      "name": "{{ PRACTICE_INFO.doctor_name if PRACTICE_INFO else 'Dr. PhD Elena Saewska' }}",
+      "name": "{{ PRACTICE_INFO.doctor_name if PRACTICE_INFO else 'Dr. Elena Saewska, PhD' }}",
       "honorificPrefix": "Dr. PhD",
       "givenName": "Elena",
       "familyName": "Saewska",

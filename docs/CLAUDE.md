@@ -202,14 +202,54 @@ Templates use `{{ _('string') }}` for translatable UI strings and access site da
 
 ## Deployment
 
-**Automatic deployment via GitHub Actions** (`.github/workflows/deploy.yml`):
+### Cloudflare Pages (Production)
 
-1. Push to `main` branch (or trigger workflow manually)
-2. Workflow runs `uv run pelican content -s publishconf.py`
-3. Uploads `output/` directory to GitHub Pages
-4. Site live at https://praxis-saewska.de
+**Automatic deployment via Cloudflare's build pipeline**:
 
-Note: The workflow uses `publishconf.py` (not `build.sh`), so it only compiles the site without running `scripts/compile_translations.py`. Ensure translations are compiled and `.mo` files are committed before pushing.
+The site uses Cloudflare Pages with a custom build process configured in `wrangler.toml` and `cloudflare-build.sh`.
+
+#### Cloudflare Build Settings
+
+Configure these settings in your Cloudflare Pages dashboard (or they're read from `wrangler.toml`):
+
+- **Build command**: `./cloudflare-build.sh`
+- **Build output directory**: `output`
+- **Root directory**: (leave empty / project root)
+- **Environment variables**:
+  - `PYTHON_VERSION`: `3.12`
+  - `UV_VERSION`: `latest`
+
+#### Build Process
+
+The `cloudflare-build.sh` script performs these steps:
+
+1. Installs system dependencies (`apt-get install gettext`)
+2. Installs Python dependencies via `uv sync`
+3. Compiles translations (`scripts/compile_translations.py`)
+4. Generates site with production config (`publishconf.py`)
+5. Cleans up unnecessary root files
+6. Generates sitemap
+
+#### Deployment Flow
+
+1. Push to `main` branch (or configured production branch)
+2. Cloudflare detects changes and triggers build
+3. Runs `cloudflare-build.sh` in Ubuntu container
+4. Deploys `output/` directory to Cloudflare's edge network
+5. Site live at https://praxis-saewska.de
+
+**Note**: Unlike the GitHub Actions workflow, Cloudflare's build pipeline runs the complete build including translation compilation, so `.mo` files don't need to be committed.
+
+### GitHub Actions (Alternative/Legacy)
+
+**Manual deployment via GitHub Actions** (`.github/workflows/cloudflare-pages.yml`):
+
+1. Trigger workflow manually from Actions tab
+2. Workflow runs full build process with `uv`
+3. Compiles translations
+4. Uploads `output/` to Cloudflare Pages via API
+
+This workflow can be used for manual deployments or as a backup deployment method.
 
 ## Critical Implementation Patterns
 
