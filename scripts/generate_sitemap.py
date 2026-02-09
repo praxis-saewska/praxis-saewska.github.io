@@ -78,8 +78,19 @@ def generate_sitemap(output_dir="output", base_url="https://praxis-saewska.de"):
             # Skip certain paths
             if any(
                 skip in str(rel_path)
-                for skip in ["tag/", "tags/", "author/", "authors/"]
+                for skip in [
+                    "tag/",
+                    "tags/",
+                    "author/",
+                    "authors/",
+                    "drafts/",
+                    "categories/",
+                ]
             ):
+                continue
+
+            # Skip duplicate index pages (e.g., /de/index/ duplicates /de/)
+            if html_file.name == "index.html" and html_file.parent.name == "index":
                 continue
 
             # Determine content type

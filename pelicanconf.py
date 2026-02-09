@@ -3,6 +3,7 @@
 Pelican configuration for Praxis Saewska website
 """
 
+import json
 import sys
 from pathlib import Path
 
@@ -104,8 +105,19 @@ MARKDOWN = {
 I18N_GETTEXT_LOCALEDIR = "themes/med_praxis/translations/"
 I18N_GETTEXT_DOMAIN = "messages"
 
+
+# Custom Jinja2 filter to preserve Unicode characters in JSON output
+def tojson_unicode(value):
+    """Convert value to JSON string without escaping non-ASCII characters."""
+    return json.dumps(value, ensure_ascii=False)
+
+
 JINJA_ENVIRONMENT = {
     "extensions": ["jinja2.ext.i18n"],
+}
+
+JINJA_FILTERS = {
+    "tojson_unicode": tojson_unicode,
 }
 
 # i18n_subsites configuration
