@@ -11,11 +11,35 @@
     <meta name="author" content="{{ AUTHOR }}">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="{% block canonical_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}" id="canonical-link">
+    {% block canonical_url %}
+        {% set canonical_path = '' %}
+        {% if page and page.url %}
+            {% set canonical_path = page.url %}
+        {% elif article and article.url %}
+            {% set canonical_path = article.url %}
+        {% endif %}
+        {% if canonical_path %}
+            <link rel="canonical" href="{{ ('/' + DEFAULT_LANG + '/' + canonical_path) | absolute_url }}" id="canonical-link">
+        {% else %}
+            <link rel="canonical" href="{{ ('/' + DEFAULT_LANG + '/') | absolute_url }}" id="canonical-link">
+        {% endif %}
+    {% endblock %}
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{% block og_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}" id="og-url">
+    {% block og_url %}
+        {% set og_path = '' %}
+        {% if page and page.url %}
+            {% set og_path = page.url %}
+        {% elif article and article.url %}
+            {% set og_path = article.url %}
+        {% endif %}
+        {% if og_path %}
+            <meta property="og:url" content="{{ ('/' + DEFAULT_LANG + '/' + og_path) | absolute_url }}" id="og-url">
+        {% else %}
+            <meta property="og:url" content="{{ ('/' + DEFAULT_LANG + '/') | absolute_url }}" id="og-url">
+        {% endif %}
+    {% endblock %}
     <meta property="og:title" content="{% block og_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
     <meta property="og:image" content="/theme/images/logo.svg">
@@ -28,40 +52,39 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{% block twitter_url %}{{ SITEURL }}{% if page and page.save_as == 'index.html' %}/{% elif page and page.slug %}/{{ page.slug }}/{% else %}/{% endif %}{% endblock %}">
+    {% block twitter_url %}
+        {% set twitter_path = '' %}
+        {% if page and page.url %}
+            {% set twitter_path = page.url %}
+        {% elif article and article.url %}
+            {% set twitter_path = article.url %}
+        {% endif %}
+        {% if twitter_path %}
+            <meta name="twitter:url" content="{{ ('/' + DEFAULT_LANG + '/' + twitter_path) | absolute_url }}">
+        {% else %}
+            <meta name="twitter:url" content="{{ ('/' + DEFAULT_LANG + '/') | absolute_url }}">
+        {% endif %}
+    {% endblock %}
     <meta name="twitter:title" content="{% block twitter_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
     <meta name="twitter:image" content="/theme/images/logo.svg">
     
-    <!-- Hreflang для многоязычности -->
-    {% if lang_siteurls is defined %}
-        {% if page and page.slug %}
-            {% for lang, url in lang_siteurls.items() %}
-            <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}/{{ page.slug }}/">
-            {% endfor %}
-            <link rel="alternate" hreflang="x-default" href="{{ main_siteurl }}/{{ page.slug }}/">
-        {% else %}
-            {% for lang, url in lang_siteurls.items() %}
-            <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}/">
-            {% endfor %}
-            <link rel="alternate" hreflang="x-default" href="{{ main_siteurl }}/">
-        {% endif %}
-    {% else %}
-        {# Fallback if lang_siteurls is not available #}
-        {% if page and page.slug %}
-        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/de/{{ page.slug }}/">
-        <link rel="alternate" hreflang="en" href="{{ SITEURL }}/en/{{ page.slug }}/">
-        <link rel="alternate" hreflang="ru" href="{{ SITEURL }}/ru/{{ page.slug }}/">
-        <link rel="alternate" hreflang="uk" href="{{ SITEURL }}/uk/{{ page.slug }}/">
-        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/de/{{ page.slug }}/">
-        {% else %}
-        <link rel="alternate" hreflang="de" href="{{ SITEURL }}/de/">
-        <link rel="alternate" hreflang="en" href="{{ SITEURL }}/en/">
-        <link rel="alternate" hreflang="ru" href="{{ SITEURL }}/ru/">
-        <link rel="alternate" hreflang="uk" href="{{ SITEURL }}/uk/">
-        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/de/">
-        {% endif %}
+    <!-- Hreflang tags for multilingual support -->
+    {% set page_path = '' %}
+    {% if page and page.url %}
+        {% set page_path = page.url %}
+    {% elif article and article.url %}
+        {% set page_path = article.url %}
     {% endif %}
+    
+    {% for lang_code in ['de', 'en', 'ru', 'uk'] %}
+        {% if page_path %}
+            <link rel="alternate" hreflang="{{ lang_code }}" href="{{ ('/' + lang_code + '/' + page_path) | absolute_url }}">
+        {% else %}
+            <link rel="alternate" hreflang="{{ lang_code }}" href="{{ ('/' + lang_code + '/') | absolute_url }}">
+        {% endif %}
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ '/de/' | absolute_url }}">
     
     <!-- Preconnect для внешних ресурсов -->
     <link rel="preconnect" href="https://www.google.com">
