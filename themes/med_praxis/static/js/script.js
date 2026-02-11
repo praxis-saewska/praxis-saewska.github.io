@@ -76,9 +76,13 @@
     // Get SITEURL from the page (from canonical link or base tag)
     function getSiteUrl() {
         const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) {
-            const url = new URL(canonical.href);
-            return url.origin;
+        if (canonical && canonical.href) {
+            try {
+                const url = new URL(canonical.href);
+                return url.origin;
+            } catch (e) {
+                console.warn('Invalid canonical URL:', canonical.href);
+            }
         }
         return window.location.origin;
     }

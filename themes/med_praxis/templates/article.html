@@ -8,9 +8,20 @@
 
 {% block og_title %}{{ article.title|striptags }}{% endblock %}
 {% block og_description %}{% if article.summary %}{{ article.summary|striptags }}{% else %}{{ SITE_DESCRIPTION }}{% endif %}{% endblock %}
+{% block og_url %}
+    <meta property="og:url" content="{{ ('/' + article.lang + '/' + article.url) | absolute_url }}" id="og-url">
+{% endblock %}
 
 {% block twitter_title %}{{ article.title|striptags }}{% endblock %}
 {% block twitter_description %}{% if article.summary %}{{ article.summary|striptags }}{% else %}{{ SITE_DESCRIPTION }}{% endif %}{% endblock %}
+{% block twitter_url %}
+    <meta name="twitter:url" content="{{ ('/' + article.lang + '/' + article.url) | absolute_url }}">
+{% endblock %}
+
+{% block canonical_url %}
+    {# Override canonical URL for articles to use article-specific URL #}
+    <link rel="canonical" href="{{ ('/' + article.lang + '/' + article.url) | absolute_url }}" id="canonical-link">
+{% endblock %}
 
 {% block extra_head %}
     <!-- Article metadata -->
@@ -28,12 +39,22 @@
     <meta property="article:tag" content="{{ tag }}">
     {% endfor %}
     
-    <!-- Hreflang for translations -->
+    <!-- Hreflang for article and translations -->
+    <link rel="alternate" hreflang="{{ article.lang }}" href="{{ ('/' + article.lang + '/' + article.url) | absolute_url }}">
     {% if article.translations %}
         {% for translation in article.translations %}
-        <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ SITEURL }}/{{ DEFAULT_LANG }}/{{ translation.url }}">
+        <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ ('/' + translation.lang + '/' + translation.url) | absolute_url }}">
         {% endfor %}
-        <link rel="alternate" hreflang="{{ article.lang }}" href="{{ SITEURL }}/{{ DEFAULT_LANG }}/{{ article.url }}">
+    {% endif %}
+    {# x-default points to German version if available, otherwise current article #}
+    {% if article.lang == 'de' %}
+        <link rel="alternate" hreflang="x-default" href="{{ ('/' + article.lang + '/' + article.url) | absolute_url }}">
+    {% elif article.translations %}
+        {% for translation in article.translations %}
+            {% if translation.lang == 'de' %}
+        <link rel="alternate" hreflang="x-default" href="{{ ('/' + translation.lang + '/' + translation.url) | absolute_url }}">
+            {% endif %}
+        {% endfor %}
     {% endif %}
     
     <!-- BreadcrumbList Structured Data -->
@@ -46,31 +67,31 @@
           "@type": "ListItem",
           "position": 1,
           "name": "{{ _('Home') }}",
-          "item": "{{ SITEURL }}/{{ article.lang }}/"
+          "item": "{{ ('/' + article.lang + '/') | absolute_url }}"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "{{ _('Blog') }}",
-          "item": "{{ SITEURL }}/{{ article.lang }}/blog/"
+          "item": "{{ ('/' + article.lang + '/blog/') | absolute_url }}"
         }{% if article.category %},
         {
           "@type": "ListItem",
           "position": 3,
           "name": "{{ article.category }}",
-          "item": "{{ SITEURL }}/{{ article.lang }}/{{ article.category.url }}"
+          "item": "{{ ('/' + article.lang + '/' + article.category.url) | absolute_url }}"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "{{ article.title|striptags }}",
-          "item": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"
+          "item": "{{ ('/' + article.lang + '/' + article.url) | absolute_url }}"
         }{% else %},
         {
           "@type": "ListItem",
           "position": 3,
           "name": "{{ article.title|striptags }}",
-          "item": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"
+          "item": "{{ ('/' + article.lang + '/' + article.url) | absolute_url }}"
         }{% endif %}
       ]
     }
@@ -93,13 +114,13 @@
         "name": "{{ SITENAME }}",
         "logo": {
           "@type": "ImageObject",
-          "url": "{{ SITEURL }}/theme/images/logo.svg"
+          "url": "{{ '/theme/images/logo.svg' | absolute_url }}"
         }
       },
       {% if article.summary %}"description": {{ article.summary|striptags|tojson_unicode }},{% endif %}
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "{{ SITEURL }}/{{ article.lang }}/{{ article.url }}"
+        "@id": "{{ ('/' + article.lang + '/' + article.url) | absolute_url }}"
       },
       {% if article.category %}"articleSection": "{{ article.category }}",{% endif %}
       {% if article.tags %}"keywords": "{% for tag in article.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}",{% endif %}

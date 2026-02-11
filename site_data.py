@@ -26,7 +26,7 @@ CLOSED_TEXT = {
 CONTACT_INFO = {
     "address_street": "Uhlandstr. 87",
     "address_city": "10717 Berlin",
-    "phone": "[Ihre Telefonnummer]",
+    "phone": "+49308615424",
     "email": "info@praxis-saewska.de",
 }
 
