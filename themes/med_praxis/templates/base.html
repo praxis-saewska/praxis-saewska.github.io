@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="{% block meta_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
     <meta name="keywords" content="{% block meta_keywords %}{{ SITE_KEYWORDS }}{% endblock %}">
     <meta name="robots" content="index, follow">
     <meta name="author" content="{{ AUTHOR }}">
-    
+
     <!-- Canonical URL -->
     {% block canonical_url %}
         {% set canonical_path = '' %}
@@ -24,7 +24,7 @@
             <link rel="canonical" href="{{ ('/' + DEFAULT_LANG + '/') | absolute_url }}" id="canonical-link">
         {% endif %}
     {% endblock %}
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     {% block og_url %}
@@ -49,7 +49,7 @@
     <meta property="og:locale:alternate" content="uk_UA">
     <meta property="og:locale:alternate" content="uk">
     <meta property="og:site_name" content="{{ SITENAME }}">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     {% block twitter_url %}
@@ -68,7 +68,7 @@
     <meta name="twitter:title" content="{% block twitter_title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ SITE_DESCRIPTION }}{% endblock %}">
     <meta name="twitter:image" content="/theme/images/logo.svg">
-    
+
     <!-- Hreflang tags for multilingual support -->
     {% set page_path = '' %}
     {% if page and page.url %}
@@ -76,7 +76,7 @@
     {% elif article and article.url %}
         {% set page_path = article.url %}
     {% endif %}
-    
+
     {% for lang_code in ['de', 'en', 'ru', 'uk'] %}
         {% if page_path %}
             <link rel="alternate" hreflang="{{ lang_code }}" href="{{ ('/' + lang_code + '/' + page_path) | absolute_url }}">
@@ -85,12 +85,12 @@
         {% endif %}
     {% endfor %}
     <link rel="alternate" hreflang="x-default" href="{{ '/de/' | absolute_url }}">
-    
+
     <!-- Preconnect для внешних ресурсов -->
     <link rel="preconnect" href="https://www.google.com">
-    <link rel="preconnect" href="https://www.googleapis.com">
-    <link rel="dns-prefetch" href="https://www.doctolib.de">
-    
+    <!--<link rel="preconnect" href="https://www.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.doctolib.de">-->
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/theme/images/logo.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/theme/images/logo.svg">
@@ -98,15 +98,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/theme/images/logo.svg">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#00C9A7">
-    
+
     <title>{% block title %}{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</title>
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="/theme/css/styles.css" as="style">
     <link rel="preload" href="/theme/js/script.js" as="script">
-    
+
     <link rel="stylesheet" href="/theme/css/styles.css">
-    
+
     {% block extra_head %}{% endblock %}
 </head>
 <body>
@@ -187,10 +187,9 @@
     <!-- Load vanilla-cookieconsent library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@2.9.1/dist/cookieconsent.css">
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@2.9.1/dist/cookieconsent.min.js" defer></script>
-    
+
     <!-- Load scripts -->
     <script src="/theme/js/script.js" defer></script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>
-
