@@ -25,7 +25,7 @@ CLOSED_TEXT = {
 # Контактная информация
 CONTACT_INFO = {
     "address_street": "Uhlandstr. 87",
-    "address_city": "10717 Berlin (BSNR: 721090000)",
+    "address_city": "10717 Berlin",
     "phone": "+49308615424",
     "email": "info@praxis-saewska.de",
 }

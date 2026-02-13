@@ -3,6 +3,7 @@ Lang: de
 Slug: impressum
 Template: impressum
 Last_Updated: Stand: [Datum]
+translation: true
 
 **Angaben gemäß § 5 TMG:**
 
@@ -10,19 +11,19 @@ Last_Updated: Stand: [Datum]
 Fachärztin für Gynäkologie und Geburtshilfe  
 Uhlandstr. 87  
 10717 Berlin
+BSNR: 721090000
 
 **Kontakt:**  
-Telefon: [Ihre Telefonnummer]  
+Telefon: +49308615424 
 E-Mail: info@praxis-saewska.de
 
 **Approbation:**  
-Approbationsnummer: [Nummer]  
 Erteilt durch: Landesamt für Gesundheit und Soziales, Berlin  
 Credential ID: 2022-2194-BER
 
 **Berufshaftpflichtversicherung:**  
-[Versicherungsgesellschaft]  
-[Adresse der Versicherung]
+Dialog Versicherung AG,  
+81718 München, Deutschland
 
 **Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:**  
 Dr. PhD Elena Saewska  

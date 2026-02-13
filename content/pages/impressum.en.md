@@ -3,6 +3,7 @@ Lang: en
 Slug: impressum
 Template: impressum
 Last_Updated: Last updated: [Date]
+translation: true
 
 **Information according to § 5 TMG:**
 
@@ -10,19 +11,19 @@ Last_Updated: Last updated: [Date]
 Specialist in Gynecology and Obstetrics  
 Uhlandstr. 87  
 10717 Berlin
+BSNR: 721090000
 
 **Contact:**  
-Phone: [Your Phone Number]  
+Phone: +49308615424  
 Email: info@praxis-saewska.de
 
 **Medical License:**  
-License Number: [Number]  
 Issued by: Landesamt für Gesundheit und Soziales, Berlin  
 Credential ID: 2022-2194-BER
 
 **Professional Liability Insurance:**  
-[Insurance Company]  
-[Insurance Address]
+Dialog Versicherung AG,  
+81718 München, Deutschland
 
 **Responsible for content according to § 55 Abs. 2 RStV:**  
 Dr. PhD Elena Saewska  

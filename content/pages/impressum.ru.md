@@ -3,6 +3,7 @@ Lang: ru
 Slug: impressum
 Template: impressum
 Last_Updated: Последнее обновление: [Дата]
+translation: true
 
 **Информация согласно § 5 TMG:**
 
@@ -10,19 +11,19 @@ Last_Updated: Последнее обновление: [Дата]
 Специалист по гинекологии и акушерству  
 Uhlandstr. 87  
 10717 Berlin
+BSNR: 721090000
 
 **Контакт:**  
-Телефон: [Ваш номер телефона]  
+Телефон: +49308615424 
 Электронная почта: info@praxis-saewska.de
 
 **Медицинская лицензия:**  
-Номер лицензии: [Номер]  
 Выдана: Landesamt für Gesundheit und Soziales, Berlin  
 Credential ID: 2022-2194-BER
 
 **Страхование профессиональной ответственности:**  
-[Страховая компания]  
-[Адрес страховой компании]
+Dialog Versicherung AG,  
+81718 München, Deutschland
 
 **Ответственный за контент согласно § 55 Abs. 2 RStV:**  
 Д-р PhD Елена Заевская  
