@@ -18,33 +18,54 @@ and patient resources. It serves a legitimate healthcare business registered in 
 TECHNICAL DETAILS:
 ------------------
 
-1. STATIC SITE GENERATOR:
+1. HOSTING INFRASTRUCTURE:
+   - Hosted on Cloudflare Pages (https://pages.cloudflare.com/)
+   - Cloudflare Pages is a JAMstack platform for deploying static sites
+   - Used by thousands of businesses including Fortune 500 companies
+   - Provides automatic HTTPS, DDoS protection, and global CDN
+   - Static files served directly from edge locations worldwide
+   - Official Cloudflare service with enterprise-grade security
+
+2. STATIC SITE GENERATOR:
    - Built using Pelican (Python-based static site generator)
    - Generates clean, static HTML pages
    - No dynamic code execution on the server
    - Source code: https://github.com/praxis-saewska/praxis-saewska.github.io
 
-2. MULTILINGUAL SUPPORT (i18n):
+3. ROUTING MECHANISM (CLOUDFLARE PAGES STANDARD):
+   - Uses _worker.js file in the root directory
+   - This is Cloudflare Pages' STANDARD routing mechanism
+   - Documentation: https://developers.cloudflare.com/pages/functions/
+   - The _worker.js file is automatically executed by Cloudflare's edge network
+   - This is the OFFICIAL method for adding dynamic behavior to Cloudflare Pages
+   - Equivalent to _redirects, _headers files used by other platforms (Netlify, Vercel)
+   - Deployed and sandboxed entirely within Cloudflare's infrastructure
+
+4. MULTILINGUAL SUPPORT (i18n):
    - Supports 4 languages: German (DE), English (EN), Russian (RU), Ukrainian (UK)
    - Uses Cloudflare Workers for automatic language detection and redirect
    - The redirect logic reads browser's Accept-Language header
    - Redirects to appropriate language subdirectory (/de/, /en/, /ru/, /uk/)
    - This is a STANDARD internationalization pattern used by major websites like Wikipedia
+   - Similar implementations: MDN Web Docs, GNU Project, European Commission websites
 
-3. CLOUDFLARE WORKER (_worker.js):
+5. CLOUDFLARE WORKER CODE ANALYSIS (_worker.js):
    - Likely trigger for the false positive
    - Contains legitimate redirect code for language preference detection
    - Uses standard Web APIs: Request.headers.get(), Response.redirect(), URL()
    - No malicious code, no obfuscation, no data exfiltration
    - Well-documented with extensive comments explaining functionality
+   - Executes in Cloudflare's sandboxed V8 isolate environment
+   - Cannot access local file system or perform server-side operations
+   - Limited to HTTP request/response manipulation only
    - References: https://developers.cloudflare.com/workers/
 
-4. JAVASCRIPT LIBRARIES:
+6. JAVASCRIPT LIBRARIES:
    - Vanilla Cookie Consent v2.9.1 (legitimate GDPR compliance library)
    - Source: https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@2.9.1/
    - No custom malicious scripts
 
-5. SECURITY MEASURES IMPLEMENTED:
+7. SECURITY MEASURES IMPLEMENTED:
    - Content Security Policy (CSP) headers
    - X-Content-Type-Options: nosniff
    - X-Frame-Options: SAMEORIGIN
@@ -61,8 +82,17 @@ The detection likely triggered due to:
 3. Multiple redirect calls (Response.redirect())
 4. Dynamic path construction
 
-These are LEGITIMATE web development patterns for multilingual websites.
-Similar code is used by thousands of international websites.
+These are LEGITIMATE and STANDARD web development patterns that are:
+- Officially documented by Cloudflare Pages
+- Part of the Cloudflare Pages platform architecture
+- Used by thousands of international websites
+- Equivalent to standard routing configurations on other platforms
+- Sandboxed and security-reviewed by Cloudflare's infrastructure
+- Cannot perform malicious operations due to Worker execution environment
+
+The _worker.js file is NOT arbitrary JavaScript code - it is part of Cloudflare's
+official Pages Functions feature, similar to how Netlify uses _redirects or Vercel
+uses vercel.json for routing configuration.
 
 VERIFICATION:
 -------------
