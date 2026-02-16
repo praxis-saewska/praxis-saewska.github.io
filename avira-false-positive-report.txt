@@ -1,0 +1,114 @@
+AVIRA FALSE POSITIVE REPORT
+===========================
+
+URL REPORTED: https://praxis-saewska.de/en/
+DETECTION NAME: BehavesLike.HTML.Infected.lr
+REPORT DATE: February 16, 2026
+
+EXPLANATION:
+------------
+
+This is a FALSE POSITIVE detection. The reported URL is a legitimate medical practice website 
+for "Praxis Dr. Elena Saewska" - a gynecological practice located in Berlin, Germany.
+
+WEBSITE PURPOSE:
+The website provides information about medical services, doctor credentials, appointment booking, 
+and patient resources. It serves a legitimate healthcare business registered in Berlin.
+
+TECHNICAL DETAILS:
+------------------
+
+1. STATIC SITE GENERATOR:
+   - Built using Pelican (Python-based static site generator)
+   - Generates clean, static HTML pages
+   - No dynamic code execution on the server
+   - Source code: https://github.com/praxis-saewska/praxis-saewska.github.io
+
+2. MULTILINGUAL SUPPORT (i18n):
+   - Supports 4 languages: German (DE), English (EN), Russian (RU), Ukrainian (UK)
+   - Uses Cloudflare Workers for automatic language detection and redirect
+   - The redirect logic reads browser's Accept-Language header
+   - Redirects to appropriate language subdirectory (/de/, /en/, /ru/, /uk/)
+   - This is a STANDARD internationalization pattern used by major websites like Wikipedia
+
+3. CLOUDFLARE WORKER (_worker.js):
+   - Likely trigger for the false positive
+   - Contains legitimate redirect code for language preference detection
+   - Uses standard Web APIs: Request.headers.get(), Response.redirect(), URL()
+   - No malicious code, no obfuscation, no data exfiltration
+   - Well-documented with extensive comments explaining functionality
+   - References: https://developers.cloudflare.com/workers/
+
+4. JAVASCRIPT LIBRARIES:
+   - Vanilla Cookie Consent v2.9.1 (legitimate GDPR compliance library)
+   - Source: https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@2.9.1/
+   - No custom malicious scripts
+
+5. SECURITY MEASURES IMPLEMENTED:
+   - Content Security Policy (CSP) headers
+   - X-Content-Type-Options: nosniff
+   - X-Frame-Options: SAMEORIGIN
+   - Proper robots.txt and sitemap.xml
+   - Valid SSL certificate
+   - Professional schema.org structured data for medical business
+
+WHY THIS IS A FALSE POSITIVE:
+------------------------------
+
+The detection likely triggered due to:
+1. URL manipulation in _worker.js (new URL(), url.pathname checks)
+2. Browser header inspection (Accept-Language)
+3. Multiple redirect calls (Response.redirect())
+4. Dynamic path construction
+
+These are LEGITIMATE web development patterns for multilingual websites.
+Similar code is used by thousands of international websites.
+
+VERIFICATION:
+-------------
+
+You can verify this is a legitimate medical website by:
+
+1. Visiting the website manually - it's a professional medical practice site
+2. Checking business registration: 
+   - Practice name: Praxis Dr. Elena Saewska
+   - Address: Uhlandstr. 87, 10717 Berlin, Germany
+   - BSNR (German medical practice number): 721090000
+   - Email: info@praxis-saewska.de
+
+3. Reviewing structured data on the site (Medical Business schema)
+4. Checking domain reputation and SSL certificate validity
+5. Scanning with multiple antivirus engines (VirusTotal) - only Avira flags it
+
+IMPACT:
+-------
+
+This false positive is blocking legitimate patients from accessing important medical information 
+and appointment booking services. Patients with Avira antivirus cannot access the website, 
+which disrupts healthcare service delivery.
+
+REQUEST:
+--------
+
+Please review and whitelist the following:
+- Domain: praxis-saewska.de
+- All subpaths: /de/, /en/, /ru/, /uk/
+- Worker script: _worker.js
+
+The website poses NO security threat and should be removed from your detection database.
+
+CONTACT INFORMATION:
+--------------------
+
+Website Owner: Praxis Dr. Elena Saewska
+Email: info@praxis-saewska.de
+Location: Berlin, Germany
+Business Type: Medical Practice (Gynecology)
+
+Thank you for your prompt attention to this false positive report.
+We understand heuristic detection can sometimes flag legitimate code patterns,
+and we appreciate your thorough review process.
+
+---
+Technical Contact: Website Administrator
+For verification purposes, you may scan the entire domain or request additional information.
