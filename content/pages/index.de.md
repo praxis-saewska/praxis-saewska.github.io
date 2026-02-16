@@ -1,4 +1,4 @@
-Title: Praxis Saewska - Gynäkologische Praxis
+Title: Dr. Saewska - Fachärztin für Gynäkologie und Geburtshilfe
 Lang: de
 Slug: index
 Template: index
