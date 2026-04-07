@@ -42,7 +42,7 @@ html[lang="uk"] {
 }
 
 /* ============================================================
-   4. TYPOGRAPHY
+   3. TYPOGRAPHY
    — Global headings (h1–h6), paragraphs, links
    ============================================================ */
 h1, h2, h3, h4, h5, h6 {
@@ -85,7 +85,7 @@ a:focus {
 }
 
 /* ============================================================
-   3. LAYOUT
+   4. LAYOUT
    — Header, navigation, language switcher, mobile menu,
      container, footer
    ============================================================ */
@@ -1184,7 +1184,7 @@ footer {
 }
 
 /* ============================================================
-   7. RESPONSIVE
+   6. RESPONSIVE
    — Media queries: 768px, 480px breakpoints + print
    ============================================================ */
 @media (max-width: 768px) {
@@ -1326,7 +1326,7 @@ footer {
 }
 
 /* ============================================================
-   6. PAGES
+   7. PAGES
    — Blog listing, article pages, breadcrumb, category filter
    ============================================================ */
 
