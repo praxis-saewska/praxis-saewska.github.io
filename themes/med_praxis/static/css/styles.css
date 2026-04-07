@@ -9,14 +9,14 @@
 
 /* СХЕМА 1: БИРЮЗОВАЯ (ТЕКУЩАЯ) - Свежесть, чистота, современность */
 :root {
-    --primary-teal: #00C9A7;
-    --light-blue: #E0F7FA;
+    --primary-teal: #00b5ad;
+    --light-blue: #E0F5F5;
     --warm-white: #FFFFFF;
     --soft-gray: #64748B;
     --dark-gray: #1E293B;
     --text-dark: #0F172A;
     --border-light: #E2E8F0;
-    --accent-green: #06B6D4;
+    --accent-green: #06BDB7;
     --accent-purple: #8B5CF6;
     --accent-coral: #F87171;
 }
@@ -337,7 +337,7 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--light-blue) 0%, #B2EBF2 50%, white 100%);
+    background: linear-gradient(135deg, var(--light-blue) 0%, #B2E6E4 50%, white 100%);
     padding: 4rem 2rem;
     text-align: center;
     width: 100vw;
@@ -547,7 +547,7 @@ nav a:hover::after {
 
 /* Appointment Booking Section */
 .appointment-section {
-    background: linear-gradient(135deg, var(--light-blue) 0%, #B2EBF2 100%);
+    background: linear-gradient(135deg, var(--light-blue) 0%, #B2E6E4 100%);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -675,7 +675,7 @@ nav a:hover::after {
 }
 
 .faq-question:hover {
-    background: linear-gradient(90deg, var(--light-blue) 0%, #B2EBF2 100%);
+    background: linear-gradient(90deg, var(--light-blue) 0%, #B2E6E4 100%);
 }
 
 .faq-question:focus {
