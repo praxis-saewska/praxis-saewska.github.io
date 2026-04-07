@@ -1,13 +1,7 @@
-/* ============================================
-   ЦВЕТОВЫЕ СХЕМЫ ДЛЯ МЕДИЦИНСКОЙ ПРАКТИКИ
-   ============================================
-   
-   Раскомментируйте нужную схему и закомментируйте остальные.
-   Для переключения схемы измените класс на <html> или <body>.
-   
-   ============================================ */
-
-/* СХЕМА 1: БИРЮЗОВАЯ (ТЕКУЩАЯ) - Свежесть, чистота, современность */
+/* ============================================================
+   1. VARIABLES
+   — CSS custom properties: colors, spacing, fonts
+   ============================================================ */
 :root {
     --primary-teal: #00b5ad;
     --light-blue: #E0F5F5;
@@ -21,7 +15,10 @@
     --accent-coral: #F87171;
 }
 
-/* Reset and Base Styles */
+/* ============================================================
+   2. RESET & BASE
+   — Box model reset, html/body defaults, Cyrillic font support
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -39,13 +36,15 @@ body {
     background-color: var(--warm-white);
 }
 
-/* Ensure proper Cyrillic font rendering */
 html[lang="ru"],
 html[lang="uk"] {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }
 
-/* Typography */
+/* ============================================================
+   4. TYPOGRAPHY
+   — Global headings (h1–h6), paragraphs, links
+   ============================================================ */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
@@ -84,6 +83,12 @@ a:focus {
     outline-offset: 2px;
     border-radius: 2px;
 }
+
+/* ============================================================
+   3. LAYOUT
+   — Header, navigation, language switcher, mobile menu,
+     container, footer
+   ============================================================ */
 
 /* Header and Navigation */
 header {
@@ -222,6 +227,13 @@ nav a:hover::after {
     outline-offset: 2px;
     border-radius: 4px;
 }
+
+/* ============================================================
+   5. COMPONENTS
+   — Hero, buttons, services grid, appointment, contact,
+     maps, FAQ, loading, scroll-to-top, cookie consent,
+     contact form
+   ============================================================ */
 
 /* Hero Section */
 .hero {
@@ -1171,7 +1183,10 @@ footer {
     margin: 0.5rem 0;
 }
 
-/* Responsive Design */
+/* ============================================================
+   7. RESPONSIVE
+   — Media queries: 768px, 480px breakpoints + print
+   ============================================================ */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -1310,9 +1325,10 @@ footer {
     }
 }
 
-/* ============================================
-   BLOG & ARTICLES STYLES
-   ============================================ */
+/* ============================================================
+   6. PAGES
+   — Blog listing, article pages, breadcrumb, category filter
+   ============================================================ */
 
 /* Blog Page Layout */
 .blog-page {
@@ -1743,7 +1759,7 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Responsive Styles for Blog */
+/* Responsive — blog & article overrides */
 @media (max-width: 768px) {
     .articles-list {
         grid-template-columns: 1fr;
