@@ -10,7 +10,7 @@
             "purpose": "any maskable"
         }
     ],
-    "theme_color": "#00C9A7",
+    "theme_color": "#00b5ad",
     "background_color": "#FFFFFF",
     "display": "standalone",
     "start_url": "/",

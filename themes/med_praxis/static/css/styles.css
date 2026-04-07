@@ -1,139 +1,24 @@
-/* ============================================
-   ЦВЕТОВЫЕ СХЕМЫ ДЛЯ МЕДИЦИНСКОЙ ПРАКТИКИ
-   ============================================
-   
-   Раскомментируйте нужную схему и закомментируйте остальные.
-   Для переключения схемы измените класс на <html> или <body>.
-   
-   ============================================ */
-
-/* СХЕМА 1: БИРЮЗОВАЯ (ТЕКУЩАЯ) - Свежесть, чистота, современность */
+/* ============================================================
+   1. VARIABLES
+   — CSS custom properties: colors, spacing, fonts
+   ============================================================ */
 :root {
-    --primary-teal: #00C9A7;
-    --light-blue: #E0F7FA;
+    --primary-teal: #00b5ad;
+    --light-blue: #E0F5F5;
     --warm-white: #FFFFFF;
     --soft-gray: #64748B;
     --dark-gray: #1E293B;
     --text-dark: #0F172A;
     --border-light: #E2E8F0;
-    --accent-green: #06B6D4;
+    --accent-green: #06BDB7;
     --accent-purple: #8B5CF6;
     --accent-coral: #F87171;
 }
 
-/* СХЕМА 2: КЛАССИЧЕСКАЯ СИНЯЯ - Доверие, профессионализм, надежность */
-/*
-:root {
-    --primary-teal: #2563EB;
-    --light-blue: #EFF6FF;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #3B82F6;
-    --accent-purple: #6366F1;
-    --accent-coral: #EF4444;
-}
-*/
-
-/* СХЕМА 3: МЯГКАЯ ЗЕЛЕНАЯ - Здоровье, гармония, природа */
-/*
-:root {
-    --primary-teal: #10B981;
-    --light-blue: #ECFDF5;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #059669;
-    --accent-purple: #8B5CF6;
-    --accent-coral: #F87171;
-}
-*/
-
-/* СХЕМА 4: ЛАВАНДОВАЯ - Забота, умиротворение, нежность */
-/*
-:root {
-    --primary-teal: #8B5CF6;
-    --light-blue: #F5F3FF;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #A78BFA;
-    --accent-purple: #7C3AED;
-    --accent-coral: #F87171;
-}
-*/
-
-/* СХЕМА 5: МЯГКАЯ РОЗОВАЯ - Нежность, забота, женственность (идеально для гинекологии) */
-/*
-:root {
-    --primary-teal: #EC4899;
-    --light-blue: #FDF2F8;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #F472B6;
-    --accent-purple: #DB2777;
-    --accent-coral: #F87171;
-}
-*/
-
-/* СХЕМА 6: МЯГКИЙ ГОЛУБОЙ - Спокойствие, чистота, доверие */
-/*
-:root {
-    --primary-teal: #0EA5E9;
-    --light-blue: #F0F9FF;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #38BDF8;
-    --accent-purple: #0284C7;
-    --accent-coral: #F87171;
-}
-*/
-
-/* СХЕМА 7: ТЕПЛАЯ ЗЕЛЕНАЯ - Баланс, стабильность, естественность */
-/*
-:root {
-    --primary-teal: #059669;
-    --light-blue: #F0FDF4;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #34D399;
-    --accent-purple: #8B5CF6;
-    --accent-coral: #F87171;
-}
-*/
-
-/* СХЕМА 8: ПРОФЕССИОНАЛЬНАЯ СИНЯЯ - Серьезность, надежность, медицина */
-/*
-:root {
-    --primary-teal: #1E40AF;
-    --light-blue: #EFF6FF;
-    --warm-white: #FFFFFF;
-    --soft-gray: #64748B;
-    --dark-gray: #1E293B;
-    --text-dark: #0F172A;
-    --border-light: #E2E8F0;
-    --accent-green: #3B82F6;
-    --accent-purple: #6366F1;
-    --accent-coral: #EF4444;
-}
-*/
-
-/* Reset and Base Styles */
+/* ============================================================
+   2. RESET & BASE
+   — Box model reset, html/body defaults, Cyrillic font support
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -151,13 +36,15 @@ body {
     background-color: var(--warm-white);
 }
 
-/* Ensure proper Cyrillic font rendering */
 html[lang="ru"],
 html[lang="uk"] {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }
 
-/* Typography */
+/* ============================================================
+   3. TYPOGRAPHY
+   — Global headings (h1–h6), paragraphs, links
+   ============================================================ */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
@@ -196,6 +83,12 @@ a:focus {
     outline-offset: 2px;
     border-radius: 2px;
 }
+
+/* ============================================================
+   4. LAYOUT
+   — Header, navigation, language switcher, mobile menu,
+     container, footer
+   ============================================================ */
 
 /* Header and Navigation */
 header {
@@ -335,9 +228,16 @@ nav a:hover::after {
     border-radius: 4px;
 }
 
+/* ============================================================
+   5. COMPONENTS
+   — Hero, buttons, services grid, appointment, contact,
+     maps, FAQ, about, footer utilities, cookie consent,
+     contact form, loading, scroll-to-top
+   ============================================================ */
+
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--light-blue) 0%, #B2EBF2 50%, white 100%);
+    background: linear-gradient(135deg, var(--light-blue) 0%, #B2E6E4 50%, white 100%);
     padding: 4rem 2rem;
     text-align: center;
     width: 100vw;
@@ -547,7 +447,7 @@ nav a:hover::after {
 
 /* Appointment Booking Section */
 .appointment-section {
-    background: linear-gradient(135deg, var(--light-blue) 0%, #B2EBF2 100%);
+    background: linear-gradient(135deg, var(--light-blue) 0%, #B2E6E4 100%);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -675,7 +575,7 @@ nav a:hover::after {
 }
 
 .faq-question:hover {
-    background: linear-gradient(90deg, var(--light-blue) 0%, #B2EBF2 100%);
+    background: linear-gradient(90deg, var(--light-blue) 0%, #B2E6E4 100%);
 }
 
 .faq-question:focus {
@@ -710,7 +610,7 @@ nav a:hover::after {
     line-height: 1.8;
 }
 
-/* Paragraphs */
+/* FAQ answer content — rich text styles (paragraphs, headings, lists, code, blockquote) */
 .faq-answer-content p {
     margin: 1rem 0;
     color: var(--soft-gray);
@@ -724,7 +624,6 @@ nav a:hover::after {
     margin-bottom: 0;
 }
 
-/* Headings */
 .faq-answer-content h1,
 .faq-answer-content h2,
 .faq-answer-content h3,
@@ -762,7 +661,6 @@ nav a:hover::after {
     font-size: 1.1rem;
 }
 
-/* Lists */
 .faq-answer-content ul,
 .faq-answer-content ol {
     margin: 1rem 0;
@@ -793,7 +691,6 @@ nav a:hover::after {
     list-style-type: decimal;
 }
 
-/* Text formatting */
 .faq-answer-content strong,
 .faq-answer-content b {
     font-weight: 600;
@@ -816,7 +713,6 @@ nav a:hover::after {
     text-decoration: underline;
 }
 
-/* Code and pre */
 .faq-answer-content code {
     background-color: var(--border-light);
     padding: 0.2rem 0.4rem;
@@ -838,7 +734,6 @@ nav a:hover::after {
     padding: 0;
 }
 
-/* Blockquote */
 .faq-answer-content blockquote {
     margin: 1rem 0;
     padding-left: 1rem;
@@ -847,7 +742,6 @@ nav a:hover::after {
     font-style: italic;
 }
 
-/* Horizontal rule */
 .faq-answer-content hr {
     border: none;
     border-top: 1px solid var(--border-light);
@@ -1289,7 +1183,10 @@ footer {
     margin: 0.5rem 0;
 }
 
-/* Responsive Design */
+/* ============================================================
+   6. RESPONSIVE
+   — Media queries: 768px, 480px breakpoints + print
+   ============================================================ */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -1428,9 +1325,10 @@ footer {
     }
 }
 
-/* ============================================
-   BLOG & ARTICLES STYLES
-   ============================================ */
+/* ============================================================
+   7. PAGES
+   — Blog listing, article pages, breadcrumb, category filter
+   ============================================================ */
 
 /* Blog Page Layout */
 .blog-page {
@@ -1861,7 +1759,7 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Responsive Styles for Blog */
+/* Responsive — blog & article overrides */
 @media (max-width: 768px) {
     .articles-list {
         grid-template-columns: 1fr;
