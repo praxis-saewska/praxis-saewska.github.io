@@ -598,7 +598,7 @@ nav a:hover::after {
     line-height: 1.8;
 }
 
-/* Paragraphs */
+/* FAQ answer content — rich text styles (paragraphs, headings, lists, code, blockquote) */
 .faq-answer-content p {
     margin: 1rem 0;
     color: var(--soft-gray);
@@ -612,7 +612,6 @@ nav a:hover::after {
     margin-bottom: 0;
 }
 
-/* Headings */
 .faq-answer-content h1,
 .faq-answer-content h2,
 .faq-answer-content h3,
@@ -650,7 +649,6 @@ nav a:hover::after {
     font-size: 1.1rem;
 }
 
-/* Lists */
 .faq-answer-content ul,
 .faq-answer-content ol {
     margin: 1rem 0;
@@ -681,7 +679,6 @@ nav a:hover::after {
     list-style-type: decimal;
 }
 
-/* Text formatting */
 .faq-answer-content strong,
 .faq-answer-content b {
     font-weight: 600;
@@ -704,7 +701,6 @@ nav a:hover::after {
     text-decoration: underline;
 }
 
-/* Code and pre */
 .faq-answer-content code {
     background-color: var(--border-light);
     padding: 0.2rem 0.4rem;
@@ -726,7 +722,6 @@ nav a:hover::after {
     padding: 0;
 }
 
-/* Blockquote */
 .faq-answer-content blockquote {
     margin: 1rem 0;
     padding-left: 1rem;
@@ -735,7 +730,6 @@ nav a:hover::after {
     font-style: italic;
 }
 
-/* Horizontal rule */
 .faq-answer-content hr {
     border: none;
     border-top: 1px solid var(--border-light);
