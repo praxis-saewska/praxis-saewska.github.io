@@ -1,7 +1,7 @@
 Title: Our Practice Reopens — Refreshed and Ready to Welcome You
 Date: 2026-04-28 10:00
 Category: News
-Status: draft
+Status: published
 Tags: announcement, renovation, modernization, reopening
 Slug: praxis-renewed
 Lang: en

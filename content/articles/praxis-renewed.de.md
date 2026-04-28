@@ -1,7 +1,7 @@
 Title: Unsere Praxis öffnet wieder ihre Türen — frisch erneuert und bereit für Sie
 Date: 2026-04-28 10:00
 Category: News
-Status: draft
+Status: published
 Tags: ankündigung, renovierung, modernisierung, eröffnung
 Slug: praxis-renewed
 Lang: de

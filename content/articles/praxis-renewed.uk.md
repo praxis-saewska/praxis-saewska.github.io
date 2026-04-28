@@ -1,7 +1,7 @@
 Title: Наш праксис знову відчиняє двері — оновлений і готовий вітати вас
 Date: 2026-04-28 10:00
 Category: News
-Status: draft
+Status: published
 Tags: оголошення, ремонт, оновлення, відкриття
 Slug: praxis-renewed
 Lang: uk
