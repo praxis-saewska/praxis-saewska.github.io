@@ -31,7 +31,7 @@
                     <a href="/{{ DEFAULT_LANG }}/{{ article.url }}" class="news-card">
                         <span class="news-category">{{ article.category }}</span>
                         <h3>{{ article.title }}</h3>
-                        <p>{{ article.summary }}</p>
+                        <p>{{ article.summary | striptags }}</p>
                     </a>
                 {% endfor %}
             </div>
