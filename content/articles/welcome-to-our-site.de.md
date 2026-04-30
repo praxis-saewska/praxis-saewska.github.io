@@ -6,7 +6,7 @@ Status: published
 Tags: praxis, neuigkeiten, information
 Slug: welcome-to-our-site
 Lang: de
-Summary: Die Praxis Saewska eröffnet am 14.04.2026. Auf der Website finden Sie einen Überblick über unsere Leistungen, Informationen über Dr. Elena Saewska PhD und die Möglichkeit, uns über das Kontaktformular zu erreichen. Die Website befindet sich im Aufbau und wird laufend ergänzt.
+Summary: Ab **14.04.2026** übernimmt Dr. Elena Saewska, PhD die frauenärztliche Praxis von Dr. Josepha Rodriguez und führt sie im neuen Format als Praxis Saewska fort.
 
 Liebe Patientinnen,
 

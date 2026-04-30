@@ -6,7 +6,7 @@ Status: published
 Tags: practice, news, information
 Slug: welcome-to-our-site
 Lang: en
-Summary: Praxis Saewska will open on 14.04.2026. On this website you will find an overview of our services, information about Dr. Elena Saewska, and a way to contact us via the contact form. The site is under development and will be expanded.
+Summary: As of **14.04.2026**, the private gynaecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska, PhD and will continue in a renewed format as Praxis Saewska.
 
 Dear Patients,
 

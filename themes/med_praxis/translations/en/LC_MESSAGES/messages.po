@@ -323,3 +323,6 @@ msgstr "No articles available yet."
 
 msgid "No articles in this category yet."
 msgstr "No articles in this category yet."
+
+msgid "Latest News"
+msgstr "Latest News"
