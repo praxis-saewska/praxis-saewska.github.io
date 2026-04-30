@@ -445,6 +445,60 @@ nav a:hover::after {
     line-height: 1.8;
 }
 
+/* Latest News Section */
+.latest-news-section {
+    background-color: var(--light-blue);
+    padding: 4rem 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.news-card {
+    display: block;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 201, 167, 0.15);
+}
+
+.news-card .news-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-teal);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.news-card h3 {
+    margin: 0.25rem 0 0.75rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.news-card p {
+    font-size: 0.9rem;
+    color: var(--soft-gray);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+}
+
 /* Appointment Booking Section */
 .appointment-section {
     background: linear-gradient(135deg, var(--light-blue) 0%, #B2E6E4 100%);
@@ -1282,6 +1336,10 @@ footer {
     }
 
     .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-grid {
         grid-template-columns: 1fr;
     }
 
