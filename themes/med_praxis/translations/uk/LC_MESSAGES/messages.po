@@ -323,3 +323,6 @@ msgstr "Статей поки немає."
 
 msgid "No articles in this category yet."
 msgstr "У цій категорії поки немає статей."
+
+msgid "Latest News"
+msgstr "Новини"
