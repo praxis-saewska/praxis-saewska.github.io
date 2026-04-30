@@ -21,6 +21,29 @@
         </div>
     </section>
 
+    {% set news_count = namespace(n=0) %}
+    {% for article in articles %}{% if article.lang == DEFAULT_LANG %}{% set news_count.n = news_count.n + 1 %}{% endif %}{% endfor %}
+    {% if news_count.n > 0 %}
+    <section id="latest-news" class="section latest-news-section">
+        <div class="container">
+            <h2 class="section-title">{{ _('Latest News') }}</h2>
+            <div class="news-grid">
+                {% set ns = namespace(count=0) %}
+                {% for article in articles %}
+                    {% if article.lang == DEFAULT_LANG and ns.count < 3 %}
+                        {% set ns.count = ns.count + 1 %}
+                        <a href="{{ article.url }}" class="news-card">
+                            <span class="news-category">{{ article.category }}</span>
+                            <h3>{{ article.title }}</h3>
+                            <p>{{ article.summary }}</p>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
     <section id="services" class="section">
         <div class="container">
             {# The actual title is taken from the first "##" heading in the markdown content via JS #}
