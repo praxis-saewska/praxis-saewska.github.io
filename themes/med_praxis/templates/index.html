@@ -21,23 +21,18 @@
         </div>
     </section>
 
-    {% set news_count = namespace(n=0) %}
-    {% for article in articles %}{% if article.lang == DEFAULT_LANG %}{% set news_count.n = news_count.n + 1 %}{% endif %}{% endfor %}
-    {% if news_count.n > 0 %}
+    {% set lang_articles = articles | selectattr('lang', 'equalto', DEFAULT_LANG) | list %}
+    {% if lang_articles %}
     <section id="latest-news" class="section latest-news-section">
         <div class="container">
             <h2 class="section-title">{{ _('Latest News') }}</h2>
             <div class="news-grid">
-                {% set ns = namespace(count=0) %}
-                {% for article in articles %}
-                    {% if article.lang == DEFAULT_LANG and ns.count < 3 %}
-                        {% set ns.count = ns.count + 1 %}
-                        <a href="{{ article.url }}" class="news-card">
-                            <span class="news-category">{{ article.category }}</span>
-                            <h3>{{ article.title }}</h3>
-                            <p>{{ article.summary }}</p>
-                        </a>
-                    {% endif %}
+                {% for article in lang_articles[:3] %}
+                    <a href="/{{ DEFAULT_LANG }}/{{ article.url }}" class="news-card">
+                        <span class="news-category">{{ article.category }}</span>
+                        <h3>{{ article.title }}</h3>
+                        <p>{{ article.summary }}</p>
+                    </a>
                 {% endfor %}
             </div>
         </div>
