@@ -3,7 +3,7 @@ Lang: ru
 Slug: about
 Template: about
 
-## К.мед.н. Елена Заевская
+## К.мед.н. Д-р. Елена Заевская
 
 <div class="doctor-info">
   <div class="doctor-photo">
