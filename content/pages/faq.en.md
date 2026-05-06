@@ -8,7 +8,7 @@ translation: true
 
 You can book an appointment in various ways:
 
-- Online via our Doctolib booking system (see homepage)
+- Online via our arzt-direkt booking system (see homepage)
 - By phone during our office hours
 - By email
 

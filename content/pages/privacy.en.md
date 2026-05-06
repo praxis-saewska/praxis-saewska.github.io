@@ -2,7 +2,7 @@ Title: Privacy Policy - Praxis Saewska
 Lang: en
 Slug: privacy
 Template: privacy
-Last_Updated: Last updated: [Date]
+Last_Updated: Last updated: May 6, 2026
 
 ## 1. Data Protection at a Glance
 
@@ -32,11 +32,11 @@ You have the right at any time to receive information free of charge about the o
 
 ## 2. Hosting
 
-This website is hosted on GitHub Pages. The provider is GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA (hereinafter "GitHub").
+This website is hosted via Cloudflare. The provider is Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA (hereinafter "Cloudflare").
 
-When you visit our website, GitHub collects various log files including your IP addresses. For details, see GitHub's privacy policy: [https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)
+When you visit our website, Cloudflare acts as a reverse proxy and processes your requests, including your IP address, in order to deliver the website securely and reliably. Cloudflare may store technical data such as IP addresses, browser type, and access times in log files. For details, see Cloudflare's privacy policy: [https://www.cloudflare.com/privacypolicy/](https://www.cloudflare.com/privacypolicy/)
 
-The use of GitHub Pages is based on Art. 6 para. 1 lit. f GDPR. We have a legitimate interest in the most reliable presentation of our website.
+The use of Cloudflare is based on Art. 6 para. 1 lit. f GDPR. We have a legitimate interest in the secure, fast, and reliable presentation of our website. A data processing agreement has been concluded with Cloudflare in accordance with Art. 28 GDPR.
 
 ## 3. General Information and Mandatory Information
 
@@ -51,11 +51,11 @@ When you use this website, various personal data is collected. Personal data is 
 The responsible party for data processing on this website is:
 
 **Praxis Saewska**  
-[Your Address]  
-[Postal Code] [City]
+Uhlandstr. 87  
+10717 Berlin
 
-Phone: [Your Phone Number]  
-Email: [Your Email Address]
+Phone: +49308615424  
+Email: webmaster@praxis-saewska.de
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g. names, email addresses, etc.).
 
@@ -100,13 +100,13 @@ The map is only loaded if you consent to the use of cookies. If you do not conse
 
 For more information on how user data is handled, please see Google's privacy policy: [https://policies.google.com/privacy](https://policies.google.com/privacy)
 
-### Doctolib
+### arzt-direkt
 
-For online appointment booking, we use the Doctolib service. The provider is Doctolib GmbH, Unter den Linden 21, 10117 Berlin, Germany.
+For online appointment booking, we use the arzt-direkt service provided by Zollsoft GmbH.
 
-When you book an appointment via Doctolib, your data will be transmitted to Doctolib. You can find Doctolib's privacy policy at: [https://www.doctolib.de/datenschutz](https://www.doctolib.de/datenschutz)
+When you book an appointment via arzt-direkt, your data will be transmitted to Zollsoft GmbH. You can find arzt-direkt's privacy policy at: [https://arzt-direkt.de/datenschutz/](https://arzt-direkt.de/datenschutz/)
 
-The use of Doctolib is based on Art. 6 para. 1 lit. f GDPR. We have a legitimate interest in simple and user-friendly appointment booking for our patients.
+The use of arzt-direkt is based on Art. 6 para. 1 lit. f GDPR. We have a legitimate interest in simple and user-friendly appointment booking for our patients.
 
 ## 6. Your Rights
 
@@ -125,9 +125,9 @@ To exercise these rights, you can contact us at any time. You can find the conta
 
 ## 7. Data Security
 
-We use the widespread SSL procedure (Secure Socket Layer) in connection with the highest level of encryption supported by your browser during the website visit. Usually, this is 256-bit encryption. If your browser does not support 256-bit encryption, we use 128-bit v3 technology.
+We use the widespread SSL/TLS procedure in connection with the highest level of encryption supported by your browser during the website visit. Usually, this is 256-bit encryption. Cloudflare additionally provides DDoS protection and web application firewall services to secure the transmission of data.
 
-Whether a single page of our website is transmitted encrypted can be recognized by the closed representation of the key or lock symbol in the lower status bar of your browser.
+Whether a single page of our website is transmitted encrypted can be recognized by the closed representation of the key or lock symbol in the address bar of your browser.
 
 ## 8. Changes to This Privacy Policy
 
@@ -138,6 +138,6 @@ We reserve the right to adapt this privacy policy so that it always complies wit
 If you have questions about data protection, please send us an email or contact the person responsible for data protection in our practice directly:
 
 **Praxis Saewska**  
-[Your Address]  
-[Postal Code] [City]  
-Email: [Your Email Address]
+Uhlandstr. 87  
+10717 Berlin  
+Email: webmaster@praxis-saewska.de

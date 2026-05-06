@@ -2,7 +2,7 @@ Title: Impressum - Praxis Saewska
 Lang: de
 Slug: impressum
 Template: impressum
-Last_Updated: Stand: [Datum]
+Last_Updated: Stand: 6. Mai 2026
 translation: true
 
 **Angaben gemäß § 5 TMG:**
@@ -15,7 +15,7 @@ BSNR: 721090000
 
 **Kontakt:**  
 Telefon: +49308615424 
-E-Mail: info@praxis-saewska.de
+E-Mail: webmaster@praxis-saewska.de
 
 **Approbation:**  
 Erteilt durch: Landesamt für Gesundheit und Soziales, Berlin  
