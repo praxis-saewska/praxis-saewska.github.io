@@ -6,6 +6,14 @@
 
 {% block og_title %}{{ _('Blog') }} - {{ SITENAME }}{% endblock %}
 
+{% block canonical_url %}
+    <link rel="canonical" href="{{ ('/' + DEFAULT_LANG + '/blog/') | absolute_url }}" id="canonical-link">
+{% endblock %}
+
+{% block og_url %}
+    <meta property="og:url" content="{{ ('/' + DEFAULT_LANG + '/blog/') | absolute_url }}" id="og-url">
+{% endblock %}
+
 {% block content %}
 <div class="blog-page">
     <div class="page-header">
