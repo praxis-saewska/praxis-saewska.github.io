@@ -2,39 +2,39 @@
 # All languages are in subdirectories: /de/, /en/, /ru/, /uk/
 RewriteEngine On
 
-# Redirect root based on browser language preference (302 temporary redirect for SEO)
+# Redirect root based on browser language preference
 # Russian speakers
 RewriteCond %{REQUEST_URI} ^/$
 RewriteCond %{HTTP:Accept-Language} ^ru [NC]
-RewriteRule ^$ /ru/ [R=302,L]
+RewriteRule ^$ /ru/ [R=301,L]
 
 # Ukrainian speakers
 RewriteCond %{REQUEST_URI} ^/$
 RewriteCond %{HTTP:Accept-Language} ^uk [NC]
-RewriteRule ^$ /uk/ [R=302,L]
+RewriteRule ^$ /uk/ [R=301,L]
 
 # English speakers
 RewriteCond %{REQUEST_URI} ^/$
 RewriteCond %{HTTP:Accept-Language} ^en [NC]
-RewriteRule ^$ /en/ [R=302,L]
+RewriteRule ^$ /en/ [R=301,L]
 
 # Default to German (main language) for all others
 RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^$ /de/ [R=302,L]
+RewriteRule ^$ /de/ [R=301,L]
 
 # Redirect old /index.html to language-detected version
 RewriteCond %{REQUEST_URI} ^/index\.html$
 RewriteCond %{HTTP:Accept-Language} ^ru [NC]
-RewriteRule ^index\.html$ /ru/ [R=302,L]
+RewriteRule ^index\.html$ /ru/ [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/index\.html$
 RewriteCond %{HTTP:Accept-Language} ^uk [NC]
-RewriteRule ^index\.html$ /uk/ [R=302,L]
+RewriteRule ^index\.html$ /uk/ [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/index\.html$
 RewriteCond %{HTTP:Accept-Language} ^en [NC]
-RewriteRule ^index\.html$ /en/ [R=302,L]
+RewriteRule ^index\.html$ /en/ [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/index\.html$
-RewriteRule ^index\.html$ /de/ [R=302,L]
+RewriteRule ^index\.html$ /de/ [R=301,L]
 

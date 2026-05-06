@@ -23,18 +23,18 @@ export default {
       // Check language preference in order of priority
       // Ukrainian speakers
       if (languages.includes('uk')) {
-        return Response.redirect(new URL('/uk/', url.origin), 302);
+        return Response.redirect(new URL('/uk/', url.origin), 301);
       }
       // Russian speakers
       if (languages.includes('ru')) {
-        return Response.redirect(new URL('/ru/', url.origin), 302);
+        return Response.redirect(new URL('/ru/', url.origin), 301);
       }
       // English speakers
       if (languages.includes('en')) {
-        return Response.redirect(new URL('/en/', url.origin), 302);
+        return Response.redirect(new URL('/en/', url.origin), 301);
       }
       // German speakers or default fallback
-      return Response.redirect(new URL('/de/', url.origin), 302);
+      return Response.redirect(new URL('/de/', url.origin), 301);
     }
     
     // For all other paths, fetch the asset normally
