@@ -6,9 +6,10 @@ Hero_Subtitle: Your health is important to us. We offer comprehensive gynecologi
 
 ## Our Services
 
-### Pediatric and Adolescent Gynecology
+### [Pediatric and Adolescent Gynecology](/en/blog/pediatric-adolescent-gynecology/)
 
 A gentle introduction to women's health: We advise young girls and adolescents on all questions about the body, cycle, contraception, and first gynecological topics – in a trusting and respectful atmosphere.
+[Read more](/en/blog/pediatric-adolescent-gynecology/)
 
 ### Urogynecology
 

@@ -6,9 +6,10 @@ Hero_Subtitle: Ihre Gesundheit liegt uns am Herzen. Wir bieten umfassende gynäk
 
 ## Unsere Leistungen
 
-### Kindergynäkologie und Jugendgynäkologie
+### [Kindergynäkologie und Jugendgynäkologie](/de/blog/pediatric-adolescent-gynecology/)
 
 Ein behutsamer Einstieg in die Frauengesundheit: Wir beraten junge Mädchen und Jugendliche bei allen Fragen rund um den Körper, Zyklus, Verhütung und erste gynäkologische Themen – in vertrauensvoller und respektvoller Atmosphäre.
+[Mehr erfahren](/de/blog/pediatric-adolescent-gynecology/)
 
 ### Urogynäkologie
 
