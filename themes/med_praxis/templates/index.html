@@ -4,101 +4,91 @@
 {% block content %}
 {% for p in pages %}
 {% if p.lang == DEFAULT_LANG %}
-    {% if not p.slug or p.slug == "" or p.slug == "index" or "gynakologie" in p.slug or "gynecology" in p.slug or "ginekologiia" in p.slug %}
-        {% set page = p %}
-    {# Home page content #}
-    <section class="hero">
-        <div class="hero-content">
-            <h1>{{ page.title if page else SITENAME }}</h1>
-            {% if page %}
-                {# Pelican converts metadata: Hero_Subtitle becomes hero_subtitle attribute #}
-                {% set hero_subtitle = page.hero_subtitle | default('', true) %}
-                {% if hero_subtitle %}
-                <p>{{ hero_subtitle }}</p>
-                {% endif %}
+{% if not p.slug or p.slug == "" or p.slug == "index" or "gynakologie" in p.slug or "gynecology" in p.slug or
+"ginekologiia" in p.slug %}
+{% set page = p %}
+{# Home page content #}
+<section class="hero">
+    <div class="hero-content">
+        <h1>{{ page.title if page else SITENAME }}</h1>
+        {% if page %}
+        {# Pelican converts metadata: Hero_Subtitle becomes hero_subtitle attribute #}
+        {% set hero_subtitle = page.hero_subtitle | default('', true) %}
+        {% if hero_subtitle %}
+        <p>{{ hero_subtitle }}</p>
+        {% endif %}
+        {% endif %}
+        <a href="#appointment" class="btn">{{ _('Book Appointment') }}</a>
+    </div>
+</section>
+
+{% set lang_articles = articles | selectattr('lang', 'equalto', DEFAULT_LANG) | list %}
+{% if lang_articles %}
+<section id="latest-news" class="section latest-news-section">
+    <div class="container">
+        <h2 class="section-title">{{ _('Latest News') }}</h2>
+        <div class="news-grid">
+            {% for article in lang_articles[:3] %}
+            <a href="/{{ DEFAULT_LANG }}/{{ article.url }}" class="news-card">
+                <span class="news-category">{{ article.category }}</span>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.summary | striptags }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section id="services" class="section">
+    <div class="container">
+        {# The actual title is taken from the first "##" heading in the markdown content via JS #}
+        <h2 class="section-title"></h2>
+        <div class="services-grid">
+            {% if page and page.content %}
+            {{ page.content }}
             {% endif %}
-            <a href="#appointment" class="btn">{{ _('Book Appointment') }}</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    {% set lang_articles = articles | selectattr('lang', 'equalto', DEFAULT_LANG) | list %}
-    {% if lang_articles %}
-    <section id="latest-news" class="section latest-news-section">
-        <div class="container">
-            <h2 class="section-title">{{ _('Latest News') }}</h2>
-            <div class="news-grid">
-                {% for article in lang_articles[:3] %}
-                    <a href="/{{ DEFAULT_LANG }}/{{ article.url }}" class="news-card">
-                        <span class="news-category">{{ article.category }}</span>
-                        <h3>{{ article.title }}</h3>
-                        <p>{{ article.summary | striptags }}</p>
-                    </a>
-                {% endfor %}
+<section id="appointment" class="appointment-section">
+    <div class="container">
+        <h2 class="section-title">{{ _('Book Appointment') }}</h2>
+        <div class="doctolib-placeholder">
+            <h3>Online Appointment Booking</h3>
+            <p>We are sorry, but online booking is not available yet. We are working hard to offer it in the coming
+                days.</p>
+
+            <!-- PLACEHOLDER: Replace this div with your Online  widget code -->
+            <div
+                style="background-color: #f0f0f0; padding: 2rem; border-radius: 4px; margin: 1rem 0; text-align: center; color: #666;">
+                <p><strong>Please use our contact form to send us a request for an appointment.</strong></p>
             </div>
         </div>
-    </section>
-    {% endif %}
+    </div>
+</section>
 
-    <section id="services" class="section">
-        <div class="container">
-            {# The actual title is taken from the first "##" heading in the markdown content via JS #}
-            <h2 class="section-title"></h2>
-            <div class="services-grid">
-                {% if page and page.content %}
-                {{ page.content }}
-                {% endif %}
-            </div>
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">{{ _('Contact') }}</h2>
+
+        {{ contact_info() }}
+
+        <div class="about-section" style="margin-bottom: 3rem;">
+            <h2>{{ _('Opening Hours') }}</h2>
+            {{ opening_hours() }}
         </div>
-    </section>
-
-    <section id="appointment" class="appointment-section">
-        <div class="container">
-            <h2 class="section-title">{{ _('Book Appointment') }}</h2>
-            <div class="doctolib-placeholder">
-                <h3>Online Appointment Booking</h3>
-                <p>Book your appointment conveniently online via Doctolib.</p>
-
-                <!-- PLACEHOLDER: Replace this div with your Doctolib widget code -->
-                <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 4px; margin: 1rem 0; text-align: center; color: #666;">
-                    <p><strong>Doctolib Widget will be inserted here</strong></p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Please insert your Doctolib widget code here</p>
-                </div>
-
-                <div class="doctolib-instructions">
-                    <p><strong>Instructions for Doctolib Integration:</strong></p>
-                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li>Log in to your Doctolib account</li>
-                        <li>Go to "Settings" → "Widget"</li>
-                        <li>Copy the provided widget code</li>
-                        <li>Replace the placeholder area above with the Doctolib code</li>
-                    </ol>
-                    <p style="margin-top: 1rem;"><strong>Alternatively: Add a link to your Doctolib booking page:</strong></p>
-                    <code>https://www.doctolib.de/...</code>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">{{ _('Contact') }}</h2>
-
-            {{ contact_info() }}
-
-            <div class="about-section" style="margin-bottom: 3rem;">
-                <h2>{{ _('Opening Hours') }}</h2>
-                {{ opening_hours() }}
-            </div>
-        </div>
-    </section>
-    {% endif %}
+    </div>
+</section>
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endblock %}
 
 {% block extra_head %}
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
@@ -138,8 +128,8 @@
     }
     </script>
 
-    <!-- Detailed Physician Schema -->
-    <script type="application/ld+json">
+<!-- Detailed Physician Schema -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Physician",
