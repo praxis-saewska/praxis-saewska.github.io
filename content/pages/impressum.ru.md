@@ -2,7 +2,7 @@ Title: Выходные данные - Praxis Saewska
 Lang: ru
 Slug: impressum
 Template: impressum
-Last_Updated: Последнее обновление: [Дата]
+Last_Updated: Последнее обновление: 6 мая 2026 г.
 translation: true
 
 **Информация согласно § 5 TMG:**
@@ -15,7 +15,7 @@ BSNR: 721090000
 
 **Контакт:**  
 Телефон: +49308615424 </br>
-Электронная почта: info@praxis-saewska.de
+Электронная почта: webmaster@praxis-saewska.de
 
 **Медицинская лицензия:**  
 Выдана: Landesamt für Gesundheit und Soziales, Berlin  

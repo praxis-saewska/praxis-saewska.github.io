@@ -3,7 +3,7 @@ Lang: de
 Slug: about
 Template: about
 
-## Dr. PhD Elena Saewska
+## Dr. Elena Saewska, PhD, Fachärztin für Gynäkologie und Geburtshilfe
 
 <div class="doctor-info">
   <div class="doctor-photo">

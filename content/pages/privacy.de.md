@@ -2,7 +2,7 @@ Title: Datenschutz - Praxis Saewska
 Lang: de
 Slug: privacy
 Template: privacy
-Last_Updated: Stand: [Datum]
+Last_Updated: Stand: 6. Mai 2026
 
 ## 1. Datenschutz auf einen Blick
 
@@ -32,11 +32,11 @@ Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger
 
 ## 2. Hosting
 
-Diese Website wird bei GitHub Pages gehostet. Anbieter ist die GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA (nachfolgend "GitHub").
+Diese Website wird über Cloudflare bereitgestellt. Anbieter ist Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA (nachfolgend "Cloudflare").
 
-Wenn Sie unsere Website besuchen, erfasst GitHub verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung von GitHub: [https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)
+Wenn Sie unsere Website besuchen, fungiert Cloudflare als Reverse-Proxy und verarbeitet Ihre Anfragen einschließlich Ihrer IP-Adresse, um die Website sicher und zuverlässig auszuliefern. Cloudflare kann technische Daten wie IP-Adressen, Browsertyp und Zugriffszeiten in Logfiles speichern. Details entnehmen Sie der Datenschutzerklärung von Cloudflare: [https://www.cloudflare.com/privacypolicy/](https://www.cloudflare.com/privacypolicy/)
 
-Die Verwendung von GitHub Pages erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website.
+Die Verwendung von Cloudflare erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen Darstellung unserer Website. Mit Cloudflare wurde ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO abgeschlossen.
 
 ## 3. Allgemeine Hinweise und Pflichtinformationen
 
@@ -51,11 +51,11 @@ Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erho
 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 
 **Praxis Saewska**  
-[Ihre Adresse]  
-[PLZ] [Ort]
+Uhlandstr. 87  
+10717 Berlin
 
-Telefon: [Ihre Telefonnummer]  
-E-Mail: [Ihre E-Mail-Adresse]
+Telefon: +49308615424  
+E-Mail: webmaster@praxis-saewska.de
 
 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
 
@@ -100,13 +100,13 @@ Die Karte wird nur geladen, wenn Sie der Verwendung von Cookies zustimmen. Sofer
 
 Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: [https://policies.google.com/privacy](https://policies.google.com/privacy)
 
-### Doctolib
+### arzt-direkt
 
-Für die Online-Terminvereinbarung nutzen wir den Dienst Doctolib. Anbieter ist die Doctolib GmbH, Unter den Linden 21, 10117 Berlin, Deutschland.
+Für die Online-Terminvereinbarung nutzen wir den Dienst arzt-direkt der Zollsoft GmbH.
 
-Wenn Sie einen Termin über Doctolib buchen, werden Ihre Daten an Doctolib übermittelt. Die Datenschutzerklärung von Doctolib finden Sie unter: [https://www.doctolib.de/datenschutz](https://www.doctolib.de/datenschutz)
+Wenn Sie einen Termin über arzt-direkt buchen, werden Ihre Daten an die Zollsoft GmbH übermittelt. Die Datenschutzerklärung von arzt-direkt finden Sie unter: [https://arzt-direkt.de/datenschutz/](https://arzt-direkt.de/datenschutz/)
 
-Die Nutzung von Doctolib erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer einfachen und benutzerfreundlichen Terminvereinbarung für unsere Patientinnen.
+Die Nutzung von arzt-direkt erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer einfachen und benutzerfreundlichen Terminvereinbarung für unsere Patientinnen.
 
 ## 6. Ihre Rechte
 
@@ -125,9 +125,9 @@ Um diese Rechte auszuüben, können Sie uns jederzeit kontaktieren. Die Kontaktd
 
 ## 7. Datensicherheit
 
-Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt wird. In der Regel handelt es sich dabei um eine 256 Bit Verschlüsselung. Falls Ihr Browser keine 256-Bit-Verschlüsselung unterstützt, greifen wir auf 128-Bit v3 Technologie zurück.
+Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL/TLS-Verfahren in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt wird. In der Regel handelt es sich dabei um eine 256 Bit Verschlüsselung. Cloudflare bietet zusätzlich DDoS-Schutz und Web Application Firewall-Dienste zur Absicherung der Datenübertragung.
 
-Ob eine einzelne Seite unserer Internetpräsenz verschlüsselt übertragen wird, erkennen Sie an der geschlossenen Darstellung des Schüssel- beziehungsweise Schloss-Symbols in der unteren Statusleiste Ihres Browsers.
+Ob eine einzelne Seite unserer Internetpräsenz verschlüsselt übertragen wird, erkennen Sie an der geschlossenen Darstellung des Schloss-Symbols in der Adressleiste Ihres Browsers.
 
 ## 8. Änderungen dieser Datenschutzerklärung
 
@@ -138,6 +138,6 @@ Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets de
 Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Praxis:
 
 **Praxis Saewska**  
-[Ihre Adresse]  
-[PLZ] [Ort]  
-E-Mail: [Ihre E-Mail-Adresse]
+Uhlandstr. 87  
+10717 Berlin  
+E-Mail: webmaster@praxis-saewska.de

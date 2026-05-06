@@ -2,7 +2,7 @@ Title: Legal Notice - Praxis Saewska
 Lang: en
 Slug: impressum
 Template: impressum
-Last_Updated: Last updated: [Date]
+Last_Updated: Last updated: May 6, 2026
 translation: true
 
 **Information according to § 5 TMG:**
@@ -15,7 +15,7 @@ BSNR: 721090000
 
 **Contact:**  
 Phone: +49308615424  
-Email: info@praxis-saewska.de
+Email: webmaster@praxis-saewska.de
 
 **Medical License:**  
 Issued by: Landesamt für Gesundheit und Soziales, Berlin  

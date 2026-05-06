@@ -2,7 +2,7 @@ Title: Вихідні дані - Praxis Saewska
 Lang: uk
 Slug: impressum
 Template: impressum
-Last_Updated: Останнє оновлення: [Дата]
+Last_Updated: Останнє оновлення: 6 травня 2026 р.
 translation: true
 
 **Інформація згідно з § 5 TMG:**
@@ -14,8 +14,8 @@ Uhlandstr. 87
 BSNR: 721090000
 
 **Контакт:**  
-Телефон: [+49308615424   
-Електронна пошта: info@praxis-saewska.de
+Телефон: +49308615424  
+Електронна пошта: webmaster@praxis-saewska.de
 
 **Медична ліцензія:**  
 Видана: Landesamt für Gesundheit und Soziales, Berlin  

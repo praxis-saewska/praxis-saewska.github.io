@@ -11,7 +11,8 @@ def generate_sitemap(output_dir="output", base_url="https://praxis-saewska.de"):
     """Generate sitemap.xml from the output directory"""
 
     sitemap_header = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 """
 
     sitemap_footer = "</urlset>\n"
@@ -134,15 +135,41 @@ def generate_sitemap(output_dir="output", base_url="https://praxis-saewska.de"):
     # Sort URLs by priority (descending) then by URL (ascending)
     unique_urls.sort(key=lambda x: (-float(x["priority"]), x["loc"]))
 
+    # Build slug -> {lang: url} mapping for hreflang cross-references
+    # Strip the language prefix to get the slug: /de/about/ -> about/
+    slug_to_langs: dict[str, dict[str, str]] = {}
+    for url_data in unique_urls:
+        loc = url_data["loc"]
+        # Extract path after base_url
+        path = loc[len(base_url):]  # e.g. /de/about/
+        parts = path.strip("/").split("/", 1)
+        if len(parts) >= 1 and parts[0] in languages:
+            lang = parts[0]
+            slug = parts[1] if len(parts) > 1 else ""
+            slug_to_langs.setdefault(slug, {})[lang] = loc
+
     # Generate sitemap XML
     sitemap_content = sitemap_header
 
     for url_data in unique_urls:
+        loc = url_data["loc"]
+        path = loc[len(base_url):]
+        parts = path.strip("/").split("/", 1)
+        slug = parts[1] if len(parts) > 1 and parts[0] in languages else ""
+        alternates = slug_to_langs.get(slug, {})
+
+        hreflang_tags = ""
+        for alt_lang, alt_url in sorted(alternates.items()):
+            hreflang_tags += f'    <xhtml:link rel="alternate" hreflang="{alt_lang}" href="{alt_url}"/>\n'
+        # x-default points to German
+        if "de" in alternates:
+            hreflang_tags += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{alternates["de"]}"/>\n'
+
         sitemap_content += f"""  <url>
-    <loc>{url_data["loc"]}</loc>
+    <loc>{loc}</loc>
     <changefreq>{url_data["changefreq"]}</changefreq>
     <priority>{url_data["priority"]}</priority>
-  </url>
+{hreflang_tags}  </url>
 """
 
     sitemap_content += sitemap_footer

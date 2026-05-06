@@ -3,7 +3,7 @@ Lang: en
 Slug: about
 Template: about
 
-## Dr. PhD Elena Saewska
+## Dr. Elena Saewska, PhD, Specialist in Gynecology and Obstetrics
 
 <div class="doctor-info">
   <div class="doctor-photo">

@@ -8,7 +8,7 @@ translation: true
 
 Sie können einen Termin auf verschiedene Weise vereinbaren:
 
-- Online über unser Doctolib-Buchungssystem (siehe Startseite)
+- Online über unser arzt-direkt-Buchungssystem (siehe Startseite)
 - Telefonisch während unserer Sprechzeiten
 - Per E-Mail
 
