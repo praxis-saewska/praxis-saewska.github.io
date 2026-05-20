@@ -1,6 +1,6 @@
 Title: Vaccinations and Prevention
 Date: 2026-05-07 10:00
-Modified: 2026-05-07 10:00
+Modified: 2026-05-20 10:00
 Category: Articles
 Status: published
 Tags: practice, information
@@ -14,39 +14,49 @@ vaccination is one of the most effective ways to protect yourself from infectiou
 
 I offer counseling on all important vaccinations and perform them directly in the practice. Together we will discuss which vaccines are right for you and create an individual vaccination plan tailored to your age, health, and life plans.
 
-## Important vaccinations for women
+## Available vaccinations
 
-### HPV vaccination
+### Tetanus + Diphtheria (Td)
 
-- **For whom:** girls and women aged 9 to 45
-- **Purpose:** prevention of cervical, vaginal, vulvar, and anal cancer
-- **Doses:** 2–3 depending on age and vaccine
-- **Additional:** prevention of genital warts
+- **For whom:** all adults
+- **Purpose:** booster protection against tetanus and diphtheria
+- **When:** booster recommended every 10 years
 
-### Flu vaccination
+### Pertussis (Whooping Cough)
 
-- **For whom:** all women, especially pregnant women and those planning a pregnancy
+- **For whom:** all adults, especially pregnant women and those in contact with newborns
+- **Purpose:** protection against whooping cough and transmission to infants
+- **Recommendation:** third trimester of pregnancy (as Tdap combination)
+
+### Influenza (Flu)
+
+- **For whom:** all women, especially pregnant women
 - **Purpose:** prevention of influenza and its complications
 - **When:** annually before the flu season
-- **Especially important during pregnancy:** protects both mother and baby
 
-### MMR vaccination
+### HPV (Human Papillomavirus)
 
-- **For whom:** women without sufficient immunity, especially those planning a pregnancy
-- **Purpose:** prevention of rubella, which can be dangerous for the fetus
-- **Timing:** at least 3 months before the planned pregnancy
+- **For whom:** girls and women aged 9 to 45
+- **Purpose:** prevention of cervical cancer and other HPV-related diseases
+- **Doses:** 2–3 depending on age and vaccine
 
-### Pertussis (Tdap)
+### TBE (Tick-borne Encephalitis)
 
-- **For whom:** all women, including pregnant women
-- **Purpose:** protection of newborns from whooping cough
-- **Recommendation:** third trimester of pregnancy
+- **For whom:** persons in TBE risk areas
+- **Purpose:** protection against tick-borne encephalitis
+- **Schedule:** primary immunization with 3 doses, regular boosters
 
-### Vaccination schedule
+### Hepatitis A
 
-- **Before pregnancy planning:** MMR, rubella, chickenpox
-- **During pregnancy:** flu (2nd–3rd trimester), pertussis (3rd trimester)
-- **After birth:** HPV (if not previously vaccinated), flu
+- **For whom:** persons at increased risk, e.g. before travel to risk areas
+- **Purpose:** protection against hepatitis A infection
+- **Schedule:** 2 doses
+
+### Hepatitis B
+
+- **For whom:** persons with increased risk of infection
+- **Purpose:** protection against chronic hepatitis B infection
+- **Schedule:** primary immunization with 3 doses
 
 With kind regards,  
 Dr. Saewska and the Praxis Dr. Saewska team
