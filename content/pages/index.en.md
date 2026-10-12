@@ -50,3 +50,8 @@ We advise on all important protective vaccinations – whether HPV, flu, pregnan
 
 We offer modern diagnostics, counseling, and treatment for HPV infections as well as comprehensive prevention to protect against cervical cancer.
 [Read more](/en/blog/hpv-diagnostics-prevention/)
+
+### [Outpatient Surgery](/en/blog/outpatient-surgery/)
+
+Minimally invasive procedures without a hospital stay: hysteroscopy, laparoscopy, and plastic surgery of the external genitalia. All operations are performed under general anesthesia in a certified surgical center – you return home the same day.
+[Read more](/en/blog/outpatient-surgery/)

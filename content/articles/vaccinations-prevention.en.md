@@ -40,23 +40,11 @@ I offer counseling on all important vaccinations and perform them directly in th
 - **Purpose:** prevention of cervical cancer and other HPV-related diseases
 - **Doses:** 2–3 depending on age and vaccine
 
-### TBE (Tick-borne Encephalitis)
+### TBE (Tick-borne Encephalitis) – on request
 
 - **For whom:** persons in TBE risk areas
 - **Purpose:** protection against tick-borne encephalitis
 - **Schedule:** primary immunization with 3 doses, regular boosters
-
-### Hepatitis A
-
-- **For whom:** persons at increased risk, e.g. before travel to risk areas
-- **Purpose:** protection against hepatitis A infection
-- **Schedule:** 2 doses
-
-### Hepatitis B
-
-- **For whom:** persons with increased risk of infection
-- **Purpose:** protection against chronic hepatitis B infection
-- **Schedule:** primary immunization with 3 doses
 
 With kind regards,  
 Dr. Saewska and the Praxis Dr. Saewska team

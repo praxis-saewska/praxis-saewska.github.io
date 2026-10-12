@@ -40,23 +40,11 @@ Ich berate zu allen wichtigen Impfungen und führe sie direkt in der Praxis durc
 - **Zweck:** Vorbeugung von Gebärmutterhalskrebs und anderen HPV-bedingten Erkrankungen
 - **Dosen:** 2–3 je nach Alter und Impfstoff
 
-### FSME
+### FSME – auf Anfrage
 
 - **Für wen:** Personen in FSME-Risikogebieten
 - **Zweck:** Schutz vor Frühsommer-Meningoenzephalitis
 - **Schema:** Grundimmunisierung mit 3 Dosen, regelmäßige Auffrischung
-
-### Hepatitis A
-
-- **Für wen:** Personen mit erhöhtem Risiko, z. B. vor Reisen in Risikogebiete
-- **Zweck:** Schutz vor Hepatitis-A-Infektion
-- **Schema:** 2 Dosen
-
-### Hepatitis B
-
-- **Für wen:** Personen mit erhöhtem Ansteckungsrisiko
-- **Zweck:** Schutz vor chronischer Hepatitis-B-Infektion
-- **Schema:** Grundimmunisierung mit 3 Dosen
 
 Mit freundlichen Grüßen,  
 Dr. Saewska und das Team der Praxis Dr. Saewska

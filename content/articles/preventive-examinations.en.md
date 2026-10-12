@@ -22,7 +22,7 @@ I am pleased to offer comprehensive preventive examinations that help identify p
 - **Gynecological examination** — assessment of the reproductive organs
 - **Ultrasound (sonography)** — assessment of the uterus, ovaries, and breasts
 - **Pap smear** — cervical cancer screening
-- **Mammography or breast ultrasound** — breast cancer screening (for women over 40)
+- **Breast ultrasound** — breast cancer screening (for women over 40)
 - **Laboratory tests** — blood tests for hormones, lipids, and glucose
 - **Urine analysis** — kidney and urinary tract function assessment
 
@@ -30,7 +30,7 @@ I am pleased to offer comprehensive preventive examinations that help identify p
 
 - Women under 30: annual examination
 - Women aged 30–50: annual examination + breast ultrasound
-- Women over 50: annual examination + mammography + laboratory tests
+- Women over 50: annual examination + laboratory tests
 
 ### Individual health plan
 

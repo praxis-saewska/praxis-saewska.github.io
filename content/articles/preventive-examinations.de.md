@@ -22,7 +22,7 @@ Ich freue mich, Ihnen umfassende Vorsorgeuntersuchungen anzubieten, die dabei he
 - **Gynäkologische Untersuchung** — Beurteilung des Zustands der Fortpflanzungsorgane
 - **Ultraschall (Sonographie)** — Beurteilung von Gebärmutter, Eierstöcken und Brust
 - **Pap-Abstrich** — Screening auf Gebärmutterhalskrebs
-- **Mammographie oder Brustultraschall** — Screening auf Brustkrebs (für Frauen über 40 Jahre)
+- **Brustultraschall** — Screening auf Brustkrebs (für Frauen über 40 Jahre)
 - **Laboruntersuchungen** — Blutuntersuchungen auf Hormone, Lipide und Glukose
 - **Urinanalyse** — Beurteilung der Nieren- und Harnwegsfunktion
 
@@ -30,7 +30,7 @@ Ich freue mich, Ihnen umfassende Vorsorgeuntersuchungen anzubieten, die dabei he
 
 - Frauen unter 30 Jahren: jährliche Untersuchung
 - Frauen zwischen 30 und 50 Jahren: jährliche Untersuchung + Brustultraschall
-- Frauen über 50 Jahren: jährliche Untersuchung + Mammographie + Laboruntersuchungen
+- Frauen über 50 Jahren: jährliche Untersuchung + Laboruntersuchungen
 
 ### Individueller Gesundheitsplan
 

@@ -50,3 +50,8 @@ Wir beraten zu allen wichtigen Schutzimpfungen – ob HPV, Grippe, Schwangerscha
 
 Wir bieten moderne Diagnostik, Beratung und Behandlung bei HPV-Infektionen sowie umfassende Prävention zum Schutz vor Gebärmutterhalskrebs.
 [Mehr erfahren](/de/blog/hpv-diagnostics-prevention/)
+
+### [Ambulante Operationen](/de/blog/outpatient-surgery/)
+
+Minimalinvasive Eingriffe ohne Krankenhausaufenthalt: Hysteroskopie, Laparoskopie und plastische Operationen im äußeren Genitalbereich. Alle Eingriffe erfolgen in Vollnarkose in einem zertifizierten OP-Zentrum – nach Hause geht es noch am selben Tag.
+[Mehr erfahren](/de/blog/outpatient-surgery/)
