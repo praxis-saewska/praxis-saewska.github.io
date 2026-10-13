@@ -11,7 +11,7 @@ Template: about
   </div>
   <div class="doctor-details">
     <p><strong>Fachärztin für Gynäkologie und Geburtshilfe</strong></p>
-    <p>Herzlich willkommen in unserer Praxis! Ich freue mich, Sie kennenzulernen und Sie auf Ihrem Weg zu begleiten. Mit über 14 Jahren Erfahrung als Fachärztin bringe ich umfassende Expertise in Gynäkologie und Geburtshilfe mit. Mir ist der offene Austausch mit Ihnen wichtig, und ich erweitere kontinuierlich mein Wissen, um Ihnen die bestmögliche Versorgung zu bieten.</p>
+    <p>Herzlich willkommen in unserer Praxis! Ich freue mich, Sie kennenzulernen und Sie auf Ihrem Weg zu begleiten. Mit mehr als 15 Jahren Erfahrung als Fachärztin bringe ich umfassende Expertise in Gynäkologie und Geburtshilfe mit. Mir ist der offene Austausch mit Ihnen wichtig, und ich erweitere kontinuierlich mein Wissen, um Ihnen die bestmögliche Versorgung zu bieten.</p>
   </div>
 </div>
 

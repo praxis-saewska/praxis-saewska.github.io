@@ -11,7 +11,7 @@ Template: about
   </div>
   <div class="doctor-details">
     <p><strong>Specialist in Gynecology and Obstetrics</strong></p>
-    <p>Welcome to our practice! I look forward to meeting you and supporting you on your journey. With over 14 years of experience as a specialist, I bring extensive expertise in gynecology and obstetrics. Open communication with you matters to me, and I continuously expand my knowledge to provide the best possible care.</p>
+    <p>Welcome to our practice! I look forward to meeting you and supporting you on your journey. With more than 15 years of experience as a specialist, I bring extensive expertise in gynecology and obstetrics. Open communication with you matters to me, and I continuously expand my knowledge to provide the best possible care.</p>
   </div>
 </div>
 

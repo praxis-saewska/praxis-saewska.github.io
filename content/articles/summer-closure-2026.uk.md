@@ -2,7 +2,7 @@ Title: Літня відпустка 2026 – практика тимчасов�
 Date: 2026-07-10 10:00
 Modified: 2026-07-10 10:00
 Category: News
-Status: published
+Status: hidden
 Tags: оголошення, години роботи, відпустка
 Slug: summer-closure-2026
 Lang: uk

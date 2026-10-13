@@ -2,7 +2,7 @@ Title: Summer Holiday 2026 – Practice Temporarily Closed
 Date: 2026-07-10 10:00
 Modified: 2026-07-10 10:00
 Category: News
-Status: published
+Status: hidden
 Tags: announcement, opening hours, holiday
 Slug: summer-closure-2026
 Lang: en

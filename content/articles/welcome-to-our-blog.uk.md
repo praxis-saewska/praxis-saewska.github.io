@@ -2,7 +2,7 @@ Title: Ласкаво просимо до нашого блогу
 Date: 2025-01-15 10:00
 Modified: 2025-01-15 10:00
 Category: Articles
-Status: published
+Status: hidden
 Tags: практика, новини, інформація
 Slug: welcome-to-our-blog
 Lang: uk
