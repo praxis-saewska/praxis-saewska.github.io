@@ -1,5 +1,5 @@
 Title: Осенний отпуск 2026 – клиника временно закрыта
-Date: 2026-10-02 10:00
+Date: 2026-10-16 10:00
 Modified: 2026-10-16 10:00
 Category: News
 Status: published
