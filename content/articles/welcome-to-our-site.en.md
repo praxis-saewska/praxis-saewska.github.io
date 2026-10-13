@@ -6,11 +6,11 @@ Status: published
 Tags: practice, news, information
 Slug: welcome-to-our-site
 Lang: en
-Summary: As of **14.04.2026**, the private gynaecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska, PhD and will continue in a renewed format as Praxis Saewska.
+Summary: As of **14.04.2026**, the gynecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska, PhD and will continue in a renewed format as Praxis Saewska.
 
 Dear Patients,
 
-We are pleased to inform you that as of **14.04.2026** the private gynecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska PhD, and will continue its work in a renewed format as Praxis Saewska.
+We are pleased to inform you that as of **14.04.2026** the gynecology practice of Dr. Josepha Rodriguez will be taken over by Dr. Elena Saewska PhD, and will continue its work in a renewed format as Praxis Saewska.
 
 Dr. Elena Saewska is a specialist in gynecology and obstetrics with more than 15 years of experience, including 10 years in a leadership position. Her focus is on modern, gentle care, including minimally invasive gynecology. Over the course of her career, she has published more than 20 scientific papers. You can find more details on the [About Us](/en/about/) page.
 
@@ -18,13 +18,11 @@ Dr. Saewska has deep respect and gratitude for the many years of work and dedica
 
 In our practice, you will receive modern, attentive, and individually tailored medical care in the field of gynecology and women’s health. Our goal is a calm, trusting atmosphere in which every patient feels supported and confident in the quality of treatment.
 
-Appointment booking and additional information will be available on the website in the near future.
+You can book appointments conveniently online via [arzt-direkt.de](https://app.arzt-direkt.de/praxis-saewska/booking) or by phone. Further information is available on the [Contact](/en/contact/) page.
 
 An overview of the services we offer can be found on the homepage in the [Our Services](/en/#services) section.
 
-For all current questions, you will be able to contact Dr. Saewska via the contact form on the website: [Contact Form](/en/contact/).
-
-**Please note**: this website is in development and will gradually be expanded with new content.
+For all current questions, you can contact Dr. Saewska via the contact form on the website: [Contact Form](/en/contact/).
 
 Kind regards,  
 Dr. Elena Saewska, PhD

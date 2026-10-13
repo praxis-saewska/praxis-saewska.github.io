@@ -46,4 +46,4 @@ Die Typen 16 und 18 sind für die Entstehung von Gebärmutterhalskrebs am gefäh
 - **Lebensstil** — Rauchverzicht, Verwendung von Barrierekontrazeptiva und Stärkung des Immunsystems
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

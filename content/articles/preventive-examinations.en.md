@@ -43,4 +43,4 @@ After the examination, we discuss together:
 - Schedule for the next examination
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

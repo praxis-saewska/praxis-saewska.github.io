@@ -49,4 +49,4 @@ I will teach you the correct technique:
 - What to look for and when to see a doctor
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

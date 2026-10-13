@@ -29,4 +29,4 @@ Individual examination, consultation, and treatment in the following areas of pe
 - Genetic developmental disorders (Ullrich–Turner syndrome, Swyer syndrome, congenital adrenal hyperplasia, and others)
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

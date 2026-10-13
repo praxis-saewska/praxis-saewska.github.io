@@ -44,4 +44,4 @@ Wenn Sie schwanger sind, bitten wir Sie, Ihren Termin **telefonisch** zu vereinb
 Natürlich stehen wir Ihnen wie gewohnt auch telefonisch für alle weiteren Fragen zur Verfügung.
 
 Herzlichst,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

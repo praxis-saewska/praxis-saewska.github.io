@@ -35,4 +35,4 @@ Individual examination, consultation, and treatment for the following conditions
 - **Vaginal plastic procedures** (restoration of tissue and ligaments)
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

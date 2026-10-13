@@ -7,22 +7,22 @@ Template: about
 
 <div class="doctor-info">
   <div class="doctor-photo">
-    <img src="/images/elena-saewska.png" alt="Elena Photo" />
+    <img src="/images/elena-saewska.png" alt="Dr. Elena Saewska, Fachärztin für Gynäkologie und Geburtshilfe" />
   </div>
   <div class="doctor-details">
     <p><strong>Fachärztin für Gynäkologie und Geburtshilfe</strong></p>
-    <p>Herzlich willkommen in unserer Praxis! Ich freue mich, Sie kennenzulernen und Sie auf Ihrem Weg zu begleiten. Mit über 14 Jahren Erfahrung als Fachärztin bringe ich umfassende Expertise in Gynäkologie und Geburtshilfe mit. Ich bin sehr kommunikativ und erweitere kontinuierlich mein Wissen, um Ihnen die bestmögliche Versorgung zu bieten.</p>
+    <p>Herzlich willkommen in unserer Praxis! Ich freue mich, Sie kennenzulernen und Sie auf Ihrem Weg zu begleiten. Mit über 14 Jahren Erfahrung als Fachärztin bringe ich umfassende Expertise in Gynäkologie und Geburtshilfe mit. Mir ist der offene Austausch mit Ihnen wichtig, und ich erweitere kontinuierlich mein Wissen, um Ihnen die bestmögliche Versorgung zu bieten.</p>
   </div>
 </div>
 
 ## Qualifikationen und Ausbildung
 
-- 1998-2004 - Studium an der Krimischen Staatlichen Medizinischen Universität 'S. Georgijevsky' (KGMU)
-- 2004-2007 - Facharztausbildung/Residency in Allgemeinchirurgie sowie in Gynäkologie und Geburtshilfe am Krimischen Medizinischen Institut 'S. Georgijevsky', Simferopol (eine der führenden Universitäten der Ukraine, Note: 4,85)
-- 2006-2009 - Promotion/aspirantura in Chirurgie an der KGMU, Simferopol
+- 1998-2004 - Studium an der Krimschen Staatlichen Medizinischen Universität 'S. Georgijevsky' (KGMU)
+- 2004-2007 - Facharztausbildung (Residency) in Allgemeinchirurgie sowie in Gynäkologie und Geburtshilfe am Krimschen Medizinischen Institut 'S. Georgijevsky', Simferopol (eine der führenden Universitäten der Ukraine, Note: 4,85)
+- 2006-2009 - Promotion (Aspirantur) in Chirurgie an der KGMU, Simferopol
 - 2009 - Verteidigung der Dissertation und Verleihung des akademischen Grades Kandidat der medizinischen Wissenschaften an der KGMU
 - 2006-2011 - Klinische Tätigkeit in den Abteilungen für Endochirurgie und Gynäkologie der Universitätsklinik N. Semashko, Simferopol
-- 2011-2018 - Fakultät für postgraduale Ausbildung an der Krimischen Staatlichen Medizinischen Universität. Dozentin für Chirurgie, Gynäkologie und Geburtshilfe, Simferopol
+- 2011-2018 - Fakultät für postgraduale Ausbildung an der Krimschen Staatlichen Medizinischen Universität. Dozentin für Chirurgie, Gynäkologie und Geburtshilfe, Simferopol
 - 2011-2018 - Republikanisches Klinikum N. Semashko, Perinatalzentrum. Leitung der Abteilung für Gynäkologie mit minimalinvasiven Eingriffen, Simferopol
 - 2022 - Approbation in Deutschland (Landesamt für Gesundheit und Soziales, Berlin, ID: 2022-2194-BER)
 - 2022 - Havelland Kliniken, Klinik für Gynäkologie und Geburtshilfe, Assistenzärztin, Nauen und Rathenau

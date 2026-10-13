@@ -48,4 +48,4 @@ We perform all types of plastic surgery of the external genitalia — for both m
 - **Follow-up visit** — discussion of the histology results and further care in our practice
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

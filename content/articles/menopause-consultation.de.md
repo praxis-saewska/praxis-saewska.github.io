@@ -25,17 +25,17 @@ Individuelle Beratung und Behandlung in folgenden Bereichen:
 - **Osteoporose-Prävention** — Stärkung der Knochen durch Vitamine und Mineralstoffe
 - **Überwachung der Herzgesundheit** nach den Wechseljahren
 
-### Wechseljahrs-Symptome
+### Wechseljahressymptome
 
 Wir helfen Ihnen bei folgenden Beschwerden:
 
 - Hitzewallungen und Nachtschweiß
 - Schlafstörungen und Schlaflosigkeit
 - Stimmungsschwankungen und Reizbarkeit
-- Vaginale Trockenheit und verminderter Libido
+- Vaginale Trockenheit und verminderte Libido
 - Kopfschmerzen und Schwindel
 - Gewichtszunahme und verlangsamter Stoffwechsel
 - Konzentrationsprobleme
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

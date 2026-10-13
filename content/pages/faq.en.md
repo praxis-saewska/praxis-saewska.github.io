@@ -12,7 +12,9 @@ You can book an appointment in various ways:
 - By phone during our office hours
 - By email
 
-Please have your insurance card ready when you call.
+Please have your insurance card ready when you call. You can find our current office hours and phone number on the [Contact](/en/contact/) page.
+
+If you are pregnant, please book your appointment by phone.
 
 ## What documents should I bring to the appointment?
 
@@ -29,7 +31,7 @@ Please bring the following documents:
 We accept the following payment methods:
 
 - Cash
-- EC card
+- Debit card (EC)
 - Credit card (Visa, Mastercard)
 
 For patients with statutory insurance, the health insurance covers the costs for legally required services. Additional services (IGeL) must be paid for yourself.
@@ -40,9 +42,9 @@ We treat patients with:
 
 - Statutory health insurance (all funds)
 - Private health insurance
-- Subsidy
+- Beihilfe (civil servant health subsidy)
 
-Please inform yourself with your insurance about cost coverage, especially with private insurance.
+Please check with your insurer about cost coverage, especially with private insurance.
 
 ## What can I expect on my first visit?
 
@@ -66,8 +68,8 @@ In urgent cases, we naturally try to treat you promptly. Please call in such cas
 
 The costs depend on the type of treatment:
 
-- **Statutorily Insured:** The legally required services are covered by your health insurance. Additional services (IGeL) must be paid for yourself.
-- **Privately Insured:** The costs are calculated according to the fee schedule for doctors (GOÄ) and billed directly with your insurance.
+- **Statutory patients:** The legally required services are covered by your health insurance. Additional services (IGeL) must be paid for yourself.
+- **Private patients:** The costs are calculated according to the fee schedule for physicians (GOÄ) and billed directly with your insurance.
 
 We will be happy to inform you about the costs before a treatment.
 

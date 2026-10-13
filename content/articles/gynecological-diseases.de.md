@@ -51,4 +51,4 @@ Ich biete Ihnen eine gründliche Untersuchung, eine präzise Diagnose und eine b
 - Supportive Behandlung und Rehabilitation
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

@@ -43,4 +43,4 @@ Nach der Untersuchung besprechen wir gemeinsam:
 - Termin für die nächste Vorsorgeuntersuchung
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

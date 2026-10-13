@@ -1,4 +1,4 @@
-Title: Praxis Saewska - Gynaecological practice
+Title: Dr. Saewska - Specialist in Gynecology and Obstetrics
 Lang: en
 Slug: index
 Template: index
@@ -38,7 +38,7 @@ Regular preventive examinations are the best protection for your health. We perf
 
 ### [Treatment of Mastopathy](/en/blog/mastopathy-treatment/)
 
-Sensitive care for benign breast changes: We clarify complaints, advise on self-examination, and accompany you medically competently through all phases of treatment.
+Compassionate care for benign breast changes: We clarify complaints, advise on self-examination, and provide expert medical support through every stage of treatment.
 [Read more](/en/blog/mastopathy-treatment/)
 
 ### [Vaccinations and Prevention](/en/blog/vaccinations-prevention/)

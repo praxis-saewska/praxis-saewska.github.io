@@ -54,7 +54,7 @@ The responsible party for data processing on this website is:
 Uhlandstr. 87  
 10717 Berlin
 
-Phone: +49308615424  
+Phone: +49 30 861 5424  
 Email: webmaster@praxis-saewska.de
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g. names, email addresses, etc.).

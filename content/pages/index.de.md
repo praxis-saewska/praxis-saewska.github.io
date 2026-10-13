@@ -6,14 +6,14 @@ Hero_Subtitle: Ihre Gesundheit liegt uns am Herzen. Wir bieten umfassende gynäk
 
 ## Unsere Leistungen
 
-### [Kindergynäkologie und Jugendgynäkologie](/de/blog/pediatric-adolescent-gynecology/)
+### [Kinder- und Jugendgynäkologie](/de/blog/pediatric-adolescent-gynecology/)
 
 Ein behutsamer Einstieg in die Frauengesundheit: Wir beraten junge Mädchen und Jugendliche bei allen Fragen rund um den Körper, Zyklus, Verhütung und erste gynäkologische Themen – in vertrauensvoller und respektvoller Atmosphäre.
 [Mehr erfahren](/de/blog/pediatric-adolescent-gynecology/)
 
 ### [Urogynäkologie](/de/blog/urogynecology/)
 
-Ein starker Beckenboden für mehr Lebensqualität: Wir behandeln Blasen- und Beckenbodenschwächen, Inkontinenz oder Senkungsbeschwerden (Prolaps) individuell und ganzheitlich. Zur Verfügung stehen medikamentöse Therapien, Biofeedback, Botox-Behandlungen, minimalinvasive Operationen (z. B. Bändereinlagen) und vaginale plastische Eingriffe.
+Ein starker Beckenboden für mehr Lebensqualität: Wir behandeln Blasen- und Beckenbodenschwächen, Inkontinenz oder Senkungsbeschwerden (Prolaps) individuell und ganzheitlich. Zur Verfügung stehen medikamentöse Therapien, Biofeedback, Botulinumtoxin-Behandlungen, minimalinvasive Operationen (z. B. Bändereinlagen) und vaginale plastische Eingriffe.
 [Mehr erfahren](/de/blog/urogynecology/)
 
 ### [Schwangerschaftsbetreuung](/de/blog/pregnancy-care/)

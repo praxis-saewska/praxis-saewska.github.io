@@ -47,4 +47,4 @@ Ich berate zu allen wichtigen Impfungen und führe sie direkt in der Praxis durc
 - **Schema:** Grundimmunisierung mit 3 Dosen, regelmäßige Auffrischung
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam
