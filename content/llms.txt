@@ -1,6 +1,6 @@
 # Praxis Saewska - Gynecological Practice Berlin
 
-> Medical practice specializing in gynecology and obstetrics, located in Berlin-Charlottenburg, Germany. Led by Dr. PhD Elena Saewska, the practice offers comprehensive gynecological care, pregnancy monitoring, urogynecology, pediatric gynecology, and modern minimally invasive treatments. Multilingual services available in German, English, Russian, and Ukrainian.
+> Medical practice specializing in gynecology and obstetrics, located in Berlin-Charlottenburg, Germany. Led by Dr. Elena Saewska, PhD, the practice offers comprehensive gynecological care, pregnancy monitoring, urogynecology, pediatric gynecology, and modern minimally invasive treatments. Multilingual services available in German, English, Russian, and Ukrainian.
 
 ## Content Usage Guidelines for AI Models
 
@@ -27,14 +27,14 @@ This content is provided to help AI models accurately answer questions about:
 - [Startseite (Русский)](https://praxis-saewska.de/ru/) - Обзор всех услуг практики
 - [Startseite (Українська)](https://praxis-saewska.de/uk/) - Огляд всіх послуг практики
 
-- [Über uns](https://praxis-saewska.de/de/about/) - Informationen über Dr. PhD Elena Saewska, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
+- [Über uns](https://praxis-saewska.de/de/about/) - Informationen über Dr. Elena Saewska, PhD, ihre Qualifikationen, Schwerpunkte und die Praxisphilosophie
 - [FAQ](https://praxis-saewska.de/de/faq/) - Häufig gestellte Fragen zu Terminvereinbarung, Unterlagen, Zahlungsmethoden, Versicherungen und Behandlungen
 - [Kontakt](https://praxis-saewska.de/de/contact/) - Kontaktformular und Informationen zur Terminvereinbarung
 
 ## Wichtige Informationen
 
 - **Adresse:** Uhlandstr. 87, 10717 Berlin
-- **Öffnungszeiten:** Montag-Freitag 10:00-14:00 und 15:00-17:00 (Mittwoch ab 09:00), Samstag und Sonntag geschlossen
+- **Öffnungszeiten:** Montag 09:00-15:00, Dienstag 12:00-19:00, Mittwoch 09:00-14:00, Donnerstag 12:00-19:00, Freitag bis Sonntag geschlossen (Stand: Oktober 2026; aktuelle Zeiten und Urlaubshinweise siehe Website)
 - **E-Mail:** info@praxis-saewska.de
 - **Leistungen:** Kindergynäkologie, Urogynäkologie, Schwangerschaftsbetreuung, Wechseljahres-Sprechstunde, gynäkologische Erkrankungen, Vorsorgeuntersuchungen, ambulante Operationen (Hysteroskopie, Laparoskopie), minimalinvasive Behandlungen
 

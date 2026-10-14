@@ -35,4 +35,4 @@ Individuelle Untersuchung, Beratung und Behandlung bei folgenden Beschwerden:
 - **Vaginale Plastiken** (Wiederherstellung von Gewebe und Bändern)
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

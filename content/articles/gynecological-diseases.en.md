@@ -51,4 +51,4 @@ I offer thorough examination, precise diagnosis, and gentle, individually adapte
 - Supportive treatment and rehabilitation
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

@@ -44,4 +44,4 @@ If you are pregnant, we kindly ask you to book your appointment **by phone** —
 Of course, you are always welcome to reach us by phone for any other questions as well.
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

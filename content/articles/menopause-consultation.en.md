@@ -38,4 +38,4 @@ We help with the following symptoms:
 - Concentration problems
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

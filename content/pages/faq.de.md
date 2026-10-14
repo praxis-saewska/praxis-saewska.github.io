@@ -12,7 +12,9 @@ Sie können einen Termin auf verschiedene Weise vereinbaren:
 - Telefonisch während unserer Sprechzeiten
 - Per E-Mail
 
-Bitte haben Sie Ihre Versichertenkarte bereit, wenn Sie anrufen.
+Bitte haben Sie Ihre Versichertenkarte bereit, wenn Sie anrufen. Unsere aktuellen Sprechzeiten und die Telefonnummer finden Sie auf der Seite [Kontakt](/de/contact/).
+
+Wenn Sie schwanger sind, bitten wir Sie, Ihren Termin telefonisch zu vereinbaren.
 
 ## Welche Unterlagen sollte ich zum Termin mitbringen?
 

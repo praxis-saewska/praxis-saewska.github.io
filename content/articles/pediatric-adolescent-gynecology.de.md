@@ -29,4 +29,4 @@ Individuelle Untersuchung, Beratung und Behandlung der folgenden Bereiche der p�
 - Genetische Entwicklungsstörungen (Ullrich-Turner-Syndrom, Swyer-Syndrom, adrenogenitales Syndrom u. a.)
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

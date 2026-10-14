@@ -34,4 +34,4 @@ Every pregnancy is unique, and I approach each patient with particular attention
 - Warning signs and when to see a doctor
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

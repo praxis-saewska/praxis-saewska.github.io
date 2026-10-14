@@ -47,4 +47,4 @@ I offer counseling on all important vaccinations and perform them directly in th
 - **Schedule:** primary immunization with 3 doses, regular boosters
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

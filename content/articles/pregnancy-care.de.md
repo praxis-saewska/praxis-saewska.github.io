@@ -1,4 +1,4 @@
-Title: Schwangerschaftsvorsorge
+Title: Schwangerschaftsbetreuung
 Date: 2026-05-07 10:00
 Modified: 2026-05-07 10:00
 Category: Articles
@@ -6,7 +6,7 @@ Status: published
 Tags: praxis, information
 Slug: pregnancy-care
 Lang: de
-Summary: Umfassende Schwangerschaftsvorsorge mit regelmäßigen Untersuchungen, professioneller Diagnostik und individueller Beratung — in einer fürsorgelichen Atmosphäre.
+Summary: Umfassende Schwangerschaftsvorsorge mit regelmäßigen Untersuchungen, professioneller Diagnostik und individueller Beratung — in einer fürsorglichen Atmosphäre.
 
 Liebe werdende Mütter,
 
@@ -34,4 +34,4 @@ Jede Schwangerschaft ist einzigartig, und ich begegne jeder Patientin mit besond
 - Warnsignale und wann Sie einen Arzt aufsuchen sollten
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

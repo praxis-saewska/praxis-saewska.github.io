@@ -29,7 +29,7 @@ Ich freue mich, Ihnen eine einfühlsame und professionelle Beratung und Behandlu
 - Brustschmerzen (Mastalgie), besonders vor der Menstruation
 - Knoten in der Brust
 - Brustwarzenausfluss (klar, blutig oder milchig)
-- Brustchwellung und Ödeme
+- Brustschwellung und Ödeme
 - Beschwerden beim Tragen eines BHs
 
 ### Behandlungsmethoden
@@ -49,4 +49,4 @@ Ich werde Ihnen die richtige Technik beibringen:
 - Worauf Sie achten sollten und wann Sie einen Arzt aufsuchen sollten
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

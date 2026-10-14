@@ -54,7 +54,7 @@ Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 Uhlandstr. 87  
 10717 Berlin
 
-Telefon: +49308615424  
+Telefon: +49 30 861 5424  
 E-Mail: webmaster@praxis-saewska.de
 
 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.

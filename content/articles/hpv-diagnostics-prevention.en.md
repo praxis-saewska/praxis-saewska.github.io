@@ -46,4 +46,4 @@ Types 16 and 18 are the most dangerous for the development of cervical cancer. O
 - **Lifestyle** — avoiding smoking, using barrier contraception, and maintaining a healthy immune system
 
 With kind regards,  
-Dr. Saewska and the Praxis Dr. Saewska team
+Dr. Saewska and the practice team

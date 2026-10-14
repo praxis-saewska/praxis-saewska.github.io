@@ -24,6 +24,10 @@ MAIN_SITEURL = "https://praxis-saewska.de"
 # Path settings
 PATH = "content"
 OUTPUT_PATH = "output"
+# Архив: сняты с публикации (не генерируются и не попадают в sitemap)
+ARTICLE_EXCLUDES = ["archive"]
+PAGE_EXCLUDES = ["archive"]
+
 STATIC_PATHS = [
     "images",
     "site.webmanifest",

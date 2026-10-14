@@ -48,4 +48,4 @@ Wir führen alle Arten plastischer Operationen im äußeren Genitalbereich durch
 - **Nachkontrolle** — Besprechung des feingeweblichen Befundes und weitere Betreuung in unserer Praxis
 
 Mit freundlichen Grüßen,  
-Dr. Saewska und das Team der Praxis Dr. Saewska
+Dr. Saewska und das Praxisteam

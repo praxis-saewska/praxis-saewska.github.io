@@ -10,7 +10,7 @@ Summary: Ab **14.04.2026** übernimmt Dr. Elena Saewska, PhD die frauenärztlich
 
 Liebe Patientinnen,
 
-mit Freude teilen wir Ihnen mit, dass  Frauenärztliche Praxis von Dr. Josepha Rodriguez zum **14.04.2026** in die Verantwortung von Dr. Elena Saewska PhD, übergeht und ihre Tätigkeit in einem neuen Rahmen als Praxis Saewska fortsetzen wird.
+mit Freude teilen wir Ihnen mit, dass die Frauenärztliche Praxis von Dr. Josepha Rodriguez zum **14.04.2026** in die Verantwortung von Dr. Elena Saewska PhD, übergeht und ihre Tätigkeit in einem neuen Rahmen als Praxis Saewska fortsetzen wird.
 
 Dr. Elena Saewska ist Fachärztin für Gynäkologie und Geburtshilfe mit mehr als 15 Jahren Berufserfahrung, darunter 10 Jahre in leitender Position. Im Mittelpunkt steht eine moderne und zugleich besonders behutsame Betreuung, unter anderem im Bereich der minimalinvasiven Gynäkologie. Im Laufe ihrer Tätigkeit hat sie mehr als 20 wissenschaftliche Arbeiten veröffentlicht. Mehr dazu finden Sie auf der Seite [Über uns](/de/about/).
 
@@ -18,13 +18,11 @@ Dr. Saewska begegnet der langjährigen Arbeit und dem Engagement von Dr. Josepha
 
 In unserer Praxis erhalten Sie eine moderne, aufmerksame und individuell angepasste medizinische Betreuung im Bereich Gynäkologie und Frauengesundheit. Unser Ziel ist eine ruhige, vertrauensvolle Atmosphäre, in der sich jede Patientin gut aufgehoben fühlt und Sicherheit in der Qualität der Behandlung gewinnt.
 
-Terminvereinbarung und weitere Informationen werden in Kürze auf der Website verfügbar sein.
+Termine können Sie bequem online über [arzt-direkt.de](https://app.arzt-direkt.de/praxis-saewska/booking) oder telefonisch vereinbaren. Weitere Informationen finden Sie auf der Seite [Kontakt](/de/contact/).
 
 Einen Überblick über unsere Leistungen finden Sie auf der Startseite im Bereich [Unsere Leistungen](/de/#services).
 
 Für alle aktuellen Fragen können Sie Dr. Saewska über das Kontaktformular auf der Website erreichen: [Kontaktformular](/de/contact/).
 
-**Hinweis**: Diese Website befindet sich im Aufbau und wird schrittweise mit neuen Inhalten ergänzt.
-
 Mit freundlichen Grüßen  
-Dr.  Elena Saewska, PhD
+Dr. Elena Saewska, PhD
