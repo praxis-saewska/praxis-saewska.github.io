@@ -2,7 +2,7 @@ Title: Sommerurlaub 2026 – Praxis vorübergehend geschlossen
 Date: 2026-07-10 10:00
 Modified: 2026-07-10 10:00
 Category: News
-Status: hidden
+Status: published
 Tags: ankündigung, öffnungszeiten, urlaub
 Slug: summer-closure-2026
 Lang: de

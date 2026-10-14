@@ -2,7 +2,7 @@ Title: Willkommen in unserem Blog
 Date: 2025-01-15 10:00
 Modified: 2025-01-15 10:00
 Category: Articles
-Status: hidden
+Status: published
 Tags: praxis, neuigkeiten, information
 Slug: welcome-to-our-blog
 Lang: de

@@ -2,7 +2,7 @@ Title: Летний отпуск 2026 – клиника временно зак
 Date: 2026-07-10 10:00
 Modified: 2026-07-10 10:00
 Category: News
-Status: hidden
+Status: published
 Tags: объявление, часы работы, отпуск
 Slug: summer-closure-2026
 Lang: ru
